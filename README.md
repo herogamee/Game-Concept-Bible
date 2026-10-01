@@ -12,7 +12,8 @@ The core fantasy is not "be the chosen hero immediately." It is:
 
 ## Current Bible
 
-- [Game Concept Bible v0.1](bible/GAME-CONCEPT-BIBLE-v0.1.md)
+- [Game Concept Bible v0.2 — working draft](bible/GAME-CONCEPT-BIBLE-v0.2.md)
+- [Game Concept Bible v0.1 — preserved foundation](bible/GAME-CONCEPT-BIBLE-v0.1.md)
 - [Changelog](CHANGELOG.md)
 
 ## Design pillars

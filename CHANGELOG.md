@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.2 — 2026-10-01 — World, Guild, Factions & Starter Region
+
+### Checkpoint 1 — world and professional foundation
+
+- Added v0.2 overview with explicit working-proposal and tuning status; preserved all v0.1 locks and the complete v0.1 document.
+- Proposed three world names, historical layers, three landmasses, starter kingdom and regional route graph.
+- Specified one city, three villages, secondary town, surface resources, small dungeon and distinct main floors 1–3.
+- Added ten factions, three candidate peoples, bounded magic, currency and worked early budgets.
+- Defined physical Guild operations, license/contract lifecycle, risk eligibility, emergency duties, appeals and practical F → E assessment.
+- Cast, quest integration, market evidence and final verification are pending subsequent checkpoints.
+
 ## v0.1 — 2026-10-01 — Foundation
 
 Initial Game Concept Bible.
