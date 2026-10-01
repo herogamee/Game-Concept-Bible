@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.2.1 — 2026-10-01 — Player / NPC Boundary Correction
+
+- Locked the **Player-First Adventurer World** principle: real players remain the primary adventurers and NPCs must not consume the core game loop in their place.
+- Reframed adventurer NPCs into four roles: World NPC, Ambient Adventurer, Story Adventurer and Companion.
+- Removed the direction where NPCs autonomously reserve player-facing contracts, settle a parallel adventurer economy, grind qualification evidence or drive promotion as bot players.
+- Separated Player Contract Pool from NPC Narrative Activity so NPC atmosphere does not remove meaningful player content.
+- Made Main Dungeon breakthroughs, major bosses, first discoveries, prestige and important world-event outcomes player-centric.
+- Bounded NPC economy to services, authored shortages and world presentation rather than continuous bot farming/trading.
+- Clarified that persistent NPC state means continuity of identity/story/relationship/availability, not continuous autonomous player simulation.
+- Added owner direction toward a **lightweight shared-world Adventurer RPG** with web-first ambitions, ordinary-PC accessibility, zones/channels/instances and scalable online play.
+- Kept engine, networking stack, backend, exact concurrency model and final platform matrix open pending technical prototypes.
+- Retained the offline solo vertical-slice harness strictly as a development tool, not the final product vision.
+- Preserved v0.1 and v0.2 as historical concept checkpoints; v0.2.1 supersedes only conflicting Player/NPC and shared-world assumptions.
+- v0.3 Combat & Classes remains the next planned concept version; no v0.3 work was started in this correction.
+
 ## v0.2 — 2026-10-01 — World, Guild, Factions & Starter Region
 
 ### Checkpoint 1 — world and professional foundation

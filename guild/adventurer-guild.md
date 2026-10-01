@@ -29,26 +29,26 @@ Ground floor circulation: entrance → reception → board → preparation count
 | Space | Practical use | Living-world cue |
 |---|---|---|
 | Reception | License, reporting, appeals, expected return | Clerk recognizes a repeated reliable applicant |
-| Quest board | Ranked posted contracts and updated information | Another party signs a separate available job |
+| Quest board | Ranked posted contracts and updated information | Ambient adventurers discuss work without consuming the player's contract pool |
 | Tavern | Meals, rumors, relationships | Injured adventurer changes routine and conversation |
 | Party tables | Terms, recruitment, role discussion | Friends wait together; rival declines unsafe preparation |
 | Training yard | First aid, route planning, aptitude trial | Veteran practices rather than only standing by a marker |
 | Exam room/yard | Assessment briefing and debrief | Feedback records a failed station constructively |
 | Records / archive | Monster observations, routes, dungeon ledger | A submitted sample visibly changes one entry |
-| News and rankings wall | Local achievements, overdue notices, promotion news | NPC success appears even without player involvement |
+| News and rankings wall | Local achievements, overdue notices, promotion news | Authored peer milestones and player achievements make the profession feel active |
 | Emergency bell / dispatch desk | Muster, civilian relief and missing parties | Available ranks sort into suitable duties |
 
-Rankings publish milestones, verified discoveries and regional commendations; they are not a leaderboard equating rank with DPS. No universal live online rankings in the slice.
+Rankings publish milestones, verified discoveries and regional commendations; they are not a leaderboard equating rank with DPS. Major new discoveries and prestige during active play are player-centric. No universal live online rankings are required in the offline slice.
 
 ## License and contract lifecycle
 
 License contains registry ID, name, rank, branch of issue, permit endorsements, standing, emergency contact and last verification. Public-facing tag exposes rank and ID, not medical records. Credentials transfer between branches after record check; losing a physical tag requires verification/replacement, not losing character growth.
 
-Contract state: Draft → Assessed/Escrowed → Posted → Reserved → Active → Reported → Verified → Settled. Branches can Cancel or Dispute; overdue jobs enter Review before being treated as misconduct. Reserved player jobs are protected from NPC sniping. NPCs may take other Posted jobs; the news wall shows what changed.
+Contract state: Draft → Assessed/Escrowed → Posted → Reserved → Active → Reported → Verified → Settled. Branches can Cancel or Dispute; overdue jobs enter Review before being treated as misconduct. In v0.2.1, player-facing Posted contracts belong to the **Player Contract Pool**. Ambient or story NPC activity is represented separately as **NPC Narrative Activity** and does not remove meaningful player contracts from the board.
 
 Every board entry shows issuer, objective, advertised risk rank, confidence, location, known hazards, party/permit requirements, expected time, gross reward, fee estimate, salvage rights, deadline basis and retreat/report terms. Clients may conceal information; the UI distinguishes their claims from Guild verification. Do not lie invisibly to manufacture surprise.
 
-Accepted jobs use explicit in-world action ticks; paused time, dialogue and menus do not expire them. Slice board maintains at least one safe paid job and one exploration alternative. Consequential authored jobs have replacement/follow-up opportunities after NPC completion.
+Accepted player jobs use explicit in-world action ticks; paused time, dialogue and menus do not expire them. The slice board maintains at least one safe paid job and one exploration alternative. Consequential authored jobs may change through player action or explicit world/story milestones, not because autonomous NPC bots consumed the content.
 
 ## Rules, rewards and misconduct
 

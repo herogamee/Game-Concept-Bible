@@ -2,6 +2,12 @@
 
 **Date:** 2026-10-01. Owner approval is distinct from a writer using a coherent working draft.
 
+## Owner direction added in v0.2.1
+
+**Locked principle — Player-First Adventurer World:** real players are the primary adventurers. NPCs provide world life, story, services, rivals, mentors and companion support; they do not autonomously consume the core player contract/progression loop.
+
+**Product direction — Lightweight Shared World:** the intended final game is not single-player-only. It should pursue low hardware requirements, web-first accessibility where viable, real-player parties/social spaces and scalable zones/channels/instances. Exact engine, network stack, backend and concurrency architecture remain open pending prototypes.
+
 ## Foundation compatibility
 
 v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of v0.2. No locked concept is replaced. The draft proposes detail where v0.1 was open; implementation convenience does not turn an open decision into a permanent lock.
@@ -13,14 +19,15 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 | OD-03 | Three peoples; human player presentation in slice | Proposed / open final roster | Rig, dialogue and economic-role cost before expanding |
 | OD-04 | Bounded pattern magic, uncertain divine ontology | Proposed | Preserve everyday professions and preparation; utility prototype |
 | OD-05 | Exact combat model | Open | Compare candidate greyboxes and support-role solo viability |
-| OD-06 | Final solo/co-op/shared world | Open | Temporary offline harness tests core life; networking cost unknown |
+| OD-06 | Final product social mode | **Direction locked: lightweight shared world; exact implementation open** | Final game should support real-player social/party play; offline harness remains a temporary test tool |
 | OD-07 | Player death, permanent NPC death | Open | Slice uses temporary injury/rescue/retirement only |
 | OD-08 | Four slice aptitudes; final six or expanded classes | Proposed subset | v0.1 six-archetype foundation retained; combat validation first |
 | OD-09 | Prices, merit, exam scores and time targets | Tuning assumption | Budget checks are mathematical, not playtested balance |
 | OD-10 | Authored/procedural dungeon mixture and final 100th-floor truth | Open | Three authored floors prove differentiation; no full-floor backlog |
-| OD-11 | Platforms, engine, team size and visual fidelity | Open | Needed before schedule or budget estimate |
+| OD-11 | Platforms, engine, team size and visual fidelity | **Web-first / ordinary-PC product goal; technology open** | Validate browser performance and production constraints before locking engine or platform matrix |
 | OD-12 | Commercial model and price | Open | No sales/wishlist evidence sufficient to choose |
 | OD-13 | Calendar, technology and civic religious institutions | Proposed | Supports couriers, recovery and cultural context; no doctrine lock |
+| OD-14 | Player/NPC boundary | **Locked owner direction** | Player contracts, Main Dungeon breakthroughs, major bosses, prestige and important world-event outcomes remain player-centric; NPC activity is supportive/narrative |
 
 ## Proposed Change PC-01 — prototype class subset
 
@@ -40,13 +47,13 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 
 **Current design:** v0.1 describes schedules, changing world and advancing simulation, without committing the clock model.
 
-**Proposed design:** saved discrete travel/rest/action ticks; dialogue, menus and idle time do not advance deadlines.
+**Proposed design:** saved discrete travel/rest/action ticks for player deadlines and authored world milestones; dialogue, menus and idle time do not advance deadlines. NPCs do not use these ticks to run a hidden autonomous player career loop.
 
 **Reason:** allows understandable contract consequences and reliable persistence with a small cast.
 
-**Advantages:** repeatable debugging, accessible reading pace, bounded authoring, clear overdue-party causes.
+**Advantages:** repeatable debugging, accessible reading pace, bounded authoring, clear overdue-party causes and deterministic authored NPC state changes.
 
-**Risks:** routines may feel mechanical; resting may become an exploit. Tie material stock, career outcomes and displayed changes to a single saved tick, and show consequences before advancement.
+**Risks:** routines may feel mechanical; resting may become an exploit. Tie regional states and authored character milestones to clear saved triggers, and show consequences before advancement without turning NPCs into background bot players.
 
 **Decision:** Open final time model; proposed for the first harness only.
 
@@ -54,15 +61,15 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 
 **Current design:** v0.1 leaves solo/co-op/shared-world direction open and cautions against MMO scope.
 
-**Proposed design:** offline solo slice with NPC parties; architecture and commercial mode unresolved.
+**Proposed design:** offline solo slice with companion NPCs as a development harness; final product direction is a lightweight shared world while architecture and commercial mode remain unresolved.
 
-**Reason:** isolate the career/relationship loop before paying multiplayer complexity.
+**Reason:** isolate the career/relationship/combat loop before paying multiplayer complexity, without treating solo-only play as the final product.
 
 **Advantages:** quicker iteration and clear attribution of systemic failures.
 
-**Risks:** deferred co-op constraints could require redesign; tests may overvalue authored solo relationships. Keep stable state IDs and explicit party agreements; conduct separate co-op feasibility work before final production.
+**Risks:** deferred shared-world constraints could require redesign; tests may overvalue authored solo relationships. Keep stable state IDs and explicit party agreements, avoid autonomous NPC systems that substitute for future real players, and conduct networking/browser feasibility work before final production.
 
-**Decision:** Production assumption for review, not a final single-player lock.
+**Decision:** Development-tool assumption only. The final product is not to be designed as single-player-only.
 
 ## Proposed Change PC-04 — bounded faction/supply response
 
@@ -77,6 +84,10 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 **Risks:** repetitive state transitions; world may seem static outside the two chains. Make independent NPC changes visible and expand only if the core loop warrants it.
 
 **Decision:** Open scale decision; no reduction of the final living-world pillar.
+
+## v0.2.1 interpretation rule
+
+Where earlier v0.2 text implies NPC adventurers independently reserve player-facing contracts, settle a parallel adventurer economy, grind merit or push Main Dungeon progress, v0.2.1 overrides that interpretation. Persistent NPCs retain continuity and authored life changes without needing autonomous player simulation.
 
 ## Future decision practice
 
