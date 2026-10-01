@@ -1,7 +1,7 @@
 # First cast — 28 people with lives beyond the player
 
 **Status:** Proposed original characters. Secrets are author-only, not automatic player knowledge.
-**Scope:** 14 civic/support NPCs plus 14 persistent adventurers; only a smaller speaking subset needs complete presentation in the slice. All names are working names.
+**Scope:** 14 civic/support NPCs plus 14 adventurer NPCs spanning ambient, story and potential companion roles; only a smaller speaking subset needs complete presentation in the slice. All names are working names.
 
 ## Civic and support cast
 
@@ -24,9 +24,9 @@
 
 ## Persistent adventurers
 
-| ID / person | Rank, aptitude and home routine | Independent goal and relationships | Secret / tension | Career arc and observable state |
+| ID / person | Rank, aptitude and home routine | Own goal and relationships | Secret / tension | Authored arc and observable state |
 |---|---|---|---|---|
-| N15 Kevi Ash | F fighter; yard → board → field → bunk | Pay for a permanent blade and support a sibling; trains with N03, friendly rival of N16 | Sends half of spare earnings home, making apparent poverty misleading | Completes a farm job without player; can promote after separate evidence; new blade appears only when savings permit |
+| N15 Kevi Ash | F fighter; yard → board → field → bunk | Pay for a permanent blade and support a sibling; trains with N03, friendly rival of N16 | Sends half of spare earnings home, making apparent poverty misleading | Authored milestones can show a better blade, changed confidence or later E-rank status; these changes do not require consuming player contracts or simulating hidden merit grind |
 | N16 Noll Fen | F ranger; woods observation, evening tavern | Earn a reputation for accurate tracking; competes with N15, admires N22 | Submitted a confident predator guess that was never verified | Learns to revise claims or doubles down; rival can become a cooperative scout rather than an inevitable villain |
 | N17 Aris Pell | F mage; training bench and board | Fund safe-pattern certification; studies under N19, borrows from N20 | Focus is a loan and cannot be sold to escape debt | Takes sensing work, may pause field jobs to study; rank changes only after documented examination |
 | N18 Bera Holt | F scout; depot morning, village visits | Map safe shelters and bring reliable information; mentee of N03, trusts N10 | Cannot read formal contract script fluently and uses oral verification | Learns with archive support; practical route skill already strong; accessible license workflow respects competence |
@@ -41,6 +41,10 @@
 | N27 Sel Wist | F scout/scholar; archive mornings, board afternoon | Earn trust through discoveries instead of combat prestige; apprentice to N08, assists N12 | Privately copied a restricted map fragment | Returns it and seeks a permit, or hides it; discovery must be verified before promotion merit |
 | N28 Roan Mire | F fighter/porter; warehouse and route jobs | Assemble a dependable party without debt; supports N26, declines N16's risky boasts | Plans to leave adventuring if two consecutive losses erase savings | Can join a safer party or take steady porter work; departure is announced, does not softlock rescue jobs |
 
+## Player-first boundary
+
+The adventurer cast exists to create relationships, atmosphere, story and companion possibilities around real players. Their routines may imply work and their authored states may change over time, but they do not compete for the Player Contract Pool, independently clear Main Dungeon breakthroughs or run a parallel bot economy.
+
 ## Connections that become play
 
 - Beginner circle: N15–N18, N20, N27 and N28 have overlapping work opportunities, not permanent attachment to the player.
@@ -54,6 +58,6 @@ Each major NPC needs at least one interaction unrelated to issuing or redeeming 
 
 Tier A full slice conversations: N01, N03, N05, N09, N10, N15, N16 and N18. Tier B short functional conversations plus one personal beat: N02, N04, N06–N08, N11–N12, N17, N19–N22, N26–N28. Tier C portrait, visitor or news-only cameo: N13–N14 and N23–N25.
 
-All **14 adventurers N15–N28** still have persistent ledger state, including cameo veterans. “Persistent” means identity, money, career, injury and relationship survive save/load, not that each needs a unique high-fidelity rig and twenty dialogue branches. Support NPCs are not counted as persistent adventurers.
+All **14 adventurers N15–N28** keep persistent **player-facing character state**, including cameo veterans. “Persistent” means identity, rank/role, relationship, injury, location, availability, visible equipment and relevant story milestones survive save/load. It does **not** require a hidden player-like contract ledger, money grind, autonomous promotion loop or continuous adventurer economy. Support NPCs are not counted as adventurer NPCs.
 
 Initial slice cast includes F, E, D and C **NPC credentials**, while only F/E player progression and contracts are implemented. Higher-ranked cameos do not expand playable rank systems.
