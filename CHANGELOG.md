@@ -9,7 +9,16 @@
 - Specified one city, three villages, secondary town, surface resources, small dungeon and distinct main floors 1–3.
 - Added ten factions, three candidate peoples, bounded magic, currency and worked early budgets.
 - Defined physical Guild operations, license/contract lifecycle, risk eligibility, emergency duties, appeals and practical F → E assessment.
-- Cast, quest integration, market evidence and final verification are pending subsequent checkpoints.
+- Cast, quest integration, market evidence and final verification were pending at this checkpoint.
+
+### Checkpoint 2 — people, contracts and playable progression
+
+- Added 28 original working NPCs with goals, relationships, secrets and development; distinguished 14 persistent adventurers from support cast.
+- Specified saved career ticks, protected reservations, independent promotion/retirement and observable world changes.
+- Added 18 authored contracts covering six quest families, explicit rewards, retreat routes and qualification alternatives.
+- Connected several first-ten-hour paths, affordable upgrades, first dungeon trip and practical promotion.
+- Added bounded vertical-slice content, implementation-neutral data contracts, production gates, usability criteria and scope exclusions.
+- Market evidence, decision register and final cross-document audit remain pending.
 
 ## v0.1 — 2026-10-01 — Foundation
 

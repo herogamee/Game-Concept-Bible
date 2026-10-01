@@ -1,6 +1,6 @@
 # GAME CONCEPT BIBLE v0.2 — World, Guild, Factions & Starter Region
 
-**Date:** 2026-10-01 | **Status:** Design proposal; checkpoint 1 of 3  
+**Date:** 2026-10-01 | **Status:** Design proposal; checkpoint 2 of 3  
 **Predecessor:** [v0.1, preserved](GAME-CONCEPT-BIBLE-v0.1.md)  
 **Audience:** designers, writers, programmers, artists, producers and playtesters.
 
@@ -48,8 +48,26 @@ A contract's advertised rank measures expected operational risk, not monster lev
 
 [Economy](../world/economy.md) uses copper accounting, published fees, party splitting, salvage rules and worked budgets. A prepared F solo day should provide a small positive surplus. A failed trip hurts, but recovery work and starter equipment loans prevent forced grinding or insolvency. Numbers describe test targets, not a simulated national economy.
 
-## 8. Integration checkpoints
+## 8. People and an independently changing Guild
 
-Checkpoint 1 establishes world, factions, magic, economy and Guild rules. Checkpoint 2 will integrate 28 NPCs, authored contracts, independent careers, first-ten-hour routes and bounded production scope. Checkpoint 3 will integrate dated market evidence, community samples, reference analysis, decision register and verification.
+[Starter cast](../characters/starter-npcs.md) contains 28 original working characters: 14 support/civic people and 14 persistent adventurers. Each has a goal, relationship, private tension and possible development. The player can encounter a rival, an injured professional, a novice saving for a blade and someone choosing a clinic career. No permanent NPC death is approved.
+
+[NPC simulation](../design/npc-simulation.md) uses discrete saved action ticks, protected player reservations, single settlement and authored outcomes. Visible departures, changed equipment, recovery and news expose change without requiring a global simulation.
+
+## 9. First-ten-hour progression
+
+[First ten hours](../design/first-10-hours.md) preserves the v0.1 first hour and proposes several paths: civic investigation, surveying or social party building. Saving may produce a first permanent weapon around hours 2–4; a permitted small-dungeon trip around hours 3–5; E readiness around hours 7–10. These are test hypotheses, not mandatory time gates.
+
+The [18-contract catalogue](../design/starter-quests.md) covers all six foundation families. There is an affordable recovery job, truthful retreat, environmental clues and explicit party payouts. A floor-3 expedition is later slice content, not a prerequisite for the beginner examination.
+
+## 10. What the team builds first
+
+[Vertical slice](../design/vertical-slice.md): one city district and Guild, one village, one wilderness route, Siltwell's two chambers, main floors 1–3, F/E player ranks, four starting aptitudes, 18 contract templates, 14 persistent adventurers, two regional event chains and one promotion test. Other countries and settlements are future context.
+
+An offline solo test harness with NPC parties is a temporary production assumption. Final combat, networking, platforms, commercial model and death policy remain open. Measure profession comprehension, net-pay comprehension, observed NPC change, recovery from failure and more than one viable route to promotion before enlarging scope.
+
+## 11. Integration checkpoints
+
+Checkpoint 1 established world, factions, magic, economy and Guild rules. Checkpoint 2 integrates 28 NPCs, authored contracts, independent careers, first-ten-hour routes and bounded production scope. Checkpoint 3 will integrate dated market evidence, community samples, reference analysis, decision register and verification.
 
 The final v0.2 must let a developer answer: where does the player begin, why does this place exist, how does the Guild constrain risk, which NPCs change, what earns a promotion, and what exactly is built first?
