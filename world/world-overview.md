@@ -1,6 +1,6 @@
 # World foundation
 
-**Status:** v0.2 working proposal. Names and cosmology remain open.  
+**Status:** v0.2 working proposal. Names and cosmology remain open.
 **Design purpose:** an inhabited world in which adventuring is a profession, not an excuse for universal warfare.
 
 ## Naming candidates

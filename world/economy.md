@@ -51,7 +51,7 @@ Default party rule: fee first, reimburse pre-agreed communal expenses second, sp
 | Failed field trip, no reward | 0 − 12 food − 8 bunk − 8 wear − 6 bandage | **34c loss** |
 | Recovery work at city depot | 50 − 5 fee − 12 food − 8 bunk; no field wear | **25c surplus** |
 
-First delivery: cash 60 + 72 net payout − 28 expenses = **104c**. A second similar day reaches **148c**, enough for a 120c weapon but leaving only 28c. Waiting for a third day preserves a buffer. The desired choice is confidence versus safety, not an automatic purchase at a scripted minute.
+First delivery under the normal-cost budget: cash 60 + 72 net payout − 28 expenses = **104c**. This deliberately ignores the first-night voucher; redeeming it adds 8c to the first-day balance. A second similar normal-cost day reaches **148c**, enough for a 120c weapon but leaving only 28c. Waiting for a third day preserves a buffer. The desired choice is confidence versus safety, not an automatic purchase at a scripted minute.
 
 A potion costs roughly one normal day's surplus. Food and rest remain relevant after the first weapon. A failed first trip leaves 26c under the stated ledger; recovery work restores it. If actual failure costs exceed this, the clinic/loan/safe-work floor must still permit recovery without selling essential tools.
 

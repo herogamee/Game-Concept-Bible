@@ -1,7 +1,7 @@
 # GAME CONCEPT BIBLE v0.2 — World, Guild, Factions & Starter Region
 
-**Date:** 2026-10-01 | **Status:** Design proposal; checkpoint 2 of 3  
-**Predecessor:** [v0.1, preserved](GAME-CONCEPT-BIBLE-v0.1.md)  
+**Date:** 2026-10-01 | **Status:** Complete v0.2 documentation proposal; not implementation approval
+**Predecessor:** [v0.1, preserved](GAME-CONCEPT-BIBLE-v0.1.md)
 **Audience:** designers, writers, programmers, artists, producers and playtesters.
 
 ## 1. What game are we making?
@@ -66,8 +66,40 @@ The [18-contract catalogue](../design/starter-quests.md) covers all six foundati
 
 An offline solo test harness with NPC parties is a temporary production assumption. Final combat, networking, platforms, commercial model and death policy remain open. Measure profession comprehension, net-pay comprehension, observed NPC change, recovery from failure and more than one viable route to promotion before enlarging scope.
 
-## 11. Integration checkpoints
+## 11. Market and community evidence
 
-Checkpoint 1 established world, factions, magic, economy and Guild rules. Checkpoint 2 integrates 28 NPCs, authored contracts, independent careers, first-ten-hour routes and bounded production scope. Checkpoint 3 will integrate dated market evidence, community samples, reference analysis, decision register and verification.
+[Market comparison](../research/game-market-research.md) records fourteen Steam games with direct dated review counts, requested geographic perspectives and clear limits. [Community study](../research/community-demand.md) separates individual preference from official product facts: four relevant Reddit requests and 19 sentiment-balanced Steam samples, including Japanese, Simplified Chinese and Thai.
 
-The final v0.2 must let a developer answer: where does the player begin, why does this place exist, how does the Guild constrain risk, which NPCs change, what earns a promotion, and what exactly is built first?
+Games such as Outward, Elin, Trails, Monster Hunter, Our Adventurer Guild and Dungeon Dreams already meet parts of the fantasy. Our working positioning is the integration of ordinary self-created adventuring, professional trust, a physical civic Guild, independent colleagues, meaningful living costs and uncertain exploration. No sampled competitor was verified to combine the complete proposal, but that does not prove global uniqueness or a commercially viable market gap.
+
+Review count is not sales; language is not nationality; there are no verified public wishlist counts, revenue forecasts or market-size claims. Lower sentiment is not automatically business failure. The original Blue Protocol service ending is a distinct operational caution, not a causal proof that anime fantasy cannot succeed.
+
+## 12. Reference interpretation and Original IP
+
+[Reference study](../research/anime-reference-study.md) covers all 18 named works from the brief, including the Korean-origin Solo Leveling and the four Chinese fantasy references. Potential appeal is explicitly our analytical interpretation. Public premise checks and individual community reactions are separate from new design proposals.
+
+Preparation, vulnerable beginnings, social downtime, ecological thinking, qualification and milestone anticipation inform experiments. No counterpart cast, borrowed city, copied power system or renamed scene is proposed. Final naming/art clearance remains future work because no final branding or art exists. The desk study does not claim complete viewing/reading of every series.
+
+## 13. Open decisions and Proposed Change
+
+[Decision register](../design/decisions.md) preserves every foundation lock, lists open decisions and records current/proposed design, reasons, advantages and risks for four scope/production refinements: four-class subset, saved action ticks, temporary offline harness and bounded regional supply response. None replaces the player's adventurer identity or quietly commits an MMO, final combat model or permanent death.
+
+Priority order for the team: confirm target platform/team constraints → compare small combat approaches → choose viable presentation fidelity → approve prototype assumptions → build the short career loop. World-name approval can proceed in parallel but need not delay a greybox using working labels.
+
+## 14. Handoff and acceptance
+
+Read this overview first, then vertical-slice scope, first-ten-hour routes, contracts and NPC cast. Specialists consult linked world/Guild documents for detail. [Requirements and audit](../design/requirements-and-audit.md) maps every requested topic to its owner document and states the distinction between documentation checks and unperformed playtests.
+
+The proposed slice must demonstrate a paid job, a preparation choice, an understandable hazard, a fair report/settlement, a visible independent peer change, failure recovery and a practical F → E qualification. If that loop is unclear or dull, revise it before expanding the region or floor count.
+
+## 15. Checkpoint history and next version
+
+Checkpoint 1: world, factions, magic, economy and Guild foundation. Checkpoint 2: cast, contracts, careers, ten-hour routes and build scope. Checkpoint 3: research evidence, decision register, navigation and cross-document verification. All checkpoints retain v0.1 and update the changelog.
+
+v0.3 remains **Combat & Classes**, as planned in README. It should resolve only what team constraints and comparative prototypes justify; it should not rewrite v0.2's working world without a recorded reason. This repository contains a usable pre-production documentation baseline, not completed game code.
+
+## 16. North-star question, unchanged
+
+“Does this make me feel more like I am actually living the life of an adventurer in a world that continues without me?”
+
+For the first build, answer through a remembered job, a paid-for tool, a changing colleague and an earned license—not a longer feature list.

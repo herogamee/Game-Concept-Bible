@@ -1,6 +1,6 @@
 # First cast — 28 people with lives beyond the player
 
-**Status:** Proposed original characters. Secrets are author-only, not automatic player knowledge.  
+**Status:** Proposed original characters. Secrets are author-only, not automatic player knowledge.
 **Scope:** 14 civic/support NPCs plus 14 persistent adventurers; only a smaller speaking subset needs complete presentation in the slice. All names are working names.
 
 ## Civic and support cast

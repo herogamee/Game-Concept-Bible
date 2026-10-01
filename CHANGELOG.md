@@ -18,7 +18,18 @@
 - Added 18 authored contracts covering six quest families, explicit rewards, retreat routes and qualification alternatives.
 - Connected several first-ten-hour paths, affordable upgrades, first dungeon trip and practical promotion.
 - Added bounded vertical-slice content, implementation-neutral data contracts, production gates, usability criteria and scope exclusions.
-- Market evidence, decision register and final cross-document audit remain pending.
+- Market evidence, decision register and final cross-document audit were pending at this checkpoint.
+
+### Checkpoint 3 — research, integration and handoff
+
+- Completed v0.2 overview and role-based README navigation across the canonical detail documents.
+- Researched fourteen game comparators with direct Steam API counts dated 2026-10-01; retained exact filters, timestamps and source URLs in CSV.
+- Separated product facts, 19 multilingual review opinions, Reddit demand signals, market-gap inference and our design proposals.
+- Covered Thailand, Japan, China, Korea, Europe and America with explicit evidence limits; distinguished reception from sales and service discontinuation from unverified financial loss.
+- Mapped all 18 requested media references to transferable design hypotheses and Original IP boundaries; disclosed premise/video/access limits.
+- Added open-decision register, four Proposed Change records and requirements/consistency audit.
+- Verified local links, stable IDs, metrics arithmetic and worked budgets; preserved the v0.1 foundation unchanged.
+- No gameplay implementation or playtest is claimed. v0.3 Combat & Classes remains the next concept version.
 
 ## v0.1 — 2026-10-01 — Foundation
 
