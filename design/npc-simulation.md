@@ -1,45 +1,209 @@
-# Persistent adventurers — bounded career simulation
+# NPC life and persistence — player-first model
 
-**Status:** Slice implementation proposal, extending v0.1's three simulation tiers. No permanent NPC death.
+**Status:** v0.2.1 direction correction.  
+**Owner principle:** NPCs make the world feel alive, but real players remain the primary adventurers.
 
-## Minimum state
+## Purpose
 
-For N15–N28 save: ID, rank, qualification evidence, capability band, aptitude, party ID, goal, risk preference, funds, kit condition, temporary injury, current job, location, relevant relationships, event flags, next planned action and last processed tick. Store stable IDs rather than duplicating display names in state.
+NPC systems exist to strengthen the player's adventurer fantasy.
 
-Support characters use authored schedules and event flags. Background crowds do not need personal economics. A portrait-only veteran still needs a ledger if their career is persistent.
+They should provide:
 
-## Tick and state transitions
+- believable settlements and Guild halls;
+- recurring characters and relationships;
+- services and information;
+- rivals, mentors and companions;
+- visible change over time;
+- narrative consequences;
+- support when a player chooses to play solo or lacks a party role.
 
-Travel completion, explicit rest and an expedition's return advance discrete world ticks. Pause, dialogue and browsing never do. UI warns before the player advances time with an active deadline. Save/load restores tick number and outcomes; loading cannot reroll resolved NPC work.
+They should **not** become autonomous bot players that independently run the same core career loop as a human player.
 
-Idle → Evaluate jobs → Reserve suitable Posted job → Prepare → Depart → Resolve → Recover/report → Settle → Evaluate promotion/goal. NPC selection respects personal rank, the one-above rule, supplies, expected earnings, relationships and risk preference. A C cameo can do off-screen regional work without creating a playable C contract.
+## Four NPC categories
 
-Reserve and settle a contract exactly once. Player-reserved contracts are excluded. Two parties cannot both claim the same escrow. When a job expires or a route closes, release/reassess reservations explicitly. Maintain a recovery job and several qualification alternatives for the player.
+### 1. World NPC
 
-## Outcome design
+Guild staff, blacksmiths, merchants, innkeepers, healers, villagers, guards, nobles and similar characters.
 
-The slice uses a small authored outcome table keyed by readiness and route state, not thousands of agents. Suitable party plus safe conditions usually succeeds; missing gear leads to delayed departure; known disruption can cause retreat or temporary injury. Seed future unresolved choices at campaign start and save their state. Explain meaningful outcomes through news and conversation.
+Use authored schedules, service states, relationship flags and regional-event responses.
 
-Money changes at actual settlement, not every animation. An NPC cannot upgrade a 120c weapon without savings or recorded support. Injured adventurers take one or two recovery ticks before field work; clinic duty/porter work can substitute. Promotion requires evidence and an exam event, not a daily probability that skips qualifications.
+They do not require adventurer career simulation.
 
-## Two independently visible careers
+### 2. Ambient Adventurer NPC
 
-1. N15 accepts a farm delivery on the first available rest tick, buys a better blade after enough surplus, and submits for E assessment when evidence is sufficient. Player intervention can invite them along but is not required for the state changes.
-2. N20 alternates clinic shifts with beginner work, then chooses a clinic apprenticeship after supported conversation or a financial trigger. Retirement removes field availability while adding clinic familiarity and a news item. This is progress toward their goal, not an NPC failure state.
+These characters create the impression that the Guild and town contain other working adventurers.
 
-A rival's promotion should not occur after one trivial errand while the player needs six varied jobs. Pre-campaign evidence may explain a veteran or near-ready newcomer; publish that context. F beginners with no prior evidence follow comparable rules.
+Visible states may include:
 
-## Observation and missing NPCs
+- reading a board;
+- training;
+- packing equipment;
+- leaving town;
+- returning tired or injured;
+- celebrating;
+- arguing over shares;
+- changing seats or routines;
+- discussing rumors.
 
-Departure sign, empty usual table, report on the news wall, changed kit, altered greeting and a license entry are separate cues. Do not require the player to inspect debug statistics to perceive life. At least one outcome must be understandable without opening the news UI.
+These states may be selected from authored tables or lightweight world conditions. They do not reserve or consume the player's real contract instances.
 
-If an NPC is overdue, the branch follows its search protocol. Slice outcome is found safe, temporary injury, voluntary departure or retirement. Permanent death remains an open decision; “missing” is not a hidden way to enable it. Essential services have a substitute contact if an authored character leaves.
+### 3. Story Adventurer NPC
 
-## Acceptance scenarios
+Named rivals, friends, veterans, mentors and recurring adventurers.
 
-- Advance two ticks without recruiting anyone: one novice accepts and settles separate work, and a second NPC changes goal or recovery state.
-- Save before a tick, process it, save/load afterward: no duplicated rewards or newly rerolled outcome.
-- Reserve Q04 for the player: no NPC removes it; other posted contracts still change.
-- Invite injured N26: refusal cites recovery and offers later availability.
-- Let N20 retire: field recruitment changes, clinic relationship persists, promotion route remains feasible.
-- Close a route: affected NPC jobs reassess; the economy exposes the reason without global cascading collapse.
+Persistent state may include:
+
+- ID;
+- rank;
+- aptitude/role;
+- relationship;
+- location;
+- injury/recovery;
+- party/story affiliation;
+- visible equipment;
+- current authored state;
+- availability;
+- milestone flags.
+
+Their progression is driven by authored milestones, explicit world-state milestones and player interaction.
+
+A story adventurer may later appear at a higher rank, with new equipment or in a new occupation, but the game does not need to secretly simulate a full sequence of player-like quests, reward settlements and merit grinding to justify that change.
+
+### 4. Companion NPC
+
+Companions support a player's adventure.
+
+They can have combat AI, skills, equipment, personality, relationships and limited tactical commands.
+
+They may receive a fair in-world party share where appropriate to the fiction, but that share is not the basis of a hidden autonomous bot economy.
+
+Companions do not independently push Main Dungeon progression or major Guild progression without players.
+
+## Persistence model
+
+“Persistent” means continuity, not autonomous gameplay.
+
+Save only state that can affect the player-facing world.
+
+Recommended persistent fields for important NPCs:
+
+- stable ID;
+- current role/rank;
+- relationship state;
+- injury/recovery;
+- location;
+- current story state;
+- availability;
+- visible equipment tier;
+- relevant knowledge/rumor flags;
+- major event flags.
+
+Do not create hidden per-NPC economic ledgers, full contract histories or promotion-grind systems unless a specific authored story needs them.
+
+## State changes
+
+NPC state can change when:
+
+- the player completes or fails a relevant objective;
+- a regional/world event reaches a milestone;
+- an authored passage of in-world time occurs;
+- a character-specific story resolves;
+- the player develops a relationship;
+- a promotion/retirement/move is explicitly scheduled by content.
+
+Example:
+
+N15 Kevi Ash may begin as an F-rank fighter saving for a better blade.
+
+Later, after an authored milestone, the player may see:
+
+- a new blade;
+- an E-rank tag;
+- changed dialogue;
+- a new party role.
+
+The game does not need to simulate Kevi consuming six real Quest Board contracts behind the player's back.
+
+## Quest Board boundary
+
+Do **not** use this loop as the default NPC model:
+
+Idle → Evaluate player-facing jobs → Reserve → Complete → Settle → Grind merit → Promote.
+
+Player-facing Guild contracts belong to the Player Contract Pool.
+
+NPC Narrative Activity is separate.
+
+An NPC may visibly “leave for work” or return from an off-screen expedition, but that activity normally comes from authored background states rather than removing a meaningful player contract.
+
+This avoids the design problem where fallback quests are required because NPC bots consumed the player's progression route.
+
+## Main Dungeon boundary
+
+NPCs may provide:
+
+- historical expedition records;
+- veteran stories;
+- previously mapped areas;
+- missing-party hooks;
+- safe-route knowledge;
+- companion support.
+
+During active play, meaningful new Main Dungeon breakthroughs should primarily come from real players or player parties.
+
+Do not advance the frontier simply because an off-screen NPC simulation tick succeeded.
+
+## Major events
+
+NPCs can participate in world events as supporting actors.
+
+Example raid:
+
+- guards hold the gate;
+- healers treat casualties;
+- ambient adventurers fight in secondary areas;
+- story NPCs react according to their role.
+
+Player objectives determine important outcomes such as defeating the commander, closing the breach, rescuing a target or recovering critical evidence.
+
+## Economy boundary
+
+NPC life does not require a large autonomous economy.
+
+Allowed:
+
+- shop stock changes;
+- shortages;
+- authored supply responses;
+- service availability;
+- visible equipment upgrades;
+- story-driven financial pressure.
+
+Avoid:
+
+- thousands of NPCs farming resources;
+- NPC auction manipulation;
+- continuous bot trading;
+- bot adventurers dominating loot supply;
+- NPC economic behavior that makes player activity irrelevant.
+
+## Low-population support
+
+The future shared-world direction may use companion and ambient NPCs to prevent empty-feeling social spaces when population is low.
+
+When many real players are present, real adventurers should provide much of the life of Guild halls and towns.
+
+Dynamic NPC density is a future implementation option, not a v0.2.1 requirement.
+
+## Vertical-slice acceptance
+
+The slice only needs to prove:
+
+- at least two named NPCs visibly change state;
+- a companion can support solo play;
+- the Guild feels occupied even without networking;
+- NPC activity never removes critical player content;
+- no NPC completes a Main Dungeon breakthrough for the player;
+- save/load preserves relevant NPC continuity.
+
+No autonomous NPC player economy or career simulator is required for the slice.
