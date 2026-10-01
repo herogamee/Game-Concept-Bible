@@ -35,11 +35,15 @@ Client-owned delivery/medical items are not free sale loot. Contracts cannot be 
 
 ## Availability and qualification
 
-Initially post Q01, Q03, Q04 and Q05 plus safe Q12; Q02 can also be discovered from a conversation. Q06–Q11 emerge from reports and action ticks. At least three F quest families remain obtainable if an NPC resolves a posted job. Use replacement instances with different places/witnesses and capped promotion credit, not new bespoke quests exceeding the 18-template budget.
+Initially post Q01, Q03, Q04 and Q05 plus safe Q12; Q02 can also be discovered from a conversation. Q06–Q11 emerge from player reports and authored world/action milestones. Player-facing contract instances are not consumed by ambient NPC adventurers. NPC Narrative Activity can reference separate off-screen work without changing the availability of these core progression contracts.
 
 E contracts Q13–Q18 require E license or a specific permitted F party under [rank rules](../guild/rank-system.md). Q15 being located on floor 1 does not make its full paid survey automatically F; the free marked orientation loop has a narrower responsibility. F emergency supply tasks never become compulsory D combat.
 
 Six varied F contracts plus practice should provide around 30 merit. Example evidence path Q01/Q02/Q03/Q04/Q06/Q07 totals **29**; one additional Q05 brings **33**, so the six-contract minimum is not a guarantee of the separate merit requirement. Alternative Q02/Q03/Q04/Q06/Q07/Q08 totals **30** across four families. Review boards explain both counters.
+
+## Player/NPC boundary
+
+The 18 templates form the **Player Contract Pool** for the slice. Ambient or story adventurers may discuss other assignments, leave town or return from off-screen work, but this presentation does not reserve, settle or delete these player-facing contract instances. Companion NPCs participate only when accompanying a player.
 
 ## Content boundaries
 
