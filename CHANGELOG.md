@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.2.3 — 2026-10-02 — Open-Source Toolchain Research & Codex Handoff
+
+- Researched current open-source/browser game tooling for character creation, walk/combat/sword animations, maps, AI, pathfinding, procedural dungeons, narrative and multiplayer.
+- Confirmed RPGJS v5.0.0 as the primary next architecture because it now provides stable TypeScript browser RPG/MMORPG support with action battle, Tiled, authoritative multiplayer, prediction/reconciliation, accounts and chat.
+- Added `research/open-source-game-development-stack-2026-10-02.md` with adoption guidance for RPGJS v5, Universal LPC, Tiled, Pixelorama, Kenney, ink, rot.js, EasyStar.js, Yuka, XState, Phaser, Colyseus and optional 3D CC0 animation libraries.
+- Selected Universal LPC as the first character-animation source for walk/slash/thrust/shoot/hurt/spellcast and documented the mixed-license/credits requirement.
+- Added `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md` with a concrete migration mission, sword-combat state contract, multiplayer proof, tests and acceptance gates.
+- Kept Phaser + Colyseus as a fallback stack only; they should not be added beside RPGJS without a documented blocker.
+- Preserved `prototype/web-pixel-rpg-v0.1/` as the known playable baseline.
+
 ## v0.2.2 — 2026-10-02 — First Playable Web Pixel RPG Prototype
 
 - Added `prototype/web-pixel-rpg-v0.1/index.html`, the first directly playable browser prototype.
