@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-02 — Walking cadence, responsive HUD and mobile foundation
+
+- Select continuous locomotion from actual server motion and retain gait across ticks; finite slash/hurt/death animation remains independent.
+- Enlarge overhead labels, replace full-width bottom toolbar with a corner action dock and move utility controls into settings. Add saved 85–130% UI scale, safe-area layout and scrollable dialogs.
+- Crop the camera to real viewport aspect without stretching world units; align click coordinates and labels with the crop.
+- Add pointer-captured touch joystick and bounded server steering leases for touch/WASD; expired input stops movement. Android/iOS browser foundation is implemented; native packages and real-device acceptance are pending.
+- Passed 28 tests, typecheck, build and root/subpath smoke. Recorded desktop/tablet/phone layout evidence, including 130% text. Sustained touch performance needs foreground/device verification; owner product acceptance remains pending.
+
+
 ## 2026-10-02 — 1080p scenery stability and visible monster death
 
 - Reproduced a slime with HP 0 and an old visible sprite. Replaced empty graphics with a registered invisible death graphic, restoring the live graphic only on the server's five-second respawn.
@@ -179,3 +188,4 @@ Established:
 - Multiplayer, combat, and art kept open.
 - Vertical-slice scope guardrails.
 - v0.2 world-building questions.
+

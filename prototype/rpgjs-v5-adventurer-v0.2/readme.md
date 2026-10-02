@@ -6,6 +6,8 @@ Bounded RPGJS v5 presentation/control experiment using the original v0.1 artwork
 
 Current checkpoint: selectable smooth/native-density or original pixel rendering; a synchronized, saved cosmetic schema for body/face/eyes/pants/shoes/shirt/hair/hat/weapon. Real separate costume layers are not authored yet. Read `CHARACTER-APPEARANCE.md`, `../../PROJECT-STATUS.md` and `../../DEVELOPING.md` for the precise scope and portable setup.
 
+Responsive checkpoint: continuous walking cadence, larger overhead labels, compact action dock, scrollable responsive dialogs, saved UI scale and a touch joystick foundation. See `MOBILE-FOUNDATION.md` for device targets and remaining acceptance checks.
+
 ## Run
 
 Node 22.23.2 was used on Windows. From this directory:
@@ -34,7 +36,7 @@ npm.cmd run build
 npm.cmd run test:production
 ```
 
-Twenty-five focused rules/runtime/appearance tests cover active-only damage, one hit per swing, death/interruption/revival, atomic kill rewards, three-kill quest, level growth, potion limits, navigation, Tiled IDs, credits, appearance migration/catalog validation and display-resolution bounds. Production smoke test builds and serves maps, original PNGs and the UI theme at root and `/quest/`; it is not an online deployment test. See `PARITY-REVIEW.md` for current browser results; `ACCEPTANCE.md` preserves the earlier implementation's evidence.
+Twenty-eight focused rules/runtime/appearance tests cover active-only damage, one hit per swing, death/interruption/revival, atomic kill rewards, three-kill quest, level growth, potion limits, navigation, Tiled IDs, credits, appearance migration/catalog validation and display-resolution bounds. Production smoke test builds and serves maps, original PNGs and the UI theme at root and `/quest/`; it is not an online deployment test. See `PARITY-REVIEW.md` for current browser results; `ACCEPTANCE.md` preserves the earlier implementation's evidence.
 
 ## Architecture and authority
 
@@ -65,4 +67,5 @@ The starter sample Pipoya assets/maps remain as references, unregistered in game
 # 1080p visual follow-up
 
 Static props now use an image-only event renderer. Death switches slimes to an invisible graphic until the authoritative five-second respawn; HP/rewards remain server-owned. Collision tiles are transparent and preserve the same footprints. See `evidence/1080p/` and [the original chibi art direction](../../design/art-reference/README.md). The current 64×64 source artwork still limits fine detail at 1080p; the new concept is not a playable animation or modular clothing set.
+
 

@@ -62,3 +62,8 @@ Hurt/death still use an idle frame plus feedback; no dedicated death animation, 
 
 See [1080p evidence](evidence/1080p/README.md): reproduced stale live slime at HP zero, switched to explicit invisible death graphic, removed animated graphics from scenery and used image-only event components. Transparent Tiled collision tiles preserve footprints. Matched fence captures show no pixel changes; rock capture limitations are recorded. The current source art is still low resolution. An original chibi concept is a design reference, not completed runtime animation or visual acceptance.
 
+
+## Responsive / gait checkpoint
+
+See MOBILE-FOUNDATION.md and evidence/responsive/. 28 focused tests, TypeScript, build and production smoke passed. Layout inspected at 320×568, 390×844, 844×390, 1024×768 and 1920×1080. Settings fit and scroll with 130% text; tablet bag fits. Locomotion preserves continuous gait. Browser joystick automation was background-throttled, so sustained touch performance and Android/iOS device acceptance remain open. This checkpoint does not pass owner product parity automatically.
+

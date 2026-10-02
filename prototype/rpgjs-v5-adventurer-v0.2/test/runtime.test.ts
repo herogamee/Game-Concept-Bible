@@ -40,6 +40,23 @@ test('requests cannot set HP, gold, kill count or attack multiplier',()=>{
 });
 test('keyboard cancel overrides server click navigation',()=>{const{a}=fixture();runtime(a).path=[{x:400,y:200}];runtime(a).target='slime-001';action(a,'cancel',undefined);assert.deepEqual(runtime(a).path,[]);assert.equal(runtime(a).target,undefined);});
 
+test('touch steering expires without a release packet and rejects directions/world edges',()=>{
+  const {a,map}=fixture();let moves=0;a.addMovement=async()=>{moves++;};
+  action(a,'steer','teleport');assert.equal(runtime(a).steer,undefined);
+  runtime(a).lastAction=0;action(a,'steer','right');const expiry=runtime(a).steer!.until;
+  stepMap(map,expiry-1);assert.equal(moves,1);stepMap(map,expiry+1);assert.equal(moves,1);assert.equal(runtime(a).steer,undefined);
+  runtime(a).steer={direction:'right' as any,until:expiry+1000};a.x.set(940);stepMap(map,expiry+10);assert.equal(moves,1);
+  action(a,'cancel',undefined);assert.equal(runtime(a).steer,undefined);
+});
+
+test('server motion selects continuous gait without restarting it each step; attack unlocks it',()=>{
+  const {a,map}=fixture();const animations:unknown[][]=[];a.setGraphicAnimation=(...args:unknown[])=>animations.push(args);
+  runtime(a);a.x.set(470);stepMap(map,1000);assert.equal(a.combatPhase(),'move');assert.equal(a.animationFixed,true);assert.deepEqual(animations,[['walk']]);
+  a.x.set(466);stepMap(map,1040);assert.deepEqual(animations,[['walk']]);
+  stepMap(map,1121);assert.equal(a.combatPhase(),'idle');assert.deepEqual(animations,[['walk'],['stand']]);
+  beginAttack(a,1200);assert.equal(a.animationFixed,false);assert.deepEqual(animations.at(-1),['slash',1]);
+});
+
 test('a persistent monster cannot camp an entrance outside its home aggro radius',()=>{
   const {a,e,map}=fixture();a.y.set(50);e.x.set(480);e.y.set(50);
   let home:any;e.moveTo=(point:any)=>{home=point;};stepMap(map,1000);

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {defaultAppearance,normalizeAppearance,parseAppearance,appearanceGraphics,appearanceCatalog,type AppearanceAsset} from '../src/game/appearance';
 import {renderResolution} from '../src/game/display-quality';
 import {playerSchema,applyAppearance} from '../src/game/runtime';
+import {viewportSize,cameraPosition} from '../src/game/viewport';
 test('old/corrupt saves migrate safely; cosmetic schema is permanent',()=>{
   for(const value of [undefined,'bad-json','{}','{"version":99}'])assert.deepEqual(parseAppearance(value),defaultAppearance());
   assert.deepEqual(JSON.parse(playerSchema.appearance.$default),defaultAppearance());
@@ -21,4 +22,16 @@ test('transparent layers resolve in defined order without changing combat data',
 test('physical resolution respects CSS scale, DPR and GPU cap without changing world size',()=>{
   assert.equal(renderResolution(1280,1,'smooth'),1.6);assert.equal(renderResolution(800,2,'smooth'),2);
   assert.equal(renderResolution(1920,3,'smooth'),3);assert.equal(renderResolution(1280,2,'pixel'),1);assert.equal(renderResolution(NaN,NaN,'smooth'),1);
+});
+test('portrait, landscape and desktop cameras crop consistently without distorting world units',()=>{
+  for(const [width,height]of [[1920,1080],[1024,768],[390,844],[844,390]]){
+    const view=viewportSize(width,height);assert.ok(view.width<=800&&view.height<=450);
+    assert.ok(Math.abs(view.width/view.height-width/height)<.003);
+    const camera=cameraPosition({x:950,y:530},view,{width:960,height:540});
+    assert.equal(camera.x,960-view.width);assert.equal(camera.y,540-view.height);
+    const at={x:100,y:150},scale=width/view.width;
+    assert.ok(Math.abs((at.x*scale)/width*view.width-at.x)<1e-8);
+    assert.ok(Math.abs((at.y*height/view.height)/height*view.height-at.y)<1e-8);
+  }
+  assert.deepEqual(viewportSize(0,NaN),{width:800,height:450});
 });

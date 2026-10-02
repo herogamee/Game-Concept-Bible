@@ -21,7 +21,7 @@ declare module '@rpgjs/server' {
   }
 }
 export interface WorldView {map:string;players:{id:string;name:string;x:number;y:number;hp:number;phase:string;direction:string;destination:Point|null}[];monsters:{id:string;x:number;y:number;hp:number;state:string;generation:number}[]}
-interface Runtime {swing?:Swing;hurtUntil:number;deadUntil:number;target?:string;path:Point[];lastAction:number;lastView:number;lastSave:number;transfer:boolean;lastPosition:Point;movingUntil:number}
+interface Runtime {swing?:Swing;steer?:{direction:Direction;until:number};hurtUntil:number;deadUntil:number;target?:string;path:Point[];lastAction:number;lastView:number;lastSave:number;transfer:boolean;lastPosition:Point;movingUntil:number}
 const runtimes=new WeakMap<RpgPlayer,Runtime>();
 const slimeTimers=new WeakMap<RpgEvent,{home:Point;hurtUntil:number;respawnAt:number;attackAt:number;wanderAt:number}>();
 export const playerSchema={adventure:{$default:JSON.stringify(newProgress())},appearance:{$default:JSON.stringify(defaultAppearance())},combatPhase:{$default:'idle',$permanent:false},notice:{$default:'พร้อมออกเดินทาง',$permanent:false},worldView:{$default:JSON.stringify({map:'',players:[],monsters:[]}),$permanent:false}};
@@ -32,7 +32,7 @@ export const position=(p:RpgPlayer):Point=>({x:p.x(),y:p.y()});
 const distance=(a:RpgPlayer,b:RpgPlayer)=>Math.hypot(a.x()-b.x(),a.y()-b.y());
 function updateProgress(p:RpgPlayer,change:(v:Progress)=>void) {const v={...progressOf(p)};change(v);p.adventure.set(JSON.stringify(v));p.hp=v.hp;p.level=v.level;}
 export function applyAppearance(p:RpgPlayer){const appearance=parseAppearance(p.appearance());p.appearance.set(JSON.stringify(appearance));p.setGraphic(appearanceGraphics(appearance));}
-export function resetTransient(p:RpgPlayer,clearMovement=true) {runtimes.delete(p);p.canMove=true;p.directionFixed=false;p.combatPhase.set('idle');if(clearMovement){p.clearMovements();p.stopMoveTo();}applyAppearance(p);}
+export function resetTransient(p:RpgPlayer,clearMovement=true) {runtimes.delete(p);p.canMove=true;p.directionFixed=false;p.animationFixed=false;p.setGraphicAnimation(engineAnimation('idle'));p.animationFixed=true;p.combatPhase.set('idle');if(clearMovement){p.clearMovements();p.stopMoveTo();}applyAppearance(p);}
 export function initMonster(e:RpgEvent) {
   e.setSync({monster:{$default:JSON.stringify({hp:3,maxHp:3,state:'idle',rewarded:false,generation:1})}});
   e.setGraphic('slime');e.name='Slime Lv.1';e.setHitbox(20,16);e.speed=slimeDefinition.speed/45;
@@ -42,11 +42,11 @@ function face(p:RpgPlayer,t:Point) {const dx=t.x-p.x(),dy=t.y-p.y();p.direction.
 export function beginAttack(p:RpgPlayer,now=Date.now()) {
   const r=runtime(p);if(progressOf(p).hp<=0||now<r.hurtUntil)return;
   const swing=startSwing(r.swing,now,facingOf(p.direction()));if(!swing)return;
-  r.swing=swing;r.path=[];p.stopMoveTo();p.clearMovements();p.canMove=false;p.directionFixed=true;
-  p.combatPhase.set('attack_windup');p.setGraphicAnimation(engineAnimation('slash'),1);
+  r.swing=swing;r.steer=undefined;r.path=[];p.stopMoveTo();p.clearMovements();p.canMove=false;p.directionFixed=true;
+  p.animationFixed=false;p.combatPhase.set('attack_windup');p.setGraphicAnimation(engineAnimation('slash'),1);
   p.getCurrentMap()?.broadcast('adventure:sound',{kind:'slash',id:p.id});
 }
-function stopNavigation(p:RpgPlayer) {const r=runtime(p);r.path=[];r.target=undefined;p.stopMoveTo();p.clearMovements();}
+function stopNavigation(p:RpgPlayer) {const r=runtime(p);r.path=[];r.steer=undefined;r.target=undefined;p.stopMoveTo();p.clearMovements();}
 function walkTo(p:RpgPlayer,to:Point) {
   const map=p.getCurrentMap();if(!map||!(map.id in content))return;
   const path=route(position(p),to,content[map.id as MapId].blockedTiles,content[map.id as MapId]);runtime(p).path=path;
@@ -58,6 +58,10 @@ export function action(p:RpgPlayer,name:string,data:unknown) {
   if(now-r.lastAction<60)return;r.lastAction=now;
   if(progressOf(p).hp<=0)return;
   switch(name){
+    case 'steer': {
+      if(![Direction.Up,Direction.Down,Direction.Left,Direction.Right].includes(data as Direction))return;
+      stopNavigation(p);r.steer={direction:data as Direction,until:now+180};break;
+    }
     case 'attack':r.target=undefined;beginAttack(p,now);break;
     case 'walk': {if(!data||typeof data!=='object')return;const {x,y}=data as Point;if(!Number.isFinite(x)||!Number.isFinite(y))return;stopNavigation(p);walkTo(p,{x,y});break;}
     case 'target': {if(typeof data!=='string')return;const e=p.getCurrentMap()?.getEvent(data);if(!e||!e.monster||monsterOf(e).hp<=0)return;r.target=e.id;r.path=[];break;}
@@ -105,7 +109,7 @@ function damagePlayer(p:RpgPlayer,now:number) {
   const r=runtime(p);if(now<r.hurtUntil||progressOf(p).hp<=0)return;
   updateProgress(p,v=>p.combatPhase.set(takeDamage(v,slimeDefinition.attack)));
   r.hurtUntil=now+700;r.swing=undefined;p.stopMoveTo();p.clearMovements();p.canMove=progressOf(p).hp>0;p.directionFixed=false;
-  p.setGraphicAnimation(engineAnimation(progressOf(p).hp===0?'dead':'hurt'),1);
+  p.animationFixed=false;p.setGraphicAnimation(engineAnimation(progressOf(p).hp===0?'dead':'hurt'),1);
   p.getCurrentMap()?.broadcast('adventure:sound',{kind:'hurt',id:p.id});
   if(progressOf(p).hp===0){r.target=undefined;r.deadUntil=now+1000;p.notice.set('หมดสติ... กำลังกลับหมู่บ้าน');}
 }
@@ -146,6 +150,17 @@ export function stepMap(map:RpgMap,now=Date.now()) {
       if(phase==='idle'){r.swing=undefined;p.canMove=true;p.directionFixed=false;}else continue;
     }
     p.canMove=true;
+    if(r.steer){
+      if(now>=r.steer.until){r.steer=undefined;p.clearMovements();}
+      else{
+        const vector=({up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}} as const)[r.steer.direction];
+        const authored=content[map.id as MapId],next={x:p.x()+vector.x*8,y:p.y()+vector.y*8};
+        // Keep joystick steering inside the authored world; physics still checks walls.
+        if(next.x>=16&&next.y>=16&&next.x<=authored.width-24&&next.y<=authored.height-24){
+          p.direction.set(r.steer.direction);p.clearMovements();void p.addMovement(new LinearMove({x:vector.x*160,y:vector.y*160},.04));
+        }else p.clearMovements();
+      }
+    }
     if(r.target){
       const e=map.getEvent(r.target);if(!e||monsterOf(e).hp<=0)r.target=undefined;
       else if(distance(p,e)<=sword.range-5){face(p,position(e));beginAttack(p,now);}
@@ -153,7 +168,13 @@ export function stepMap(map:RpgMap,now=Date.now()) {
     }
     if(r.path.length){const target=r.path[0],dx=target.x-p.x(),dy=target.y-p.y(),d=Math.hypot(dx,dy);p.clearMovements();if(d<6){r.path.shift();p.stopMoveTo();}else{face(p,target);void p.addMovement(new LinearMove({x:dx/d*160,y:dy/d*160},.04));}}
     if(Math.hypot(p.x()-r.lastPosition.x,p.y()-r.lastPosition.y)>.05){r.movingUntil=now+80;r.lastPosition=position(p);}
-    p.combatPhase.set(hurt?'hurt':now<r.movingUntil?'move':'idle');portal(p);
+    const locomotion=now<r.movingUntil?'move':'idle';
+    // Zero-duration client position interpolation cannot infer click/WASD gait.
+    // Lock only the authoritative locomotion choice, never a finite attack/hurt.
+    if(!hurt&&(p.combatPhase()!==locomotion||!p.animationFixed)){
+      p.animationFixed=false;p.setGraphicAnimation(engineAnimation(locomotion==='move'?'walk':'idle'));p.animationFixed=true;
+    }
+    p.combatPhase.set(hurt?'hurt':locomotion);portal(p);
     if(now-r.lastSave>=15000)checkpoint(p);
   }
   for(const e of monsters)stepMonster(e,players,now);
