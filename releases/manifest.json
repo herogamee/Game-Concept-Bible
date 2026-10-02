@@ -1,0 +1,9 @@
+{
+  "sha256": "3fd33fc5300fad022ab35ad4b46e902a2e36eb63ab989260b373bf46a49b5c9c",
+  "file": "willowbrook-v02-portable.zip",
+  "mode": "standalone",
+  "tested": "Windows localhost browser; village/meadow transfer",
+  "bytes": 4781969,
+  "sourceCommit": "5be5fd0d5294fc3ca33fa5bc08b3af36ba2e4d5d",
+  "runtime": "Node.js 22+"
+}
