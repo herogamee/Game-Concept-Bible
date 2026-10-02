@@ -1,9 +1,9 @@
 {
-  "sha256": "3fd33fc5300fad022ab35ad4b46e902a2e36eb63ab989260b373bf46a49b5c9c",
-  "file": "willowbrook-v02-portable.zip",
+  "runtime": "Node.js 22+",
+  "sourceCommit": "990e218888e381daf4da485ed1f8ba29fcbd01dd",
+  "bytes": 5106382,
+  "tested": "1920x1080 browser: static scenery, slime death/reward; 25 tests, typecheck, root/subpath smoke",
+  "sha256": "321d41e937b1440e54d96efd12e5d612736667c4be98a565b4e279e85f22eaed",
   "mode": "standalone",
-  "tested": "Windows localhost browser; village/meadow transfer",
-  "bytes": 4781969,
-  "sourceCommit": "5be5fd0d5294fc3ca33fa5bc08b3af36ba2e4d5d",
-  "runtime": "Node.js 22+"
+  "file": "willowbrook-v02-portable.zip"
 }
