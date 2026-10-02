@@ -5,7 +5,7 @@ import { toggleAudio, sound, setAudioScene, setAudioVolume } from './audio';
 import maps from './content.json';
 import type { WorldView } from './runtime';
 import ParityScene from './parity-scene.ce';
-import {camera,setPresentationEngine,canvasPoint,setGroundMap} from './presentation';
+import {camera,setPresentationEngine,canvasPoint,setGroundMap,displayQuality,setDisplayQuality} from './presentation';
 const read=(v:any):any=>typeof v==='function'?read(v()):Array.isArray(v)?v.map(read):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).filter(([k])=>!k.startsWith('_')).map(([k,v])=>[k,read(v)])):v;
 let socket:AbstractWebsocket,engine:RpgClientEngine,lastRender=0,lastMonsters='',lastPeers='',inventory=false;
 let frameTimes:number[]=[],lastFrame=0,lastLevel=0;
@@ -25,6 +25,7 @@ function setup(e:RpgClientEngine){
   document.getElementById('sound-toggle')!.addEventListener('click',toggleAudio);
   document.getElementById('sound-volume')!.addEventListener('input',event=>setAudioVolume((event.target as HTMLInputElement).value));
   document.getElementById('developer-toggle')!.addEventListener('click',()=>{const panel=document.getElementById('developer-panel')!;panel.hidden=!panel.hidden;document.getElementById('developer-toggle')!.setAttribute('aria-expanded',String(!panel.hidden));});
+  const quality=document.getElementById('display-quality') as HTMLSelectElement;quality.value=displayQuality();quality.addEventListener('change',()=>setDisplayQuality(quality.value));
   document.addEventListener('keydown',event=>{
     if((event.target as HTMLElement).closest('input,textarea,select'))return;
     held.add(event.code);if(event.repeat)return;

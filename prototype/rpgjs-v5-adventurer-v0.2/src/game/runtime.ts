@@ -3,6 +3,7 @@ import { type RpgPlayer, type RpgEvent, type RpgMap, type RpgWritableSignal } fr
 import contentData from './content.json';
 import { facingOf, engineAnimation, type Facing } from './animation';
 import { route, type Point } from './navigation';
+import {defaultAppearance,parseAppearance,appearanceGraphics} from './appearance';
 import { newProgress, sword, slimeDefinition, phaseAt, startSwing, swordCanHit, confirmKill, questTalk, usePotion, takeDamage, type Progress, type Swing, type Phase, type SlimeState } from './rules';
 export const content = contentData;
 export const progressOf=(p:RpgPlayer):Progress=>JSON.parse(p.adventure());
@@ -12,6 +13,7 @@ interface Monster {hp:number;maxHp:number;state:SlimeState;rewarded:boolean;gene
 declare module '@rpgjs/server' {
   interface RpgPlayer {
     adventure:RpgWritableSignal<string>;
+    appearance:RpgWritableSignal<string>;
     combatPhase:RpgWritableSignal<Phase>;
     notice:RpgWritableSignal<string>;
     worldView:RpgWritableSignal<string>;
@@ -22,14 +24,15 @@ export interface WorldView {map:string;players:{id:string;name:string;x:number;y
 interface Runtime {swing?:Swing;hurtUntil:number;deadUntil:number;target?:string;path:Point[];lastAction:number;lastView:number;lastSave:number;transfer:boolean;lastPosition:Point;movingUntil:number}
 const runtimes=new WeakMap<RpgPlayer,Runtime>();
 const slimeTimers=new WeakMap<RpgEvent,{home:Point;hurtUntil:number;respawnAt:number;attackAt:number;wanderAt:number}>();
-export const playerSchema={adventure:{$default:JSON.stringify(newProgress())},combatPhase:{$default:'idle',$permanent:false},notice:{$default:'พร้อมออกเดินทาง',$permanent:false},worldView:{$default:JSON.stringify({map:'',players:[],monsters:[]}),$permanent:false}};
+export const playerSchema={adventure:{$default:JSON.stringify(newProgress())},appearance:{$default:JSON.stringify(defaultAppearance())},combatPhase:{$default:'idle',$permanent:false},notice:{$default:'พร้อมออกเดินทาง',$permanent:false},worldView:{$default:JSON.stringify({map:'',players:[],monsters:[]}),$permanent:false}};
 export function runtime(p:RpgPlayer):Runtime {
   let r=runtimes.get(p);if(!r){r={hurtUntil:0,deadUntil:0,path:[],lastAction:0,lastView:0,lastSave:Date.now(),transfer:false,lastPosition:position(p),movingUntil:0};runtimes.set(p,r);}return r;
 }
 export const position=(p:RpgPlayer):Point=>({x:p.x(),y:p.y()});
 const distance=(a:RpgPlayer,b:RpgPlayer)=>Math.hypot(a.x()-b.x(),a.y()-b.y());
 function updateProgress(p:RpgPlayer,change:(v:Progress)=>void) {const v={...progressOf(p)};change(v);p.adventure.set(JSON.stringify(v));p.hp=v.hp;p.level=v.level;}
-export function resetTransient(p:RpgPlayer,clearMovement=true) {runtimes.delete(p);p.canMove=true;p.directionFixed=false;p.combatPhase.set('idle');if(clearMovement){p.clearMovements();p.stopMoveTo();}p.setGraphic('adventurer');}
+export function applyAppearance(p:RpgPlayer){const appearance=parseAppearance(p.appearance());p.appearance.set(JSON.stringify(appearance));p.setGraphic(appearanceGraphics(appearance));}
+export function resetTransient(p:RpgPlayer,clearMovement=true) {runtimes.delete(p);p.canMove=true;p.directionFixed=false;p.combatPhase.set('idle');if(clearMovement){p.clearMovements();p.stopMoveTo();}applyAppearance(p);}
 export function initMonster(e:RpgEvent) {
   e.setSync({monster:{$default:JSON.stringify({hp:3,maxHp:3,state:'idle',rewarded:false,generation:1})}});
   e.setGraphic('slime');e.name='Slime Lv.1';e.setHitbox(20,16);e.speed=slimeDefinition.speed/45;

@@ -4,7 +4,7 @@ import { beginAttack, initMonster, stepMap, action, runtime, progressOf, monster
 import { newProgress } from '../src/game/rules';
 const signal=(value:any)=>Object.assign(()=>value,{set:(v:any)=>{value=v;}});
 function fixture(two=false){
-  const player=(id:string)=>({id,name:id,x:signal(480),y:signal(300),direction:signal('right'),adventure:signal(JSON.stringify(newProgress())),combatPhase:signal('idle'),notice:signal(''),worldView:signal(''),hp:30,level:1,canMove:true,directionFixed:false,stopMoveTo(){},clearMovements(){},setGraphic(){},setGraphicAnimation(){},moveTo(){},addMovement:async()=>{},save:async()=>({index:0}),load:async()=>({ok:false}),changeMap:async()=>{},getCurrentMap:()=>map});
+  const player=(id:string)=>({id,name:id,x:signal(480),y:signal(300),direction:signal('right'),adventure:signal(JSON.stringify(newProgress())),appearance:signal('{}'),combatPhase:signal('idle'),notice:signal(''),worldView:signal(''),hp:30,level:1,canMove:true,directionFixed:false,stopMoveTo(){},clearMovements(){},setGraphic(){},setGraphicAnimation(){},moveTo(){},addMovement:async()=>{},save:async()=>({index:0}),load:async()=>({ok:false}),changeMap:async()=>{},getCurrentMap:()=>map});
   const a=player('A'),b=player('B'),e:any={...player('slime-001'),x:signal(520),setSync(schema:any){for(const[k,v]of Object.entries(schema))this[k]=signal((v as any).$default);},setHitbox(){},teleport:async()=>{},through:false};
   const map:any={id:'meadow',getPlayers:()=>two?[a,b]:[a],getEvents:()=>[e],getEvent:(id:string)=>id===e.id?e:undefined,broadcast(){}};
   initMonster(e);return {a:a as any,b:b as any,e,map};

@@ -6,9 +6,11 @@
     "dev": "vite",
     "dev:online": "cross-env RPG_TYPE=mmorpg vite --host 127.0.0.1 --port 5174 --strictPort",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test test/rules.test.ts test/runtime.test.ts",
+    "test": "tsx --test test/rules.test.ts test/runtime.test.ts test/appearance.test.ts",
     "maps": "node tools/build-parity-assets.mjs && node tools/build-maps.mjs",
     "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "package:portable": "node tools/package-portable.mjs",
     "test:production": "node --test test/production-preview.test.mjs",
     "assets:parity": "node tools/build-parity-assets.mjs"
   },
