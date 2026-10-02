@@ -2,5 +2,11 @@
 <Sprite image={image} anchor={[0.5,1]} />
 
 <script>
-  const { image } = defineProps();
+  import { mount } from 'canvasengine';
+  import { registerScenery } from './presentation';
+  const { id, image, worldX, worldY } = defineProps();
+  // Prop events can be depenetrated by the physics engine even when movement
+  // is disabled. Cancel that parent translation; artwork is authored scenery,
+  // and its collision footprint already lives in the static Tiled terrain.
+  mount(element => registerScenery(id,element.componentInstance,worldX,worldY));
 </script>

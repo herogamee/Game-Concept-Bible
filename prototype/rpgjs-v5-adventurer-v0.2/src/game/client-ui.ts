@@ -6,17 +6,17 @@ import maps from './content.json';
 import type { WorldView } from './runtime';
 import ParityScene from './parity-scene.ce';
 import StaticProp from './static-prop.ce';
-import {camera,viewSize,setPresentationEngine,canvasPoint,setGroundMap,displayQuality,setDisplayQuality} from './presentation';
+import {camera,viewSize,setPresentationEngine,canvasPoint,setGroundMap,displayQuality,setDisplayQuality,cameraSettings,setCameraSettings} from './presentation';
 import {setupTouchControls,touchDirection,releaseTouch} from './touch-controls';
 const read=(v:any):any=>typeof v==='function'?read(v()):Array.isArray(v)?v.map(read):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).filter(([k])=>!k.startsWith('_')).map(([k,v])=>[k,read(v)])):v;
 let socket:AbstractWebsocket,engine:RpgClientEngine,lastRender=0,lastMonsters='',lastPeers='',inventory=false;
 let frameTimes:number[]=[],lastFrame=0,lastLevel=0;
-let lastSteer=0,steering=false;
+let lastSteer=0,lastSteerInput='',steering=false;
 const previousHp=new Map<string,number>();
 const feedbackNodes=new Map<string,HTMLElement>();
 const held=new Set<string>();
 let panel:'inventory'|'settings'|undefined;
-function steer(direction:Direction){const now=performance.now();if(panel||document.hidden||now-lastSteer<80)return;send('steer',direction);lastSteer=now;steering=true;}
+function steer(direction:Direction|{x:number;y:number}){const now=performance.now(),input=JSON.stringify(direction);if(panel||document.hidden||steering&&input===lastSteerInput&&now-lastSteer<80)return;send('steer',direction);lastSteer=now;lastSteerInput=input;steering=true;}
 function showPanel(value:typeof panel){
   panel=value;inventory=value==='inventory';held.clear();releaseTouch();send('cancel');
   for(const id of ['inventory','settings'])document.getElementById(id)!.hidden=id!==value;
@@ -31,7 +31,7 @@ function setup(e:RpgClientEngine){
     const prop=[...maps.village.objects,...maps.meadow.objects].find(o=>o.type==='prop'&&o.id===sprite.id);
     if(!prop)return null;
     const name=String(prop.properties.graphic).replace(/^prop-/,'');
-    return {component:StaticProp,props:{image:`${import.meta.env.BASE_URL}willowbrook/${name}.png`},renderGraphic:false};
+    return {component:StaticProp,props:{id:prop.id,image:`${import.meta.env.BASE_URL}willowbrook/${name}.png`,object:sprite,worldX:prop.x,worldY:prop.y},renderGraphic:false};
   });
   // Start at the reference framing; presentation crops it to the actual viewport.
   e.width.set('800');e.height.set('450');e.renderer.resize(800,450);e.setCameraFollow(null,false);
@@ -50,12 +50,18 @@ function setup(e:RpgClientEngine){
   document.getElementById('sound-volume')!.addEventListener('input',event=>setAudioVolume((event.target as HTMLInputElement).value));
   document.getElementById('developer-toggle')!.addEventListener('click',()=>{const panel=document.getElementById('developer-panel')!;panel.hidden=!panel.hidden;document.getElementById('developer-toggle')!.setAttribute('aria-expanded',String(!panel.hidden));});
   const quality=document.getElementById('display-quality') as HTMLSelectElement;quality.value=displayQuality();quality.addEventListener('change',()=>setDisplayQuality(quality.value));
+  const distance=document.getElementById('camera-distance') as HTMLInputElement,framing=document.getElementById('camera-framing') as HTMLInputElement,mode=document.getElementById('camera-mode') as HTMLSelectElement;
+  const settings=cameraSettings();distance.value=String(settings.distance);framing.value=String(settings.framing);mode.value=settings.mode;
+  const cameraLabels=()=>{text('camera-distance-value',`${distance.value}% · ยิ่งมากยิ่งเห็นไกล`);text('camera-framing-value',`${framing.value}%`);};cameraLabels();
+  distance.addEventListener('input',()=>{setCameraSettings({distance:Number(distance.value)});cameraLabels();});
+  framing.addEventListener('input',()=>{setCameraSettings({framing:Number(framing.value)});cameraLabels();});
+  mode.addEventListener('change',()=>setCameraSettings({mode:mode.value}));
   document.addEventListener('keydown',event=>{
     if(event.code==='Escape'&&panel){event.preventDefault();showPanel(undefined);return;}
     if(panel)return;
     if((event.target as HTMLElement).closest('input,textarea,select'))return;
     held.add(event.code);if(event.repeat)return;
-    if(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.code))send('cancel');
+    if(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.code)){event.preventDefault();if(!steering)send('cancel');}
     const action=({KeyZ:'attack',Space:'attack',KeyE:'talk',Enter:'talk',Digit1:'potion',KeyK:'save',KeyL:'load'} as Record<string,string>)[event.code];
     if(action){event.preventDefault();if(action==='attack')engine.interruptCurrentPlayerMovement();send(action);}
     if(event.code==='KeyI')document.getElementById('inventory-toggle')!.click();
@@ -73,8 +79,10 @@ function setup(e:RpgClientEngine){
 }
 function render(e:RpgClientEngine){
   const frame=performance.now();if(lastFrame)frameTimes.push(frame-lastFrame);lastFrame=frame;if(frameTimes.length>600)frameTimes.shift();
-  // Arrow keys use native input; WASD/touch use short server steering leases.
-  const direction=touchDirection()??(held.has('KeyW')?Direction.Up:held.has('KeyS')?Direction.Down:held.has('KeyA')?Direction.Left:held.has('KeyD')?Direction.Right:undefined);
+  // One authoritative input path for arrows, WASD and touch; opposing keys cancel.
+  const x=Number(held.has('KeyD')||held.has('ArrowRight'))-Number(held.has('KeyA')||held.has('ArrowLeft'));
+  const y=Number(held.has('KeyS')||held.has('ArrowDown'))-Number(held.has('KeyW')||held.has('ArrowUp'));
+  const direction=touchDirection()??(x||y?{x,y}:undefined);
   if(direction&&!panel&&!document.hidden){
     steer(direction);
   }else if(steering){e.interruptCurrentPlayerMovement();send('cancel');steering=false;}
@@ -84,7 +92,6 @@ function render(e:RpgClientEngine){
   if(!progress||!view)return;
   setGroundMap(view.map);
   setAudioScene(view.map);if(lastLevel&&progress.level>lastLevel)sound('level');lastLevel=progress.level;
-  renderFeedback(e,p,view);
   text('player-stats',`Lv.${progress.level} · HP ${progress.hp}/${progress.maxHp} · EXP ${progress.exp}/${progress.nextExp} · ATK ${progress.level}`);
   text('purse',`${progress.gold} Gold · Potion ×${progress.potions} · Gel ×${progress.gel}`);
   text('quest',progress.quest===0?'คุยกับผู้ใหญ่บ้านเพื่อรับเควส':progress.quest===1?`เควส: กำจัดสไลม์ ${progress.kills}/3`:progress.quest===2?'ครบ 3 ตัว! กลับไปหาผู้ใหญ่บ้าน':'เควสเริ่มต้นสำเร็จ ✓');
@@ -101,6 +108,14 @@ function render(e:RpgClientEngine){
   text('inventory-items',`ดาบเริ่มต้น · Potion ×${progress.potions} · Slime Gel ×${progress.gel} · ${progress.gold} Gold`);
 }
 
+// Called by the scene render tick after the camera has moved. The HUD can stay
+// throttled, but world labels and feedback must share the scenery's frame clock.
+export function updateWorldFeedback(){
+  const p=engine?.getCurrentPlayer() as any;if(!p)return;
+  const view=JSON.parse(read(p.worldView)||'null') as WorldView|null;if(!view?.map)return;
+  renderFeedback(engine,p,view);
+}
+
 function renderFeedback(e:RpgClientEngine,p:any,view:WorldView){
   const root=document.getElementById('world-feedback')!,frame=root.getBoundingClientRect(),map=(maps as any)[view.map];if(!map)return;
   
@@ -113,14 +128,16 @@ function renderFeedback(e:RpgClientEngine,p:any,view:WorldView){
   for(const actor of [...view.players,...view.monsters]){
     const before=previousHp.get(actor.id);if(before!==undefined&&actor.hp<before){const node=document.createElement('div'),at=screen(actor.x,actor.y-25);node.className='damage-popup';node.textContent=String(before-actor.hp);node.style.left=`${at.x}px`;node.style.top=`${at.y}px`;root.append(node);node.addEventListener('animationend',()=>node.remove(),{once:true});}previousHp.set(actor.id,actor.hp);
   }
+  const livePosition=(actor:{id:string;x:number;y:number})=>{const object=e.getObjectById(actor.id) as any;return object?{x:Number(object.x()),y:Number(object.y())}:actor;};
   for(const monster of view.monsters.filter(m=>m.hp>0)){
-    const node=place(monster.id,'world-label',monster.x,monster.y-33,`Slime Lv.1 · ${monster.hp}/3`);if(monster.state==='hurt')node.style.color='#ffd092';else node.style.color='#fff5dd';
+    const at=livePosition(monster);const node=place(monster.id,'world-label',at.x,at.y-33,`Slime Lv.1 · ${monster.hp}/3`);if(monster.state==='hurt')node.style.color='#ffd092';else node.style.color='#fff5dd';
   }
   for(const peer of view.players){
-    if(peer.id!==e.playerId)place(peer.id,'world-label',peer.x,peer.y-40,peer.name);
-    if(peer.phase==='hurt'||peer.phase==='dead')place(`hurt-${peer.id}`,'hurt-ring',peer.x,peer.y+10);
+    const at=livePosition(peer);
+    if(peer.id!==e.playerId)place(peer.id,'world-label',at.x,at.y-40,peer.name);
+    if(peer.phase==='hurt'||peer.phase==='dead')place(`hurt-${peer.id}`,'hurt-ring',at.x,at.y+10);
     if(peer.phase==='attack_active'){
-      const node=place(`slash-${peer.id}`,'slash-arc',peer.x,peer.y);const rotation=({right:0,down:90,left:180,up:270} as any)[peer.direction]??0;
+      const node=place(`slash-${peer.id}`,'slash-arc',at.x,at.y);const rotation=({right:0,down:90,left:180,up:270} as any)[peer.direction]??0;
       node.style.transform=`translate(-50%,-50%) rotate(${rotation}deg)`;
     }
     if(peer.id===e.playerId&&peer.destination)place('destination','destination',peer.destination.x,peer.destination.y+8);

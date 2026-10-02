@@ -35,3 +35,15 @@ test('portrait, landscape and desktop cameras crop consistently without distorti
   }
   assert.deepEqual(viewportSize(0,NaN),{width:800,height:450});
 });
+
+test('camera distance reveals more world with uniform scaling and stays inside the map',()=>{
+  const near=viewportSize(1920,1080,100),far=viewportSize(1920,1080,125);
+  assert.ok(far.width>near.width&&far.height>near.height);
+  assert.deepEqual(far,{width:960,height:540});
+  for(const [w,h]of [[3840,2160],[1645,1244],[390,844]]){
+    const view=viewportSize(w,h,150);assert.ok(view.width<=960&&view.height<=540);assert.ok(Math.abs(view.width/view.height-w/h)<.006);
+    const at=cameraPosition({x:480,y:300},view,{width:960,height:540},.75);assert.ok(at.x>=0&&at.y>=0);
+  }
+  const view=viewportSize(800,450,80);
+  assert.ok(cameraPosition({x:480,y:300},view,{width:960,height:540},.75).y<cameraPosition({x:480,y:300},view,{width:960,height:540},.5).y);
+});

@@ -21,7 +21,14 @@ declare module '@rpgjs/server' {
   }
 }
 export interface WorldView {map:string;players:{id:string;name:string;x:number;y:number;hp:number;phase:string;direction:string;destination:Point|null}[];monsters:{id:string;x:number;y:number;hp:number;state:string;generation:number}[]}
-interface Runtime {swing?:Swing;steer?:{direction:Direction;until:number};hurtUntil:number;deadUntil:number;target?:string;path:Point[];lastAction:number;lastView:number;lastSave:number;transfer:boolean;lastPosition:Point;movingUntil:number}
+interface Runtime {swing?:Swing;steer?:{direction:Direction;vector?:Point;until:number};hurtUntil:number;deadUntil:number;target?:string;path:Point[];lastAction:number;lastView:number;lastSave:number;transfer:boolean;lastPosition:Point;movingUntil:number}
+export function steeringVector(data:unknown):Point|null {
+  const cardinal=({up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}} as Record<string,Point>)[String(data)];
+  if(cardinal)return cardinal;
+  if(!data||typeof data!=='object')return null;const {x,y}=data as Point;
+  if(!Number.isFinite(x)||!Number.isFinite(y)||Math.abs(x)>1||Math.abs(y)>1)return null;
+  const length=Math.hypot(x,y);return length>.01?{x:x/length,y:y/length}:null;
+}
 const runtimes=new WeakMap<RpgPlayer,Runtime>();
 const slimeTimers=new WeakMap<RpgEvent,{home:Point;hurtUntil:number;respawnAt:number;attackAt:number;wanderAt:number}>();
 export const playerSchema={adventure:{$default:JSON.stringify(newProgress())},appearance:{$default:JSON.stringify(defaultAppearance())},combatPhase:{$default:'idle',$permanent:false},notice:{$default:'พร้อมออกเดินทาง',$permanent:false},worldView:{$default:JSON.stringify({map:'',players:[],monsters:[]}),$permanent:false}};
@@ -55,12 +62,16 @@ function walkTo(p:RpgPlayer,to:Point) {
 export function action(p:RpgPlayer,name:string,data:unknown) {
   const r=runtime(p),now=Date.now();
   if(name==='cancel'){stopNavigation(p);return;}
-  if(now-r.lastAction<60)return;r.lastAction=now;
+  // Steering direction changes must not inherit the attack/item debounce.
+  if(name!=='steer'){if(now-r.lastAction<60)return;r.lastAction=now;}
   if(progressOf(p).hp<=0)return;
   switch(name){
     case 'steer': {
-      if(![Direction.Up,Direction.Down,Direction.Left,Direction.Right].includes(data as Direction))return;
-      stopNavigation(p);r.steer={direction:data as Direction,until:now+180};break;
+      const vector=steeringVector(data);if(!vector)return;
+      // Heartbeats extend the lease without stopping the movement already running.
+      if(!r.steer)stopNavigation(p);
+      const direction=Math.abs(vector.x)>Math.abs(vector.y)?vector.x>0?Direction.Right:Direction.Left:vector.y>0?Direction.Down:Direction.Up;
+      r.steer={direction,vector,until:now+250};break;
     }
     case 'attack':r.target=undefined;beginAttack(p,now);break;
     case 'walk': {if(!data||typeof data!=='object')return;const {x,y}=data as Point;if(!Number.isFinite(x)||!Number.isFinite(y))return;stopNavigation(p);walkTo(p,{x,y});break;}
@@ -153,11 +164,11 @@ export function stepMap(map:RpgMap,now=Date.now()) {
     if(r.steer){
       if(now>=r.steer.until){r.steer=undefined;p.clearMovements();}
       else{
-        const vector=({up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}} as const)[r.steer.direction];
+        const vector=r.steer.vector??steeringVector(r.steer.direction)!;
         const authored=content[map.id as MapId],next={x:p.x()+vector.x*8,y:p.y()+vector.y*8};
         // Keep joystick steering inside the authored world; physics still checks walls.
         if(next.x>=16&&next.y>=16&&next.x<=authored.width-24&&next.y<=authored.height-24){
-          p.direction.set(r.steer.direction);p.clearMovements();void p.addMovement(new LinearMove({x:vector.x*160,y:vector.y*160},.04));
+          p.direction.set(r.steer.direction);p.clearMovements();void p.addMovement(new LinearMove({x:vector.x*160,y:vector.y*160},.12));
         }else p.clearMovements();
       }
     }
@@ -166,7 +177,14 @@ export function stepMap(map:RpgMap,now=Date.now()) {
       else if(distance(p,e)<=sword.range-5){face(p,position(e));beginAttack(p,now);}
       else if(!r.path.length)walkTo(p,position(e));
     }
-    if(r.path.length){const target=r.path[0],dx=target.x-p.x(),dy=target.y-p.y(),d=Math.hypot(dx,dy);p.clearMovements();if(d<6){r.path.shift();p.stopMoveTo();}else{face(p,target);void p.addMovement(new LinearMove({x:dx/d*160,y:dy/d*160},.04));}}
+    if(r.path.length){
+      // Consume nearby waypoints in this step, rather than insert a stopped frame
+      // at every 16px grid cell. A short final step cannot overshoot its target.
+      while(r.path.length&&Math.hypot(r.path[0].x-p.x(),r.path[0].y-p.y())<4)r.path.shift();
+      p.clearMovements();
+      if(r.path.length){const target=r.path[0],dx=target.x-p.x(),dy=target.y-p.y(),d=Math.hypot(dx,dy);face(p,target);void p.addMovement(new LinearMove({x:dx/d*160,y:dy/d*160},Math.min(.12,d/160)));}
+      else p.stopMoveTo();
+    }
     if(Math.hypot(p.x()-r.lastPosition.x,p.y()-r.lastPosition.y)>.05){r.movingUntil=now+80;r.lastPosition=position(p);}
     const locomotion=now<r.movingUntil?'move':'idle';
     // Zero-duration client position interpolation cannot infer click/WASD gait.

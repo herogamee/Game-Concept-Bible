@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { beginAttack, initMonster, stepMap, action, runtime, progressOf, monsterOf, playerSchema } from '../src/game/runtime';
+import { beginAttack, initMonster, stepMap, action, runtime, progressOf, monsterOf, playerSchema, steeringVector } from '../src/game/runtime';
 import { newProgress } from '../src/game/rules';
 const signal=(value:any)=>Object.assign(()=>value,{set:(v:any)=>{value=v;}});
 function fixture(two=false){
@@ -39,6 +39,22 @@ test('requests cannot set HP, gold, kill count or attack multiplier',()=>{
   action(a,'walk',{x:Infinity,y:20});assert.deepEqual(runtime(a).path,[]);
 });
 test('keyboard cancel overrides server click navigation',()=>{const{a}=fixture();runtime(a).path=[{x:400,y:200}];runtime(a).target='slime-001';action(a,'cancel',undefined);assert.deepEqual(runtime(a).path,[]);assert.equal(runtime(a).target,undefined);});
+
+test('steering heartbeats preserve active movement and diagonals keep cardinal speed',()=>{
+  const {a}=fixture();let stops=0;a.clearMovements=()=>{stops++;};
+  action(a,'steer',{x:1,y:-1});assert.equal(stops,1);
+  const vector=runtime(a).steer!.vector!;assert.ok(Math.abs(Math.hypot(vector.x,vector.y)-1)<1e-10);
+  runtime(a).lastAction=0;action(a,'steer',{x:1,y:-1});assert.equal(stops,1);
+  for(const input of [{x:Infinity,y:1},{x:2,y:0},{x:0,y:0},null])assert.equal(steeringVector(input),null);
+  action(a,'cancel',undefined);assert.equal(runtime(a).steer,undefined);assert.equal(stops,2);
+});
+
+test('reaching a route waypoint continues toward the next in the same step',()=>{
+  const {a,map}=fixture();const moves:any[]=[];a.addMovement=async(move:any)=>{moves.push(move);};
+  runtime(a).path=[{x:481,y:300},{x:560,y:300}];stepMap(map,1000);
+  assert.deepEqual(runtime(a).path,[{x:560,y:300}]);assert.equal(moves.length,1);
+  let velocity:any;moves[0].update({setVelocity:(v:any)=>velocity=v},1/60);assert.deepEqual(velocity,{x:160,y:0});
+});
 
 test('touch steering expires without a release packet and rejects directions/world edges',()=>{
   const {a,map}=fixture();let moves=0;a.addMovement=async()=>{moves++;};

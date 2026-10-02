@@ -60,6 +60,11 @@ test('selected LPC layers all retain attribution and OGA-BY alternative',()=>{
 
 test('diagonal paths cannot squeeze through blocked corners',()=>{
   const map={width:160,height:160,tileSize:16,columns:10};const blocks=[24,33];
-  const path=route({x:24,y:24},{x:88,y:88},blocks,map);assert.ok(path.length>5);
-  assert.ok(path.every(p=>!blocks.includes(Math.floor(p.y/16)*10+Math.floor(p.x/16))));
+  const from={x:24,y:24},path=route(from,{x:88,y:88},blocks,map);assert.ok(path.length>0);
+  let before=from,length=0;
+  for(const p of path){const d=Math.hypot(p.x-before.x,p.y-before.y);length+=d;
+    for(let i=0;i<=Math.ceil(d);i++){const t=i/Math.max(1,Math.ceil(d)),x=before.x+(p.x-before.x)*t,y=before.y+(p.y-before.y)*t;assert.ok(!blocks.includes(Math.floor(y/16)*10+Math.floor(x/16)));}
+    before=p;
+  }
+  assert.ok(length>Math.hypot(88-from.x,88-from.y));
 });

@@ -6,6 +6,8 @@ Bounded RPGJS v5 presentation/control experiment using the original v0.1 artwork
 
 Current checkpoint: selectable smooth/native-density or original pixel rendering; a synchronized, saved cosmetic schema for body/face/eyes/pants/shoes/shirt/hair/hat/weapon. Real separate costume layers are not authored yet. Read `CHARACTER-APPEARANCE.md`, `../../PROJECT-STATUS.md` and `../../DEVELOPING.md` for the precise scope and portable setup.
 
+Camera/movement follow-up: settings now save camera distance (80–150%), vertical framing and steady/follow behavior. Desktop default distance is 125%; the view fits the authored map. WASD/arrows support normalized diagonals; click routes continue through intermediate waypoints; static scenery is anchored to authored coordinates. See `evidence/camera/REVIEW.md` for measured results and limits.
+
 Responsive checkpoint: continuous walking cadence, larger overhead labels, compact action dock, scrollable responsive dialogs, saved UI scale and a touch joystick foundation. See `MOBILE-FOUNDATION.md` for device targets and remaining acceptance checks.
 
 ## Run
@@ -36,7 +38,7 @@ npm.cmd run build
 npm.cmd run test:production
 ```
 
-Twenty-eight focused rules/runtime/appearance tests cover active-only damage, one hit per swing, death/interruption/revival, atomic kill rewards, three-kill quest, level growth, potion limits, navigation, Tiled IDs, credits, appearance migration/catalog validation and display-resolution bounds. Production smoke test builds and serves maps, original PNGs and the UI theme at root and `/quest/`; it is not an online deployment test. See `PARITY-REVIEW.md` for current browser results; `ACCEPTANCE.md` preserves the earlier implementation's evidence.
+Thirty-one focused rules/runtime/appearance tests cover active-only damage, one hit per swing, death/interruption/revival, atomic kill rewards, three-kill quest, level growth, potion limits, navigation, Tiled IDs, credits, appearance migration/catalog validation and display-resolution bounds. Production smoke test builds and serves maps, original PNGs and the UI theme at root and `/quest/`; it is not an online deployment test. See `PARITY-REVIEW.md` for current browser results; `ACCEPTANCE.md` preserves the earlier implementation's evidence.
 
 ## Architecture and authority
 

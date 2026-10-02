@@ -1,3 +1,7 @@
+## Latest camera and movement follow-up
+
+See [camera evidence](evidence/camera/REVIEW.md): continuous steering/route fixes, authored scenery anchoring, persisted camera distance/framing/follow controls, local Full HD frame observations and 31 passing tests. Owner feel acceptance remains pending.
+
 # Willowbrook one-scene review — 2026-10-02
 
 ## Later display/appearance checkpoint

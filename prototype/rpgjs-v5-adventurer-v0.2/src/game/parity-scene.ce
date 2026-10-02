@@ -9,10 +9,11 @@
   import { mount, tick } from 'canvasengine';
   import { SceneMap } from '@rpgjs/client';
   import { attachCamera, updateCamera, groundImage } from './presentation';
+  import { updateWorldFeedback } from './client-ui';
 
   mount(element => {
     attachCamera(element.props.context?.viewport);
     return () => attachCamera(null);
   });
-  tick(() => updateCamera());
+  tick(() => { updateCamera();updateWorldFeedback(); });
 </script>

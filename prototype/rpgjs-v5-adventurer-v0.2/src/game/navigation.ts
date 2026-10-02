@@ -25,5 +25,8 @@ export function route(from:Point,to:Point,blockedTiles:number[],map:RouteMap=leg
   if(!parent.has(end))return [];
   const path:Point[]=[];for(let i=end;i!==start;i=parent.get(i)!){path.unshift({x:i%width*16+8,y:Math.floor(i/width)*16+8});}
   const destination=cell(to)===end?to:{x:end%width*16+8,y:Math.floor(end/width)*16+8};
-  path.push(destination);return path;
+  path.push(destination);
+  // Remove only collinear waypoints: preserve every turn and the collision-safe
+  // segments found above while avoiding a steering correction per grid cell.
+  return path.filter((point,i)=>{if(i===path.length-1)return true;const before=i?path[i-1]:from,after=path[i+1];const ax=point.x-before.x,ay=point.y-before.y,bx=after.x-point.x,by=after.y-point.y;return Math.abs(ax*by-ay*bx)>.001||ax*bx+ay*by<=0;});
 }

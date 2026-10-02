@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-02 — Continuous walking, fixed scenery and adjustable camera
+
+- Stop steering heartbeats from cancelling active movement; unify WASD/arrows and normalize diagonal speed. Remove stopped route frames at grid waypoints while preserving safe turns.
+- Anchor image-only scenery to authored world coordinates after reproducing 1–7px physics depenetration of decorative event bodies. Preserve the static terrain collision mask and original art.
+- Own the viewport clamp/follow behavior in logical coordinates, ease camera motion, and update world labels on the render clock. Add saved distance, vertical framing and steady/follow controls; default desktop distance is 125%.
+- Recorded local 1920x1080 observations (~60 FPS, 0.00px scenery image drift) with hardware/method/limitations. Owner feel acceptance and online visual/input retest remain pending. Passed 31 tests, typecheck, build and production smoke; portable ZIP is still the earlier checkpoint.
+
+
 ## 2026-10-02 — Walking cadence, responsive HUD and mobile foundation
 
 - Select continuous locomotion from actual server motion and retain gait across ticks; finite slash/hurt/death animation remains independent.
