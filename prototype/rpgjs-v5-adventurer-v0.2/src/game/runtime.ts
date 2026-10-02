@@ -1,4 +1,4 @@
-import { Direction } from '@rpgjs/common';
+import { Direction, LinearMove } from '@rpgjs/common';
 import { type RpgPlayer, type RpgEvent, type RpgMap, type RpgWritableSignal } from '@rpgjs/server';
 import contentData from './content.json';
 import { facingOf, engineAnimation, type Facing } from './animation';
@@ -32,7 +32,7 @@ function updateProgress(p:RpgPlayer,change:(v:Progress)=>void) {const v={...prog
 export function resetTransient(p:RpgPlayer,clearMovement=true) {runtimes.delete(p);p.canMove=true;p.directionFixed=false;p.combatPhase.set('idle');if(clearMovement){p.clearMovements();p.stopMoveTo();}p.setGraphic('adventurer');}
 export function initMonster(e:RpgEvent) {
   e.setSync({monster:{$default:JSON.stringify({hp:3,maxHp:3,state:'idle',rewarded:false,generation:1})}});
-  e.setGraphic('slime');e.name='Slime Lv.1';e.setHitbox(20,16);e.speed=slimeDefinition.speed;
+  e.setGraphic('slime');e.name='Slime Lv.1';e.setHitbox(20,16);e.speed=slimeDefinition.speed/45;
   e.hp=3;slimeTimers.set(e,{home:position(e),hurtUntil:0,respawnAt:0,attackAt:0,wanderAt:0});
 }
 function face(p:RpgPlayer,t:Point) {const dx=t.x-p.x(),dy=t.y-p.y();p.direction.set(Math.abs(dx)>Math.abs(dy)?dx>0?Direction.Right:Direction.Left:dy>0?Direction.Down:Direction.Up);}
@@ -100,10 +100,10 @@ function hitMonster(p:RpgPlayer,e:RpgEvent,now:number) {
 function damagePlayer(p:RpgPlayer,now:number) {
   const r=runtime(p);if(now<r.hurtUntil||progressOf(p).hp<=0)return;
   updateProgress(p,v=>p.combatPhase.set(takeDamage(v,slimeDefinition.attack)));
-  r.hurtUntil=now+700;r.swing=undefined;r.target=undefined;r.path=[];p.stopMoveTo();p.clearMovements();p.canMove=false;p.directionFixed=false;
+  r.hurtUntil=now+700;r.swing=undefined;r.path=[];p.stopMoveTo();p.clearMovements();p.canMove=false;p.directionFixed=false;
   p.setGraphicAnimation(engineAnimation(progressOf(p).hp===0?'dead':'hurt'),1);
   p.getCurrentMap()?.broadcast('adventure:sound',{kind:'hurt',id:p.id});
-  if(progressOf(p).hp===0){r.deadUntil=now+1000;p.notice.set('หมดสติ... กำลังกลับหมู่บ้าน');}
+  if(progressOf(p).hp===0){r.target=undefined;r.deadUntil=now+1000;p.notice.set('หมดสติ... กำลังกลับหมู่บ้าน');}
 }
 function stepMonster(e:RpgEvent,players:RpgPlayer[],now:number) {
   const timer=slimeTimers.get(e);if(!timer)return;const m={...monsterOf(e)},before=JSON.stringify(m);
@@ -111,10 +111,10 @@ function stepMonster(e:RpgEvent,players:RpgPlayer[],now:number) {
     if(now>=timer.respawnAt){m.state='respawn';m.hp=m.maxHp;m.rewarded=false;m.generation++;e.hp=m.hp;e.canMove=true;e.through=false;e.setGraphic('slime');void e.teleport(timer.home);timer.hurtUntil=now+150;}
   }else if(now<timer.hurtUntil){m.state=m.state==='respawn'?'respawn':'hurt';e.stopMoveTo();}
   else {
-    const nearest=players.filter(p=>progressOf(p).hp>0).sort((a,b)=>distance(a,e)-distance(b,e))[0];
+    const nearest=players.filter(p=>progressOf(p).hp>0&&!runtime(p).transfer).sort((a,b)=>distance(a,e)-distance(b,e))[0];
     if(nearest&&distance(e,nearest)<slimeDefinition.aggro){
       if(distance(e,nearest)<=30){m.state='attack';e.stopMoveTo();if(now>=timer.attackAt){timer.attackAt=now+900;damagePlayer(nearest,now);}}
-      else{m.state='chase';e.moveTo(nearest);}
+      else{m.state='chase';const dx=nearest.x()-e.x(),dy=nearest.y()-e.y(),d=Math.hypot(dx,dy);e.stopMoveTo();e.clearMovements();void e.addMovement(new LinearMove({x:dx/d*slimeDefinition.speed,y:dy/d*slimeDefinition.speed},.04));}
     }else if(now>=timer.wanderAt){m.state='wander';timer.wanderAt=now+2500;const drift=Math.sin(now/1500+e.id.length)*25;e.moveTo({x:timer.home.x+drift,y:timer.home.y+Math.cos(now/1700)*20});}
     else if(now>=timer.wanderAt-1000){m.state='idle';e.stopMoveTo();}
   }
@@ -124,14 +124,14 @@ function portal(p:RpgPlayer) {
   const map=p.getCurrentMap(),r=runtime(p);if(!map||!(map.id in content)||r.transfer||progressOf(p).hp<=0)return;
   const o=content[map.id as MapId].objects.find(o=>o.type==='portal'&&p.x()>=o.x&&p.x()<o.x+(o as any).width&&p.y()>=o.y&&p.y()<o.y+(o as any).height) as any;
   if(!o)return;r.transfer=true;stopNavigation(p);r.swing=undefined;p.canMove=true;p.directionFixed=false;
-  void p.changeMap(o.properties.targetMap,{x:o.properties.targetX,y:o.properties.targetY}).then(()=>checkpoint(p)).finally(()=>runtime(p).transfer=false);
+  void p.changeMap(o.properties.targetMap,{x:o.properties.targetX,y:o.properties.targetY});
 }
 export function stepMap(map:RpgMap,now=Date.now()) {
   if(!(map.id in content))return;
   const players=map.getPlayers(),monsters=map.getEvents().filter(e=>!!e.monster);
   for(const p of players){
-    if(!p.adventure)continue;const r=runtime(p);
-    if(progressOf(p).hp===0){if(r.deadUntil&&now>=r.deadUntil&&!r.transfer){r.transfer=true;updateProgress(p,v=>v.hp=v.maxHp);void p.changeMap('village',content.village.spawn).then(()=>{resetTransient(p);checkpoint(p);});}continue;}
+    if(!p.adventure)continue;const r=runtime(p);if(r.transfer)continue;
+    if(progressOf(p).hp===0){if(r.deadUntil&&now>=r.deadUntil&&!r.transfer){r.transfer=true;updateProgress(p,v=>v.hp=v.maxHp);void p.changeMap('village',content.village.spawn);}continue;}
     if(now<r.hurtUntil)continue;
     if(r.swing){
       const phase=phaseAt(r.swing,now);p.combatPhase.set(phase);
@@ -144,12 +144,12 @@ export function stepMap(map:RpgMap,now=Date.now()) {
       else if(distance(p,e)<=sword.range-5){face(p,position(e));beginAttack(p,now);}
       else if(!r.path.length)walkTo(p,position(e));
     }
-    if(r.path.length){const target=r.path[0];if(Math.hypot(p.x()-target.x,p.y()-target.y)<6){r.path.shift();p.stopMoveTo();}else p.moveTo(target);}
+    if(r.path.length){const target=r.path[0],dx=target.x-p.x(),dy=target.y-p.y(),d=Math.hypot(dx,dy);p.clearMovements();if(d<6){r.path.shift();p.stopMoveTo();}else{face(p,target);void p.addMovement(new LinearMove({x:dx/d*160,y:dy/d*160},.04));}}
     if(Math.hypot(p.x()-r.lastPosition.x,p.y()-r.lastPosition.y)>.05){r.movingUntil=now+80;r.lastPosition=position(p);}
     p.combatPhase.set(now<r.movingUntil?'move':'idle');portal(p);
     if(now-r.lastSave>=15000)checkpoint(p);
   }
   for(const e of monsters)stepMonster(e,players,now);
-  const view={map:map.id,players:players.filter(p=>p.adventure).map(p=>({id:p.id,name:p.name,...position(p),hp:progressOf(p).hp})),monsters:monsters.map(e=>({id:e.id,...position(e),hp:monsterOf(e).hp,state:monsterOf(e).state,generation:monsterOf(e).generation}))};
-  for(const p of players){const r=runtime(p);if(p.worldView&&now-r.lastView>100){p.worldView.set(JSON.stringify(view));r.lastView=now;}}
+  const view={map:map.id,players:players.filter(p=>!runtime(p).transfer).map(p=>({id:p.id,name:p.name,...position(p),hp:progressOf(p).hp})),monsters:monsters.map(e=>({id:e.id,...position(e),hp:monsterOf(e).hp,state:monsterOf(e).state,generation:monsterOf(e).generation}))};
+  for(const p of players){const r=runtime(p);if(!r.transfer&&p.worldView&&now-r.lastView>100){p.worldView.set(JSON.stringify(view));r.lastView=now;}}
 }

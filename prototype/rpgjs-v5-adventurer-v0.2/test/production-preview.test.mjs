@@ -44,7 +44,7 @@ test('production previews serve maps and the UI theme at root and subpath', asyn
         base: variant.base,
         build: { outDir, emptyOutDir: true }
       })
-      await access(join(outDir, 'map', 'simplemap.tmx'))
+      await access(join(outDir, 'map', 'village.tmx'))
 
       const server = await preview({
         root: projectRoot,
@@ -69,7 +69,7 @@ test('production previews serve maps and the UI theme at root and subpath', asyn
         const builtHtml = await indexResponse.text()
         assert.doesNotMatch(builtHtml, /node_modules\/@rpgjs\/ui-css/)
 
-        const mapResponse = await fetch(new URL(`${variant.route}map/simplemap.tmx`, origin))
+        const mapResponse = await fetch(new URL(`${variant.route}map/village.tmx`, origin))
         assert.equal(mapResponse.status, 200, `${variant.name} map status`)
         assert.match(await mapResponse.text(), /<map\b/)
 

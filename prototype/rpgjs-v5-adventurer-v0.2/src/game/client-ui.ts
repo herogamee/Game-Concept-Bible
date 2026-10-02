@@ -26,7 +26,11 @@ function setup(e:RpgClientEngine){
   document.addEventListener('keyup',e=>held.delete(e.code));window.addEventListener('blur',()=>held.clear());
   document.addEventListener('pointerup',event=>{
     if(!(event.target instanceof HTMLCanvasElement)||event.button!==0)return;
-    const point=engine.pointer.world();if(point)send('walk',point);
+    const point=engine.pointer.world();if(!point)return;
+    const player=engine.getCurrentPlayer() as any;
+    const view=JSON.parse(read(player?.worldView)||'null') as WorldView|null;
+    const target=view?.monsters.find(m=>m.hp>0&&Math.hypot(point.x-m.x,point.y-m.y)<26);
+    send(target?'target':'walk',target?target.id:point);
   });
 }
 function render(e:RpgClientEngine){

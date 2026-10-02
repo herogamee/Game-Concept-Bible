@@ -3,6 +3,7 @@ import { rpgjs, tiledMapFolderPlugin } from '@rpgjs/vite';
 import startServer from './src/server';
 
 export default defineConfig({
+  server: { hmr: { host: 'localhost' } },
   optimizeDeps: {
     include: ['pixi.js > @xmldom/xmldom']
   },
