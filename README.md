@@ -30,10 +30,14 @@ v0.2.1 is the current direction correction. It preserves v0.2's useful world/Gui
 
 ## Document map
 
-- Narrative: [main story and world mystery](story/MAIN-STORY-AND-WORLD-MYSTERY-v0.1.md), [post-S and life endgame](design/POST-S-AND-LIFE-ENDGAME-v0.1.md).\n- World: [foundation](world/world-overview.md), [world expansion](world/WORLD-EXPANSION-v0.1.md), [starter region and routes](world/starter-region.md), [ten factions](world/factions.md), [peoples/species](world/species.md), [magic](world/magic-system.md), [economy and budgets](world/economy.md).
+- Narrative: [main story and world mystery](story/MAIN-STORY-AND-WORLD-MYSTERY-v0.1.md), [post-S and life endgame](design/POST-S-AND-LIFE-ENDGAME-v0.1.md).
+- World: [foundation](world/world-overview.md), [world expansion](world/WORLD-EXPANSION-v0.1.md), [starter region and routes](world/starter-region.md), [ten factions](world/factions.md), [peoples/species](world/species.md), [magic](world/magic-system.md), [economy and budgets](world/economy.md).
 - Guild: [organization and physical hall](guild/adventurer-guild.md), [rank/eligibility](guild/rank-system.md), [promotion and practical exam](guild/promotion-system.md).
 - People: [28 starter NPCs](characters/starter-npcs.md), [player-first NPC roles and persistence](design/npc-simulation.md).
-- Playable planning: [first ten hours](design/first-10-hours.md), [18 authored contracts](design/starter-quests.md), [bounded vertical slice](design/vertical-slice.md).\n- Progression: [hybrid skills and mastery](design/SKILLS-AND-MASTERY-v0.1.md).\n- Creatures: [monster and boss design bible](creatures/MONSTER-AND-BOSS-BIBLE-v0.1.md).\n- Next frontier: [economy, treasures, trade, collections, social safety and Chinese-fantasy research agenda](design/NEXT-DESIGN-FRONTIER-2026-10-02.md).
+- Playable planning: [first ten hours](design/first-10-hours.md), [18 authored contracts](design/starter-quests.md), [bounded vertical slice](design/vertical-slice.md).
+- Progression: [hybrid skills and mastery](design/SKILLS-AND-MASTERY-v0.1.md).
+- Creatures: [monster and boss design bible](creatures/MONSTER-AND-BOSS-BIBLE-v0.1.md).
+- Next frontier: [economy, treasures, trade, collections, social safety and Chinese-fantasy research agenda](design/NEXT-DESIGN-FRONTIER-2026-10-02.md).
 - Evidence: [market comparison](research/game-market-research.md), [community demand](research/community-demand.md), [reference study](research/anime-reference-study.md), [open-source implementation stack](research/open-source-game-development-stack-2026-10-02.md), [commercial-safe game audio resources](research/game-audio-sources-2026-10-02.md), [audio source/license matrix](research/evidence/game-audio-source-matrix-2026-10-02.csv), [dated Steam counts](research/evidence/steam-review-counts-2026-10-01.csv), [individual review index](research/evidence/community-review-index-2026-10-01.csv).
 - Review: [open decisions and Proposed Changes](design/decisions.md), [requirements coverage and audit](design/requirements-and-audit.md).
 
