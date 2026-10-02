@@ -1,5 +1,5 @@
 body{margin:0;background:#17231e;color:#f3ecd8;font-family:Tahoma,system-ui,sans-serif;overflow:hidden;display:grid;place-items:center;height:100vh}
-.game-frame{position:relative;width:min(100vw,177.7778vh);aspect-ratio:16/9;overflow:hidden;background:#79966a;box-shadow:0 0 70px #0008}
+.game-frame{position:relative;width:min(100vw,177.7778vh);aspect-ratio:16/9;overflow:clip;background:#79966a;box-shadow:0 0 70px #0008}
 #rpg{position:absolute;inset:0}#rpg canvas{width:100%!important;height:100%!important;image-rendering:pixelated;display:block}
 #game-hud{--rpg-ui-bg:#28281f;--rpg-ui-text:#f5eedc;--rpg-ui-text-muted:#c8c2a9;--rpg-ui-accent:#d7c293;--rpg-ui-border:#887751;--rpg-ui-panel-background:linear-gradient(145deg,#2b3027ee,#23261feb);--rpg-ui-font-body:Tahoma,system-ui,sans-serif;position:absolute;inset:0;pointer-events:none;font-size:13px;z-index:10;color:var(--rpg-ui-text)}
 #game-hud button,#game-hud input,#game-hud details{pointer-events:auto}#game-hud button{font:inherit;padding:6px 10px;border-radius:4px;background:#35372be6;border:1px solid #8b7955;color:#f5eedc;cursor:pointer}#game-hud button:hover{background:#596046;border-color:#d7c293}

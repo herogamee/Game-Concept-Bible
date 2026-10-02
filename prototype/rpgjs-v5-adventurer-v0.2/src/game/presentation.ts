@@ -15,6 +15,9 @@ export function canvasPoint(event:PointerEvent,canvas:HTMLCanvasElement){
 }
 export function updateCamera(){
   const p=engine?.getCurrentPlayer() as any;if(!p||!viewport)return;
+  if(engine.renderer.screen.width!==800||engine.renderer.screen.height!==450){
+    engine.width.set('800');engine.height.set('450');engine.renderer.resize(800,450);
+  }
   const room=engine.getCurrentRoom();if(!('id' in room))return;
   const map=(maps as any)[room.id];if(!map)return;
   // v0.1 leaves more of the village visible above the hero.
