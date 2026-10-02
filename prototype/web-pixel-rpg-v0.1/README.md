@@ -10,12 +10,13 @@ npm run build
 
 Dev URL: http://localhost:4173. Build output: `dist/`, deployable to any static host. No install, external runtime, network asset request or backend is required.
 
-WASD/arrows move; E/Enter talks; Z/Space attacks; I opens inventory; 1 uses a potion. Talk to the elder, enter the south portal, defeat three slimes and return for 50 gold / 20 EXP. Merchant sells potions for 10 gold. Slime kills immediately add gel and gold, preserving the original drop behavior.
+Left-click the ground to walk there (routes around obstacles; blocked targets choose the nearest reachable point). WASD/arrows take over and cancel the mouse route; E/Enter talks; Z/Space attacks; I opens inventory; 1 uses a potion. Talk to the elder, enter the south portal, defeat three slimes and return for 50 gold / 20 EXP. Merchant sells potions for 10 gold. Slime kills immediately add gel and gold, preserving the original drop behavior.
 
 ## Visual architecture
 
 - `assets/pixel-art.js`: original cached bitmap sprites: 32px tiles, 64px directional actor frames, animated slime and scenery.
 - `src/world.js`: ground tile layer and decoration/obstacle placements.
+- `src/navigation.js`: click coordinates, collision-aware routes and destination marker.
 - `src/game.js`: preserved progression, input, NPC/merchant, combat, inventory and save loop.
 - `src/render.js`: camera, Y sorting, actor/obstacle foreground overlap and lightweight effects.
 - `src/style.css`: responsive fantasy HUD, HP/EXP bars, quest, dialogue and item slots.

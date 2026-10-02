@@ -8,3 +8,5 @@
 - Three real browser screenshots saved under screenshots/. Preview scene URLs never overwrite the existing save.
 - Chrome/Edge/Safari APIs used are standard Canvas 2D, classic scripts, localStorage and requestAnimationFrame. Safari, physical iMac 2017 and old notebooks were not available. No measured cross-device 60 FPS certification is claimed.
 - The optional second monster was omitted to keep this pass focused on the visual baseline.
+
+Click-to-move follow-up: deterministic arrival/detour/blocked-target/keyboard/portal checks passed; browser left-click smoke test passed with no console errors.

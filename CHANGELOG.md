@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-02 — Click-to-move
+
+- Added left-click movement with obstacle routing, destination marker and keyboard override; clear routes on portal travel or defeat.
+- Validated arrival, water detour, blocked target, keyboard takeover and portal cancellation.
+
+
 ## Web Pixel RPG v0.1.1 — 2026-10-02 — Visual Baseline
 
 - Replaced prototype rendering with original pixel tiles, directional actors, animated slime and fantasy UI.
