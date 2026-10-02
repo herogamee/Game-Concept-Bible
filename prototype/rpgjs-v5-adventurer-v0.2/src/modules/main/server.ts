@@ -1,19 +1,13 @@
-import { defineModule } from "@rpgjs/common";
-import { RpgServer } from "@rpgjs/server";
-import { player } from './player'
-import { Npc } from "./event";
-
+import { defineModule } from '@rpgjs/common';
+import { type RpgServer, type RpgMap, type EventDefinition } from '@rpgjs/server';
+import { player } from './player';
+import { content, initMonster, stepMap, talk } from '../../game/runtime';
+const npc=(name:string):EventDefinition=>({onInit(){this.name=name;this.setHitbox(16,16);this.setGraphic('adventurer');},onAction(p){talk(p);}});
 export default defineModule<RpgServer>({
   player,
-  maps: [
-    {
-      id: 'simplemap',
-      events: [{
-        id: 'npc',
-        x: 300,
-        y: 400,
-        event: Npc()
-      }]
-    }
-  ]
+  engine:{onStep(server){if(server.getCurrentRoomKind()==='map'){const map=server.getCurrentRoom<RpgMap>();if(map)stepMap(map);}}},
+  maps:Object.entries(content).map(([id,map])=>({
+    id,
+    events:map.objects.filter(o=>o.type==='npc'||o.type==='monster').map(o=>({id:o.id,event:o.type==='monster'?{name:o.id,onInit(){initMonster(this);}}:{name:o.id,...npc(o.id==='elder-001'?'ผู้ใหญ่บ้าน':o.id==='merchant-001'?'พ่อค้า':'รุ่นพี่')}})),
+  })),
 });

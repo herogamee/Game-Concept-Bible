@@ -6,7 +6,7 @@ import { provideTiledMap } from "@rpgjs/tiledmap/server";
 export default createServer({
     providers: [
       provideMain(),
-      provideSaveStorage(new LocalStorageSaveStorageStrategy({ key: "save" })),
+      ...(typeof window !== 'undefined' ? [provideSaveStorage(new LocalStorageSaveStorageStrategy({ key: "adventurer-rpgjs-v02-slots1" }))] : []),
       provideServerModules([]),
       provideTiledMap()
     ]

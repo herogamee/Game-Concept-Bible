@@ -1,0 +1,13 @@
+body,#rpg{margin:0;padding:0;width:100vw;height:100vh;overflow:hidden;background:#101d21;font-family:system-ui,sans-serif}
+canvas{image-rendering:pixelated}
+#game-hud{position:fixed;inset:0;pointer-events:none;color:var(--rpg-ui-text,#f5eed9);font-size:14px;z-index:1000}
+#game-hud button{pointer-events:auto;padding:7px 12px;font:inherit}
+.hud-panel{background:var(--rpg-ui-panel-background,#13242c);border:1px solid var(--rpg-ui-border,#778878);border-radius:8px;padding:12px;box-shadow:0 6px 22px #0004}
+.top{position:absolute;top:14px;left:14px;max-width:480px}
+.top h1{margin:0 0 8px;font-size:20px;color:var(--rpg-ui-accent,#d4bf79)}
+.side{position:absolute;right:14px;top:14px;width:230px}.side ul{padding-left:15px;font-size:12px}.side details{pointer-events:auto}
+.bottom{position:absolute;left:14px;right:14px;bottom:14px}.actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+#monsters{display:grid;gap:5px;margin-top:8px}#monsters button{font-size:12px;text-align:left}
+#notice{font-size:15px;margin:6px 0}#quest{margin-top:8px;color:#e4cf8f}#phase,#position{font-size:12px;color:#b7cecb}
+#inventory{position:absolute;top:160px;left:14px;max-width:430px}progress{width:100%;height:8px;accent-color:#df6961}
+@media(max-width:750px){.side{top:155px;width:165px}.top{max-width:calc(100vw - 28px)}.side details{font-size:11px}#game-hud{font-size:12px}.actions button{padding:5px 7px}}

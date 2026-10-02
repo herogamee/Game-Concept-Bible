@@ -2,15 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>RPGJS Game</title>
+    <title>Willowbrook · RPGJS v0.2</title>
     <meta
       name="viewport"
       content="initial-scale=1, maximum-scale=1, user-scalable=no, minimum-scale=1, width=device-width, height=device-height"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./node_modules/@rpgjs/ui-css/src/reset.css">
     <link rel="stylesheet" href="./node_modules/@rpgjs/ui-css/src/index.css">
     <link rel="stylesheet" href="./node_modules/@rpgjs/ui-css/theme-default/theme.css">
+    <link rel="stylesheet" href="./src/game/ui.css">
     <style>
       body, #rpg {
         margin: 0;
@@ -23,5 +23,11 @@
   </head>
   <body>
     <div id="rpg"></div>
+    <main id="game-hud" class="rpg-ui" aria-label="เกม Willowbrook">
+      <section class="hud-panel top"><h1>Willowbrook · v0.2</h1><b id="map-name">กำลังโหลดแผนที่</b><p id="player-stats">กำลังเชื่อมต่อ...</p><progress id="hp-meter" value="30" max="30" aria-label="HP"></progress><div id="purse"></div><div id="quest"></div><div id="phase"></div><div id="position"></div></section>
+      <aside class="hud-panel side"><b>ผู้เล่นในแผนที่</b><ul id="players"></ul><details open><summary>สไลม์ · คลิกเพื่อตามไปฟัน</summary><div id="monsters"></div></details><button id="audio-toggle" class="rpg-ui-button">เสียง: ปิด</button></aside>
+      <section id="inventory" class="hud-panel" hidden><b>กระเป๋าเดินทาง</b><p id="inventory-items"></p><button class="rpg-ui-button" data-action="potion">ใช้ Potion</button></section>
+      <section class="hud-panel bottom"><div id="notice" role="status">พร้อมออกเดินทาง</div><small>คลิกพื้น / WASD / ลูกศร: เดิน · Z: ฟัน · E: คุย · I: กระเป๋า · 1: ยา</small><div class="actions"><button class="rpg-ui-button" data-action="attack">ฟัน (Z)</button><button class="rpg-ui-button" data-action="talk">คุย (E)</button><button class="rpg-ui-button" id="inventory-toggle">กระเป๋า (I)</button><button class="rpg-ui-button" data-action="potion">Potion (1)</button><button class="rpg-ui-button" data-action="travel">เดินไปประตู</button><button class="rpg-ui-button" data-action="save">บันทึก (K)</button><button class="rpg-ui-button" data-action="load">โหลด (L)</button></div></section>
+    </main>
   </body>
 </html>

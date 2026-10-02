@@ -1,9 +1,13 @@
 {
-  "name": "myrpg",
-  "version": "1.0.0",
+  "name": "adventurer-rpgjs-v02",
+  "version": "0.2.0",
   "main": "index.js",
   "scripts": {
     "dev": "vite",
+    "dev:online": "cross-env RPG_TYPE=mmorpg vite --host 127.0.0.1 --port 5174 --strictPort",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/rules.test.ts test/runtime.test.ts",
+    "maps": "node tools/build-maps.mjs",
     "build": "vite build",
     "test:production": "node --test test/production-preview.test.mjs"
   },
