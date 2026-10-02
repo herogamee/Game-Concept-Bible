@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-02 — RPGJS one-scene presentation and control pass
+
+- Reused v0.1 original painted hero, distinct NPCs, slime, props and deterministic village/meadow terrain through reproducible adapters; preserved v0.1 runtime and save.
+- Added the 800×450 camera, compact parchment HUD, optional debug telemetry, destination marker, opaque hurt feedback, slash arc and damage numbers. Restored the original village/meadow audio with independent preferences.
+- Corrected CSS-scaled mouse coordinates; added eight-way routes with hitbox clearance/corner guards and a shared footprint collision mask. Matched the 350ms sword cycle while retaining authoritative active-window damage.
+- Repaired old v0.2 save locations only when inside new blockers; added monster home leashes for persistent online maps. Rendered ground as one bitmap instead of 2,040 visible tile components.
+- Kept retreat navigation usable during hurt, added physics-bounded slime knockback, fixed logical renderer dimensions across transfers and prevented focus from scrolling the game frame. Disabled client movement prediction for consistent server-driven routes.
+- Verification and owner review status are recorded in the candidate PARITY-REVIEW.md; product acceptance remains pending.
+
 ## 2026-10-02 — Quality-first repository reset
 
 - Owner authorized revising the earlier engine migration guidance after rejecting v0.2's presentation/control regression. Restored v0.1 as the recommended playable reference; retained RPGJS v0.2 as a technical experiment.

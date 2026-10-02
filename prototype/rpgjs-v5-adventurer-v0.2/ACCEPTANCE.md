@@ -1,5 +1,7 @@
 # Acceptance record — 2026-10-02
 
+Historical record for the first LPC implementation. For the current original-art/control slice and its remaining gates, read [PARITY-REVIEW.md](PARITY-REVIEW.md). The observations below retain their original test count, actor IDs and map coordinates.
+
 Local Windows Node 22.23.2, RPGJS 5.0.0, in-app browser. This is a prototype gate, not production deployment certification.
 
 ## Standalone gate
