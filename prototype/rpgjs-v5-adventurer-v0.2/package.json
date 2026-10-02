@@ -1,0 +1,47 @@
+{
+  "name": "adventurer-rpgjs-v02",
+  "version": "0.2.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "dev:online": "cross-env RPG_TYPE=mmorpg vite --host 127.0.0.1 --port 5174 --strictPort",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/rules.test.ts test/runtime.test.ts test/appearance.test.ts",
+    "maps": "node tools/build-parity-assets.mjs && node tools/build-maps.mjs",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "package:portable": "node tools/package-portable.mjs",
+    "test:production": "node --test test/production-preview.test.mjs",
+    "assets:parity": "node tools/build-parity-assets.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@canvasengine/compiler": "2.4.0",
+    "@napi-rs/canvas": "^1.0.10",
+    "@types/node": "^26.6.4",
+    "@vitejs/plugin-vue": "^6.0.9",
+    "cross-env": "^10.1.0",
+    "path-browserify": "^1.0.1",
+    "tsx": "^4.23.15",
+    "typescript": "6.0.3",
+    "vite": "^8.3.1"
+  },
+  "private": true,
+  "dependencies": {
+    "@canvasengine/presets": "2.4.0",
+    "@rpgjs/action-battle": "5.0.0",
+    "@rpgjs/client": "5.0.0",
+    "@rpgjs/common": "5.0.0",
+    "@rpgjs/server": "5.0.0",
+    "@rpgjs/tiledmap": "5.0.0",
+    "@rpgjs/ui-css": "5.0.0",
+    "@rpgjs/vite": "5.0.0",
+    "@signe/di": "^3.1.1",
+    "canvasengine": "2.4.0",
+    "pixi.js": "^8.21.0"
+  },
+  "type": "module"
+}

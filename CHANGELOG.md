@@ -1,5 +1,88 @@
 # Changelog
 
+## 2026-10-02 — Walking cadence, responsive HUD and mobile foundation
+
+- Select continuous locomotion from actual server motion and retain gait across ticks; finite slash/hurt/death animation remains independent.
+- Enlarge overhead labels, replace full-width bottom toolbar with a corner action dock and move utility controls into settings. Add saved 85–130% UI scale, safe-area layout and scrollable dialogs.
+- Crop the camera to real viewport aspect without stretching world units; align click coordinates and labels with the crop.
+- Add pointer-captured touch joystick and bounded server steering leases for touch/WASD; expired input stops movement. Android/iOS browser foundation is implemented; native packages and real-device acceptance are pending.
+- Passed 28 tests, typecheck, build and root/subpath smoke. Recorded desktop/tablet/phone layout evidence, including 130% text. Sustained touch performance needs foreground/device verification; owner product acceptance remains pending.
+
+
+## 2026-10-02 — 1080p scenery stability and visible monster death
+
+- Reproduced a slime with HP 0 and an old visible sprite. Replaced empty graphics with a registered invisible death graphic, restoring the live graphic only on the server's five-second respawn.
+- Render static scenery through image-only event components, removing character animation/hitbox-anchor clocks from rocks, fences and other props while retaining event Y sorting and Tiled physics.
+- Replaced collision terrain fragments with a transparent collision tile; regenerated identical blocked footprints and validated the registry against Tiled cell locations.
+- Checked 1920×1080 backing and actual death/reward visuals. Added original high-resolution chibi concept and explicit source-art/modular-animation production direction; the current 64×64 hero has not been replaced or claimed to match commercial art.
+
+## 2026-10-02 — Display quality, appearance foundation and portable checkpoint
+
+- Added smooth/native-density and original pixel modes with independent preference; physical backing follows CSS size/DPI up to 3× while world/physics remain 800×450. No invented high-resolution source art.
+- Added versioned durable/synchronized cosmetic slots, server catalog normalization and graphic-stack application on load/join/reset. Current full-costume sheet remains the only real asset; modular hair/face/clothes/weapon layers and ownership/equipment UI are future work.
+- Passed 25 focused tests, TypeScript, builds and root/subpath smoke; exercised display modes, kill rewards, transfers and save/reload. Added evidence and explicit current scope.
+- Added cross-machine source setup and a portable built-game launcher/package with asset/package notices. Source/assets/maps/lockfile remain reproducible in GitHub; save transfer between machines is not implemented.
+- Merged latest main's commercial-safe audio research without adding new external audio assets. v0.1 and product-acceptance limits remain preserved.
+
+## 2026-10-02 — RPGJS one-scene presentation and control pass
+
+- Reused v0.1 original painted hero, distinct NPCs, slime, props and deterministic village/meadow terrain through reproducible adapters; preserved v0.1 runtime and save.
+- Added the 800×450 camera, compact parchment HUD, optional debug telemetry, destination marker, opaque hurt feedback, slash arc and damage numbers. Restored the original village/meadow audio with independent preferences.
+- Corrected CSS-scaled mouse coordinates; added eight-way routes with hitbox clearance/corner guards and a shared footprint collision mask. Matched the 350ms sword cycle while retaining authoritative active-window damage.
+- Repaired old v0.2 save locations only when inside new blockers; added monster home leashes for persistent online maps. Rendered ground as one bitmap instead of 2,040 visible tile components.
+- Kept retreat navigation usable during hurt, added physics-bounded slime knockback, fixed logical renderer dimensions across transfers and prevented focus from scrolling the game frame. Disabled client movement prediction for consistent server-driven routes.
+- Verification and owner review status are recorded in the candidate PARITY-REVIEW.md; product acceptance remains pending.
+
+## 2026-10-02 — Quality-first repository reset
+
+- Owner authorized revising the earlier engine migration guidance after rejecting v0.2's presentation/control regression. Restored v0.1 as the recommended playable reference; retained RPGJS v0.2 as a technical experiment.
+- Added root agent instructions, prototype index, implementation decision review and a one-scene parity handoff. Marked earlier research/handoff engine/LPC exclusivity as superseded while retaining source/license research and historical evidence.
+- Kept production engine selection open; allowed an isolated Phaser 4 comparison if justified by comparative fit/cost evidence. No engine pivot or new runtime dependency implemented in this reset.
+- Added owner visual/feel review and measured browser-cost gates alongside functional/authoritative online gates. v0.1 runtime/assets/save are unchanged; no scope expansion.
+
+
+## 2026-10-02 — RPGJS v5 Adventurer prototype v0.2
+
+- Imported latest main including v0.2.3 research/handoff and created a separate `prototype/rpgjs-v5-adventurer-v0.2/`; preserved the playable v0.1.
+- Added RPGJS 5.0.0/TypeScript, Tiled village/meadow content IDs, actual Universal LPC layers with OGA-BY 3.0 credit exports and semantic animation adapter.
+- Implemented phased sword combat, slime AI/death/respawn, authoritative EXP/drop and single-claim reward, three-kill quest/turn-in/level-up, inventory/potion, portals and isolated standalone save slots. Added original synthesized music/slash/hurt audio.
+- Verified two MMORPG clients sharing movement and the same dead slime; the contested death granted one reward. Verified standalone quest turn-in and save/reload. Fixed ID hydration and departed-room autosave regressions.
+- Added 18 focused tests and production map/theme HTTP smoke. README/acceptance document server authority, reproduction commands, guest/in-memory online-save limitations and art/death placeholders. No MMO-scale scope expansion.
+
+
+## 2026-10-02 — Player visibility fix and original audio
+
+- Fixed hurt timer underflow causing the player to remain faded; clamp timers and reset transient combat state on load/save. Keep the player opaque with a red hit indicator.
+- Added original Web Audio village/meadow music, slash/hurt effects, level chime, gesture activation, saved mute/volume controls and tab suspension.
+- Added audio scheduling/control tests and opacity regression checks.
+
+
+## 2026-10-02 — Playable Willowbrook art-quality pass
+
+- Replaced key prototype scenery, adventurer, NPCs and slime with original illustrated sprites and directional animation sheets.
+- Improved village composition, terrain, camera, UI and melee feedback while preserving gameplay/save compatibility.
+- Added generation prompts, asset provenance, extraction tools and runtime asset checks. See prototype/web-pixel-rpg-v0.1/ART-DIRECTION.md.
+
+## 2026-10-02 — Monster tiers and melee progression
+
+- Added Lv.1 slime, Lv.3 azure slime and Lv.5 boar with distinct HP, attack, movement, EXP and gold rewards.
+- Click monsters to approach and repeatedly slash; keyboard movement or clicking the ground cancels targeting.
+- Player ATK equals level; each level adds 5 max HP and heals. EXP rolls over and levels persist in the existing save.
+- Higher-tier monsters retaliate when attacked and remain passive toward low-level beginners.
+
+
+## 2026-10-02 — Click-to-move
+
+- Added left-click movement with obstacle routing, destination marker and keyboard override; clear routes on portal travel or defeat.
+- Validated arrival, water detour, blocked target, keyboard takeover and portal cancellation.
+
+
+## Web Pixel RPG v0.1.1 — 2026-10-02 — Visual Baseline
+
+- Replaced prototype rendering with original pixel tiles, directional actors, animated slime and fantasy UI.
+- Added camera follow, Y depth sorting, collision aligned with artwork and combat feedback while preserving the original game loop/save key.
+- Added modular source files, asset license/credits, dev/build scripts, regression checks and three screenshots.
+- Details: prototype/web-pixel-rpg-v0.1/CHANGELOG.md.
 ## v0.2.4 — 2026-10-02 — Commercial-Safe Game Audio Research
 
 - Added `research/game-audio-sources-2026-10-02.md`, covering commercial-safe game music, SFX, ambience and open-source sound generators.
@@ -105,3 +188,4 @@ Established:
 - Multiplayer, combat, and art kept open.
 - Vertical-slice scope guardrails.
 - v0.2 world-building questions.
+
