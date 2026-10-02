@@ -1,5 +1,15 @@
 # Willowbrook one-scene review — 2026-10-02
 
+## Later display/appearance checkpoint
+
+Implementation `2156ce1` adds a saved local display choice and a durable synchronized cosmetic schema. At the same 1280×720 CSS viewport, DOM inspection confirmed smooth backing **1280×720** versus original pixel backing **800×450**. Comparison screenshots are `evidence/display/smooth.png` and `pixel.png`; these demonstrate sampling choices, not newly authored source detail. Smooth mode uses linear texture sampling and capped physical resolution (max 3×); the higher GPU pixel count is a tradeoff. No controlled performance superiority is claimed. APIs: [Pixi application resolution](https://pixijs.com/8.x/guides/components/application), [TextureStyle sampling](https://pixijs.download/release/docs/rendering.TextureStyle.html).
+
+Standalone old progress loaded without reset, killed a slime (EXP 22→30, Gold 78→80, Gel 4→5), transferred back and survived save/reload at Lv.2/HP35. New props normalize old/malformed appearance to the original costume; real customization assets are still pending. TypeScript, **25/25 tests**, build and root/subpath production smoke passed.
+
+Fresh MMORPG actors `QEZo` and `RAU0` both saw the same dead slime-003. RAU0 received EXP8/Gold22/Gel1; QEZo stayed EXP0/Gold20/Gel0. See `evidence/display/online-a.png` and `online-b.png`. OnStep samples during this run were about 57–62Hz, p95 16.1–17.6ms; these are uncontrolled callback samples, not GPU FPS or a benchmark against the previous build.
+
+The built portable folder, with no npm dependencies installed in that folder, was served by its bundled Node launcher at 4175 and loaded village/meadow via the real portal (`evidence/display/portable.png`). Cross-machine installation itself has not been tested on a second physical computer. Use `../../DEVELOPING.md`; source and a tracked ZIP checkpoint are the portable deliverables. The remaining owner acceptance and game scope below still apply.
+
 Status: **reviewable RPGJS experiment; owner visual/feel acceptance pending. v0.1 remains the default playable.** Implementation commits: `bc31e4b` and transfer/resize correction `32e6dea`, followed by this evidence record.
 
 ## What changed and what the comparison means

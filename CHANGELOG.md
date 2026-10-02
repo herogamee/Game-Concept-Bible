@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-02 — Display quality, appearance foundation and portable checkpoint
+
+- Added smooth/native-density and original pixel modes with independent preference; physical backing follows CSS size/DPI up to 3× while world/physics remain 800×450. No invented high-resolution source art.
+- Added versioned durable/synchronized cosmetic slots, server catalog normalization and graphic-stack application on load/join/reset. Current full-costume sheet remains the only real asset; modular hair/face/clothes/weapon layers and ownership/equipment UI are future work.
+- Passed 25 focused tests, TypeScript, builds and root/subpath smoke; exercised display modes, kill rewards, transfers and save/reload. Added evidence and explicit current scope.
+- Added cross-machine source setup and a portable built-game launcher/package with asset/package notices. Source/assets/maps/lockfile remain reproducible in GitHub; save transfer between machines is not implemented.
+- Merged latest main's commercial-safe audio research without adding new external audio assets. v0.1 and product-acceptance limits remain preserved.
+
 ## 2026-10-02 — RPGJS one-scene presentation and control pass
 
 - Reused v0.1 original painted hero, distinct NPCs, slime, props and deterministic village/meadow terrain through reproducible adapters; preserved v0.1 runtime and save.

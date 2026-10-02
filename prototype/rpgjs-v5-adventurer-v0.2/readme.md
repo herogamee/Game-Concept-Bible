@@ -4,6 +4,8 @@
 
 Bounded RPGJS v5 presentation/control experiment using the original v0.1 artwork. v0.1 remains the default playable until owner review. See `PARITY-REVIEW.md` for current results.
 
+Current checkpoint: selectable smooth/native-density or original pixel rendering; a synchronized, saved cosmetic schema for body/face/eyes/pants/shoes/shirt/hair/hat/weapon. Real separate costume layers are not authored yet. Read `CHARACTER-APPEARANCE.md`, `../../PROJECT-STATUS.md` and `../../DEVELOPING.md` for the precise scope and portable setup.
+
 ## Run
 
 Node 22.23.2 was used on Windows. From this directory:
@@ -32,7 +34,7 @@ npm.cmd run build
 npm.cmd run test:production
 ```
 
-Twenty-one focused rules/runtime tests cover active-only damage, one hit per swing, death/interruption/revival, atomic kill rewards, three-kill quest, level growth, potion limits, navigation, Tiled IDs and credits. Production smoke test builds and serves maps, original PNGs and the UI theme at root and `/quest/`; it is not an online deployment test. See `PARITY-REVIEW.md` for current browser results; `ACCEPTANCE.md` preserves the earlier implementation's evidence.
+Twenty-five focused rules/runtime/appearance tests cover active-only damage, one hit per swing, death/interruption/revival, atomic kill rewards, three-kill quest, level growth, potion limits, navigation, Tiled IDs, credits, appearance migration/catalog validation and display-resolution bounds. Production smoke test builds and serves maps, original PNGs and the UI theme at root and `/quest/`; it is not an online deployment test. See `PARITY-REVIEW.md` for current browser results; `ACCEPTANCE.md` preserves the earlier implementation's evidence.
 
 ## Architecture and authority
 

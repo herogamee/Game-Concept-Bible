@@ -1,0 +1,21 @@
+# Implemented game status — 2026-10-02
+
+We are at a **small playable village/meadow prototype**, not a full RPG/MMO. Bible version numbers describe design documents; they are not percentages of implemented gameplay. v0.1 remains the product reference. The RPGJS v0.2 candidate is reviewable, with visual/control acceptance still pending.
+
+| Area | Actual implementation |
+|---|---|
+| World / art | Village and meadow, original painted scenery/actors, distinct elder/merchant/guide, camera/Y sorting. |
+| Controls | Ground click routing, WASD/arrows, click pursuit, sword slash and cancel. Keyboard diagonal parity remains open. |
+| Combat / growth | Four Lv.1 slimes, phased server-validated damage, hit feedback, EXP/Gold/Gel, level growth, death/recovery and respawn. Higher monster tiers are in v0.1, not this bounded candidate. |
+| Quest / inventory | One three-kill elder quest, real turn-in/rewards, starter sword/count-based bag, potion use and merchant purchase. |
+| Audio | Original synthesized village/meadow music, slash/hurt/level effects, separate preferences. New audio research is preserved; no external pack has been ingested. |
+| Display | Selectable smooth/native-density vs original pixel mode, separate local preference. Logical world stays 800×450; physical resolution is capped at 3×. Higher source detail is not created by this setting. |
+| Appearance | Versioned durable/synchronized cosmetic slots, catalog validation and graphic-stack resolution; base-body migration for old saves. No real modular wardrobe or dressing UI yet. |
+| Save / online | Standalone save/load/reload; two-client authoritative death/single reward proof. Online guest reconnect cleanup and durable accounts/storage remain open. |
+| Portability | Committed source/assets/lockfile/maps plus build commands and portable standalone packaging. Node.js 22+ required for local launcher. |
+
+This checkpoint passed TypeScript, **25 focused tests**, build and root/subpath production smoke. Browser checks exercised both display modes (1280×720 vs 800×450 backing at the same 1280px CSS viewport), cross-map rendering, kill rewards and standalone save/reload. See candidate evidence reports for historical multiplayer observations and this checkpoint's additions.
+
+Not implemented: complete character customization, equipment stats/ownership UI, classes/professions, Guild rank progression, broad quest chains, crafting, parties/guild systems, durable accounts, production multiplayer hosting or the 100-floor dungeon. The corresponding Bible proposals remain design work.
+
+Next bounded work: owner chooses image/control feel; author a modular body and compatible transparent costume/face/hair/weapon layers; address keyboard diagonal movement and controlled load/frame benchmarking. Avoid expanding MMO systems before these gates. Production engine choice remains open; no Phaser runtime is installed.

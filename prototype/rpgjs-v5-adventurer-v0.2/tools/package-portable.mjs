@@ -7,6 +7,7 @@ await mkdir(join(output,'tools'),{recursive:true});
 await cp(join(project,'dist'),join(output,'game'),{recursive:true});
 await cp(join(project,'tools','serve-portable.mjs'),join(output,'tools','serve-portable.mjs'));
 await cp(join(project,'assets'),join(output,'asset-credits'),{recursive:true});
+await cp(join(project,'..','web-pixel-rpg-v0.1','ART-DIRECTION.md'),join(output,'asset-credits','ORIGINAL-ART-DIRECTION.md'));
 await writeFile(join(output,'start-game.cmd'),'@echo off\r\ncd /d "%~dp0"\r\nnode tools\\serve-portable.mjs\r\npause\r\n');
 await writeFile(join(output,'README.txt'),'Willowbrook v0.2 standalone preview\nRequires Node.js 22+. No npm install required.\nWindows: double-click start-game.cmd, then open http://localhost:4175/\nmacOS/Linux: node tools/serve-portable.mjs\nDo not open index.html directly (file://).\nThis build runs server logic locally in the browser; it is not an online account service.\nSave is browser/origin-specific; it is not transferred to a different computer by this ZIP.\nSource and lockfile: https://github.com/herogamee/Game-Concept-Bible/tree/codex/rpgjs-v0.2\nRead the source repository DEVELOPING.md to continue development.\n');
 // Retain available package notices for the installed build inputs/dependencies.
