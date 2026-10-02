@@ -1,0 +1,1 @@
+const fs=require('fs'),path=require('path');let root=path.resolve(__dirname,'..'),out=path.join(root,'dist');fs.mkdirSync(out,{recursive:true});for(let file of ['index.html','src','assets'])fs.cpSync(path.join(root,file),path.join(out,file),{recursive:true});console.log('Built dependency-free static game in dist');

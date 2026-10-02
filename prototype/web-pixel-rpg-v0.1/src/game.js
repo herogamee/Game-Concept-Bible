@@ -1,0 +1,33 @@
+
+const c=document.getElementById('c'),x=c.getContext('2d'),K=new Set(),S='al-web-rpg-v01';
+let p={x:480,y:300,hp:30,max:30,lv:1,exp:0,next:30,gold:20,map:'v',pot:2,gel:0,q:0,kills:0,cd:0,hit:0}, mobs=[];
+try{Object.assign(p,JSON.parse(localStorage.getItem(S)||'{}'))}catch{}
+const maps={
+v:{name:'หมู่บ้านเริ่มต้น',base:'#82b967',road:'#c7a974',obs:[['h',60,60,210,125],['h',690,70,200,120],['t',330,45,30,115],['t',610,55,30,115],['w',65,355,180,105]],npcs:[['elder','ผู้ใหญ่บ้าน',465,220],['shop','พ่อค้า',370,320],['guide','รุ่นพี่นักผจญภัย',570,330]],portal:[430,505,100,35,'f',480,50]},
+f:{name:'ทุ่งหญ้าสไลม์',base:'#6dab58',road:'#b99a68',obs:[['r',90,85,40,40],['r',220,390,40,40],['r',740,120,40,40],['t',310,120,30,120],['t',640,305,30,120]],npcs:[],portal:[430,0,100,32,'v',480,475]}
+};
+for(const id of ['v','f']){maps[id].obs=World.objects[id].filter(o=>!['flower','sign','lamp'].includes(o[0])).map(([t,x,y])=>{let a=Art.object(t);return t==='tree'?['t',x+46,y+107,22,33]:t==='house'?['h',x+18,y+95,188,80]:[t,x+5,y+a.height-18,a.width-10,16]});if(id==='v')maps[id].obs.push(['w',64,352,192,128]);}
+function save(){try{if(previewScene)return;localStorage.setItem(S,JSON.stringify(p));document.getElementById('save-status').textContent='บันทึกแล้ว · '+new Date().toLocaleTimeString()}catch{document.getElementById('save-status').textContent='เบราว์เซอร์ไม่อนุญาตให้บันทึก'}}function D(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+function spawn(){mobs=[[170,170],[300,260],[480,190],[610,220],[760,260],[370,410],[590,420],[820,460]].map((q,i)=>({x:q[0],y:q[1],hx:q[0],hy:q[1],hp:3,dead:0,resp:0,t:i*.2}))}
+if(!maps[p.map]){p.map='v';p.x=480;p.y=300;}
+const previewScene=new URLSearchParams(location.search).get('preview');if(previewScene){p={x:480,y:300,hp:30,max:30,lv:1,exp:0,next:30,gold:20,map:previewScene==='field'?'f':'v',pot:2,gel:0,q:1,kills:0,cd:0,hit:0};}if(previewScene==='dialogue')p.y=260;if(p.map==='f')spawn();
+function message(t){let m=document.getElementById('msg');m.innerHTML=t+'<div style="margin-top:8px"><button onclick="closeMsg()">ปิด</button></div>';m.style.display='block'}function closeMsg(){document.getElementById('msg').style.display='none'}
+function collide(o,X,Y){let [_,ox,oy,w,h]=o,nx=Math.max(ox,Math.min(X,ox+w)),ny=Math.max(oy,Math.min(Y,oy+h));return (X-nx)**2+(Y-ny)**2<14**2}
+let facing='down',walking=false,elapsed=0,effects=[];function move(dx,dy,dt){walking=true;facing=Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');let m=maps[p.map],nx=Math.max(14,Math.min(946,p.x+dx*160*dt)),ny=Math.max(14,Math.min(526,p.y+dy*160*dt));if(!m.obs.some(o=>collide(o,nx,p.y)))p.x=nx;if(!m.obs.some(o=>collide(o,p.x,ny)))p.y=ny}
+function talk(){let ns=maps[p.map].npcs.map(n=>({n,d:Math.hypot(p.x-n[2],p.y-n[3])})).sort((a,b)=>a.d-b.d);if(!ns[0]||ns[0].d>70)return message('ไม่มี NPC อยู่ใกล้ ๆ');let n=ns[0].n;
+if(n[0]==='elder'){if(p.q===0){p.q=1;p.kills=0;message('ผู้ใหญ่บ้าน: ช่วยกำจัดสไลม์ 3 ตัวทางใต้ของหมู่บ้านให้หน่อย');save()}else if(p.q===1)message('ผู้ใหญ่บ้าน: ตอนนี้ '+p.kills+'/3 ตัว');else if(p.q===2){p.q=3;p.gold+=50;gain(20);message('เควสสำเร็จ! +50 Gold +20 EXP');save()}else message('ผู้ใหญ่บ้าน: ขอบใจมาก นักผจญภัย')}
+else if(n[0]==='shop'){if(p.gold>=10){p.gold-=10;p.pot++;message('พ่อค้า: ซื้อ Potion 1 ขวด ราคา 10 Gold');save()}else message('พ่อค้า: Gold ไม่พอ')}
+else message('รุ่นพี่: ลงประตูด้านล่างเพื่อไปทุ่งสไลม์ ใช้ Z โจมตี');
+}
+function gain(v){p.exp+=v;while(p.exp>=p.next){p.exp-=p.next;p.lv++;p.next=Math.floor(p.next*1.45);p.max+=5;p.hp=p.max;message('LEVEL UP! Lv.'+p.lv)}}
+function attack(){if(p.cd>0)return;p.cd=.35;effects.push({type:'swing',x:p.x,y:p.y,life:.25});if(p.map!=='f')return;let m=mobs.find(m=>!m.dead&&D(p,m)<55);if(!m)return;m.hp--;m.flash=.18;effects.push({type:"damage",text:"1",x:m.x,y:m.y-30,life:.65});let angle=Math.atan2(m.y-p.y,m.x-p.x);m.x=Math.max(18,Math.min(942,m.x+Math.cos(angle)*10));m.y=Math.max(18,Math.min(522,m.y+Math.sin(angle)*10));if(m.hp<=0){m.dead=1;m.resp=5;effects.push({type:"death",x:m.x,y:m.y,life:.55});p.gel++;p.gold+=2;gain(8);if(p.q===1){p.kills++;if(p.kills>=3){p.q=2;message('ครบ 3 ตัวแล้ว! กลับไปหาผู้ใหญ่บ้าน')}}save()}}
+function potion(){if(!p.pot)return message('Potion หมด');if(p.hp>=p.max)return message('HP เต็มแล้ว');p.pot--;p.hp=Math.min(p.max,p.hp+18);save()}
+function inventory(){let v=document.getElementById('inv');v.innerHTML='<small>ADVENTURER SATCHEL</small><br><b>กระเป๋าเดินทาง</b><div class="slots"><div class="slot"><span>🧪</span>Potion × '+p.pot+'</div><div class="slot"><span>🟢</span>Gel × '+p.gel+'</div><div class="slot"><span>⚔</span>ดาบเริ่มต้น</div></div><p>◈ '+p.gold+' Gold</p><button onclick="potion();inventory();inventory()">ใช้ Potion</button> <button onclick="inventory()">ปิด · I</button>';v.style.display=v.style.display==='block'?'none':'block'}
+function upd(dt){elapsed+=dt;walking=false;effects=effects.filter(e=>(e.life-=dt)>0);for(let m of mobs)m.flash=Math.max(0,(m.flash||0)-dt);if(p.cd>0)p.cd-=dt;if(p.hit>0)p.hit-=dt;let dx=(K.has('KeyD')||K.has('ArrowRight'))-(K.has('KeyA')||K.has('ArrowLeft')),dy=(K.has('KeyS')||K.has('ArrowDown'))-(K.has('KeyW')||K.has('ArrowUp'));if(dx||dy){let l=Math.hypot(dx,dy);move(dx/l,dy/l,dt)}
+let z=maps[p.map].portal;if(p.x>z[0]&&p.x<z[0]+z[2]&&p.y>z[1]&&p.y<z[1]+z[3]){p.map=z[4];p.x=z[5];p.y=z[6];if(p.map==='f')spawn();else mobs=[];save()}
+if(p.map==='f')for(let m of mobs){if(m.dead){m.resp-=dt;if(m.resp<=0){m.dead=0;m.hp=3;m.x=m.hx;m.y=m.hy}continue}let d=D(p,m),a=Math.atan2(p.y-m.y,p.x-m.x);if(d<150){m.x+=Math.cos(a)*50*dt;m.y+=Math.sin(a)*50*dt}if(d<28&&p.hit<=0){p.hp-=3;p.hit=.7;effects.push({type:"damage",text:"-3",x:p.x,y:p.y-38,life:.7});if(p.hp<=0){p.hp=p.max;p.map='v';p.x=480;p.y=300;mobs=[];message('หมดสติ... กลับหมู่บ้าน')}}}
+document.getElementById('map').textContent=maps[p.map].name;document.getElementById('stat').textContent='◈ '+p.gold+' Gold · 🧪 '+p.pot;document.getElementById('quest').textContent=p.q===0?'เควส: คุยกับผู้ใหญ่บ้าน':p.q===1?'เควส: สไลม์ '+p.kills+'/3':p.q===2?'เควส: กลับหาผู้ใหญ่บ้าน':'เควสเริ่มต้น ✓'}
+let last=performance.now();function loop(n){let dt=Math.min(.033,(n-last)/1000);last=n;upd(dt);draw();requestAnimationFrame(loop)}
+onkeydown=e=>{K.add(e.code);if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space'].includes(e.code))e.preventDefault();if(e.repeat)return;if(e.code==='KeyE'||e.code==='Enter')talk();if(e.code==='KeyZ'||e.code==='Space')attack();if(e.code==='KeyI')inventory();if(e.code==='Digit1')potion()};onkeyup=e=>K.delete(e.code);setInterval(save,15000);requestAnimationFrame(loop);
+
+onblur=()=>K.clear();addEventListener("pagehide",save);

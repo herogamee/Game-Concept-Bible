@@ -1,5 +1,13 @@
 # Changelog
 
+## Web Pixel RPG v0.1.1 — 2026-10-02 — Visual Baseline
+
+- Replaced prototype rendering with original pixel tiles, directional actors, animated slime and fantasy UI.
+- Added camera follow, Y depth sorting, collision aligned with artwork and combat feedback while preserving the original game loop/save key.
+- Added modular source files, asset license/credits, dev/build scripts, regression checks and three screenshots.
+- Details: prototype/web-pixel-rpg-v0.1/CHANGELOG.md.
+
+
 ## v0.2.2 — 2026-10-02 — First Playable Web Pixel RPG Prototype
 
 - Added `prototype/web-pixel-rpg-v0.1/index.html`, the first directly playable browser prototype.
