@@ -27,7 +27,7 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 | OD-11 | Platforms, engine, team size and visual fidelity | **Web-first / ordinary-PC product goal; technology open** | Validate browser performance and production constraints before locking engine or platform matrix |
 | OD-12 | Commercial model and price | Open | No sales/wishlist evidence sufficient to choose |
 | OD-13 | Calendar, technology and civic religious institutions | Proposed | Supports couriers, recovery and cultural context; no doctrine lock |
-| OD-14 | Player/NPC boundary | **Locked owner direction** | Player contracts, Main Dungeon breakthroughs, major bosses, prestige and important world-event outcomes remain player-centric; NPC activity is supportive/narrative |
+| OD-14 | Player/NPC boundary | **Locked owner direction** | Player contracts, Main Dungeon breakthroughs, major bosses, prestige and important world-event outcomes remain player-centric; NPC activity is supportive/narrative |\n| OD-15 | Long-form story escalation F→S with Underfold/world-network mystery | Proposed / owner-requested framework | Add a narrative spine while preserving ordinary-life stories and avoiding chosen-one structure |\n| OD-16 | S-rank as gateway to legendary/unknown-world play; no automatic SS/SSS ladder | Proposed / owner-requested framework | Preserve meaningful endgame through discovery, legacy, mastery and world mysteries instead of pure number inflation |\n| OD-17 | Hybrid skill model: Weapon + Discipline + Learned Skill + Pattern Magic + Life Skill | Proposed for v0.3 validation | Supports flexible identity, world-discovered techniques and future rare-manual/mentor systems |\n| OD-18 | Ecology-first monsters, Named Monsters and non-kill boss resolutions | Proposed | Make creatures part of the world and reduce boss design to more than HP checks |\n| OD-19 | Future Chinese-fantasy/xianxia inspiration pass for treasures, manuals, hidden realms and inheritance | Research direction requested 2026-10-02 | Translate structural appeal into original IP; do not copy protected names, characters, techniques, artifacts or lore |
 
 ## Proposed Change PC-01 — prototype class subset
 
@@ -84,6 +84,36 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 **Risks:** repetitive state transitions; world may seem static outside the two chains. Make independent NPC changes visible and expand only if the core loop warrants it.
 
 **Decision:** Open scale decision; no reduction of the final living-world pillar.
+
+## Proposed Change PC-05 — narrative and post-S framework
+
+**Current design:** v0.1 establishes F→S, the 100-floor mystery, hidden discovery and the emotional arc from Nobody to Living Legend, but does not define a complete Main Story or post-S play loop.
+
+**Proposed design:** progressively connect local anomalies to a buried world-network mystery; treat Floor 100 as a possible junction rather than a default final-boss room; use S-rank as trusted access to legendary uncertain content, discovery, legacy, crafting/collection/social goals and unknown regions.
+
+**Reason:** players need long-horizon curiosity and reasons to remain in the world after reaching professional rank cap.
+
+**Advantages:** preserves the meaning of the S ceiling, avoids endless SS/SSS inflation, supports years of expansion and keeps small-town/lifestyle play relevant.
+
+**Risks:** world mystery could overshadow ordinary adventurer life; too many hidden systems could become wiki-dependent; high-rank content could become mandatory raid pressure.
+
+**Decision:** Working proposal approved for documentation and future validation, not final lore lock. Floor 100 truth remains open.
+
+## Proposed Change PC-06 — world-discovered mastery
+
+**Current design:** v0.1 names six archetypes and example evolutions but final class/skill implementation remains open.
+
+**Proposed design:** hybrid Weapon Skills + Adventurer Disciplines + Learned Skills + Pattern Magic + Life Skills. Important techniques may come from mentors, books, factions, hidden quests, ruins, achievements and future original rare-manual systems.
+
+**Reason:** makes progression part of the player's story and allows future treasure/secret-technique content without forcing permanent class lock-in.
+
+**Risks:** excessive freedom may blur roles or create balance complexity.
+
+**Decision:** Proposal for v0.3 Combat & Classes prototyping. Do not build the full tree before combat feel is validated.
+
+## Owner-requested next design agenda — 2026-10-02
+
+After the narrative checkpoint, the next deep-design pass should cover currency, weapons/armor, magical and historical treasures, rare artifacts, player trade, auction, collections, housing/social life, anti-conflict safeguards and market inflation controls. A focused Chinese-fantasy/xianxia reference study will follow, with special interest in the treasure/manual/hidden-realm appeal of **คัมภีร์วิถีเซียน** and related works.
 
 ## v0.2.1 interpretation rule
 
