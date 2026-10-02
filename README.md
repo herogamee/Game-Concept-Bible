@@ -34,7 +34,7 @@ v0.2.1 is the current direction correction. It preserves v0.2's useful world/Gui
 - Guild: [organization and physical hall](guild/adventurer-guild.md), [rank/eligibility](guild/rank-system.md), [promotion and practical exam](guild/promotion-system.md).
 - People: [28 starter NPCs](characters/starter-npcs.md), [player-first NPC roles and persistence](design/npc-simulation.md).
 - Playable planning: [first ten hours](design/first-10-hours.md), [18 authored contracts](design/starter-quests.md), [bounded vertical slice](design/vertical-slice.md).
-- Evidence: [market comparison](research/game-market-research.md), [community demand](research/community-demand.md), [reference study](research/anime-reference-study.md), [dated Steam counts](research/evidence/steam-review-counts-2026-10-01.csv), [individual review index](research/evidence/community-review-index-2026-10-01.csv).
+- Evidence: [market comparison](research/game-market-research.md), [community demand](research/community-demand.md), [reference study](research/anime-reference-study.md), [open-source implementation stack](research/open-source-game-development-stack-2026-10-02.md), [dated Steam counts](research/evidence/steam-review-counts-2026-10-01.csv), [individual review index](research/evidence/community-review-index-2026-10-01.csv).
 - Review: [open decisions and Proposed Changes](design/decisions.md), [requirements coverage and audit](design/requirements-and-audit.md).
 
 ## Source of truth and workflow
@@ -43,7 +43,7 @@ Preserve previous Bible versions. Foundation locks and explicit owner approvals 
 
 For each meaningful checkpoint, update the current Bible and CHANGELOG, check references and consistency, commit with a clear message and push to this repository. Never treat documentation completeness as proof that a mechanic is balanced or implemented.
 
-The next concept step after this correction is v0.3 Combat & Classes, supported by a small greybox career loop and combat comparison. Shared-world intent does not justify MMO-scale implementation yet; avoid building networking at scale or the remaining 97 floors before the core loop is validated.
+The next concept step after this correction is v0.3 Combat & Classes, supported by a small greybox career loop and combat comparison. The technical migration target is now explicitly documented as **RPGJS v5 + TypeScript + Tiled + LPC**, with [Codex handoff instructions](prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md). Shared-world intent does not justify MMO-scale implementation yet; avoid building networking at scale or the remaining 97 floors before the core loop is validated.
 
 ## Design pillars
 
@@ -72,4 +72,4 @@ The Bible uses semantic-style concept versions:
 - v0.9 — Prototype specification
 - v1.0 — First complete pre-production Bible
 
-Last updated: 2026-10-01
+Last updated: 2026-10-02
