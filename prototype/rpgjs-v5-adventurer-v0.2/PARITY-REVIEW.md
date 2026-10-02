@@ -58,3 +58,7 @@ Keep v0.1 as the product reference. This RPGJS slice is now suitable for an owne
 No hard engine blocker has been established and Phaser has not been installed. If the owner still rejects control feel, or the measured payload/integration costs are unacceptable, the next justified comparison is the same small scene in an isolated Phaser 4 candidate. First address the known keyboard diagonal difference and record a controlled load/frame benchmark; do not start a full rewrite or MMO expansion from this evidence.
 
 Hurt/death still use an idle frame plus feedback; no dedicated death animation, full equipment UI, higher-level roster or account backend is claimed. Product acceptance and broader performance gates remain pending.
+# 1080p bug follow-up
+
+See [1080p evidence](evidence/1080p/README.md): reproduced stale live slime at HP zero, switched to explicit invisible death graphic, removed animated graphics from scenery and used image-only event components. Transparent Tiled collision tiles preserve footprints. Matched fence captures show no pixel changes; rock capture limitations are recorded. The current source art is still low resolution. An original chibi concept is a design reference, not completed runtime animation or visual acceptance.
+

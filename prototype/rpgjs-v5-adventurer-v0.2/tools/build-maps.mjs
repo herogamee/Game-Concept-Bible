@@ -1,5 +1,8 @@
 import fs from 'node:fs';
+import {createCanvas} from '@napi-rs/canvas';
 const root=new URL('../',import.meta.url);
+// Physics tiles must never paint terrain over independently sorted props.
+fs.writeFileSync(new URL('src/tiled/collision.png',root),createCanvas(16,16).toBuffer('image/png'));
 const {world,props}=JSON.parse(fs.readFileSync(new URL('tools/parity-world.json',root),'utf8'));
 const point=(id,type,x,y,properties={})=>({id,type,x,y,properties});
 const rectangle=(id,type,x,y,width,height,properties)=>({...point(id,type,x,y,properties),width,height});
@@ -34,9 +37,9 @@ for(const [id,map] of Object.entries(content)){
     return obstacles.some(o=>x<o.x+o.w&&x+16>o.x&&y<o.y+o.h&&y+16>o.y);
   });
   const objects=map.objects.map((o,i)=>`<object id="${i+1}" name="${o.id}" type="${o.type}" x="${o.x}" y="${o.y}" ${o.width?`width="${o.width}" height="${o.height}"`:''}><properties>${Object.entries(o.properties).map(([k,v])=>`<property name="${k}" ${typeof v==='number'?'type="int"':''} value="${escape(v)}"/>`).join('')}</properties>${o.width?'':'<point/>'}</object>`).join('\n');
-  const tiles=Array.from({length:2040},(_,i)=>map.blockedTiles.includes(i)?i+1:0);
+  const tiles=Array.from({length:2040},(_,i)=>map.blockedTiles.includes(i)?1:0);
   fs.writeFileSync(new URL(`src/tiled/${id}.tmx`,root),`<?xml version="1.0" encoding="UTF-8"?><map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="60" height="34" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="${map.objects.length+1}"><tileset firstgid="1" source="${id}-ground.tsx"/><layer id="1" name="Collision" width="60" height="34"><data encoding="csv">${tiles.join(',')}</data></layer><objectgroup id="2" name="Content">${objects}</objectgroup></map>`);
-  fs.writeFileSync(new URL(`src/tiled/${id}-ground.tsx`,root),`<?xml version="1.0" encoding="UTF-8"?><tileset version="1.10" tiledversion="1.11.2" name="${id}" tilewidth="16" tileheight="16" tilecount="2040" columns="60"><image source="${id}-ground.png" width="960" height="544"/>${map.blockedTiles.map(i=>`<tile id="${i}"><properties><property name="collision" type="bool" value="true"/></properties></tile>`).join('')}</tileset>`);
+  fs.writeFileSync(new URL(`src/tiled/${id}-ground.tsx`,root),`<?xml version="1.0" encoding="UTF-8"?><tileset version="1.10" tiledversion="1.11.2" name="${id}-collision" tilewidth="16" tileheight="16" tilecount="1" columns="1"><image source="collision.png" width="16" height="16"/><tile id="0"><properties><property name="collision" type="bool" value="true"/></properties></tile></tileset>`);
 }
 fs.writeFileSync(new URL('src/game/content.json',root),JSON.stringify(content,null,2));
 fs.writeFileSync(new URL('src/game/props.json',root),JSON.stringify(props,null,2));

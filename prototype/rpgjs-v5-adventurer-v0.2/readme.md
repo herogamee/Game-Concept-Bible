@@ -62,3 +62,7 @@ Active art is the original project-generated painted set from v0.1, with provena
 Starter: https://github.com/rpgjs/starter/tree/v5. RPGJS packages pinned to 5.0.0; TypeScript 6.0.3 (7 caused the starter declaration plugin to fail). Official RPGJS agent skill installed in the repository, inspected upstream at `2560a72fa9ca8b33ef9b61e69003e58872e4f344`, plus current v5 docs. LPC source tree fetched at `4963a69795255fb15a934c47f478a8bdcf3668f5`; all selected source images/definitions are retained for reproducibility.
 
 The starter sample Pipoya assets/maps remain as references, unregistered in gameplay. v0.1's click/keyboard movement, village/meadow loop, quest, inventory, EXP/save and audio intentions are retained; the candidate now reuses its illustrated artwork and original village/meadow music with a separate audio preference key.
+# 1080p visual follow-up
+
+Static props now use an image-only event renderer. Death switches slimes to an invisible graphic until the authoritative five-second respawn; HP/rewards remain server-owned. Collision tiles are transparent and preserve the same footprints. See `evidence/1080p/` and [the original chibi art direction](../../design/art-reference/README.md). The current 64×64 source artwork still limits fine detail at 1080p; the new concept is not a playable animation or modular clothing set.
+

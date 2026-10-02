@@ -1,0 +1,6 @@
+<!-- Static scenery has no animation clock or animated hitbox anchor. -->
+<Sprite image={image} anchor={[0.5,1]} />
+
+<script>
+  const { image } = defineProps();
+</script>

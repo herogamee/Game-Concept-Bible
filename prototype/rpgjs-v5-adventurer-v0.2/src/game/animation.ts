@@ -28,6 +28,8 @@ export function paintedSupportingSheets() {
     textures:Object.fromEntries([[Animation.Stand,standRow],[Animation.Walk,walkRow]].map(([key,row])=>[key,{offset:{x:0,y:Number(row)*size},framesWidth:columns,framesHeight:1,animations:()=>[[...Array.from({length:columns},(_,frameX)=>({time:frameX*12,frameX,frameY:0})),{time:columns*12}]]}]))
   });
   return [animated('slime','willowbrook/slime.png',48,4,4,0,1),
+    // A nonempty invisible graphic replaces the cached live sprite reliably.
+    {...animated('slime-dead','willowbrook/slime.png',48,4,4,0,1),opacity:0},
     ...['elder','merchant','guide'].map(role=>({id:`npc-${role}`,image:`willowbrook/npc-${role}.png`,width:64,height:192,rectWidth:64,rectHeight:64,framesWidth:1,framesHeight:3,anchor:[.5,.625],opacity:1,textures:{[Animation.Stand]:{animations:()=>[[{time:0,frameX:0,frameY:0},{time:24,frameX:0,frameY:1},{time:48,frameX:0,frameY:2},{time:72}]]}}})),
     ...Object.entries(props).map(([name,{width,height}])=>({id:`prop-${name}`,image:`willowbrook/${name}.png`,width,height,rectWidth:width,rectHeight:height,framesWidth:1,framesHeight:1,anchor:[.5,1],opacity:1,textures:{[Animation.Stand]:{animations:()=>[[{time:0,frameX:0,frameY:0},{time:60}]]}}}))];
 }

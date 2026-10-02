@@ -95,7 +95,7 @@ function hitMonster(p:RpgPlayer,e:RpgEvent,now:number) {
   const timer=slimeTimers.get(e)!;timer.hurtUntil=now+180;e.stopMoveTo();e.clearMovements();
   if(m.hp>0){const dx=e.x()-p.x(),dy=e.y()-p.y(),length=Math.hypot(dx,dy)||1;void e.addMovement(new LinearMove({x:dx/length*100,y:dy/length*100},.1));}
   if(m.hp===0){
-    m.state='dead';timer.respawnAt=now+slimeDefinition.respawnMs;e.canMove=false;e.through=true;e.setGraphic([]);
+    m.state='dead';timer.respawnAt=now+slimeDefinition.respawnMs;e.canMove=false;e.through=true;e.setGraphic('slime-dead');
     let earned=false;updateProgress(p,v=>{earned=confirmKill(v,m);});
     if(earned){p.notice.set(`กำจัด Slime · +8 EXP +2 Gold +1 Gel${progressOf(p).quest===2?' · ครบ 3 ตัว กลับผู้ใหญ่บ้าน!':''}`);checkpoint(p);}
   }else m.state='hurt';

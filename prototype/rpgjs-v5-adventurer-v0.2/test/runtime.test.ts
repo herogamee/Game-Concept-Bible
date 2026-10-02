@@ -27,8 +27,12 @@ test('hurt interrupts a swing, dead player cannot attack and recovers through vi
   beginAttack(a,1100);assert.equal(runtime(a).swing,undefined);stepMap(map,2081);assert.equal(progressOf(a).hp,30);assert.equal(runtime(a).transfer,true);
 });
 test('respawn creates a new reward generation without re-awarding the old death',()=>{
-  const {a,e,map}=fixture();a.adventure.set(JSON.stringify({...newProgress(),level:3}));beginAttack(a,1000);stepMap(map,1090);assert.equal(progressOf(a).gel,1);
+  const {a,e,map}=fixture();const graphics:string[]=[];e.setGraphic=(id:string)=>graphics.push(id);
+  a.adventure.set(JSON.stringify({...newProgress(),level:3}));beginAttack(a,1000);stepMap(map,1090);assert.equal(progressOf(a).gel,1);
+  assert.deepEqual(graphics,['slime-dead']);assert.equal(e.through,true);assert.equal(e.canMove,false);
+  stepMap(map,6089);assert.equal(monsterOf(e).hp,0);assert.deepEqual(graphics,['slime-dead']);
   stepMap(map,6091);assert.equal(monsterOf(e).generation,2);assert.equal(monsterOf(e).hp,3);assert.equal(monsterOf(e).rewarded,false);assert.equal(progressOf(a).gel,1);
+  assert.deepEqual(graphics,['slime-dead','slime']);assert.equal(e.through,false);assert.equal(e.canMove,true);
 });
 test('requests cannot set HP, gold, kill count or attack multiplier',()=>{
   const {a}=fixture();const before=progressOf(a);action(a,'set-stats',{hp:999,gold:999,kills:3});assert.deepEqual(progressOf(a),before);

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-02 — 1080p scenery stability and visible monster death
+
+- Reproduced a slime with HP 0 and an old visible sprite. Replaced empty graphics with a registered invisible death graphic, restoring the live graphic only on the server's five-second respawn.
+- Render static scenery through image-only event components, removing character animation/hitbox-anchor clocks from rocks, fences and other props while retaining event Y sorting and Tiled physics.
+- Replaced collision terrain fragments with a transparent collision tile; regenerated identical blocked footprints and validated the registry against Tiled cell locations.
+- Checked 1920×1080 backing and actual death/reward visuals. Added original high-resolution chibi concept and explicit source-art/modular-animation production direction; the current 64×64 hero has not been replaced or claimed to match commercial art.
+
 ## 2026-10-02 — Display quality, appearance foundation and portable checkpoint
 
 - Added smooth/native-density and original pixel modes with independent preference; physical backing follows CSS size/DPI up to 3× while world/physics remain 800×450. No invented high-resolution source art.

@@ -47,7 +47,10 @@ test('Tiled point IDs/properties match generated registry and collision data',()
     const xml=fs.readFileSync(new URL(`../src/tiled/${id}.tmx`,import.meta.url),'utf8');
     for(const o of map.objects){assert.ok(xml.includes(`name="${o.id}"`));for(const [k,v] of Object.entries(o.properties))assert.ok(xml.includes(`name="${k}"`)&&xml.includes(`value="${v}"`));}
     const tsx=fs.readFileSync(new URL(`../src/tiled/${id}-ground.tsx`,import.meta.url),'utf8');
-    assert.deepEqual([...tsx.matchAll(/<tile id="(\d+)">/g)].map(m=>Number(m[1])),map.blockedTiles);
+    assert.ok(tsx.includes('source="collision.png"')&&tsx.includes('value="true"'));
+    const cells=xml.match(/<data encoding="csv">([^<]+)<\/data>/)![1].split(',').map(Number);
+    assert.deepEqual(cells.flatMap((gid,i)=>gid===1?[i]:[]),map.blockedTiles);
+    assert.ok(cells.every(gid=>gid===0||gid===1));
   }
 });
 test('selected LPC layers all retain attribution and OGA-BY alternative',()=>{

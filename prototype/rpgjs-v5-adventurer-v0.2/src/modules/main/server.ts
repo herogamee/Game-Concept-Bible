@@ -7,6 +7,6 @@ export default defineModule<RpgServer>({
   player,
   engine:{onStep(server){if(server.getCurrentRoomKind()==='map'){const map=server.getCurrentRoom<RpgMap>();if(map)stepMap(map);}}},
   maps:Object.entries(content).map(([id,map])=>({id,
-    events:map.objects.filter(o=>o.type!=='portal').map(o=>({id:o.id,event:o.type==='monster'?{name:o.id,onInit(){initMonster(this);}}:o.type==='prop'?{name:o.id,onInit(){this.name='';this.setHitbox(1,1);this.through=true;this.setGraphic(o.properties.graphic!);}}:{name:o.id,...npc(o.id==='elder-001'?'ผู้ใหญ่บ้าน':o.id==='merchant-001'?'พ่อค้า':'รุ่นพี่',(o.properties as {role:string}).role)}}))
+    events:map.objects.filter(o=>o.type!=='portal').map(o=>({id:o.id,event:o.type==='monster'?{name:o.id,onInit(){initMonster(this);}}:o.type==='prop'?{name:o.id,onInit(){this.name='';this.setHitbox(1,1);this.through=true;}}:{name:o.id,...npc(o.id==='elder-001'?'ผู้ใหญ่บ้าน':o.id==='merchant-001'?'พ่อค้า':'รุ่นพี่',(o.properties as {role:string}).role)}}))
   }))
 });
