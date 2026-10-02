@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.2.2 — 2026-10-02 — First Playable Web Pixel RPG Prototype
+
+- Added `prototype/web-pixel-rpg-v0.1/index.html`, the first directly playable browser prototype.
+- Locked a gameplay-first, low-spec direction for the technical prototype: art quality is intentionally minimal for now.
+- Implemented movement, NPC interaction, starter quest, slime combat, HP/EXP/level, gold, potion/merchant, item drop, inventory, map transition and local browser save.
+- Added `AGENTS.md` so ChatGPT/Codex/Claude can continue the prototype consistently.
+- Selected RPGJS v5 + TypeScript + Tiled/RPGJS Studio as the next online architecture target after validating the loop.
+- Multiplayer, accounts, chat and server-side persistence remain next milestones; v0.1 is intentionally zero-dependency and local-first.
+
 ## v0.2.1 — 2026-10-01 — Player / NPC Boundary Correction
 
 - Locked the **Player-First Adventurer World** principle: real players remain the primary adventurers and NPCs must not consume the core game loop in their place.
