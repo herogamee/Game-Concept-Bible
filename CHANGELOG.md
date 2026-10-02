@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-02 — Quality-first repository reset
+
+- Owner authorized revising the earlier engine migration guidance after rejecting v0.2's presentation/control regression. Restored v0.1 as the recommended playable reference; retained RPGJS v0.2 as a technical experiment.
+- Added root agent instructions, prototype index, implementation decision review and a one-scene parity handoff. Marked earlier research/handoff engine/LPC exclusivity as superseded while retaining source/license research and historical evidence.
+- Kept production engine selection open; allowed an isolated Phaser 4 comparison if justified by comparative fit/cost evidence. No engine pivot or new runtime dependency implemented in this reset.
+- Added owner visual/feel review and measured browser-cost gates alongside functional/authoritative online gates. v0.1 runtime/assets/save are unchanged; no scope expansion.
+
+
 ## 2026-10-02 — RPGJS v5 Adventurer prototype v0.2
 
 - Imported latest main including v0.2.3 research/handoff and created a separate `prototype/rpgjs-v5-adventurer-v0.2/`; preserved the playable v0.1.

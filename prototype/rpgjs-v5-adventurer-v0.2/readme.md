@@ -1,3 +1,5 @@
+> **Technical experiment, not accepted replacement:** v0.1 is the current playable quality reference. Visual/control parity has not passed. See [active reset](../../design/implementation-reset-2026-10-02.md) and [next handoff](../CODEX-HANDOFF-QUALITY-PARITY.md).
+
 # Willowbrook — RPGJS v5 Adventurer v0.2
 
 Separate playable migration of `web-pixel-rpg-v0.1`. The old prototype is preserved. RPGJS v5 is the primary engine; no Phaser/Colyseus pivot and no MMO-scale systems.

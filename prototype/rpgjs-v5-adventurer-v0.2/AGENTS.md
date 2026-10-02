@@ -1,8 +1,7 @@
-# RPGJS v0.2
+# RPGJS v0.2 — technical experiment
 
-Follow the baseline rules in ../web-pixel-rpg-v0.1/AGENTS.md and its RPGJS handoff.
-Preserve v0.1. RPGJS v5 is primary. Read the installed .agents/skills/rpgjs skill
-and current official docs before engine API changes. Keep combat, rewards and
-progression authoritative on the server. LPC frame indices belong only in the
-animation adapter; retain per-layer credits and selected licenses. Validate both
-standalone and two-client MMORPG gates before extending scope.
+Read ../../AGENTS.md, ../../design/implementation-reset-2026-10-02.md and ../CODEX-HANDOFF-QUALITY-PARITY.md first. They supersede the historical RPGJS-only handoff.
+
+Preserve v0.1. This candidate has functional and two-client evidence, but has NOT passed visual/control parity and is not the default playable. Next work is one-scene parity using the better existing v0.1 assets and behaviors, with renderer/animation adapters where needed. LPC is optional; retain credits for any LPC layers actually used.
+
+Read the installed RPGJS skill and current official docs before engine API changes. Keep combat, rewards and progression authoritative on the server. Distinguish technical test gates from owner visual/feel acceptance. Document save/account/storage limits. Do not expand gameplay systems before parity review. Phaser 4 is an authorized isolated comparison candidate, not a dependency to add beside RPGJS.

@@ -43,7 +43,7 @@ Preserve previous Bible versions. Foundation locks and explicit owner approvals 
 
 For each meaningful checkpoint, update the current Bible and CHANGELOG, check references and consistency, commit with a clear message and push to this repository. Never treat documentation completeness as proof that a mechanic is balanced or implemented.
 
-The next concept step after this correction is v0.3 Combat & Classes, supported by a small greybox career loop and combat comparison. The technical migration target is now explicitly documented as **RPGJS v5 + TypeScript + Tiled + LPC**, with [Codex handoff instructions](prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md). Shared-world intent does not justify MMO-scale implementation yet; avoid building networking at scale or the remaining 97 floors before the core loop is validated.
+The next concept step after this correction is v0.3 Combat & Classes, supported by a small greybox career loop and combat comparison. The active [implementation reset](design/implementation-reset-2026-10-02.md) keeps v0.1 as the playable quality reference and RPGJS v0.2 as a technical experiment. Final engine selection awaits comparable visual/control and browser-cost evidence; read the [current handoff](prototype/CODEX-HANDOFF-QUALITY-PARITY.md). Shared-world intent does not justify MMO-scale implementation yet; avoid building networking at scale or the remaining 97 floors before the core loop is validated.
 
 ## Design pillars
 
@@ -74,6 +74,8 @@ The Bible uses semantic-style concept versions:
 
 Last updated: 2026-10-02
 
-## Playable RPGJS migration
+## Playable prototypes and current direction
 
-[Willowbrook Adventurer v0.2](prototype/rpgjs-v5-adventurer-v0.2/readme.md) uses RPGJS v5, TypeScript, Tiled and credited Universal LPC assets. It is separate from the preserved v0.1. The new prototype includes a phased sword/slime loop, three-kill quest, inventory/potion, EXP/drop, portals/save and a local server-authoritative two-client mode. See its README and acceptance record for run commands and limitations.
+Start with **[v0.1 — illustrated Willowbrook](prototype/web-pixel-rpg-v0.1/README.md)**, the recommended playable and presentation/control reference. See the [prototype index](prototype/README.md) and [current implementation handoff](prototype/CODEX-HANDOFF-QUALITY-PARITY.md).
+
+[Willowbrook Adventurer v0.2](prototype/rpgjs-v5-adventurer-v0.2/readme.md) is a technical experiment that has not passed product parity. It uses RPGJS v5, TypeScript, Tiled and credited Universal LPC assets. It is separate from the preserved v0.1. The new prototype includes a phased sword/slime loop, three-kill quest, inventory/potion, EXP/drop, portals/save and a local server-authoritative two-client mode. See its README and acceptance record for run commands and limitations.

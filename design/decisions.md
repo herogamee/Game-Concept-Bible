@@ -92,3 +92,7 @@ Where earlier v0.2 text implies NPC adventurers independently reserve player-fac
 ## Future decision practice
 
 Record current design, proposed design, reason, advantages, risks and disposition before altering any locked premise. A later approved decision identifies approver/date and affected documents. A completed documentation version does not imply every proposal is approved or implemented.
+
+## Implementation review — 2026-10-02
+
+Owner rejected the RPGJS v0.2 presentation/control regression and authorized revising previous implementation instructions. [Active reset](implementation-reset-2026-10-02.md) and [current handoff](../prototype/CODEX-HANDOFF-QUALITY-PARITY.md) supersede engine/LPC exclusivity. OD-11 remains technology-open: v0.1 is the primary playable reference; RPGJS is an isolated candidate and Phaser 4 may receive a bounded comparison. Functional/two-client gates do not replace visual/feel acceptance. This changes implementation guidance, not locked Player-First/shared-world principles.
