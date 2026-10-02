@@ -25,25 +25,25 @@ v0.2.1 is the current direction correction. It preserves v0.2's useful world/Gui
 |---|---|
 | New team member | v0.2.1 correction → v0.2 overview → vertical slice → first ten hours |
 | Producer / programmer | Slice → contracts → NPC simulation → rank/promotion → economy |
-| World / narrative designer | World → starter region → factions → cast → magic/species |
+| World / narrative designer | Main story/world mystery → world expansion → starter region → factions → cast → magic/species |
 | Research / product reviewer | Market → community → reference study → decision register |
 
 ## Document map
 
-- World: [foundation](world/world-overview.md), [starter region and routes](world/starter-region.md), [ten factions](world/factions.md), [peoples/species](world/species.md), [magic](world/magic-system.md), [economy and budgets](world/economy.md).
+- Narrative: [main story and world mystery](story/MAIN-STORY-AND-WORLD-MYSTERY-v0.1.md), [post-S and life endgame](design/POST-S-AND-LIFE-ENDGAME-v0.1.md).\n- World: [foundation](world/world-overview.md), [world expansion](world/WORLD-EXPANSION-v0.1.md), [starter region and routes](world/starter-region.md), [ten factions](world/factions.md), [peoples/species](world/species.md), [magic](world/magic-system.md), [economy and budgets](world/economy.md).
 - Guild: [organization and physical hall](guild/adventurer-guild.md), [rank/eligibility](guild/rank-system.md), [promotion and practical exam](guild/promotion-system.md).
 - People: [28 starter NPCs](characters/starter-npcs.md), [player-first NPC roles and persistence](design/npc-simulation.md).
-- Playable planning: [first ten hours](design/first-10-hours.md), [18 authored contracts](design/starter-quests.md), [bounded vertical slice](design/vertical-slice.md).
+- Playable planning: [first ten hours](design/first-10-hours.md), [18 authored contracts](design/starter-quests.md), [bounded vertical slice](design/vertical-slice.md).\n- Progression: [hybrid skills and mastery](design/SKILLS-AND-MASTERY-v0.1.md).\n- Creatures: [monster and boss design bible](creatures/MONSTER-AND-BOSS-BIBLE-v0.1.md).\n- Next frontier: [economy, treasures, trade, collections, social safety and Chinese-fantasy research agenda](design/NEXT-DESIGN-FRONTIER-2026-10-02.md).
 - Evidence: [market comparison](research/game-market-research.md), [community demand](research/community-demand.md), [reference study](research/anime-reference-study.md), [open-source implementation stack](research/open-source-game-development-stack-2026-10-02.md), [commercial-safe game audio resources](research/game-audio-sources-2026-10-02.md), [audio source/license matrix](research/evidence/game-audio-source-matrix-2026-10-02.csv), [dated Steam counts](research/evidence/steam-review-counts-2026-10-01.csv), [individual review index](research/evidence/community-review-index-2026-10-01.csv).
 - Review: [open decisions and Proposed Changes](design/decisions.md), [requirements coverage and audit](design/requirements-and-audit.md).
 
 ## Source of truth and workflow
 
-Preserve previous Bible versions. Foundation locks and explicit owner approvals take priority; v0.2.1 supersedes v0.2 only where Player/NPC boundaries and shared-world direction conflict. v0.2 remains the current integrated world/Guild proposal, with linked specialist documents owning detailed rules. Research is supporting evidence, not canonical lore. The [decision register](design/decisions.md) records proposals before locked concepts change.
+Preserve previous Bible versions. Foundation locks and explicit owner approvals take priority; v0.2.1 supersedes v0.2 only where Player/NPC boundaries and shared-world direction conflict. v0.2 remains the current integrated world/Guild proposal, with linked specialist documents owning detailed rules. Research is supporting evidence, not canonical lore. The new story, world-expansion, skills, creature and post-S documents are working proposals layered on top of the current Bible; they do not silently lock Floor 100's final truth, final classes or combat balance. The [decision register](design/decisions.md) records proposals before locked concepts change.
 
 For each meaningful checkpoint, update the current Bible and CHANGELOG, check references and consistency, commit with a clear message and push to this repository. Never treat documentation completeness as proof that a mechanic is balanced or implemented.
 
-The next concept step after this correction is v0.3 Combat & Classes, supported by a small greybox career loop and combat comparison. The technical migration target is now explicitly documented as **RPGJS v5 + TypeScript + Tiled + LPC**, with [Codex handoff instructions](prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md). Shared-world intent does not justify MMO-scale implementation yet; avoid building networking at scale or the remaining 97 floors before the core loop is validated.
+The next canonical concept step after this correction remains v0.3 Combat & Classes, supported by a small greybox career loop and combat comparison. A narrative/endgame framework now exists in parallel: S-rank is proposed as a gateway to legendary unknown-world content rather than a new SS/SSS ladder, and Floor 100 is proposed as a junction that resolves one mystery while opening others.  The technical migration target is now explicitly documented as **RPGJS v5 + TypeScript + Tiled + LPC**, with [Codex handoff instructions](prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md). Shared-world intent does not justify MMO-scale implementation yet; avoid building networking at scale or the remaining 97 floors before the core loop is validated. The next deep-design frontier is currency, weapons/equipment, rare treasures/artifacts, trade/auction, collections, cooperative social safety, hidden realms and a dedicated Chinese-fantasy/xianxia reference study.
 
 ## Design pillars
 
