@@ -1,0 +1,242 @@
+# Next Design Frontier — Economy, Treasures, Social World & Chinese Fantasy
+
+**Date:** 2026-10-02  
+**Status:** Owner-requested next design agenda; details intentionally deferred until the current narrative checkpoint is integrated.
+
+## Goal
+
+Deepen the Adventurer Life RPG from a strong adventure framework into a world where players also care about:
+
+- money;
+- trade;
+- ownership;
+- rare discoveries;
+- equipment history;
+- collections;
+- social life;
+- craftsmanship;
+- markets;
+- treasures;
+- secret techniques;
+- hidden realms.
+
+The design must support both highly active adventurers and players who log in mainly to relax, trade, collect, craft or socialize.
+
+---
+
+# 1. Currency and economic foundation
+
+Next design pass should define:
+
+- currency denominations;
+- regional currencies if any;
+- Guild escrow;
+- banking/storage;
+- money sinks;
+- inflation controls;
+- repair and service costs;
+- taxes/fees;
+- travel and lodging costs;
+- NPC baseline economy;
+- player-to-player prices.
+
+The economy should make early money meaningful without turning late-game wealth into meaningless giant numbers.
+
+---
+
+# 2. Weapons, armor and equipment
+
+Define:
+
+- weapon families;
+- armor categories;
+- quality;
+- durability/maintenance;
+- crafting;
+- enhancement;
+- provenance;
+- named equipment;
+- relic equipment;
+- legendary equipment;
+- cosmetic identity;
+- trade restrictions only where necessary.
+
+Avoid a design where every new item invalidates everything below it through raw numerical inflation.
+
+---
+
+# 3. Rare treasures and artifacts
+
+Rare items should be exciting because of:
+
+- history;
+- unique function;
+- scarcity;
+- discovery story;
+- unusual crafting use;
+- connection to a secret realm;
+- relationship with a technique/manual;
+- social prestige;
+- collection value.
+
+Not every rare treasure should be the strongest combat item.
+
+---
+
+# 4. Secret techniques and manuals
+
+Future research will examine Chinese fantasy / xianxia progression structures.
+
+The owner particularly wants to study the appeal of works rich in:
+
+- precious artifacts;
+- rare manuals;
+- secret arts;
+- inheritance;
+- hidden realms;
+- ancient ruins;
+- alchemy;
+- unusual materials;
+- layered mysteries;
+- long-term character development.
+
+A later research pass will specifically study **คัมภีร์วิถีเซียน** and other Chinese fantasy sources.
+
+Rule:
+
+> Borrow structural inspiration, not protected names, characters, techniques, artifacts, scenes or world lore.
+
+The goal is original Adventurer Life content.
+
+---
+
+# 5. Hidden realms / secret areas
+
+Explore systems for:
+
+- ancient sealed zones;
+- temporary entrances;
+- inherited trials;
+- rare environmental conditions;
+- buried network side-nodes;
+- lost schools;
+- hidden settlements;
+- puzzle routes.
+
+Access conditions must be clue-driven rather than random wiki bait.
+
+---
+
+# 6. Player trade
+
+Design goals:
+
+- safe direct trade;
+- clear confirmation;
+- scam-resistant UI;
+- item provenance;
+- binding only when necessary;
+- useful crafting market;
+- casual participation;
+- fair fees.
+
+---
+
+# 7. Auction / market
+
+Future questions:
+
+- local vs global market;
+- listing duration;
+- taxes;
+- price history;
+- anti-manipulation;
+- rare-item auctions;
+- anonymous vs named sellers;
+- buy orders;
+- regional arbitrage;
+- inflation sinks.
+
+The system should avoid creating hostility between players.
+
+---
+
+# 8. Collection systems
+
+Potential collections:
+
+- monster journal;
+- fish;
+- recipes;
+- books;
+- maps;
+- artifacts;
+- rare materials;
+- techniques;
+- fashion;
+- furniture;
+- trophies;
+- relic records.
+
+Collection progress should offer prestige, knowledge and life goals, not mandatory combat power.
+
+---
+
+# 9. Social world without forced conflict
+
+Default direction:
+
+- cooperative world;
+- opt-in competition;
+- no forced open-world PvP;
+- no kill-stealing incentives;
+- no permanent monopolization of essential rare spawns;
+- contribution credit for group events;
+- safe trading;
+- strong anti-scam UX;
+- social reputation for helpful play.
+
+The design should make other players feel like **neighbors, party members, customers, teachers and fellow adventurers**, not obstacles.
+
+---
+
+# 10. Casual / relaxation play
+
+A player should be able to enjoy the game without taking a contract.
+
+Possible activities:
+
+- fishing;
+- cooking;
+- gardening;
+- decorating;
+- crafting;
+- browsing markets;
+- collecting;
+- reading lore;
+- talking with NPCs;
+- festivals;
+- tavern games;
+- exploring town;
+- taking screenshots/records;
+- music/performance;
+- helping friends.
+
+No mandatory daily-login pressure.
+
+---
+
+# 11. Next document set
+
+Recommended next documents:
+
+1. `economy/CURRENCY-AND-MONEY-v0.1.md`
+2. `items/WEAPONS-ARMOR-AND-EQUIPMENT-v0.1.md`
+3. `items/TREASURES-ARTIFACTS-AND-RELICS-v0.1.md`
+4. `design/TRADE-AUCTION-AND-MARKET-v0.1.md`
+5. `design/COLLECTION-AND-HOUSING-v0.1.md`
+6. `design/SOCIAL-SAFETY-AND-COOPERATION-v0.1.md`
+7. `research/CHINESE-FANTASY-XIANXIA-REFERENCE-STUDY-v0.1.md`
+8. `world/HIDDEN-REALMS-AND-INHERITANCE-v0.1.md`
+
+Do not design these in isolation. Currency, treasure rarity, trade and social safety must be reviewed together to prevent exploit loops or player conflict.
