@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.2.5 — 2026-10-02 — Narrative, World Mystery & Long-Term Progression Framework
+
+- Added `story/MAIN-STORY-AND-WORLD-MYSTERY-v0.1.md` with an original F→S narrative escalation, Underfold/world-network mystery, rank-scale story arcs, Floor 100 junction direction and four-layer story model.
+- Added `world/WORLD-EXPANSION-v0.1.md` to expand Roven, Istrane, Ulreth, future settlements, forbidden regions, travel philosophy and post-S exploration without committing a giant production map.
+- Added `design/SKILLS-AND-MASTERY-v0.1.md` proposing a hybrid progression model: Weapon Skills + Adventurer Disciplines + Learned Skills + Pattern Magic + Life Skills.
+- Added `creatures/MONSTER-AND-BOSS-BIBLE-v0.1.md` with ecology-first monster rules, five boss classes, Named Monster discovery structure, non-kill resolutions and shared-world anti-monopolization direction.
+- Added `design/POST-S-AND-LIFE-ENDGAME-v0.1.md` so S-rank becomes access to legendary contracts, unknown regions, discovery, mastery, collection, craft/social legacy and relaxing noncombat play rather than automatic SS/SSS inflation.
+- Added `design/NEXT-DESIGN-FRONTIER-2026-10-02.md` recording the next owner-requested work: currency, weapons/armor, treasures/artifacts, technique manuals, hidden realms, trade, auction, collections, housing, cooperative social safety and anti-inflation design.
+- Recorded a future focused Chinese-fantasy/xianxia research pass, including the owner's interest in **คัมภีร์วิถีเซียน**, rare treasures, secret techniques, inheritance trials, hidden realms and long-form progression. Structural inspiration only; final IP remains original.
+- Preserved Game Concept Bible v0.2.1 as the current canonical correction and kept v0.3 Combat & Classes as the next canonical concept version. The new documents are working proposals, not silent locks on final combat, classes or Floor 100 truth.
+
 ## v0.2.4 — 2026-10-02 — Commercial-Safe Game Audio Research
 
 - Added `research/game-audio-sources-2026-10-02.md`, covering commercial-safe game music, SFX, ambience and open-source sound generators.
