@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "rpgjs": {
+      "source": "./.rpgjs-upstream",
+      "sourceType": "local",
+      "computedHash": "59e579cec682f6b4eb1149109b9dd6c4865c3eadda27708bcda696594580f008"
+    }
+  }
+}
