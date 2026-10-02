@@ -60,6 +60,18 @@ c.onpointerdown = event => {
   if (event.button !== 0 || document.getElementById('msg').style.display === 'block' ||
       document.getElementById('inv').style.display === 'block') return;
   const rect = c.getBoundingClientRect(), camera = cameraPosition();
-  clickWalkTo((event.clientX-rect.left)*640/rect.width+camera.x,
-    (event.clientY-rect.top)*360/rect.height+camera.y);
+  const X=(event.clientX-rect.left)*640/rect.width+camera.x, Y=(event.clientY-rect.top)*360/rect.height+camera.y;
+  combatTarget=mobs.filter(m=>!m.dead&&Math.hypot(X-m.x,Y-(m.y-6))<26).sort((a,b)=>Math.hypot(X-a.x,Y-a.y)-Math.hypot(X-b.x,Y-b.y))[0]||null;
+  chaseTimer=0;
+  if(combatTarget) stopClickWalk(); else clickWalkTo(X,Y);
 };
+
+function updateCombatTarget(dt) {
+  if(!combatTarget)return;
+  if(combatTarget.dead||p.map!=='f'){combatTarget=null;stopClickWalk();return;}
+  if(D(p,combatTarget)<50&&clearWalkSegment(p,combatTarget)){
+    stopClickWalk();const dx=combatTarget.x-p.x,dy=combatTarget.y-p.y;
+    facing=Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up');
+    attack(combatTarget);
+  }else{chaseTimer-=dt;if(chaseTimer<=0){clickWalkTo(combatTarget.x,combatTarget.y);chaseTimer=.5;}}
+}

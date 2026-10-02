@@ -30,3 +30,7 @@ Save key stays `al-web-rpg-v01`; existing saves carry over. Automatic save every
 `npm test` runs the real gameplay functions in a deterministic Node VM harness: movement, collision, NPC, full quest/reward, combat/drop, merchant, potion, inventory, save/load and both portals; it also executes the renderer and checks syntax. Browser smoke testing covered rendered village/meadow, dialogue/inventory, console and responsive layout. See `VALIDATION.md` for scope. Safari and physical iMac 2017 hardware were not available; 60 FPS on those devices is a target, not a measured guarantee.
 
 Screenshots: [village](screenshots/village.jpg), [slime field](screenshots/slime-field.jpg), [inventory / dialogue](screenshots/inventory-dialogue.jpg).
+
+## Monster combat and leveling
+
+Click a monster to approach and slash repeatedly, or press Z/Space in melee range. Click ground or move with WASD/arrows to cancel targeting. Slime Lv.1: 3 HP / 8 EXP / 2 gold; azure slime Lv.3: 9 HP / 18 EXP / 5 gold; boar Lv.5: 18 HP / 32 EXP / 9 gold. Monsters respawn after 5 seconds. Higher-tier creatures stay passive until attacked by low-level players. ATK equals player level; level-up adds 5 max HP and restores health. EXP thresholds grow by 1.45×, with leftover EXP retained. Levels, HP, EXP and gold use the existing local save.

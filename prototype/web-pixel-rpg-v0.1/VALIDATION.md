@@ -10,3 +10,5 @@
 - The optional second monster was omitted to keep this pass focused on the visual baseline.
 
 Click-to-move follow-up: deterministic arrival/detour/blocked-target/keyboard/portal checks passed; browser left-click smoke test passed with no console errors.
+
+Monster progression follow-up: regression checks passed for tier stats, Lv.1 vs Lv.3 damage, EXP rollover, HP/ATK level gains, boar loot, automatic targeted kills and saving levels. Browser rendering/targeting smoke checks performed.

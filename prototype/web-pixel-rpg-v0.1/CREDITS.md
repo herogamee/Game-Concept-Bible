@@ -14,3 +14,5 @@ All bundled artwork was authored for this repository by Codex for the Game-Conce
 Text uses local system fonts and Unicode symbols; platform-rendered glyph appearance varies. No font files are distributed.
 
 License research: Kenney Tiny Town was checked at https://kenney.nl/assets/tiny-town (CC0, 16×16). It is **not bundled or used**: this release uses original 32px tiles and 64px actors for one coherent palette. No attribution obligations from third-party art are introduced.
+
+Azure slime color variant and original boar animation: Game-Concept-Bible / Codex, src/monsters.js, same repository URL and MIT asset license above.
