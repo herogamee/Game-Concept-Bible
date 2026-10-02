@@ -34,7 +34,7 @@ v0.2.1 is the current direction correction. It preserves v0.2's useful world/Gui
 - Guild: [organization and physical hall](guild/adventurer-guild.md), [rank/eligibility](guild/rank-system.md), [promotion and practical exam](guild/promotion-system.md).
 - People: [28 starter NPCs](characters/starter-npcs.md), [player-first NPC roles and persistence](design/npc-simulation.md).
 - Playable planning: [first ten hours](design/first-10-hours.md), [18 authored contracts](design/starter-quests.md), [bounded vertical slice](design/vertical-slice.md).
-- Evidence: [market comparison](research/game-market-research.md), [community demand](research/community-demand.md), [reference study](research/anime-reference-study.md), [open-source implementation stack](research/open-source-game-development-stack-2026-10-02.md), [dated Steam counts](research/evidence/steam-review-counts-2026-10-01.csv), [individual review index](research/evidence/community-review-index-2026-10-01.csv).
+- Evidence: [market comparison](research/game-market-research.md), [community demand](research/community-demand.md), [reference study](research/anime-reference-study.md), [open-source implementation stack](research/open-source-game-development-stack-2026-10-02.md), [commercial-safe game audio resources](research/game-audio-sources-2026-10-02.md), [audio source/license matrix](research/evidence/game-audio-source-matrix-2026-10-02.csv), [dated Steam counts](research/evidence/steam-review-counts-2026-10-01.csv), [individual review index](research/evidence/community-review-index-2026-10-01.csv).
 - Review: [open decisions and Proposed Changes](design/decisions.md), [requirements coverage and audit](design/requirements-and-audit.md).
 
 ## Source of truth and workflow
