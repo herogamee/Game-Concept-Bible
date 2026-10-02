@@ -1,6 +1,6 @@
 <Container sortableChildren={true}>
   @if (groundImage()) {
-    <Sprite image={groundImage} x={0} y={0} zIndex={-10000} />
+    <Sprite image={groundImage} width={960} height={544} x={0} y={0} zIndex={-10000} />
   }
   <SceneMap />
 </Container>
