@@ -1,0 +1,18 @@
+<Container sortableChildren={true}>
+  @if (groundImage()) {
+    <Sprite image={groundImage} x={0} y={0} zIndex={-10000} />
+  }
+  <SceneMap />
+</Container>
+
+<script>
+  import { mount, tick } from 'canvasengine';
+  import { SceneMap } from '@rpgjs/client';
+  import { attachCamera, updateCamera, groundImage } from './presentation';
+
+  mount(element => {
+    attachCamera(element.props.context?.viewport);
+    return () => attachCamera(null);
+  });
+  tick(() => updateCamera());
+</script>

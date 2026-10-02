@@ -73,6 +73,16 @@ test('production previews serve maps and the UI theme at root and subpath', asyn
         assert.equal(mapResponse.status, 200, `${variant.name} map status`)
         assert.match(await mapResponse.text(), /<map\b/)
 
+        const tileset=await fetch(new URL(`${variant.route}map/village-ground.tsx`,origin))
+        assert.equal(tileset.status,200)
+        assert.match(await tileset.text(), /collision/)
+        for(const path of ['map/village-ground.png','map/meadow-ground.png','willowbrook/adventurer.png','willowbrook/npc-elder.png']){
+          const response=await fetch(new URL(`${variant.route}${path}`,origin))
+          assert.equal(response.status,200,`${variant.name} ${path}`)
+          const bytes=new Uint8Array(await response.arrayBuffer())
+          assert.deepEqual([...bytes.slice(0,8)],[137,80,78,71,13,10,26,10],`${path} must be PNG, not HTML fallback`)
+        }
+
         const localStylesheets = stylesheetUrls(builtHtml, indexUrl)
         assert(localStylesheets.length > 0, `${variant.name} emitted no local stylesheets`)
         let fetchedTheme = false

@@ -1,0 +1,66 @@
+{
+  "house": {
+    "width": 224,
+    "height": 192
+  },
+  "tree": {
+    "width": 112,
+    "height": 152
+  },
+  "rock": {
+    "width": 64,
+    "height": 48
+  },
+  "bush": {
+    "width": 64,
+    "height": 48
+  },
+  "flower": {
+    "width": 32,
+    "height": 32
+  },
+  "fence": {
+    "width": 64,
+    "height": 40
+  },
+  "sign": {
+    "width": 48,
+    "height": 64
+  },
+  "well": {
+    "width": 80,
+    "height": 80
+  },
+  "lamp": {
+    "width": 32,
+    "height": 96
+  },
+  "house-blue": {
+    "width": 224,
+    "height": 192
+  },
+  "market": {
+    "width": 104,
+    "height": 100
+  },
+  "planter": {
+    "width": 64,
+    "height": 48
+  },
+  "reeds": {
+    "width": 48,
+    "height": 40
+  },
+  "barrels": {
+    "width": 48,
+    "height": 48
+  },
+  "bridge": {
+    "width": 100,
+    "height": 72
+  },
+  "rune": {
+    "width": 48,
+    "height": 64
+  }
+}

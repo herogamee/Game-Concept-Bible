@@ -1,7 +1,7 @@
 import { facingVector, type Facing } from './animation';
 export type Phase='idle'|'move'|'attack_windup'|'attack_active'|'attack_recovery'|'hurt'|'dead';
 export type SlimeState='idle'|'wander'|'chase'|'attack'|'hurt'|'dead'|'respawn';
-export const sword={id:'starter-sword-slash',animation:'slash',windupMs:90,activeMs:120,recoveryMs:220,range:48,arcDegrees:100,damageMultiplier:1,hitOncePerTarget:true} as const;
+export const sword={id:'starter-sword-slash',animation:'slash',windupMs:90,activeMs:120,recoveryMs:140,range:48,arcDegrees:100,damageMultiplier:1,hitOncePerTarget:true} as const;
 export const slimeDefinition={id:'slime',level:1,maxHp:3,attack:3,exp:8,gold:2,gel:1,respawnMs:5000,aggro:120,speed:38};
 export interface Progress {hp:number;maxHp:number;level:number;exp:number;nextExp:number;gold:number;potions:number;gel:number;quest:0|1|2|3;kills:number}
 export const newProgress=():Progress=>({hp:30,maxHp:30,level:1,exp:0,nextExp:30,gold:20,potions:2,gel:0,quest:0,kills:0});

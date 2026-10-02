@@ -1,0 +1,230 @@
+{
+  "world": {
+    "width": 960,
+    "height": 540,
+    "viewW": 800,
+    "viewH": 450,
+    "objects": {
+      "v": [
+        [
+          "house",
+          55,
+          15
+        ],
+        [
+          "house-blue",
+          688,
+          20
+        ],
+        [
+          "tree",
+          290,
+          0
+        ],
+        [
+          "tree",
+          575,
+          0
+        ],
+        [
+          "well",
+          190,
+          245
+        ],
+        [
+          "market",
+          300,
+          187
+        ],
+        [
+          "barrels",
+          248,
+          180
+        ],
+        [
+          "planter",
+          685,
+          288
+        ],
+        [
+          "reeds",
+          72,
+          437
+        ],
+        [
+          "rune",
+          785,
+          345
+        ],
+        [
+          "sign",
+          535,
+          430
+        ],
+        [
+          "lamp",
+          665,
+          210
+        ],
+        [
+          "lamp",
+          320,
+          200
+        ],
+        [
+          "bush",
+          25,
+          215
+        ],
+        [
+          "bush",
+          865,
+          315
+        ],
+        [
+          "rock",
+          820,
+          435
+        ],
+        [
+          "fence",
+          45,
+          220
+        ],
+        [
+          "fence",
+          109,
+          220
+        ],
+        [
+          "fence",
+          735,
+          225
+        ],
+        [
+          "fence",
+          799,
+          225
+        ]
+      ],
+      "f": [
+        [
+          "tree",
+          275,
+          65
+        ],
+        [
+          "tree",
+          605,
+          250
+        ],
+        [
+          "tree",
+          25,
+          315
+        ],
+        [
+          "tree",
+          845,
+          30
+        ],
+        [
+          "rock",
+          90,
+          85
+        ],
+        [
+          "rock",
+          220,
+          390
+        ],
+        [
+          "rock",
+          740,
+          120
+        ],
+        [
+          "bush",
+          690,
+          420
+        ],
+        [
+          "bush",
+          65,
+          210
+        ],
+        [
+          "sign",
+          535,
+          38
+        ]
+      ]
+    }
+  },
+  "props": {
+    "house": {
+      "width": 224,
+      "height": 192
+    },
+    "tree": {
+      "width": 112,
+      "height": 152
+    },
+    "rock": {
+      "width": 64,
+      "height": 48
+    },
+    "bush": {
+      "width": 64,
+      "height": 48
+    },
+    "flower": {
+      "width": 32,
+      "height": 32
+    },
+    "fence": {
+      "width": 64,
+      "height": 40
+    },
+    "sign": {
+      "width": 48,
+      "height": 64
+    },
+    "well": {
+      "width": 80,
+      "height": 80
+    },
+    "lamp": {
+      "width": 32,
+      "height": 96
+    },
+    "house-blue": {
+      "width": 224,
+      "height": 192
+    },
+    "market": {
+      "width": 104,
+      "height": 100
+    },
+    "planter": {
+      "width": 64,
+      "height": 48
+    },
+    "reeds": {
+      "width": 48,
+      "height": 40
+    },
+    "barrels": {
+      "width": 48,
+      "height": 48
+    },
+    "bridge": {
+      "width": 100,
+      "height": 72
+    },
+    "rune": {
+      "width": 48,
+      "height": 64
+    }
+  }
+}

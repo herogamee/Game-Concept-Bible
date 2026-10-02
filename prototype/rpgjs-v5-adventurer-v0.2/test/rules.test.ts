@@ -8,8 +8,8 @@ import fs from 'node:fs';
 test('windup/active/recovery boundaries and held-request protection',()=>{
   const s=startSwing(undefined,1000,'east')!;
   assert.equal(phaseAt(s,1089),'attack_windup');assert.equal(phaseAt(s,1090),'attack_active');
-  assert.equal(phaseAt(s,1209),'attack_active');assert.equal(phaseAt(s,1210),'attack_recovery');assert.equal(phaseAt(s,1430),'idle');
-  assert.equal(startSwing(s,1016,'east'),undefined);assert.equal(startSwing(s,1400,'east'),undefined);assert.ok(startSwing(s,1430,'east'));
+  assert.equal(phaseAt(s,1209),'attack_active');assert.equal(phaseAt(s,1210),'attack_recovery');assert.equal(phaseAt(s,1350),'idle');
+  assert.equal(startSwing(s,1016,'east'),undefined);assert.equal(startSwing(s,1349,'east'),undefined);assert.ok(startSwing(s,1350,'east'));
 });
 test('damage only in active window, once per swing, alive target inside facing arc',()=>{
   const s=startSwing(undefined,0,'east')!,from={x:100,y:100},to={x:130,y:100};
@@ -35,9 +35,9 @@ test('potion clamps max HP, does not waste a full-HP potion or revive dead',()=>
   const p=newProgress();assert.equal(usePotion(p),false);assert.equal(p.potions,2);p.hp=29;assert.equal(usePotion(p),true);assert.equal(p.hp,30);assert.equal(p.potions,1);p.hp=0;assert.equal(usePotion(p),false);
 });
 test('click route detours around blocked water and rejects invalid destinations',()=>{
-  const path=route({x:64,y:304},{x:224,y:400},content.village.blockedTiles);assert.ok(path.length);
-  assert.ok(path.every(p=>!content.village.blockedTiles.includes(Math.floor(p.y/32)*20+Math.floor(p.x/32))));
-  assert.deepEqual(route({x:320,y:224},{x:100,y:360},content.village.blockedTiles),[]);assert.deepEqual(route({x:320,y:224},{x:NaN,y:0},[]),[]);
+  const path=route({x:48,y:320},{x:280,y:480},content.village.blockedTiles,content.village);assert.ok(path.length);
+  assert.ok(path.every(p=>!content.village.blockedTiles.includes(Math.floor(p.y/16)*60+Math.floor(p.x/16))));
+  const edge=route({x:480,y:300},{x:100,y:360},content.village.blockedTiles,content.village);assert.ok(edge.length);assert.ok(!content.village.blockedTiles.includes(Math.floor(edge.at(-1)!.y/16)*60+Math.floor(edge.at(-1)!.x/16)));assert.deepEqual(route({x:320,y:224},{x:NaN,y:0},[]),[]);
 });
 test('semantic adapter has all LPC animations and documented death fallback',()=>{
   const s=lpcSheet();assert.equal(s.opacity,1);for(const key of ['stand','walk','slash','thrust','shoot','spellcast','hurt','dead'])assert.ok(s.textures[key]);
@@ -46,11 +46,17 @@ test('Tiled point IDs/properties match generated registry and collision data',()
   for(const [id,map] of Object.entries(content)){
     const xml=fs.readFileSync(new URL(`../src/tiled/${id}.tmx`,import.meta.url),'utf8');
     for(const o of map.objects){assert.ok(xml.includes(`name="${o.id}"`));for(const [k,v] of Object.entries(o.properties))assert.ok(xml.includes(`name="${k}"`)&&xml.includes(`value="${v}"`));}
-    const csv=xml.match(/<data encoding="csv">([^<]+)<\/data>/)![1].split(',').map(Number);
-    assert.deepEqual(csv.map((t,i)=>t===3||t===4?i:-1).filter(i=>i>=0),map.blockedTiles);
+    const tsx=fs.readFileSync(new URL(`../src/tiled/${id}-ground.tsx`,import.meta.url),'utf8');
+    assert.deepEqual([...tsx.matchAll(/<tile id="(\d+)">/g)].map(m=>Number(m[1])),map.blockedTiles);
   }
 });
 test('selected LPC layers all retain attribution and OGA-BY alternative',()=>{
   const credits=JSON.parse(fs.readFileSync(new URL('../assets/LPC-CREDITS.json',import.meta.url),'utf8'));
   assert.equal(credits.layers.length,5);for(const l of credits.layers){assert.equal(l.selectedLicense,'OGA-BY 3.0');assert.ok(l.licenses.includes(l.selectedLicense));assert.ok(l.authors.length&&l.urls.length);}
+});
+
+test('diagonal paths cannot squeeze through blocked corners',()=>{
+  const map={width:160,height:160,tileSize:16,columns:10};const blocks=[24,33];
+  const path=route({x:24,y:24},{x:88,y:88},blocks,map);assert.ok(path.length>5);
+  assert.ok(path.every(p=>!blocks.includes(Math.floor(p.y/16)*10+Math.floor(p.x/16))));
 });

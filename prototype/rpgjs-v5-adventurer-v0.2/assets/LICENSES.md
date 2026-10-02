@@ -1,30 +1,37 @@
-# Asset provenance
+# Asset provenance — active presentation
 
-Runtime adventurer: actual Universal LPC male body, male human head, male pants,
-male long-sleeved shirt and plain adult hair. Layer definitions and untouched
-PNG sources are retained in `lpc-source/`. Selected license for **each** of these
-layers is OGA-BY 3.0, one of the upstream offered alternatives. This is not CC0.
-`LPC-CREDITS.csv` / `.json` export all selected layer authors, URLs, alternative
-licenses and modifications. Include these credits in any redistribution.
+The active character, three NPCs, green slime and sixteen village props are the
+original project artwork from `../web-pixel-rpg-v0.1/assets/painted/`. These were
+created with image_gen for this project. They are not commercial-game sprites,
+Universal LPC assets or Kenney assets. See the preserved prompts and source
+sheets in `../web-pixel-rpg-v0.1/ART-DIRECTION.md`. No new third-party license is
+claimed for these project-owned images.
 
-OGA-BY 3.0 text: https://opengameart.org/content/oga-by-30-faq
-Universal LPC: https://github.com/LiberatedPixelCup/Universal-LPC-Spritesheet-Character-Generator
+`tools/build-parity-assets.mjs` copies only runtime PNGs, extracts the three NPC
+columns, and executes the unchanged reference `src/world.js` in an isolated
+build-time canvas context to reproduce its deterministic terrain. The 540px
+reference ground is padded by four grass pixels for the Tiled 16px grid.
+`@napi-rs/canvas` is a build-only dependency; its package license is MIT.
 
-The composite recolors the shirt/hair and overlays a simple original sword.
-No generator code is bundled in the browser. `tools/build-assets.py` reproduces
-the sheet from the retained layer sources. No GPL or CC-BY-SA alternative is
-selected. OGA-BY attribution still applies to the composite.
+`src/game/audio.ts` adapts the original project-authored Web Audio village/meadow
+scores and slash/hurt/level effects. Its preference key is separate from v0.1.
 
-`slime.png`, `willowbrook-tiles.png`, temporary sword overlay and both maps are
-original project placeholders, dedicated to CC0-1.0. They are not Kenney art.
-CC0: https://creativecommons.org/publicdomain/zero/1.0/
+## Retained experiment assets (not active)
 
-The official starter's sample maps, tiles and hero/female PNGs are preserved for
-reference but not registered in the active v0.2 maps or spritesheet config.
-Starter attribution: Pipoya — https://pipoya.itch.io/. Starter provenance and
-upstream references are documented in README.
+The earlier Universal LPC composite and five original layer sources remain in
+`public/spritesheets/adventurer-lpc.png` and `assets/lpc-source/` for reproducible
+history. Every layer selected OGA-BY 3.0 from its offered alternatives. Keep
+`LPC-CREDITS.csv` and `LPC-CREDITS.json` with redistribution of those assets.
+OGA-BY text: https://opengameart.org/content/oga-by-30-faq
+Generator: https://github.com/LiberatedPixelCup/Universal-LPC-Spritesheet-Character-Generator
+Source revision: 4963a69795255fb15a934c47f478a8bdcf3668f5.
 
-Death currently uses the last south-facing LPC hurt frame. This is an explicit
-temporary fallback, not a production four-direction death animation.
+The earlier code-art slime and five-tile terrain were original CC0 placeholders;
+they are no longer registered in the active maps. Official starter sample maps,
+tiles and sprites remain for reference; attribution: Pipoya —
+https://pipoya.itch.io/. They are not active gameplay art.
 
-Source tree revision: 4963a69795255fb15a934c47f478a8bdcf3668f5. Selected PNGs and layer definitions are retained locally.
+Painted hurt/dead currently hold the idle frame with opaque red ground feedback;
+there is no authored dedicated hurt/death animation in the original hero sheet.
+The unused thrust/shoot/spellcast semantics fall back to its sword rows; no such
+abilities are enabled. Do not advertise those as completed visual animations.
