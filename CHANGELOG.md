@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-02 — Playable Willowbrook art-quality pass
+
+- Replaced key prototype scenery, adventurer, NPCs and slime with original illustrated sprites and directional animation sheets.
+- Improved village composition, terrain, camera, UI and melee feedback while preserving gameplay/save compatibility.
+- Added generation prompts, asset provenance, extraction tools and runtime asset checks. See prototype/web-pixel-rpg-v0.1/ART-DIRECTION.md.
+
 ## 2026-10-02 — Monster tiers and melee progression
 
 - Added Lv.1 slime, Lv.3 azure slime and Lv.5 boar with distinct HP, attack, movement, EXP and gold rewards.

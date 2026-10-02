@@ -5,14 +5,14 @@ const MonsterTypes = {
   boar: {name:'หมูป่า',level:5,hp:18,attack:8,speed:65,exp:32,gold:9,gel:0}
 };
 function monsterSprite(m, frame) {
-  if(m.kind==='slime') return Art.slime(frame);
-  const key=m.kind+frame;
+  if(m.kind==='slime') return Art.slime(frame,m.flash>0?'hit':D(p,m)<120?'move':'idle');
+  const state=m.flash>0?'hit':D(p,m)<120?'move':'idle';const key=m.kind+frame+state;
   if(monsterSprite.cache[key])return monsterSprite.cache[key];
-  const canvas=document.createElement('canvas');canvas.width=48;canvas.height=40;
+  const canvas=document.createElement('canvas');canvas.width=48;canvas.height=48;
   const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=false;
   if(m.kind==='azure') {
-    ctx.drawImage(Art.slime(frame),0,0);
-    ctx.globalCompositeOperation='source-atop';ctx.fillStyle='#649bb880';ctx.fillRect(0,0,48,40);
+    ctx.drawImage(Art.slime(frame,state),0,0);
+    ctx.globalCompositeOperation='source-atop';ctx.fillStyle='#3589bdb8';ctx.fillRect(0,0,48,48);
   } else {
     const r=(color,x,y,w,h)=>{ctx.fillStyle=color;ctx.fillRect(x,y,w,h)};
     const bob=frame%2;

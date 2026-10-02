@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-02 — Illustrated Willowbrook art pass
+
+- Integrated original image-generated RGBA environment props, directional adventurer, NPC idle frames and animated slime into the playable game.
+- Added an orange cottage, teal cottage, lush oak, market stall, flower beds, well, fence, lantern, barrels and rune stone; preserved collision and Y depth behavior.
+- Adventurer walks and attacks in eight-frame cycles across four directions; slime has idle, move, hit and death frames. NPCs use their own illustrated sprites and dialogue portraits.
+- Refined seeded terrain, road margins, contact shadows, pollen, sword trails, fantasy panels and camera framing.
+- Added an asset decoder startup gate, asset validation, exact generation prompts, preserved source sheets and reproducible extraction scripts. Build omits authoring images.
+
 ## 2026-10-02 — Monster tiers and melee progression
 
 - Added Lv.1 slime, Lv.3 azure slime and Lv.5 boar with distinct HP, attack, movement, EXP and gold rewards.

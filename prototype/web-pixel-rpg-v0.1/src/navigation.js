@@ -1,8 +1,8 @@
 // Small, bounded navigation grid. Routes use the same player radius as keyboard movement.
 let walkPath = [], walkTarget = null;
 function cameraPosition() {
-  return { x: Math.round(Math.max(0, Math.min(320, p.x - 320))),
-    y: Math.round(Math.max(0, Math.min(180, p.y - 180))) };
+  return { x: Math.round(Math.max(0, Math.min(World.width-World.viewW, p.x-World.viewW/2))),
+    y: Math.round(Math.max(0, Math.min(World.height-World.viewH, p.y-300))) };
 }
 function stopClickWalk() { walkPath = []; walkTarget = null; }
 function walkable(X, Y) {
@@ -60,7 +60,7 @@ c.onpointerdown = event => {
   if (event.button !== 0 || document.getElementById('msg').style.display === 'block' ||
       document.getElementById('inv').style.display === 'block') return;
   const rect = c.getBoundingClientRect(), camera = cameraPosition();
-  const X=(event.clientX-rect.left)*640/rect.width+camera.x, Y=(event.clientY-rect.top)*360/rect.height+camera.y;
+  const X=(event.clientX-rect.left)*World.viewW/rect.width+camera.x, Y=(event.clientY-rect.top)*World.viewH/rect.height+camera.y;
   combatTarget=mobs.filter(m=>!m.dead&&Math.hypot(X-m.x,Y-(m.y-6))<26).sort((a,b)=>Math.hypot(X-a.x,Y-a.y)-Math.hypot(X-b.x,Y-b.y))[0]||null;
   chaseTimer=0;
   if(combatTarget) stopClickWalk(); else clickWalkTo(X,Y);

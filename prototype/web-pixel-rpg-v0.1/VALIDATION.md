@@ -12,3 +12,5 @@
 Click-to-move follow-up: deterministic arrival/detour/blocked-target/keyboard/portal checks passed; browser left-click smoke test passed with no console errors.
 
 Monster progression follow-up: regression checks passed for tier stats, Lv.1 vs Lv.3 damage, EXP rollover, HP/ATK level gains, boar loot, automatic targeted kills and saving levels. Browser rendering/targeting smoke checks performed.
+
+Illustrated art pass: gameplay/navigation/combat regression harness passed including resized pointer conversion for the 800×450 logical view. Runtime PNG validation passed: 19 RGBA assets, correctly packed sheet grids, valid HTML paths and 745 KiB image payload. Chromium rendered the village, field, new player/NPCs/slime and elder dialogue; captured console warning/error list was empty. 1280×900 and 640×480 viewport smoke checks passed. Real browser screenshots are village-polished.jpg, field-polished.jpg and dialogue-polished.jpg. Build excludes source atlases. Safari and old-device frame rates remain unmeasured.

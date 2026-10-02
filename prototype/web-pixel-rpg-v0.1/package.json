@@ -1,1 +1,10 @@
-{"name":"willowbrook-pixel-rpg","version":"0.1.1","private":true,"scripts":{"dev":"node tools/serve.cjs","build":"node tools/build.cjs","test":"node tools/check.cjs"}}
+{
+  "name": "willowbrook-pixel-rpg",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "dev": "node tools/serve.cjs",
+    "build": "node tools/build.cjs",
+    "test": "node tools/check.cjs && node tools/check-art.cjs"
+  }
+}
