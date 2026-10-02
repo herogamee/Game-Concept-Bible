@@ -29,3 +29,5 @@ These original assets were generated with OpenAI's built-in image_gen under Code
 | Elder, merchant and veteran adventurer, 9 idle frames | same | same repository directory, npcs-source.png and npcs.png | MIT |
 
 Exact prompts and tool choice: ART-DIRECTION.md. Original source sheets are preserved for further art cleanup. `slice-art.py`, `slice-character.py`, `slice-slime.py` and `slice-npcs.py` extract/package the generated atlases; the game loads only compact runtime PNGs.
+
+Original village/meadow score and sword/hurt/level-up effects: Game-Concept-Bible / Codex, authored synthesizer notes and envelopes in src/audio.js; source URL is the same repository above. Distributed under ASSET-LICENSE.txt (MIT). No third-party audio files are bundled.

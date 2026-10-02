@@ -42,3 +42,9 @@ Original generated bitmap sprites now replace the key village props, player, thr
 Exact prompts, production notes and tool choice: [ART-DIRECTION.md](ART-DIRECTION.md). The new sprites use illustrated fantasy shading, not a strict limited-color pixel palette. The boar is unchanged in this focused pass.
 
 Updated screenshots: [village](screenshots/village-polished.jpg), [field](screenshots/field-polished.jpg), [dialogue](screenshots/dialogue-polished.jpg).
+
+## Audio
+
+Original music and effects are synthesized locally with Web Audio in `src/audio.js`: a warm village theme, a meadow theme, sword swish, damage impact and level-up chime. No audio downloads or commercial tracks. Audio starts after a click/key gesture; the header button and volume slider control both music/effects and persist separately from the game save. Switching tabs suspends audio; returning resumes it when enabled. Browsers without Web Audio keep gameplay working silently.
+
+The hurt/cooldown timers clamp at zero and never persist across reload. The player stays opaque during damage feedback (a brief red ground ring); old negative timers no longer leave the sprite faded.

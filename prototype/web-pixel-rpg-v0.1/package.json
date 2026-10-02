@@ -5,6 +5,6 @@
   "scripts": {
     "dev": "node tools/serve.cjs",
     "build": "node tools/build.cjs",
-    "test": "node tools/check.cjs && node tools/check-art.cjs"
+    "test": "node tools/check.cjs && node tools/check-art.cjs && node tools/check-audio.cjs"
   }
 }

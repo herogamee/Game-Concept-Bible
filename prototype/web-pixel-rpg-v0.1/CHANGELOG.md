@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-02 — Player visibility fix and original audio
+
+- Fixed hurt timer underflow causing the player to remain faded; clamp timers and reset transient combat state on load/save. Keep the player opaque with a red hit indicator.
+- Added original Web Audio village/meadow music, slash/hurt effects, level chime, gesture activation, saved mute/volume controls and tab suspension.
+- Added audio scheduling/control tests and opacity regression checks.
+
+
 ## 2026-10-02 — Illustrated Willowbrook art pass
 
 - Integrated original image-generated RGBA environment props, directional adventurer, NPC idle frames and animated slime into the playable game.
