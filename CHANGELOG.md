@@ -59,6 +59,18 @@
 - Added camera follow, Y depth sorting, collision aligned with artwork and combat feedback while preserving the original game loop/save key.
 - Added modular source files, asset license/credits, dev/build scripts, regression checks and three screenshots.
 - Details: prototype/web-pixel-rpg-v0.1/CHANGELOG.md.
+## v0.2.4 — 2026-10-02 — Commercial-Safe Game Audio Research
+
+- Added `research/game-audio-sources-2026-10-02.md`, covering commercial-safe game music, SFX, ambience and open-source sound generators.
+- Added `research/evidence/game-audio-source-matrix-2026-10-02.csv` so Codex/CI can consume source, license, attribution and accept/review/reject status as structured data.
+- Selected Kenney CC0, Sonniss GameAudioGDC, OpenGameArt CC0, Freesound CC0 and itch.io CC0 as the primary external audio path.
+- Added the unified `uncle-sheepsky/duru-ai-cc0-bgm` repository as the canonical DURU/HYAK CC0 music source.
+- Selected jfxr as the preferred SFX generator because its README explicitly grants unrestricted commercial use of generated sounds; retained jsfxr and rFXGen with provenance requirements.
+- Documented the critical Mixkit split: the Sound Effects Free License allows video games, while the Stock Music Free License explicitly does not.
+- Added review rules for Pixabay, ZapSplat Basic and ccMixter CC-BY, with hard rejection of NC/ND/unknown-license material.
+- Added an audio folder plan, per-file metadata contract, automatic attribution requirement and Codex/CI license gate.
+- Recorded Sonniss GameAudioGDC v2.0's commercial/no-attribution grant, raw-redistribution limits, download-date license-version rule and AI/ML-training prohibition.
+- Linked the new audio research and machine-readable matrix from the README evidence map.
 
 ## v0.2.3 — 2026-10-02 — Open-Source Toolchain Research & Codex Handoff
 
