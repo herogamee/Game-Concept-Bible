@@ -26,3 +26,5 @@ upstream references are documented in README.
 
 Death currently uses the last south-facing LPC hurt frame. This is an explicit
 temporary fallback, not a production four-direction death animation.
+
+Source tree revision: 4963a69795255fb15a934c47f478a8bdcf3668f5. Selected PNGs and layer definitions are retained locally.

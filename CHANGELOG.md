@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-10-02 — RPGJS v5 Adventurer prototype v0.2
+
+- Imported latest main including v0.2.3 research/handoff and created a separate `prototype/rpgjs-v5-adventurer-v0.2/`; preserved the playable v0.1.
+- Added RPGJS 5.0.0/TypeScript, Tiled village/meadow content IDs, actual Universal LPC layers with OGA-BY 3.0 credit exports and semantic animation adapter.
+- Implemented phased sword combat, slime AI/death/respawn, authoritative EXP/drop and single-claim reward, three-kill quest/turn-in/level-up, inventory/potion, portals and isolated standalone save slots. Added original synthesized music/slash/hurt audio.
+- Verified two MMORPG clients sharing movement and the same dead slime; the contested death granted one reward. Verified standalone quest turn-in and save/reload. Fixed ID hydration and departed-room autosave regressions.
+- Added 18 focused tests and production map/theme HTTP smoke. README/acceptance document server authority, reproduction commands, guest/in-memory online-save limitations and art/death placeholders. No MMO-scale scope expansion.
+
+
 ## 2026-10-02 — Player visibility fix and original audio
 
 - Fixed hurt timer underflow causing the player to remain faded; clamp timers and reset transient combat state on load/save. Keep the player opaque with a red hit indicator.

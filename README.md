@@ -73,3 +73,7 @@ The Bible uses semantic-style concept versions:
 - v1.0 — First complete pre-production Bible
 
 Last updated: 2026-10-02
+
+## Playable RPGJS migration
+
+[Willowbrook Adventurer v0.2](prototype/rpgjs-v5-adventurer-v0.2/readme.md) uses RPGJS v5, TypeScript, Tiled and credited Universal LPC assets. It is separate from the preserved v0.1. The new prototype includes a phased sword/slime loop, three-kill quest, inventory/potion, EXP/drop, portals/save and a local server-authoritative two-client mode. See its README and acceptance record for run commands and limitations.
