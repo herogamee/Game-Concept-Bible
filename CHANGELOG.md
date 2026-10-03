@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.2.12 — 2026-10-03 — One-World Integration & Ternhaven Life Boundary
+
+- Added `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md` as the repository-wide coherence gate for future design work.
+- Recorded owner direction OD-20: new systems must belong to the same Adventurer Life world and reuse existing progression/institution terminology before inventing parallel mechanics.
+- Defined a source-of-truth hierarchy: locked owner principles → current Bible → preserved Bible material → Decision Register → specialist proposals → authored examples → research.
+- Added the seven-question One-Game Test requiring every future mechanic to name its world location, user, adventurer purpose, existing-system connection, reused terminology, removal impact and smallest playable version.
+- Consolidated the shared vocabulary for Guild Rank, mastery, professional evidence, local standing, artisan reputation, coin, Drift, Pattern Magic, Relics, Signature Gear and Hidden Realms.
+- Added hard coherence guardrails against SS/SSS rank inflation, duplicate progression ladders, global gear-score design, +99 enhancement, mandatory daily energy, full-loot PvP, land monopoly, autonomous NPC economy, instant global teleportation and factory-style passive production.
+- Added `design/TERNHAVEN-HOUSING-WORKSHOP-SOCIAL-LIFE-v0.1.md`, explicitly scoped to Ternhaven first.
+- Housing progresses from Guild/inn bed to rented room and optional small home/workspace; it supports rest, storage, display, collection, social visits, limited craft and small gardening.
+- Home gardening is deliberately low-volume so Aldermead remains meaningful as an agricultural community.
+- Home workshops do not passively craft offline and do not replace Bellcross or specialist facilities.
+- Reused existing social concepts instead of adding a new Social Level: Guild professional evidence, local standing, artisan reputation and named relationships.
+- Housing prototype is bounded to one Ternhaven rented room with rest, storage, a few display points, one work surface and decoration; land plots, livestock, NPC workers, shop automation and full farming remain outside initial scope.
+
 ## v0.2.11 — 2026-10-03 — Crafting, Gathering & Artisan Life Foundation
 
 - Added a complete Gather → Process → Craft → Use/Trade → Maintain/Restore → Recycle/Requisition lifecycle.
