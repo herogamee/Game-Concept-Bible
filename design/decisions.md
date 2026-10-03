@@ -119,9 +119,11 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 
 **Decision:** Proposal for v0.3 Combat & Classes prototyping. Do not build the full tree before combat feel is validated.
 
-## Owner-requested next design agenda — 2026-10-02
+## Owner-requested design agenda — 2026-10-02 (integration status updated 2026-10-03)
 
-After the narrative checkpoint, the next deep-design pass should cover currency, weapons/armor, magical and historical treasures, rare artifacts, player trade, auction, collections, housing/social life, anti-conflict safeguards and market inflation controls. A focused Chinese-fantasy/xianxia reference study will follow, with special interest in the treasure/manual/hidden-realm appeal of **คัมภีร์วิถีเซียน** and related works.
+The requested pass on currency, equipment, treasure, manuals, hidden realms, trade/auction, crafting, housing/social life, anti-conflict safeguards and Chinese-fantasy reference research now exists as **working proposals/research**.
+
+This does not promote those documents into locked canon. Under OD-20, further breadth expansion is paused in favor of consolidation and v0.3 Combat & Classes validation. No standalone universal Social Reputation system will be added; existing contextual recognition concepts are reused.
 
 ## v0.2.1 interpretation rule
 
