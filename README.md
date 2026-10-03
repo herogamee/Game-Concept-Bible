@@ -12,6 +12,7 @@ The core fantasy is not "be the chosen hero immediately." It is:
 
 ## Current Bible
 
+- [Game Concept Bible v0.3 — Combat & Classes Candidate](bible/GAME-CONCEPT-BIBLE-v0.3.md) — active prototype candidate; combat balance/final class structure not yet locked
 - [Game Concept Bible v0.2.1 — Player / NPC Boundary Correction](bible/GAME-CONCEPT-BIBLE-v0.2.1.md)
 - [Game Concept Bible v0.2 — preserved world/Guild proposal](bible/GAME-CONCEPT-BIBLE-v0.2.md)
 - [Game Concept Bible v0.1 — preserved foundation](bible/GAME-CONCEPT-BIBLE-v0.1.md)
@@ -35,7 +36,7 @@ v0.2.1 is the current direction correction. It preserves v0.2's useful world/Gui
 - Guild: [organization and physical hall](guild/adventurer-guild.md), [rank/eligibility](guild/rank-system.md), [promotion and practical exam](guild/promotion-system.md).
 - People: [28 starter NPCs](characters/starter-npcs.md), [player-first NPC roles and persistence](design/npc-simulation.md).
 - Playable planning: [first ten hours](design/first-10-hours.md), [18 authored contracts](design/starter-quests.md), [bounded vertical slice](design/vertical-slice.md).
-- Progression: [hybrid skills and mastery](design/SKILLS-AND-MASTERY-v0.1.md).
+- Progression & combat: [v0.3 combat/classes candidate](bible/GAME-CONCEPT-BIBLE-v0.3.md), [combat kernel](design/COMBAT-KERNEL-v0.1.md), [four-loadout matrix](design/COMBAT-APTITUDE-PROTOTYPE-MATRIX-v0.1.md), [playtest scorecard](design/COMBAT-PLAYTEST-SCORECARD-v0.1.md), [hybrid skills and mastery](design/SKILLS-AND-MASTERY-v0.1.md).
 - Creatures: [monster and boss design bible](creatures/MONSTER-AND-BOSS-BIBLE-v0.1.md).
 - Economy & treasure systems: [currency and money](economy/CURRENCY-AND-MONEY-v0.1.md), [treasures/artifacts/relics](items/TREASURES-ARTIFACTS-AND-RELICS-v0.1.md), [manuals/techniques/inheritance](items/MANUALS-TECHNIQUES-AND-INHERITANCE-v0.1.md), [hidden realms](world/HIDDEN-REALMS-AND-INHERITANCE-v0.1.md), [trade/auction/market](design/TRADE-AUCTION-AND-MARKET-v0.1.md).
 - Authored content Set 01: [50 treasures/relics](items/catalogues/ORAVEL-TREASURE-CATALOGUE-SET-01.md), [30 manuals/techniques](items/catalogues/ORAVEL-MANUALS-TECHNIQUES-SET-01.md), [10 hidden realms](world/catalogues/ORAVEL-HIDDEN-REALMS-SET-01.md), [rare materials and expedition medicines](items/catalogues/ORAVEL-RARE-MATERIALS-MEDICINES-SET-01.md).
@@ -55,7 +56,7 @@ Preserve previous Bible versions. Foundation locks and explicit owner approvals 
 
 For each meaningful checkpoint, update the current Bible and CHANGELOG, check references and consistency, commit with a clear message and push to this repository. Never treat documentation completeness as proof that a mechanic is balanced or implemented.
 
-The next canonical concept step remains **v0.3 Combat & Classes**, supported by a small greybox career loop and combat comparison. Narrative, economy, treasure, equipment, crafting, trade and bounded housing now have working specialist proposals, so **feature breadth is temporarily frozen**: consolidate and validate the core game instead of opening more standalone systems. S-rank remains the proposed professional ceiling; Floor 100's final truth remains open even though a junction direction is being explored. The technical migration target is **RPGJS v5 + TypeScript + Tiled + LPC**, with [Codex handoff instructions](prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md). Shared-world intent does not justify MMO-scale implementation yet; avoid large networking scale, the remaining 97 floors, or new life-simulation subsystems before the core loop is validated.
+The active concept step is now **v0.3 Combat & Classes Candidate**, supported by a small greybox career loop and four-loadout combat comparison. Narrative, economy, treasure, equipment, crafting, trade and bounded housing now have working specialist proposals, so **feature breadth is temporarily frozen**: consolidate and validate the core game instead of opening more standalone systems. S-rank remains the proposed professional ceiling; Floor 100's final truth remains open even though a junction direction is being explored. The technical migration target is **RPGJS v5 + TypeScript + Tiled + LPC**, with [RPGJS migration instructions](prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md) and the [v0.3 combat implementation handoff](prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md). Shared-world intent does not justify MMO-scale implementation yet; avoid large networking scale, the remaining 97 floors, or new life-simulation subsystems before the core loop is validated.
 
 ## Design pillars
 
