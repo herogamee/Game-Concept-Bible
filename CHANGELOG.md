@@ -16,6 +16,8 @@
 - Updated the vertical slice so combat comparison now uses the same kernel and four weapon languages instead of comparing unrelated combat genres.
 - Recorded OD-21 as **Proposed for prototype validation**, not a final combat lock.
 - Continued the feature-breadth freeze: do not expand class trees, crafting, housing, PvP, mounts, pets or 100-floor content before the combat gates pass.
+- Added `prototype/PROTOTYPE-STATUS-2026-10-03.md` after verifying that the RPGJS v5 migration target folder is not yet present; the repository must not claim playable v0.3 code until bootstrap/build/tests are actually completed.
+- Updated prototype `AGENTS.md` so coding agents read the integration guardrails, consolidation audit, prototype status, RPGJS migration handoff and v0.3 combat handoff in the correct order.
 
 ## v0.2.13 — 2026-10-03 — Consolidation Pass & Feature-Breadth Freeze
 
