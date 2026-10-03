@@ -1,5 +1,7 @@
 # CODEX HANDOFF — RPGJS v5 + LPC Playable Migration v0.2
 
+> **Continuation:** After the migration/kernel baseline is established, follow `CODEX-HANDOFF-COMBAT-v0.3.md` for the current Sword/Spear/Bow/Staff-Focus combat validation. The v0.3 handoff does not supersede this file's migration, asset-license or server-authority requirements.
+
 Date: 2026-10-02
 Repository: herogamee/Game-Concept-Bible
 Source baseline: `prototype/web-pixel-rpg-v0.1/`
