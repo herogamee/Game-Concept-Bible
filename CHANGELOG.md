@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.2.10 — 2026-10-03 — Weapons, Equipment & Signature Gear Foundation
+
+- Added `items/WEAPONS-ARMOR-AND-EQUIPMENT-v0.1.md` defining weapon families, armor trade-offs, equipment slots, Pattern equipment, condition/repair, meaningful modifications, material expression, crafting identity and prototype scope.
+- Added `items/catalogues/ORAVEL-WEAPONS-EQUIPMENT-SET-01.md` with 40 original weapons, shields, armor pieces, tools and life-skill equipment concepts.
+- Added `design/SIGNATURE-GEAR-AND-EQUIPMENT-LEGACY-v0.1.md` so beloved equipment can accumulate bounded familiarity, physical modifications, provenance and story history across F→S play.
+- Rejected a generic +1→+99 enhancement treadmill as the core progression model; enhancement failure must not destroy beloved equipment.
+- Separated base form, workmanship, material, modification and relic/provenance significance so one rarity number does not define every item's value.
+- Defined an example E-rank Fine Bellcross sword that can remain relevant through Rank S without becoming automatic best-in-slot.
+- Added maker/restorer provenance and commission direction so player craftspeople can build reputation without mass-producing junk.
+- Added believable loot rules: creatures provide ecological materials; manufactured weapons come from believable owners, caches, craftspeople or institutions.
+- Preserved player trust: no full-loot PvP, random Signature Gear destruction or paid protection requirement.
+- First RPGJS validation scope remains intentionally small: Sword, Spear, Bow, Staff/Focus, optional Shield, three armor profiles, basic condition and one modification per weapon.
+
 ## v0.2.9 — 2026-10-03 — Oravel Authored Content Set 01
 
 - Added the first authored content library rather than only system frameworks.
