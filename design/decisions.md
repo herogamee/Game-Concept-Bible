@@ -1,12 +1,14 @@
 # Decision register and proposed changes
 
-**Date:** 2026-10-01. Owner approval is distinct from a writer using a coherent working draft.
+**Date:** 2026-10-03. Owner approval is distinct from a writer using a coherent working draft.
 
 ## Owner direction added in v0.2.1
 
 **Locked principle — Player-First Adventurer World:** real players are the primary adventurers. NPCs provide world life, story, services, rivals, mentors and companion support; they do not autonomously consume the core player contract/progression loop.
 
 **Product direction — Lightweight Shared World:** the intended final game is not single-player-only. It should pursue low hardware requirements, web-first accessibility where viable, real-player parties/social spaces and scalable zones/channels/instances. Exact engine, network stack, backend and concurrency architecture remain open pending prototypes.
+
+**Locked principle — One-World System Coherence:** new mechanics must strengthen the same Adventurer Life world rather than accumulate as disconnected feature sets. Reuse existing ranks, currencies, reputations, institutions, settlements and progression language where possible; attach new systems to an in-world place/actor/purpose before expanding scope.
 
 ## Foundation compatibility
 
@@ -33,6 +35,7 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 | OD-17 | Hybrid skill model: Weapon + Discipline + Learned Skill + Pattern Magic + Life Skill | Proposed for v0.3 validation | Supports flexible identity, world-discovered techniques and future rare-manual/mentor systems |
 | OD-18 | Ecology-first monsters, Named Monsters and non-kill boss resolutions | Proposed | Make creatures part of the world and reduce boss design to more than HP checks |
 | OD-19 | Future Chinese-fantasy/xianxia inspiration pass for treasures, manuals, hidden realms and inheritance | Research direction requested 2026-10-02 | Translate structural appeal into original IP; do not copy protected names, characters, techniques, artifacts or lore |
+| OD-20 | One-World System Coherence: new systems must connect to the existing Adventurer Life world and reuse shared concepts before inventing parallel currencies/ranks/reputations | **Locked owner direction** | Owner explicitly requested that growing documentation remain one coherent game rather than systems becoming increasingly mixed/disconnected; use the integration guardrails before future expansion |
 
 ## Proposed Change PC-01 — prototype class subset
 
