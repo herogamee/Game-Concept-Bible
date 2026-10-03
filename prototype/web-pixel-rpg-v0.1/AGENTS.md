@@ -4,9 +4,14 @@ Goal: browser-first low-spec pixel RPG/MMORPG. Gameplay first, art later.
 
 Current baseline: `prototype/web-pixel-rpg-v0.1/index.html` is the first playable loop.
 
-Read before architecture work:
+Read before architecture work, in this order:
+- `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md`
+- `design/CONSOLIDATION-AUDIT-2026-10-03.md`
+- `prototype/PROTOTYPE-STATUS-2026-10-03.md`
 - `research/open-source-game-development-stack-2026-10-02.md`
 - `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md`
+- `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md`
+- `design/COMBAT-KERNEL-v0.1.md`
 
 Rules:
 - Keep browser-first and low-spec.
@@ -19,3 +24,5 @@ Rules:
 - Online mode must remain server-authoritative before valuable economy/PvP systems are added.
 - Keep NPC simulation bounded by the Player-First Adventurer World design.
 - Meaningful changes should update README/CHANGELOG and remain easy for ChatGPT/Codex/Claude to continue.
+- Current feature breadth is frozen. Implement and validate v0.3 combat before adding new standalone systems.
+- Do not claim the RPGJS migration or v0.3 combat is complete until the target folder exists and build/tests/play evidence are recorded.
