@@ -209,15 +209,21 @@ The repository has enough breadth for now.
 
 ## Priority A — v0.3 Combat & Classes validation
 
-Resolve through prototype/evidence:
-- action timing;
-- hit/recovery feel;
-- weapon distinction;
-- defense;
-- stamina/effort question;
-- first 3–4 player combat identities;
-- support solo viability;
-- browser/mobile control budget.
+The current candidate now exists in:
+- `bible/GAME-CONCEPT-BIBLE-v0.3.md`;
+- `design/COMBAT-KERNEL-v0.1.md`;
+- `design/COMBAT-APTITUDE-PROTOTYPE-MATRIX-v0.1.md`;
+- `design/COMBAT-PLAYTEST-SCORECARD-v0.1.md`.
+
+Current prototype choices:
+- readable real-time action;
+- one shared windup/active/recovery kernel;
+- Fighter/Sword, Scout/Spear, Ranger/Bow, Mage/Staff-Focus;
+- shared prototype Effort resource;
+- no permanent class lock;
+- no additional Mana bar in the first combat comparison.
+
+These remain prototype decisions until implementation/playtest evidence validates them.
 
 ## Priority B — vertical-slice integration
 
