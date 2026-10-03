@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.7 — 2026-10-03 — Chinese-Fantasy Treasure & Hidden-Realm Deep Study
+
+- Added research/CHINESE-FANTASY-TREASURE-MANUAL-HIDDEN-REALM-STUDY-v0.1.md.
+- Added research/evidence/chinese-fantasy-system-patterns-v0.1.csv.
+- Deepened the Chinese-fantasy reference study across six licensed/public novel sources.
+- Defined the Treasure Desire Model: Mystery, Utility, Provenance, Connection, Choice, Growth and Memory.
+- Proposed original narrative treasure categories, manuals/codices, technique fragments, layered appraisal, artifact restoration, rare-material ecology and hidden-realm access.
+- Proposed auction catalogues, proxy bids, requested exchanges, appraisal and provenance while rejecting real-money combat auctions and attendance pressure.
+- Added original Oravel treasure prototypes focused on exploration, investigation, collection and world mystery rather than only damage.
+- Added multiplayer fairness rules separating lore uniqueness and server-first prestige from permanent gameplay denial.
+- Existing fiction remains reference material only; protected names, techniques, artifacts, progression ladders and lore are not game canon.
+
 ## v0.2.6 — 2026-10-03 — Economy, Treasure & Chinese-Fantasy Systems Research
 
 - Added `research/ECONOMY-TREASURE-XIANXIA-SYSTEMS-RESEARCH-v0.1.md`.
