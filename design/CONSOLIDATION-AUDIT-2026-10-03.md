@@ -1,7 +1,7 @@
 # Consolidation Audit — 2026-10-03
 
 **Status:** Active repository audit  
-**Scope:** Working-system expansion through checkpoint v0.2.12  
+**Scope:** Working-system expansion through checkpoint v0.2.13  
 **Canonical Bible:** v0.2.1 remains the current canonical correction. This audit does not promote working proposals into canon.
 
 ## Purpose
