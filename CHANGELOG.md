@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.3 — 2026-10-03 — Combat & Classes Prototype Candidate
+
+- Added `bible/GAME-CONCEPT-BIBLE-v0.3.md` as the active Combat & Classes prototype candidate while preserving v0.2.1's locked Player/NPC correction.
+- Selected readable real-time action combat for prototype validation, continuing the existing playable direction rather than changing genres before evidence.
+- Defined Starter Aptitudes as initial training/loan-kit packages rather than permanent classes.
+- Mapped the four slice aptitudes to four comparison loadouts: Fighter/Sword, Scout/Spear, Ranger/Bow and Mage/Staff-Focus.
+- Added one shared combat state machine with explicit windup → active → recovery timing and server-authoritative hit/reward rules.
+- Added a prototype shared `Effort` resource for defenses/techniques and bounded Pattern exertion; no separate Mana subsystem is added for the first comparison.
+- Added normalized starter attacks so initial testing compares weapon feel rather than item-level math.
+- Added distinct defenses: Sword Guard, Spear Brace, Bow Evade Step and Staff/Focus Ward.
+- Added `design/COMBAT-KERNEL-v0.1.md` with TypeScript-oriented attack/state/reward contracts and required tests.
+- Added `design/COMBAT-APTITUDE-PROTOTYPE-MATRIX-v0.1.md` and `design/COMBAT-PLAYTEST-SCORECARD-v0.1.md`.
+- Added `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md` for phased implementation on the RPGJS v5 migration target.
+- Updated the vertical slice so combat comparison now uses the same kernel and four weapon languages instead of comparing unrelated combat genres.
+- Recorded OD-21 as **Proposed for prototype validation**, not a final combat lock.
+- Continued the feature-breadth freeze: do not expand class trees, crafting, housing, PvP, mounts, pets or 100-floor content before the combat gates pass.
+
 ## v0.2.13 — 2026-10-03 — Consolidation Pass & Feature-Breadth Freeze
 
 - Added `design/CONSOLIDATION-AUDIT-2026-10-03.md` as the current cross-system audit and reading reference.
