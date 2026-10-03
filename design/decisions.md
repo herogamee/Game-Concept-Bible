@@ -36,6 +36,7 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 | OD-18 | Ecology-first monsters, Named Monsters and non-kill boss resolutions | Proposed | Make creatures part of the world and reduce boss design to more than HP checks |
 | OD-19 | Future Chinese-fantasy/xianxia inspiration pass for treasures, manuals, hidden realms and inheritance | Research direction requested 2026-10-02 | Translate structural appeal into original IP; do not copy protected names, characters, techniques, artifacts or lore |
 | OD-20 | One-World System Coherence: new systems must connect to the existing Adventurer Life world and reuse shared concepts before inventing parallel currencies/ranks/reputations | **Locked owner direction** | Owner explicitly requested that growing documentation remain one coherent game rather than systems becoming increasingly mixed/disconnected; use the integration guardrails before future expansion |
+| OD-21 | v0.3 prototype combat direction: readable real-time action kernel, four Starter Aptitude loadouts (Sword/Spear/Bow/Staff-Focus), shared Effort resource, no permanent class lock | **Proposed for prototype validation** | Continues the existing playable real-time prototype while preserving web/mobile input limits and bounded Pattern Magic; promote only after combat gates/playtest evidence |
 
 ## Proposed Change PC-01 — prototype class subset
 
