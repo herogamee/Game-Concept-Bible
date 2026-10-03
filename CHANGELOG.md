@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.9 — 2026-10-03 — Oravel Authored Content Set 01
+
+- Added the first authored content library rather than only system frameworks.
+- Added 50 original treasures/relics spanning F through post-S, with utility, provenance, mystery and world connections.
+- Added 30 original manuals/techniques across combat, survival, medicine, scholarship, exploration, Pattern Magic and ancient-system knowledge.
+- Added 10 clue-driven hidden realms from the Reedmark through post-S unknown-world exploration.
+- Added 15 rare materials and 10 expedition medicines/preparations.
+- Connected content into chains: treasure can reveal a realm, a realm can provide a manual/material, and later knowledge can reveal new functions in earlier objects.
+- Preserved multiplayer fairness: server-first prestige does not permanently deny later players meaningful story access.
+- Preserved noncombat value: several treasures, realms and techniques focus on ecology, investigation, mapping, crafting, restoration and scholarship.
+- Names and numerical balance remain reviewable authored proposals rather than immutable canon.
+
 ## v0.2.8 — 2026-10-03 — Economy, Treasure, Technique, Hidden-Realm & Market Systems
 
 - Added `economy/CURRENCY-AND-MONEY-v0.1.md`: Copper/Silver/Gold foundation, currency sources/sinks, functional magical-resource direction, banking and inflation telemetry.
