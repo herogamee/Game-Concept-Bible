@@ -45,6 +45,10 @@ v0.2.1 is the current direction correction. It preserves v0.2's useful world/Gui
 - Evidence: [economy/treasure/xianxia systems research](research/ECONOMY-TREASURE-XIANXIA-SYSTEMS-RESEARCH-v0.1.md), [Chinese-fantasy treasure/manual/hidden-realm deep study](research/CHINESE-FANTASY-TREASURE-MANUAL-HIDDEN-REALM-STUDY-v0.1.md), [machine-readable Chinese-fantasy pattern matrix](research/evidence/chinese-fantasy-system-patterns-v0.1.csv), [market comparison](research/game-market-research.md), [community demand](research/community-demand.md), [reference study](research/anime-reference-study.md), [open-source implementation stack](research/open-source-game-development-stack-2026-10-02.md), [commercial-safe game audio resources](research/game-audio-sources-2026-10-02.md), [audio source/license matrix](research/evidence/game-audio-source-matrix-2026-10-02.csv), [dated Steam counts](research/evidence/steam-review-counts-2026-10-01.csv), [individual review index](research/evidence/community-review-index-2026-10-01.csv).
 - Review: [open decisions and Proposed Changes](design/decisions.md), [requirements coverage and audit](design/requirements-and-audit.md).
 
+## Coherence gate
+
+Before proposing another major system, use [World & System Integration Guardrails](design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md). New mechanics must identify their in-world location/owner, reuse existing progression language where possible, connect to the Adventurer Life loop, and define a bounded playable version before expanding. Housing/life-space work begins with [Ternhaven Housing, Workshop & Social Life](design/TERNHAVEN-HOUSING-WORKSHOP-SOCIAL-LIFE-v0.1.md), not a continent-wide property simulator.
+
 ## Source of truth and workflow
 
 Preserve previous Bible versions. Foundation locks and explicit owner approvals take priority; v0.2.1 supersedes v0.2 only where Player/NPC boundaries and shared-world direction conflict. v0.2 remains the current integrated world/Guild proposal, with linked specialist documents owning detailed rules. Research is supporting evidence, not canonical lore. The new story, world-expansion, skills, creature and post-S documents are working proposals layered on top of the current Bible; they do not silently lock Floor 100's final truth, final classes or combat balance. The [decision register](design/decisions.md) records proposals before locked concepts change.
@@ -80,4 +84,4 @@ The Bible uses semantic-style concept versions:
 - v0.9 — Prototype specification
 - v1.0 — First complete pre-production Bible
 
-Last updated: 2026-10-02
+Last updated: 2026-10-03
