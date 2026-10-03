@@ -2,6 +2,8 @@
 
 # Willowbrook — RPGJS v5 Adventurer v0.2
 
+HD art checkpoint: original clean-outline chibi hero and matching HUD avatar, higher-density NPC/slime/props from preserved masters, and terrain rendered at2× density. World geometry and saved appearance IDs stay compatible. See `evidence/art-hd/REVIEW.md` for actual source resolution, validation and unfinished art scope. Rebuild exports with `npm run assets:parity`.
+
 Bounded RPGJS v5 presentation/control experiment using the original v0.1 artwork. v0.1 remains the default playable until owner review. See `PARITY-REVIEW.md` for current results.
 
 Current checkpoint: selectable smooth/native-density or original pixel rendering; a synchronized, saved cosmetic schema for body/face/eyes/pants/shoes/shirt/hair/hat/weapon. Real separate costume layers are not authored yet. Read `CHARACTER-APPEARANCE.md`, `../../PROJECT-STATUS.md` and `../../DEVELOPING.md` for the precise scope and portable setup.

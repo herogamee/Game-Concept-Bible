@@ -26,7 +26,7 @@ let viewport:any=null,engine:RpgClientEngine;
 export const camera={x:0,y:0};
 export const viewSize={width:800,height:450};
 export const groundImage=signal('');
-export function setGroundMap(map:string){if(map in maps){const url=`${import.meta.env.BASE_URL}map/${map}-ground.png`;if(groundImage()!==url)groundImage.set(url);}}
+export function setGroundMap(map:string){if(map in maps){const url=`${import.meta.env.BASE_URL}willowbrook/hd/${map}-ground.png`;if(groundImage()!==url)groundImage.set(url);}}
 export function attachCamera(value:any){viewport=value;resetCamera=true;lastCameraFrame=0;}
 export function setPresentationEngine(value:RpgClientEngine){engine=value;}
 export function canvasPoint(event:PointerEvent,canvas:HTMLCanvasElement){

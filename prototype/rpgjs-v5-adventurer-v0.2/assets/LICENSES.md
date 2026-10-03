@@ -18,6 +18,8 @@ scores and slash/hurt/level effects. Its preference key is separate from v0.1.
 
 ## Retained experiment assets (not active)
 
+The active chibi hero v2 is original artwork generated with built-in imagegen on2026-10-02. Its source and complete prompt are preserved in `assets/masters/CHIBI-HERO-V2.md`. No files from DDT4.0 were copied into the game. `public/willowbrook/hd/` also includes higher-density exports from the preserved project-owned v0.1 masters and deterministic terrain. The source master is authoring material; the runtime receives only packed exports.
+
 The earlier Universal LPC composite and five original layer sources remain in
 `public/spritesheets/adventurer-lpc.png` and `assets/lpc-source/` for reproducible
 history. Every layer selected OGA-BY 3.0 from its offered alternatives. Keep

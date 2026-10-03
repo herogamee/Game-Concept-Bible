@@ -7,30 +7,30 @@ export function facingOf(direction: Direction): Facing {
   return ({up:'north',left:'west',down:'south',right:'east'} as const)[direction] ?? 'south';
 }
 
-// v0.1 painted sheet layout is independent of LPC's frame order.
+// Original chibi v2 keeps v0.1's directional row semantics, with denser frames.
 // Hurt/dead hold the readable idle frame: red feedback is separate from opacity.
 export function paintedSheet() {
   const textures: Record<string,unknown> = {};
   for(const semantic of Object.keys(keys) as CharacterAnim[]) {
     const attack=['slash','thrust','shoot','spellcast'].includes(semantic);
     const count=semantic==='walk'||attack?8:1;
-    textures[keys[semantic]]={offset:{x:0,y:attack?256:0},framesWidth:8,framesHeight:4,
+    textures[keys[semantic]]={offset:{x:0,y:attack?768:0},framesWidth:8,framesHeight:4,
       animations:({direction}:{direction:Direction})=>{
         const row={south:0,west:1,east:2,north:3}[facingOf(direction)];
         return [[...Array.from({length:count},(_,frameX)=>({time:frameX*(attack?2.5:6),frameX,frameY:row})),{time:count*(attack?3:6)}]];
       }};
   }
-  return {id:'adventurer',image:'willowbrook/adventurer.png',width:512,height:512,rectWidth:64,rectHeight:64,framesWidth:8,framesHeight:8,anchor:[.5,.625],opacity:1,textures};
+  return {id:'adventurer',image:'willowbrook/hd/chibi-hero-v2.png',width:1536,height:1536,rectWidth:192,rectHeight:192,displayScale:1/3,framesWidth:8,framesHeight:8,anchor:[.5,.625],opacity:1,textures};
 }
 export function paintedSupportingSheets() {
   const animated=(id:string,image:string,size:number,columns:number,rows:number,standRow=0,walkRow=0)=>({
-    id,image,width:size*columns,height:size*rows,rectWidth:size,rectHeight:size,framesWidth:columns,framesHeight:rows,anchor:[.5,.625],opacity:1,
+    id,image,width:size*columns,height:size*rows,rectWidth:size,rectHeight:size,framesWidth:columns,framesHeight:rows,anchor:[.5,.625],displayScale:0.5,opacity:1,
     textures:Object.fromEntries([[Animation.Stand,standRow],[Animation.Walk,walkRow]].map(([key,row])=>[key,{offset:{x:0,y:Number(row)*size},framesWidth:columns,framesHeight:1,animations:()=>[[...Array.from({length:columns},(_,frameX)=>({time:frameX*12,frameX,frameY:0})),{time:columns*12}]]}]))
   });
-  return [animated('slime','willowbrook/slime.png',48,4,4,0,1),
+  return [animated('slime','willowbrook/hd/slime.png',96,4,4,0,1),
     // A nonempty invisible graphic replaces the cached live sprite reliably.
-    {...animated('slime-dead','willowbrook/slime.png',48,4,4,0,1),opacity:0},
-    ...['elder','merchant','guide'].map(role=>({id:`npc-${role}`,image:`willowbrook/npc-${role}.png`,width:64,height:192,rectWidth:64,rectHeight:64,framesWidth:1,framesHeight:3,anchor:[.5,.625],opacity:1,textures:{[Animation.Stand]:{animations:()=>[[{time:0,frameX:0,frameY:0},{time:24,frameX:0,frameY:1},{time:48,frameX:0,frameY:2},{time:72}]]}}})),
+    {...animated('slime-dead','willowbrook/hd/slime.png',96,4,4,0,1),opacity:0},
+    ...['elder','merchant','guide'].map(role=>({id:`npc-${role}`,image:`willowbrook/hd/npc-${role}.png`,width:128,height:384,rectWidth:128,rectHeight:128,displayScale:0.5,framesWidth:1,framesHeight:3,anchor:[.5,.625],opacity:1,textures:{[Animation.Stand]:{animations:()=>[[{time:0,frameX:0,frameY:0},{time:24,frameX:0,frameY:1},{time:48,frameX:0,frameY:2},{time:72}]]}}})),
     ...Object.entries(props).map(([name,{width,height}])=>({id:`prop-${name}`,image:`willowbrook/${name}.png`,width,height,rectWidth:width,rectHeight:height,framesWidth:1,framesHeight:1,anchor:[.5,1],opacity:1,textures:{[Animation.Stand]:{animations:()=>[[{time:0,frameX:0,frameY:0},{time:60}]]}}}))];
 }
 // All raw LPC indices live here, including the explicitly temporary death fallback.

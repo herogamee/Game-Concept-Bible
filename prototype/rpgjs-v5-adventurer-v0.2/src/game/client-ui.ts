@@ -31,7 +31,7 @@ function setup(e:RpgClientEngine){
     const prop=[...maps.village.objects,...maps.meadow.objects].find(o=>o.type==='prop'&&o.id===sprite.id);
     if(!prop)return null;
     const name=String(prop.properties.graphic).replace(/^prop-/,'');
-    return {component:StaticProp,props:{id:prop.id,image:`${import.meta.env.BASE_URL}willowbrook/${name}.png`,object:sprite,worldX:prop.x,worldY:prop.y},renderGraphic:false};
+    return {component:StaticProp,props:{id:prop.id,image:`${import.meta.env.BASE_URL}willowbrook/hd/${name}.png`,object:sprite,worldX:prop.x,worldY:prop.y},renderGraphic:false};
   });
   // Start at the reference framing; presentation crops it to the actual viewport.
   e.width.set('800');e.height.set('450');e.renderer.resize(800,450);e.setCameraFollow(null,false);

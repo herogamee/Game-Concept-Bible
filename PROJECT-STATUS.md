@@ -1,10 +1,10 @@
-# Implemented game status — 2026-10-02
+# Implemented game status — 2026-10-03
 
 We are at a **small playable village/meadow prototype**, not a full RPG/MMO. Bible version numbers describe design documents; they are not percentages of implemented gameplay. v0.1 remains the product reference. The RPGJS v0.2 candidate is reviewable, with visual/control acceptance still pending.
 
 | Area | Actual implementation |
 |---|---|
-| World / art | Village and meadow, original painted scenery/actors, distinct elder/merchant/guide, camera/Y sorting. |
+| World / art | Village and meadow, original clean-outline chibi hero v2, HD exports of painted scenery/NPCs/slime, 2x deterministic terrain, camera/Y sorting. Hero is a baked costume; complete style unification is pending. |
 | Controls | Ground click routing, WASD/arrows, click pursuit, sword slash and cancel. Normalized diagonal WASD/arrows and continuous route/steering corrections are implemented; owner feel review remains pending. |
 | Combat / growth | Four Lv.1 slimes, phased server-validated damage, hit feedback, EXP/Gold/Gel, level growth, death/recovery and respawn. Higher monster tiers are in v0.1, not this bounded candidate. |
 | Quest / inventory | One three-kill elder quest, real turn-in/rewards, starter sword/count-based bag, potion use and merchant purchase. |
@@ -14,7 +14,7 @@ We are at a **small playable village/meadow prototype**, not a full RPG/MMO. Bib
 | Save / online | Standalone save/load/reload; two-client authoritative death/single reward proof. Online guest reconnect cleanup and durable accounts/storage remain open. |
 | Portability | Committed source/assets/lockfile/maps plus build commands and portable standalone packaging. Node.js 22+ required for local launcher. |
 
-This checkpoint passed TypeScript, **31 focused tests**, build and root/subpath production smoke. Browser checks exercised both display modes (1280×720 vs 800×450 backing at the same 1280px CSS viewport), cross-map rendering, kill rewards and standalone save/reload. See candidate evidence reports for historical multiplayer observations and this checkpoint's additions.
+This checkpoint passed TypeScript, **33 focused tests**, build and root/subpath production smoke including active HD textures. Browser checks exercised both display modes (1280×720 vs 800×450 backing at the same 1280px CSS viewport), cross-map rendering, kill rewards and standalone save/reload. See candidate evidence reports for historical multiplayer observations and this checkpoint's additions.
 
 Not implemented: complete character customization, equipment stats/ownership UI, classes/professions, Guild rank progression, broad quest chains, crafting, parties/guild systems, durable accounts, production multiplayer hosting or the 100-floor dungeon. The corresponding Bible proposals remain design work.
 

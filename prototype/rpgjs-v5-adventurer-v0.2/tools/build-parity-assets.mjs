@@ -31,3 +31,5 @@ for(const [id,key] of [['village','v'],['meadow','f']]) {
 }
 fs.writeFileSync(new URL('tools/parity-world.json',root),JSON.stringify({world:sandbox.referenceWorld,props},null,2));
 console.log('Original painted sprites, distinct NPC frames and deterministic v1 terrain adapted.');
+
+await import('./build-hd-assets.mjs');

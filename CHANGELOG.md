@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-02 — Chibi hero and HD asset exports
+
+- Add an original clean-outline chibi hero with four-direction walk/slash frames and matching HUD avatar; preserve generated source/prompt and previous art.
+- Export NPCs, slime and props from original masters at higher density; redraw deterministic ground at2× without changing world geometry or saves.
+- Pack native hero pixels with transparent frame gutters and aligned walk foot baselines; verify all64 frames and world footprints. Art remains a baked costume; full environment redraw and modular wardrobe remain future work, not claimed complete.
+- Record Full HD runtime observations and honest art acceptance limits in candidate evidence/art-hd/REVIEW.md.
+
 ## 2026-10-02 — Continuous walking, fixed scenery and adjustable camera
 
 - Stop steering heartbeats from cancelling active movement; unify WASD/arrows and normalize diagonal speed. Remove stopped route frames at grid waypoints while preserving safe turns.

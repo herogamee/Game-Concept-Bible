@@ -76,7 +76,7 @@ test('production previews serve maps and the UI theme at root and subpath', asyn
         const tileset=await fetch(new URL(`${variant.route}map/village-ground.tsx`,origin))
         assert.equal(tileset.status,200)
         assert.match(await tileset.text(), /collision/)
-        for(const path of ['map/village-ground.png','map/meadow-ground.png','willowbrook/adventurer.png','willowbrook/npc-elder.png']){
+        for(const path of ['map/village-ground.png','map/meadow-ground.png','willowbrook/adventurer.png','willowbrook/npc-elder.png','willowbrook/hd/chibi-hero-v2.png','willowbrook/hd/hero-avatar-v2.png','willowbrook/hd/npc-elder.png','willowbrook/hd/slime.png','willowbrook/hd/tree.png','willowbrook/hd/village-ground.png','willowbrook/hd/meadow-ground.png']){
           const response=await fetch(new URL(`${variant.route}${path}`,origin))
           assert.equal(response.status,200,`${variant.name} ${path}`)
           const bytes=new Uint8Array(await response.arrayBuffer())
