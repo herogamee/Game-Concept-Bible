@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-03 — Character Lab
+
+- Add an inspector using actual character/NPC/Slime atlases and frame timings, with slow motion, stepping, filmstrip, foot/grid overlays and cadence controls.
+- Add PNG/manifest and appearance-layer preview, explicit missing-action states, shared sword timing/range inspection, notes and export controls.
+- Embed real game combat under a separate Lab save namespace and add a game-settings link.
+- Pass TypeScript, 38 tests and production root/subpath smoke. Record browser review and Slime reward evidence in the Lab guide. Gait redraw, modular wardrobe, class skills and owner feel acceptance remain pending.
+
 ## 2026-10-02 — Chibi hero and HD asset exports
 
 - Add an original clean-outline chibi hero with four-direction walk/slash frames and matching HUD avatar; preserve generated source/prompt and previous art.

@@ -68,6 +68,14 @@ test('production previews serve maps and the UI theme at root and subpath', asyn
         assert.equal(indexResponse.status, 200, `${variant.name} index status`)
         const builtHtml = await indexResponse.text()
         assert.doesNotMatch(builtHtml, /node_modules\/@rpgjs\/ui-css/)
+        const labResponse=await fetch(new URL(`${variant.route}lab.html`,origin))
+        assert.equal(labResponse.status,200)
+        const labHtml=await labResponse.text()
+        assert.match(labHtml,/Character Lab/)
+        assert.match(labHtml,/assets\/lab-[^" ]+\.js/)
+        assert.doesNotMatch(labHtml,/assets\/(?:game|standalone)-[^" ]+\.js/,'Lab must not boot the game outside its isolated iframe')
+        const labScripts=[...labHtml.matchAll(/src="([^"]+\.js)"/g)]
+        for(const [,path] of labScripts){const script=await fetch(new URL(path,indexUrl));assert.equal(script.status,200);assert.match(script.headers.get('content-type')??'',/javascript/)}
 
         const mapResponse = await fetch(new URL(`${variant.route}map/village.tmx`, origin))
         assert.equal(mapResponse.status, 200, `${variant.name} map status`)

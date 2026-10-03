@@ -6,6 +6,7 @@ import maps from './content.json';
 import type { WorldView } from './runtime';
 import ParityScene from './parity-scene.ce';
 import StaticProp from './static-prop.ce';
+import {isCharacterLab} from './save-key';
 import {camera,viewSize,setPresentationEngine,canvasPoint,setGroundMap,displayQuality,setDisplayQuality,cameraSettings,setCameraSettings} from './presentation';
 import {setupTouchControls,touchDirection,releaseTouch} from './touch-controls';
 const read=(v:any):any=>typeof v==='function'?read(v()):Array.isArray(v)?v.map(read):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).filter(([k])=>!k.startsWith('_')).map(([k,v])=>[k,read(v)])):v;
@@ -26,6 +27,11 @@ function showPanel(value:typeof panel){
 export const send=(name:string,data?:unknown)=>socket?.emit('adventure:action',{name,data});
 function text(id:string,value:string){const el=document.getElementById(id);if(el&&el.textContent!==value)el.textContent=value;}
 function setup(e:RpgClientEngine){
+  if(isCharacterLab(window.location.search)){
+    document.title='Willowbrook · Character Lab runtime';
+    const badge=document.querySelector('#game-hud .eyebrow');
+    if(badge)badge.textContent='✦ CHARACTER LAB · เซฟทดสอบ';
+  }
   engine=e;setPresentationEngine(e);socket=inject<AbstractWebsocket>(WebSocketToken);
   e.addEventComponentResolver(sprite=>{
     const prop=[...maps.village.objects,...maps.meadow.objects].find(o=>o.type==='prop'&&o.id===sprite.id);

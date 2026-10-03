@@ -4,6 +4,8 @@ Canonical design repository for the original fantasy **Adventurer Life RPG** pro
 
 ## Current direction
 
+The RPGJS candidate now has a **[Character Lab](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-LAB.md)** at `http://localhost:5173/lab.html` for frame inspection, local costume/face layers, sword timing and actual-game Slime testing with a separate save. Gait art and class gameplay remain pending review/development.
+
 The player begins as an ordinary **F-rank adventurer**, chooses a profession, joins an Adventurer Guild, accepts ranked quests, travels through towns and villages, forms relationships and parties, grows toward S-rank, and explores a mysterious 100-floor dungeon.
 
 The core fantasy is not "be the chosen hero immediately." It is:

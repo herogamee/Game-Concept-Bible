@@ -2,6 +2,7 @@ import { createServer,  provideServerModules, LocalStorageSaveStorageStrategy } 
 import { provideMain } from "./modules/main";
 import { provideSaveStorage } from "@rpgjs/server";
 import { provideTiledMap } from "@rpgjs/tiledmap/server";
+import {saveKeyForSearch} from './game/save-key';
 // A browser slot belongs to this save, not to a past room's public player ID.
 class AdventureLocalStorage extends LocalStorageSaveStorageStrategy {
   async get(player:any,index:number){
@@ -15,7 +16,7 @@ class AdventureLocalStorage extends LocalStorageSaveStorageStrategy {
 export default createServer({
     providers: [
       provideMain(),
-      ...(typeof window !== 'undefined' ? [provideSaveStorage(new AdventureLocalStorage({ key: "adventurer-rpgjs-v02-slots1" }))] : []),
+      ...(typeof window !== 'undefined' ? [provideSaveStorage(new AdventureLocalStorage({ key: saveKeyForSearch(window.location.search) }))] : []),
       provideServerModules([]),
       provideTiledMap()
     ]
