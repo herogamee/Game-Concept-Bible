@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.2.6 — 2026-10-03 — Economy, Treasure & Chinese-Fantasy Systems Research
+
+- Added `research/ECONOMY-TREASURE-XIANXIA-SYSTEMS-RESEARCH-v0.1.md`.
+- Studied currency sinks, item sinks, transparent markets, regional crafting economies and anti-inflation patterns from Guild Wars 2, Final Fantasy XIV, Albion Online and Path of Exile.
+- Expanded the Chinese-fantasy research direction using *A Record of a Mortal's Journey to Immortality* / **คัมภีร์วิถีเซียน** as a structural reference for functional currency-like resources, rare-item barter, auctions, manuals and hidden-realm discovery; no protected names/lore are adopted.
+- Proposed a two-layer economic direction: readable everyday coin plus future functional magical resources that can be consumed, crafted or traded.
+- Proposed Common Exchange + Curated Auction rather than forcing all goods through one market model.
+- Proposed peaceful item sinks (Guild requisitions, study/disassembly, donation, expedition consumables) rather than full-loot PvP.
+- Added treasure provenance, manual/technique, hidden-realm, regional-economy and cooperative anti-conflict research hypotheses.
+- Existing copper/silver/gold prototype values remain unchanged pending a dedicated economy design pass.
+
 ## v0.2.5 — 2026-10-02 — Narrative, World Mystery & Long-Term Progression Framework
 
 - Added `story/MAIN-STORY-AND-WORLD-MYSTERY-v0.1.md` with an original F→S narrative escalation, Underfold/world-network mystery, rank-scale story arcs, Floor 100 junction direction and four-layer story model.
