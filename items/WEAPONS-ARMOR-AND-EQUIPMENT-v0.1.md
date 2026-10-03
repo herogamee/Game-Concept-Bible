@@ -39,12 +39,13 @@ Examples:
 How well was this particular object made?
 
 Working bands:
-- Worn
 - Serviceable
 - Fine
 - Masterwork
 
 These apply mainly to ordinary crafted gear.
+
+**Terminology rule:** `Worn` is reserved for equipment **Condition**, not Workmanship.
 
 ## C. Material
 What is it made from?
