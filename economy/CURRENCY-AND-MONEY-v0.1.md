@@ -55,9 +55,9 @@ Every sink must provide understandable value.
 
 ## 4. Functional magical resource
 
-Future working class: **Pattern Shard** — placeholder name.
+Future working class: **Pattern Shard** — placeholder name only.
 
-It is NOT ordinary money.
+It is NOT ordinary money and is **not approved for prototype implementation or final naming**. The game currently needs no second universal currency.
 
 Possible uses:
 
