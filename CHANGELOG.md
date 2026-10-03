@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.8 — 2026-10-03 — Economy, Treasure, Technique, Hidden-Realm & Market Systems
+
+- Added `economy/CURRENCY-AND-MONEY-v0.1.md`: Copper/Silver/Gold foundation, currency sources/sinks, functional magical-resource direction, banking and inflation telemetry.
+- Added `items/TREASURES-ARTIFACTS-AND-RELICS-v0.1.md`: Treasure Desire Model, provenance, layered identification, relic growth, trade classes and multiplayer uniqueness rules.
+- Added `items/MANUALS-TECHNIQUES-AND-INHERITANCE-v0.1.md`: world-discovered techniques, manuals, fragments, copying, mentors, inheritance and dangerous-knowledge rules.
+- Added `world/HIDDEN-REALMS-AND-INHERITANCE-v0.1.md`: clue-driven secret areas, varied challenge types and shared-world access fairness.
+- Added `design/TRADE-AUCTION-AND-MARKET-v0.1.md`: Common Exchange, Specialist Exchange, Curated Auction, safe direct trade, price information, anti-monopoly and regional trade.
+- Explicitly separated money from Guild Rank, reputation, discovery and mastery so wealth cannot directly buy core progression.
+- Explicitly separated equipment workmanship from relic/lore significance to reduce pure gear-score inflation.
+- Preserved cooperative social direction: no forced PvP for essential resources, no first-hit boss ownership and no permanent monopoly over progression-critical hidden realms.
+- Exact economic balance values remain open for simulation; these documents are working proposals rather than canonical numerical locks.
+
 ## v0.2.7 — 2026-10-03 — Chinese-Fantasy Treasure & Hidden-Realm Deep Study
 
 - Added research/CHINESE-FANTASY-TREASURE-MANUAL-HIDDEN-REALM-STUDY-v0.1.md.
