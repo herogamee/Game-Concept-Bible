@@ -1,7 +1,7 @@
 # Next Design Frontier — Economy, Treasures, Social World & Chinese Fantasy
 
 **Date:** 2026-10-02  
-**Status:** Owner-requested next design agenda; details intentionally deferred until the current narrative checkpoint is integrated.
+**Status:** Historical planning agenda — most topics now have working proposals. Retained to preserve intent; use the Integration Guardrails and Consolidation Audit for current direction.
 
 ## Goal
 
@@ -226,17 +226,23 @@ No mandatory daily-login pressure.
 
 ---
 
-# 11. Next document set
+# 11. Resolution of this agenda
 
-Recommended next documents:
+Most topics listed in this planning document now have working proposals:
 
-1. `economy/CURRENCY-AND-MONEY-v0.1.md`
-2. `items/WEAPONS-ARMOR-AND-EQUIPMENT-v0.1.md`
-3. `items/TREASURES-ARTIFACTS-AND-RELICS-v0.1.md`
-4. `design/TRADE-AUCTION-AND-MARKET-v0.1.md`
-5. `design/COLLECTION-AND-HOUSING-v0.1.md`
-6. `design/SOCIAL-SAFETY-AND-COOPERATION-v0.1.md`
-7. `research/CHINESE-FANTASY-XIANXIA-REFERENCE-STUDY-v0.1.md`
-8. `world/HIDDEN-REALMS-AND-INHERITANCE-v0.1.md`
+- Currency -> `economy/CURRENCY-AND-MONEY-v0.1.md`
+- Weapons/equipment -> `items/WEAPONS-ARMOR-AND-EQUIPMENT-v0.1.md`
+- Treasures/relics -> `items/TREASURES-ARTIFACTS-AND-RELICS-v0.1.md`
+- Manuals/techniques -> `items/MANUALS-TECHNIQUES-AND-INHERITANCE-v0.1.md`
+- Hidden realms -> `world/HIDDEN-REALMS-AND-INHERITANCE-v0.1.md`
+- Trade/auction -> `design/TRADE-AUCTION-AND-MARKET-v0.1.md`
+- Crafting/gathering -> `design/CRAFTING-GATHERING-AND-ARTISAN-LIFE-v0.1.md`
+- Housing/social life -> `design/TERNHAVEN-HOUSING-WORKSHOP-SOCIAL-LIFE-v0.1.md`
+- Chinese-fantasy research -> current files under `research/`
 
-Do not design these in isolation. Currency, treasure rarity, trade and social safety must be reviewed together to prevent exploit loops or player conflict.
+Two important changes from the original agenda:
+
+1. Do **not** create a standalone universal Social Reputation progression. Reuse Guild professional evidence, Local Standing, Artisan Reputation and named Relationships.
+2. Do **not** continue expanding feature breadth automatically. New work must pass `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md` and the current consolidation audit.
+
+This file is now a historical record of why those systems were explored, not the active backlog.
