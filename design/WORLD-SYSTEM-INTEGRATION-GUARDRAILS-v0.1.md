@@ -4,6 +4,12 @@
 **Status:** Repository-wide design governance; applies to all working proposals  
 **Authority:** Interprets new work through canonical Bible v0.2.1 and the owner direction that all systems must belong to one coherent game world.
 
+## Active consolidation reference
+
+For conflicts discovered across the current specialist documents, use `design/CONSOLIDATION-AUDIT-2026-10-03.md`. The audit resolves terminology and stale planning references without promoting working proposals into canon.
+
+---
+
 ## Purpose
 
 The repository now contains enough systems that the main design risk is no longer "missing features."
