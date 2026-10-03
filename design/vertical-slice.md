@@ -17,19 +17,19 @@ Working test harness is an offline solo build with companion NPCs. This is stric
 | Small dungeon | Siltwell, two chambers plus entrance | First preparation, light, mapping and retreat test |
 | Main dungeon | Floors 1–3, compact distinct layouts | Drain/root/weir identities; floor-3 bounded capstone |
 | Player ranks | F and E | Restricted E attempt while F; one promotion |
-| Starting aptitudes | Fighter, Ranger, Mage, Scout | Different practical strengths, shared safety fundamentals |
+| Starting aptitudes | Fighter, Ranger, Mage, Scout | v0.3 prototype loadouts: Fighter/Sword, Scout/Spear, Ranger/Bow, Mage/Staff-Focus; these are starting packages, not permanent class locks |
 | Contracts | 18 templates in starter-quests | Six families, noncombat solutions and honest retreat |
 | Adventurer NPC cast | 14 IDs N15–N28 across ambient/story/companion roles | Persistent identity and at least two visible authored state changes; no autonomous bot-player career loop |
 | Support cast | 14 IDs N01–N14 with tiered presentation | Eight major full-conversation characters across whole cast |
 | NPC/world state | Saved authored milestones plus two regional event chains | NPC continuity is visible; NPCs never consume core player contracts or softlock progression |
 | Exam | One F → E practical test | Multiple aptitude-compatible methods and feedback/retake |
 
-Four aptitudes are a selected subset of v0.1's six starting archetypes. Rogue and Cleric remain future options; Mage support tools and mundane first aid allow their important utility to be tested without committing separate class trees. No advanced-class evolution tree yet.
+Four aptitudes are a selected subset of v0.1's six starting archetypes. Under the v0.3 candidate, they are presented as **Starter Aptitudes**: initial training/loan-kit packages rather than permanent class locks. The combat comparison uses Fighter/Sword, Scout/Spear, Ranger/Bow and Mage/Staff-Focus on one shared combat kernel. Rogue and Cleric remain future identity directions; Mage support tools and mundane first aid allow important utility to be tested without committing separate class trees. No advanced-class evolution tree yet.
 
 ## Production sequence with exit gates
 
 1. **Greybox career loop:** Guild board → single road task → return ledger → rest/save. Gate: a new tester can complete it, explain fees and recover from retreat.
-2. **Combat/interaction comparison:** use the same tiny scene for two candidate combat approaches selected after platform/team discussion. Compare readability, support-aptitude solo play, input accessibility and authoring cost. Record a decision before building unique class animations; v0.2 does not choose the winner.
+2. **Combat/interaction comparison:** implement the v0.3 real-time action candidate in one tiny scene using the shared combat kernel. Compare Sword, Spear, Bow and Staff-Focus for readability, commitment, defense, retreat, solo viability, input accessibility and authoring cost. Do not choose a 'best class'; validate that the four weapon languages are distinct and viable before expanding techniques.
 3. **Social/world loop:** eight major conversations, persistent state for the named adventurer cast, ambient departures/news and companion support. Gate: at least two NPC state changes are noticed without a debug interface, with no autonomous NPC contract consumption.
 4. **Travel and dungeon:** surface shelters, Siltwell, distinct main floors and approved party rules. Gate: preparation changes outcomes and danger supports justified retreat.
 5. **Qualification loop:** enough contract families and merit, exam stations, retake, E unlock. Gate: a player can promote after varied work without kill-count grinding.
