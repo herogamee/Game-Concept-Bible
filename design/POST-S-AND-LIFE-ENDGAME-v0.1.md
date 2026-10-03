@@ -315,20 +315,24 @@ with many valid answers—not only:
 
 ---
 
-# 13. Future design documents
+# 13. Integrated follow-up status
 
-The next deep-dive should define:
+The 2026-10-02 future-work list has now been substantially explored as **working proposals**, not promoted to canon.
 
-1. currency and money sinks;
-2. weapons/armor and rarity;
-3. treasures/artifacts;
-4. technique manuals;
-5. hidden realms;
-6. player trade;
-7. auction;
-8. collection systems;
-9. housing;
-10. social reputation;
-11. anti-scam / anti-conflict safeguards;
-12. market inflation controls;
-13. Chinese-fantasy/xianxia treasure inspiration study.
+Current integrated references:
+
+1. currency/money -> `economy/CURRENCY-AND-MONEY-v0.1.md`
+2. weapons/armor -> `items/WEAPONS-ARMOR-AND-EQUIPMENT-v0.1.md`
+3. treasures/artifacts -> `items/TREASURES-ARTIFACTS-AND-RELICS-v0.1.md`
+4. technique manuals -> `items/MANUALS-TECHNIQUES-AND-INHERITANCE-v0.1.md`
+5. hidden realms -> `world/HIDDEN-REALMS-AND-INHERITANCE-v0.1.md`
+6. player trade/auction -> `design/TRADE-AUCTION-AND-MARKET-v0.1.md`
+7. housing/town life -> `design/TERNHAVEN-HOUSING-WORKSHOP-SOCIAL-LIFE-v0.1.md`
+8. crafting/gathering -> `design/CRAFTING-GATHERING-AND-ARTISAN-LIFE-v0.1.md`
+9. Chinese-fantasy structural research -> research documents under `research/`
+
+There is **no separate universal Social Reputation system**. Use Guild professional evidence, Local Standing, Artisan Reputation and named Relationships as defined by the integration guardrails.
+
+Before expanding post-S systems further, follow `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md` and `design/CONSOLIDATION-AUDIT-2026-10-03.md`.
+
+The immediate canonical design priority remains v0.3 Combat & Classes validation.
