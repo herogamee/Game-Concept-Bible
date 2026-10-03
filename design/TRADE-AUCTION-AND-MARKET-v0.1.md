@@ -139,7 +139,13 @@ Beloved named relics should not randomly disappear.
 
 ## 10. Social market roles
 
-Players can build reputation as:
+Players can become known through the **existing contextual recognition systems**, not a new universal Social Level.
+
+- craft/service work can build **Artisan Reputation**;
+- reliable local trade/service can affect **Local Standing** where appropriate;
+- named clients/crafters can build normal **Relationships**.
+
+Possible market identities include:
 
 - crafter;
 - appraiser;
@@ -149,7 +155,7 @@ Players can build reputation as:
 - collector;
 - cartographer.
 
-Market success is optional gameplay, not required for Main Story completion.
+Market success is optional gameplay, not required for Main Story completion and does not increase Guild Rank by itself.
 
 ## 11. Real-money boundary
 
