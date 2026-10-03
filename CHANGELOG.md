@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.2.13 — 2026-10-03 — Consolidation Pass & Feature-Breadth Freeze
+
+- Added `design/CONSOLIDATION-AUDIT-2026-10-03.md` as the current cross-system audit and reading reference.
+- Kept Game Concept Bible v0.2.1 as the canonical correction; this checkpoint does not silently promote specialist proposals into canon.
+- Resolved the `Worn` terminology collision: Workmanship is Serviceable/Fine/Masterwork; Condition is Good/Worn/Damaged/Critical.
+- Consolidated market/social recognition onto existing concepts: Guild professional evidence, Local Standing, Artisan Reputation and named Relationships; no universal Social Level.
+- Reaffirmed Signature Gear and Relic as independent concepts rather than stacked combat rarity tiers.
+- Made Pattern Shard explicitly a noncanonical placeholder and blocked it from prototype implementation unless later approved.
+- Marked the 2026-10-02 Next Design Frontier as a historical planning agenda because most topics now have working proposals.
+- Replaced the stale Post-S future-system checklist with links to the integrated specialist documents.
+- Updated the Decision Register to record that the requested economy/treasure/crafting/housing pass is complete as proposals/research and that OD-20 now gates further breadth.
+- Updated README so new readers encounter the Integration Guardrails and Consolidation Audit before specialist expansion documents.
+- Established a temporary feature-breadth freeze: no major new mounts/pets/land/farming/kingdom/politics/currency/rank systems before v0.3 Combat & Classes and vertical-slice evidence.
+
 ## v0.2.12 — 2026-10-03 — One-World Integration & Ternhaven Life Boundary
 
 - Added `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md` as the repository-wide coherence gate for future design work.
