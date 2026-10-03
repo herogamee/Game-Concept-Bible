@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.2.11 — 2026-10-03 — Crafting, Gathering & Artisan Life Foundation
+
+- Added a complete Gather → Process → Craft → Use/Trade → Maintain/Restore → Recycle/Requisition lifecycle.
+- Added `design/CRAFTING-GATHERING-AND-ARTISAN-LIFE-v0.1.md` covering artisan disciplines, material quality, refining, commissions, Guild requisitions, study/disassembly, provenance, failure and prototype scope.
+- Added dedicated Blacksmithing, Alchemy/Apothecary, Cooking/Provisioning and Gathering/Ecology design documents.
+- Added `crafting/catalogues/ORAVEL-ARTISAN-RECIPES-RESOURCES-SET-01.md` with 20 resource concepts, 24 initial craft/formula/dish entries and Guild requisition examples.
+- Craft mastery grows primarily from varied meaningful work rather than mass-producing identical junk.
+- Routine mastered recipes can be quick-crafted; important commissions, first crafts, Masterwork attempts and relic work retain deeper interaction.
+- Gathering progression emphasizes habitat, season, signs, extraction quality, ecology and substitutes rather than only tool tier.
+- Added bounded sustainable-harvest rules so resource competition does not create permanent player conflict.
+- Food supports daily life, recovery and expeditions without requiring stacked mandatory combat buffs.
+- Alchemy emphasizes stabilization, antidotes, environmental preparation and preservation rather than instant-reset healing.
+- Blacksmithing supports repair/reforge and Signature Gear provenance instead of a +99 enhancement treadmill.
+- Reference review used official FFXIV crafting/gathering documentation and Albion crafting/refining documentation as structural comparisons; Oravel systems remain original and intentionally reject mandatory daily Focus-style progression.
+
 ## v0.2.10 — 2026-10-03 — Weapons, Equipment & Signature Gear Foundation
 
 - Added `items/WEAPONS-ARMOR-AND-EQUIPMENT-v0.1.md` defining weapon families, armor trade-offs, equipment slots, Pattern equipment, condition/repair, meaningful modifications, material expression, crafting identity and prototype scope.
