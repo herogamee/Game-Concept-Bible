@@ -42,14 +42,15 @@ These are not automatic DPS tiers.
 
 ## 3. Equipment quality is separate
 
-Normal weapons/armor may use workmanship bands such as:
+Normal weapons/armor use the shared equipment Workmanship language:
 
-- Worn
 - Serviceable
 - Fine
 - Masterwork
 
-Final naming/balance remains open.
+`Worn` belongs to the separate Condition system (Good / Worn / Damaged / Critical), not Workmanship.
+
+Final numerical balance remains open.
 
 A Masterwork ordinary sword can be better in combat than a fragile historical relic whose value is archaeological.
 
