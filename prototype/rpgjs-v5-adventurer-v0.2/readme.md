@@ -12,6 +12,8 @@ Separate original-art study: [the first head/hair proof](evidence/character-mast
 
 Animated customization is an owner requirement: independently selected faces, hair and outfits must persist through every enabled action and direction. The [appearance contract](CHARACTER-APPEARANCE.md) requires eight face/hair/body combinations across the first walk's frames before that proof passes customization review; a single baked outfit's walk is only an intermediate study.
 
+The [side-walk study](evidence/walk-side-v1/REVIEW.md) now previews 2 face variants × 2 hairstyles × 2 outfit colourways through eight frames at `http://127.0.0.1:5199/walk`, using the same local server. Rebuild with `npm run assets:walk-side` and verify with `npm run verify:walk-side`. Cosmetic changes preserve motion phase/position; 64 composition cases passed. Natural gait and owner art acceptance remain pending. No original side idle, front/back motion or combat actions were added.
+
 Camera/movement follow-up: settings now save camera distance (80–150%), vertical framing and steady/follow behavior. Desktop default distance is 125%; the view fits the authored map. WASD/arrows support normalized diagonals; click routes continue through intermediate waypoints; static scenery is anchored to authored coordinates. See `evidence/camera/REVIEW.md` for measured results and limits.
 
 Responsive checkpoint: continuous walking cadence, larger overhead labels, compact action dock, scrollable responsive dialogs, saved UI scale and a touch joystick foundation. See `MOBILE-FOUNDATION.md` for device targets and remaining acceptance checks.

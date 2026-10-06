@@ -1,0 +1,11 @@
+Use case: precise-object-edit. Edit target: the supplied bald adventurer WALK SHEET. Preserve transparent 1536x1024 canvas, exact 4 columns x 2 rows, same eight cell origins, same character side-facing right, same scalp/face/neck proportions and outfit, no hair, no camera/scale/position changes. Change ONLY the arm and leg poses and slight body weight shifts to correct an ordinary human eight-frame walk cycle.
+The current second row mostly repeats the first. FIX that: treat the arm/leg closest to viewer as NEAR and shade the farther pair subtly darker. Ordered cells left-to-right:
+FRAME1 near leg FORWARD heel contact, far leg BACK toe. Near arm BACK, far arm forward.
+FRAME2 near foot remains forward flat taking weight, near knee bends; far back foot lifts. Near arm still back.
+FRAME3 near supporting foot UNDER hips flat, far knee passes forward raised. Near arm near torso.
+FRAME4 near supporting leg BACK toe, far leg swings forward with foot raised and toes up. Near arm forward.
+FRAME5 far leg FORWARD heel contact, near leg BACK toe. Near arm FORWARD, far arm back.
+FRAME6 far front foot flat taking weight, far knee bends; NEAR back foot lifts. Near arm still forward.
+FRAME7 far supporting foot UNDER hips flat, NEAR knee passes forward raised. Near arm near torso.
+FRAME8 far supporting leg BACK toe, NEAR leg swings forward with raised foot and toes up. Near arm back.
+Frames1 and5 must have OPPOSITE near-arm and near-leg positions. Frames3 and7 must lift OPPOSITE knees, not the same visible leg. Eight distinct sequential poses; last transitions to first smoothly. Legs bend at natural knees without seams or rings. Keep hips near each cell's center and support-foot ground baseline y494 relative to every 512px-high cell. No rigid puppet rotations, running, hopping, detached parts, extra limbs or duplicates. Genuine alpha transparency, no ground or shadow.

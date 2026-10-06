@@ -12,7 +12,9 @@ A [new complete front character candidate](prototype/rpgjs-v5-adventurer-v0.2/ev
 
 A separate [registered-layer web proof](prototype/rpgjs-v5-adventurer-v0.2/evidence/registered-character/REVIEW.md) now changes face, hair and clothing using local 4.0 reference images without part fitting. Sixteen combinations and male/female Godot-reference pixel comparisons were checked. It reads commercial reference images externally; the original-art wardrobe remains unresolved.
 
-The owner requires independent face/hair/clothing choices to persist across every supported motion and action. The [appearance contract](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-APPEARANCE.md) makes the next walking gate two faces × two hairstyles × two dressed bodies through all frames of the first direction; a fixed-costume walking study alone cannot pass customization acceptance.
+The owner requires independent face/hair/clothing choices to persist across every supported motion and action. The [appearance contract](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-APPEARANCE.md) requires two faces × two hairstyles × two dressed bodies through all frames of the first walking direction; a fixed-costume walking study alone cannot pass customization acceptance.
+
+A [first original side-walk study](prototype/rpgjs-v5-adventurer-v0.2/evidence/walk-side-v1/REVIEW.md) now runs at `http://127.0.0.1:5199/walk`: two face variants, two hairstyles and two outfit colourways through eight frames, with live changes that preserve position/phase. All 64 composition cases were checked. Natural gait, source-edge quality and owner acceptance remain pending; neutral idle, other views and combat actions are not implemented for this character.
 
 The player begins as an ordinary **F-rank adventurer**, chooses a profession, joins an Adventurer Guild, accepts ranked quests, travels through towns and villages, forms relationships and parties, grows toward S-rank, and explores a mysterious 100-floor dungeon.
 

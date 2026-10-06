@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Original side-walk wardrobe study
+
+- Generate and preserve an original right-facing eight-frame source, two face/hair variants and a second outfit colourway, with complete prompts/provenance. Retain the repeated first walk and displaced first blue edit as unused inputs; export fixed-grid head, hair and complete dressed-body layers without part fitting.
+- Add `/walk` with horizontal movement, live independent cosmetic selectors, synchronized eight-combination gallery, pause/step/slow controls, hair removal/defaults and layer inspection. Changes preserve position and motion phase; left preview mirrors the whole character.
+- Verify all 64 frame/wardrobe cases, protected regions, exact bald-source reassembly, fallback selection and invalid-input rejection; check actual browser changes during motion. This is a local study. Natural gait/owner visual acceptance, neutral idle, other views, combat actions and game integration remain pending.
+
 ## 2026-10-06 — Animated customization requirement
 
 - Record the owner's requirement that independently selected faces, hair and clothing remain consistent across standing, walking, sword attacks, gun shooting and future supported actions, including changes during motion.

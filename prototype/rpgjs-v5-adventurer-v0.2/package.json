@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "main": "index.js",
   "scripts": {
+    "assets:walk-side": "node tools/build-walk-side.mjs",
+    "verify:walk-side": "node tools/registered-character/verify-walk.mjs",
     "assets:head-hair": "node tools/build-original-head-hair.mjs",
     "verify:head-hair": "node tools/registered-character/verify-original.mjs",
     "lab:registered": "node tools/registered-character/server.mjs",
