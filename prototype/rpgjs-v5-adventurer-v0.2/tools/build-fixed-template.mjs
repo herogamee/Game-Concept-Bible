@@ -1,0 +1,116 @@
+/** Fixed front-pose authoring: one immutable head, common category masks. */
+import {createCanvas, loadImage, GlobalFonts} from '@napi-rs/canvas';
+import {readFile, writeFile, copyFile, mkdir} from 'node:fs/promises';
+
+const dir = 'assets/fixed-template-v1';
+const evidence = 'evidence/fixed-template-v1';
+const previous = 'assets/character-master/head-hair';
+const width = 1254, height = 1254;
+// Coordinates belong to the template, never calculated from an item's bounds.
+const eyeRegions = [
+  {cx: 534, cy: 383, rx: 72, ry: 80},
+  {cx: 704, cy: 383, rx: 72, ry: 80},
+  {cx: 625, cy: 487, rx: 64, ry: 30}
+];
+const faceRegions = [
+  {cx: 501, cy: 470, rx: 29, ry: 23},
+  {cx: 749, cy: 470, rx: 29, ry: 23}
+];
+const canvas = () => createCanvas(width, height);
+async function source(file) {
+  const image = await loadImage(await readFile(file));
+  if (image.width !== width || image.height !== height) throw new Error(`Unregistered source: ${file} (${image.width}x${image.height})`);
+  const result = canvas();
+  result.getContext('2d').drawImage(image, 0, 0);
+  return result.getContext('2d').getImageData(0, 0, width, height);
+}
+function weight(x, y, regions) {
+  let result = 0;
+  for (const r of regions) {
+    const d = Math.hypot((x - r.cx) / r.rx, (y - r.cy) / r.ry);
+    result = Math.max(result, Math.max(0, Math.min(1, (1 - d) / .12)));
+  }
+  return result;
+}
+function writePixels(data) {
+  const result = canvas();
+  result.getContext('2d').putImageData(data, 0, 0);
+  return result;
+}
+const original = await source(`${previous}/head-face.png`);
+const cleaned = await source(`${dir}/head-blank-generated.png`);
+const blank = canvas().getContext('2d').createImageData(width, height);
+for (let p = 0; p < width * height; p++) {
+  const i = p * 4, w = weight(p % width, Math.floor(p / width), eyeRegions);
+  for (let k = 0; k < 3; k++) blank.data[i + k] = Math.round(original.data[i + k] * (1 - w) + cleaned.data[i + k] * w);
+  blank.data[i + 3] = original.data[i + 3];
+}
+await mkdir(dir, {recursive: true});
+await mkdir(evidence, {recursive: true});
+await writeFile(`${dir}/head-template.png`, writePixels(blank).toBuffer('image/png'));
+await copyFile(`${previous}/body-traveler.png`, `${dir}/clothing-traveler.png`);
+await copyFile(`${previous}/hair-chestnut.png`, `${dir}/hair-chestnut.png`);
+if (process.argv.includes('--base-only')) {
+  console.log('Published registered blank-head candidate; inherited contour/alpha and dressed body remain fixed.');
+  process.exit(0);
+}
+
+function categoryLayer(input, regions) {
+  const data = canvas().getContext('2d').createImageData(width, height);
+  for (let p = 0; p < width * height; p++) {
+    const i = p * 4, x = p % width, y = Math.floor(p / width);
+    // These initial cheek sets never cover the eye/brow/mouth authoring zones.
+    const w = regions === faceRegions && weight(x, y, eyeRegions) > 0 ? 0 : weight(x, y, regions);
+    for (let k = 0; k < 3; k++) data.data[i + k] = input.data[i + k];
+    data.data[i + 3] = Math.round(blank.data[i + 3] * w);
+  }
+  return writePixels(data);
+}
+const sources = [
+  ['eyes-amber', 'eye_set', original, eyeRegions, 'ตาอำพัน · ยิ้ม'],
+  ['eyes-determined', 'eye_set', await source(`${dir}/eyes-determined-generated.png`), eyeRegions, 'ตาเขียว · มุ่งมั่น'],
+  ['eyes-joy', 'eye_set', await source(`${dir}/eyes-joy-generated.png`), eyeRegions, 'ตาปิด · ยิ้มกว้าง'],
+  ['face-scar', 'face_set', await source(`${dir}/face-scar-registered-generated.png`), faceRegions, 'ชุดใบหน้า · รอยแผล'],
+  ['face-blush', 'face_set', await source(`${dir}/face-blush-registered-generated.png`), faceRegions, 'ชุดใบหน้า · แก้มแดงและกระ']
+];
+const layers = new Map([['head-template', writePixels(blank)]]);
+for (const [id, , pixels, regions] of sources) {
+  const layer = categoryLayer(pixels, regions);
+  layers.set(id, layer);
+  await writeFile(`${dir}/${id}.png`, layer.toBuffer('image/png'));
+}
+const manifest = {
+  version: 1, template: 'fixed-front-v1', pose: 'stand-front', width, height,
+  origin: {x: 0, y: 0},
+  anchors: {head: [625, 357], eyeLeft: [534, 407], eyeRight: [704, 407], mouth: [625, 487], neck: [625, 543], ground: [625, 1214]},
+  views: {character: [320, 15, 620, 1225], head: [320, 15, 620, 540], catalogHead: [390, 170, 450, 380]},
+  head: {file: 'head-template.png'},
+  defaults: {eye_set: 'eyes-amber', face_set: null, hair: 'hair-chestnut', clothing: 'clothing-traveler'},
+  items: [
+    ...sources.map(([id, slot, , , label]) => ({id, slot, file: `${id}.png`, label})),
+    {id: 'hair-chestnut', slot: 'hair', file: 'hair-chestnut.png', label: 'ผมน้ำตาลเดิม'},
+    {id: 'clothing-traveler', slot: 'clothing', file: 'clothing-traveler.png', label: 'ชุดนักเดินทางเดิม'}
+  ].map(item => ({...item, template: 'fixed-front-v1', pose: 'stand-front'})),
+  masks: {eye_set: eyeRegions, face_set: faceRegions, featherFraction: .12},
+  layerOrder: ['clothing', 'head_template', 'eye_set', 'face_set', 'hair'],
+  scope: 'One front standing pose. Immutable inherited head contour and dressed body. Three eye sets and two cheek-detail face sets; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline.'
+};
+await writeFile(`${dir}/manifest.json`, JSON.stringify(manifest, null, 2) + '\n');
+
+GlobalFonts.registerFromPath('C:/Windows/Fonts/tahoma.ttf', 'FixedReview');
+const review = createCanvas(1350, 1330), ctx = review.getContext('2d');
+ctx.fillStyle = '#efe9d9'; ctx.fillRect(0, 0, review.width, review.height);
+ctx.font = '18px FixedReview'; ctx.fillStyle = '#303b29'; ctx.textAlign = 'center';
+const eyeIDs = sources.filter(s => s[1] === 'eye_set').map(s => s[0]);
+const faceIDs = [null, 'face-scar', 'face-blush'];
+for (let row = 0; row < eyeIDs.length; row++) for (let col = 0; col < faceIDs.length; col++) {
+  const composed = canvas(), c = composed.getContext('2d');
+  c.drawImage(layers.get('head-template'), 0, 0);
+  c.drawImage(layers.get(eyeIDs[row]), 0, 0);
+  if (faceIDs[col]) c.drawImage(layers.get(faceIDs[col]), 0, 0);
+  const x = col * 450, y = row * 440;
+  ctx.fillText(`${manifest.items.find(i => i.id === eyeIDs[row]).label} / ${faceIDs[col] ? manifest.items.find(i => i.id === faceIDs[col]).label : 'ใบหน้าเดิม'}`, x + 225, y + 29);
+  ctx.drawImage(composed, ...manifest.views.catalogHead, x, y + 47, 450, 380);
+}
+await writeFile(`${evidence}/nine-head-combinations.png`, review.toBuffer('image/png'));
+console.log('Exported fixed registered head, three eye sets and two face sets. Visual acceptance pending.');

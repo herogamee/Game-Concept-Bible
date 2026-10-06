@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "template": "fixed-front-v1",
+  "pose": "stand-front",
+  "width": 1254,
+  "height": 1254,
+  "origin": {
+    "x": 0,
+    "y": 0
+  },
+  "anchors": {
+    "head": [
+      625,
+      357
+    ],
+    "eyeLeft": [
+      534,
+      407
+    ],
+    "eyeRight": [
+      704,
+      407
+    ],
+    "mouth": [
+      625,
+      487
+    ],
+    "neck": [
+      625,
+      543
+    ],
+    "ground": [
+      625,
+      1214
+    ]
+  },
+  "views": {
+    "character": [
+      320,
+      15,
+      620,
+      1225
+    ],
+    "head": [
+      320,
+      15,
+      620,
+      540
+    ],
+    "catalogHead": [
+      390,
+      170,
+      450,
+      380
+    ]
+  },
+  "head": {
+    "file": "head-template.png"
+  },
+  "defaults": {
+    "eye_set": "eyes-amber",
+    "face_set": null,
+    "hair": "hair-chestnut",
+    "clothing": "clothing-traveler"
+  },
+  "items": [
+    {
+      "id": "eyes-amber",
+      "slot": "eye_set",
+      "file": "eyes-amber.png",
+      "label": "ตาอำพัน · ยิ้ม",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    },
+    {
+      "id": "eyes-determined",
+      "slot": "eye_set",
+      "file": "eyes-determined.png",
+      "label": "ตาเขียว · มุ่งมั่น",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    },
+    {
+      "id": "eyes-joy",
+      "slot": "eye_set",
+      "file": "eyes-joy.png",
+      "label": "ตาปิด · ยิ้มกว้าง",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    },
+    {
+      "id": "face-scar",
+      "slot": "face_set",
+      "file": "face-scar.png",
+      "label": "ชุดใบหน้า · รอยแผล",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    },
+    {
+      "id": "face-blush",
+      "slot": "face_set",
+      "file": "face-blush.png",
+      "label": "ชุดใบหน้า · แก้มแดงและกระ",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    },
+    {
+      "id": "hair-chestnut",
+      "slot": "hair",
+      "file": "hair-chestnut.png",
+      "label": "ผมน้ำตาลเดิม",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    },
+    {
+      "id": "clothing-traveler",
+      "slot": "clothing",
+      "file": "clothing-traveler.png",
+      "label": "ชุดนักเดินทางเดิม",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    }
+  ],
+  "masks": {
+    "eye_set": [
+      {
+        "cx": 534,
+        "cy": 383,
+        "rx": 72,
+        "ry": 80
+      },
+      {
+        "cx": 704,
+        "cy": 383,
+        "rx": 72,
+        "ry": 80
+      },
+      {
+        "cx": 625,
+        "cy": 487,
+        "rx": 64,
+        "ry": 30
+      }
+    ],
+    "face_set": [
+      {
+        "cx": 501,
+        "cy": 470,
+        "rx": 29,
+        "ry": 23
+      },
+      {
+        "cx": 749,
+        "cy": 470,
+        "rx": 29,
+        "ry": 23
+      }
+    ],
+    "featherFraction": 0.12
+  },
+  "layerOrder": [
+    "clothing",
+    "head_template",
+    "eye_set",
+    "face_set",
+    "hair"
+  ],
+  "scope": "One front standing pose. Immutable inherited head contour and dressed body. Three eye sets and two cheek-detail face sets; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline."
+}

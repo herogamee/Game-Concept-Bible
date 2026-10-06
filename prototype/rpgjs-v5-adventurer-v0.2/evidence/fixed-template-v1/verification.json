@@ -1,0 +1,492 @@
+{
+  "scope": "One front standing pose. Immutable inherited head contour and dressed body. Three eye sets and two cheek-detail face sets; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline.",
+  "dimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "origin": {
+    "x": 0,
+    "y": 0
+  },
+  "anchors": {
+    "head": [
+      625,
+      357
+    ],
+    "eyeLeft": [
+      534,
+      407
+    ],
+    "eyeRight": [
+      704,
+      407
+    ],
+    "mouth": [
+      625,
+      487
+    ],
+    "neck": [
+      625,
+      543
+    ],
+    "ground": [
+      625,
+      1214
+    ]
+  },
+  "cases": 36,
+  "visibleCombinations": 18,
+  "selections": [
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "2337f475bfb2dafe5bb5e1e6cd0a5b7548937360aaf1e23aca8680db967f2af3",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "159c3bc30f58c8c3e80743594f564a801774c39cc50e2ffdae5ca7a12ac6f628",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "79d99a67c3fb198eae2a11f1cef3fbb2a092a8ba3233643a723bc54c461eeb2e",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "ef4146d038025710489355123f6a85cee461a74696742dde331bcf798d46d12c",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "771d28bf680cc79b9b86254847acc29991e04ee0ad1439b0db7e85109ad28b3c",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "87af40da3c093f4ffd6909842bd551709781a4f640dba0e9a03471180c85516e",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "2337f475bfb2dafe5bb5e1e6cd0a5b7548937360aaf1e23aca8680db967f2af3",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "b1ac6b20b004d6135cf24d2b502586b29e97e9cd22c144bc93f131c57f17bf88",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "79d99a67c3fb198eae2a11f1cef3fbb2a092a8ba3233643a723bc54c461eeb2e",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "46a671c11d6d6159d41ae6225e44198a655c43c067c0f4a83474002a10d61730",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "771d28bf680cc79b9b86254847acc29991e04ee0ad1439b0db7e85109ad28b3c",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "9a0499c4d2ab98d4a6da46c8feae6a793ab1d22a1c4b6a22631ce630247c988d",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "2337f475bfb2dafe5bb5e1e6cd0a5b7548937360aaf1e23aca8680db967f2af3",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "3404f3b0a004710f3b729a84747c16ff28424b83f64136c21f51b276affa9de3",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "79d99a67c3fb198eae2a11f1cef3fbb2a092a8ba3233643a723bc54c461eeb2e",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "2d9e6c5b9e37aa1faff1281f487951ab4be25099474c928b66c4dfc544f9627f",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "771d28bf680cc79b9b86254847acc29991e04ee0ad1439b0db7e85109ad28b3c",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "c212ce1cf422dabc874ab3913595d86f02624ff93312f6243659ecc15da6ac75",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "05820fd3528ff6a5de90386b21ab2c767bf9ef23530ccf83419d31900cc835f1",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "6fbd6f4fb4b7df6262a44ae569bf1a7ff2ab91d6ca9594cbd8b09bd0a42d8cfc",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "a00a5b8774b2d205eb92bb91305f80cd3a1031768c79a46b5ea6d55ac94ac2b8",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "8295a9d017f639a3e6c0bb168cb74e17c2c0271cd40aec4af949cacc62cd3bd0",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "03b2a73859b2b93ac5af37a0f2a336abafa34868f53c3df667add8a2f2c0c1f3",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "1b23851e0819e5eb64c03bbc6e8e0d677939f61551bac319bb71d1e755b1e0f1",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "05820fd3528ff6a5de90386b21ab2c767bf9ef23530ccf83419d31900cc835f1",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "86afe77ab336285f56e4aad20198f4feb3babae3d04f2e35e635750c5329e0be",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "a00a5b8774b2d205eb92bb91305f80cd3a1031768c79a46b5ea6d55ac94ac2b8",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "71917636647d64d009a921cabf71c7576f6540a9dcb187fb87aa462bc6396610",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "03b2a73859b2b93ac5af37a0f2a336abafa34868f53c3df667add8a2f2c0c1f3",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "2dc168c45adbd4a227f46f39e57034753b4a7f80bb2b76a601d5d8aa6a455ae1",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "05820fd3528ff6a5de90386b21ab2c767bf9ef23530ccf83419d31900cc835f1",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "13d982938eb32f9da710e802c7ec07a7dd9c073b1e015c5eebf1fe7c97bd2198",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "a00a5b8774b2d205eb92bb91305f80cd3a1031768c79a46b5ea6d55ac94ac2b8",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "d167d20593982b7b91b61f62376224b457133fa2a474c98402eca6e302696c8b",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "03b2a73859b2b93ac5af37a0f2a336abafa34868f53c3df667add8a2f2c0c1f3",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "4c98baae0d887019856644df19e7f9ec0b90129aec911f7ebac7f8d8955613c7",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdentical": true
+    }
+  ],
+  "inheritedHeadAlphaIdentical": true,
+  "inheritedHeadOutsideEyeZonesIdentical": true,
+  "inheritedClothingAndHairFilesIdentical": true,
+  "separateEyeAndFaceMasks": true,
+  "marks": [
+    {
+      "id": "face-scar",
+      "visibleInkPixels": 570
+    },
+    {
+      "id": "face-blush",
+      "visibleInkPixels": 576
+    }
+  ],
+  "defaultsRetainNullSelections": true,
+  "incompatibleItemsRejected": true,
+  "fixedViewsContainVisibleInheritedHeadHairAndClothing": true,
+  "displayAlphaThreshold": 16,
+  "acceptance": "Technical registration checks passed for one front pose; owner art acceptance, other equipment/actions and production scale remain pending."
+}

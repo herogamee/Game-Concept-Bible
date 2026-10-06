@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Fixed front template with independent eye and face sets
+
+- Publish one protected front head candidate and preserve the original dressed body/hair. Export three combined eye/brow/mouth sets and two cheek-detail face sets on the same 1254×1254 canvas/origin, using common category masks and bounded skin underpainting; keep exact prompts, nine generation outputs and four unused cheek-placement attempts.
+- Add `/fixed-template` with independent selections, bald/face-only inspection, reference crosses, nine selectable catalog pairs and source-layer inspection. Preserve existing lab routes; enlarge common display crops to include the hair tip and boots.
+- Pass 36 rendered selection/visibility cases, inherited head/alpha and body/hair preservation checks, independent layer/default validation, route smoke and actual browser selection/reset/gallery review. Owner art acceptance, new clothing/hair/equipment, full costumes, animation and production throughput remain pending; playable saves and engine APIs are unchanged.
+
 ## 2026-10-06 — Owner fixed-template asset specification
 
 - Record one normal head/body template with fixed proportions, pose coordinates and equipment registration; prohibit per-item fitting or placement repairs as a production strategy.

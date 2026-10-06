@@ -43,8 +43,8 @@ The immediate priority is a repeatable fixed-template asset-production process f
 | Work | Actual status / next deliverable |
 |---|---|
 | Record owner categories and fixed-template rules | Defined in this contract. |
-| Freeze one normal head/body master and its coordinate/pose map | Not accepted yet. Publish protected template layers, reference positions, layer/visibility rules and numeric export geometry before treating them as production standards. |
-| Separate eye sets from face sets on that master | Not implemented in the original-art lab. Author each as its own registered source category, preserving the protected head outside the intended features. |
+| Freeze one normal head/body master and its coordinate/pose map | A front standing candidate is published in `assets/fixed-template-v1/manifest.json`: full 1254×1254 frames, origin (0,0), protected inherited head and unchanged dressed body/hair. Owner acceptance remains pending; the body example is clothed, not a new naked-body master. |
+| Separate eye sets from face sets on that master | Implemented as a bounded front proof at `/fixed-template`: three eye/brow/mouth sets, two cheek-detail face sets and no face set. Shared category masks preserve the protected head; exports retain bounded skin underpainting. Other face-set placements/poses remain unverified. |
 | Prove new-shaped clothing and hair/hat compatibility | Not verified. Recolouring one garment is insufficient evidence. |
 | Define full-costume replacement/restoration and optional-item visibility | Category behavior is specified above; source assets and runtime policy are not implemented. |
 | Repeat the same authoring/export/review procedure for varied new items | Not verified. Record time and repair effort before projecting capacity to hundreds/thousands. |
@@ -52,6 +52,8 @@ The immediate priority is a repeatable fixed-template asset-production process f
 Keep editable, category-specific sources and derive runtime exports from them. AI-generated artwork may supply candidate designs, but regenerated whole characters or item-specific colour/shape extraction masks are not a validated batch-production process. Changes outside the requested category must not enter the protected template. Technical checks should verify source dimensions/registration, protected template pixels, layer independence and required pose coverage; visual review must verify seams, occlusion and natural motion.
 
 The current `/original` and `/walk` pages remain preserved experiments. Their `face` images include the head and facial features; they are **not** separate `eye_set` and `face_set` assets. `/walk` has two outfit colourways, one authored right-facing clip, a fixed scarf strip and drawing-specific hair masks. Its 64 composition checks do not establish compliance with this stricter owner standard, an accepted fixed master, or capacity to manufacture thousands of items. Existing atlas sizes are experimental evidence, not an automatically approved production template.
+
+The [fixed-front proof](evidence/fixed-template-v1/REVIEW.md) now demonstrates independent eye and cheek-detail face selections on one published head. All 36 combinations/visibility cases passed technical registration checks; owner art acceptance remains pending. It preserves the previous dressed body/hair and does not add different garments, hair/hat compatibility, full costumes, animation coverage or measured production throughput. Its nine generated inputs include four unused cheek-placement attempts; do not treat this trial as a validated scalable authoring pipeline.
 
 ## Continuing requirement — customization across every action
 

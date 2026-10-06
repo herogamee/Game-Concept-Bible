@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "case": "green-with-scar",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-scar\",\"hair\":null,\"clothing\":null}",
+      "showEyes": "true",
+      "showHair": "true",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "joy-retains-scar",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-joy\",\"face_set\":\"face-scar\",\"hair\":null,\"clothing\":null}",
+      "showEyes": "true",
+      "showHair": "true",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "face-only-bald",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-joy\",\"face_set\":\"face-blush\",\"hair\":null,\"clothing\":null}",
+      "showEyes": "false",
+      "showHair": "false",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "matrix-select-preserves-bald-with-guides",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-joy\",\"face_set\":\"face-scar\",\"hair\":null,\"clothing\":null}",
+      "showEyes": "true",
+      "showHair": "false",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "reset-defaults",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":null,\"face_set\":null,\"hair\":null,\"clothing\":null}",
+      "showEyes": "true",
+      "showHair": "true",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "final-green-blush",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":null,\"clothing\":null}",
+      "showEyes": "true",
+      "showHair": "true",
+      "template": "fixed-front-v1"
+    }
+  ],
+  "pageErrors": []
+}
