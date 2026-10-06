@@ -1,6 +1,6 @@
 {
   "profile": "ddtank-4.0-local-2026-10-06",
-  "version": 2,
+  "version": 3,
   "view": "three-quarter-left",
   "template": "ddtank40-standing-three-quarter-left-v1",
   "masterDirectory": "assets/ddtank40-three-quarter-v1/layers",
@@ -8,21 +8,21 @@
   "authoringSourceHashes": {
     "blank-head-generated.png": "9d29eccd2cf4d778049e36bf30295c8cc7cdf55eb046e4694cefca2ce9b1eaa2",
     "master.png": "c3935fc8c254842c7fc33f1049054da13d4137fd0e60ed822d0873052cb3b75d",
-    "eyes-amber-generated.png": "cff766cc27de4ac4342f65a223a71dd0a683b4a6f9b93d33efe45973d1497c76",
     "eyes-determined-generated.png": "ac3ab05325ff7017f32b2f29ec78ddeffa9e8267c2e9fb7f4947bb758ad4af0c",
     "eyes-joy-generated.png": "910844242f3a779be12c3880dc92ad36111e86ee8bce46ebd2039d7461d92cf0",
     "face-scar-generated.png": "00b1cdfaa6ffbeda8f43f7d83581245f83e6ab41643368cb430bf3919e807144",
     "face-blush-correction-generated.png": "744a9756ba25b4c16c8e03b309d3050d2381c5c1b5575c5426a4c6cf5ecec229",
     "clothing-knight-generated.png": "09c940217a47b1f200121caf6a59d3cb2e4561ddd4dc00d66ba8f5d7a671d7b2",
     "clothing-mage-generated.png": "d3c1b784e9b0b5f7887a226da7bbb4aee6ceac842c485b69e7faba18ab663e28",
-    "hair-chestnut-compact-generated.png": "bd6f231fb28d818cfdb348dcf250db8e75b0391615b91239c67b0a2ed6627a80",
-    "hair-teal-compact-generated.png": "4aa0e53078d947bef185c3fe7e72e87e2696ea513127bc71a1f928604fe11daf",
-    "hair-silver-curls-compact-generated.png": "32e3c785f02352a7e277b1230210b4ddbdc41a19dc41ef8903ce4a590e8a4edd",
-    "hat-adventurer-generated.png": "73d06313597fa768a0a8e8a17ae15bde84fd8521d6c44fe288ad823c1c3ad0fb",
-    "face-blush-generated.png": "899c5ecfcded8ea6fb8c0aa36ff1029950f64268547bee972bc1fd2d5c9cfeeb",
-    "hair-chestnut-generated.png": "c8fc9acc65a78aba9a45172597d24507b2e951cfefafdd37652a1c8eb0ae249f",
+    "hair-teal-generated.png": "1a8867f2b311259d1eef7c4d5931c54600d551993baf3d973af95025329375a5",
     "hair-silver-curls-generated.png": "2bb0e311aba831f2c53ae19e58b9060ac095b5d51d7f397c8a1d3ae60a150dad",
-    "hair-teal-generated.png": "1a8867f2b311259d1eef7c4d5931c54600d551993baf3d973af95025329375a5"
+    "hat-adventurer-generated.png": "73d06313597fa768a0a8e8a17ae15bde84fd8521d6c44fe288ad823c1c3ad0fb",
+    "eyes-amber-generated.png": "cff766cc27de4ac4342f65a223a71dd0a683b4a6f9b93d33efe45973d1497c76",
+    "face-blush-generated.png": "899c5ecfcded8ea6fb8c0aa36ff1029950f64268547bee972bc1fd2d5c9cfeeb",
+    "hair-chestnut-compact-generated.png": "bd6f231fb28d818cfdb348dcf250db8e75b0391615b91239c67b0a2ed6627a80",
+    "hair-chestnut-generated.png": "c8fc9acc65a78aba9a45172597d24507b2e951cfefafdd37652a1c8eb0ae249f",
+    "hair-silver-curls-compact-generated.png": "32e3c785f02352a7e277b1230210b4ddbdc41a19dc41ef8903ce4a590e8a4edd",
+    "hair-teal-compact-generated.png": "4aa0e53078d947bef185c3fe7e72e87e2696ea513127bc71a1f928604fe11daf"
   },
   "contexts": [
     "show"
@@ -243,7 +243,8 @@
           "height": 312,
           "url": "/ddt40/ours/image/equip/m/cloth/ours_cloth_1/1/show.png"
         }
-      }
+      },
+      "headOverlap": "behind-face"
     },
     {
       "id": "ours-510900002",
@@ -261,7 +262,8 @@
           "height": 312,
           "url": "/ddt40/ours/image/equip/m/cloth/ours_cloth_2/1/show.png"
         }
-      }
+      },
+      "headOverlap": "behind-face"
     },
     {
       "id": "ours-510900003",
@@ -279,7 +281,8 @@
           "height": 312,
           "url": "/ddt40/ours/image/equip/m/cloth/ours_cloth_3/1/show.png"
         }
-      }
+      },
+      "headOverlap": "behind-face"
     },
     {
       "id": "ours-410900002",
@@ -377,229 +380,215 @@
       "path": "image/equip/m/face/ours_face_1/1/show.png",
       "width": 1000,
       "height": 312,
-      "sha256": "0f71787e6555f01992219851177d12cb353fe08276fcc039ae24f1b2d7c67f13"
+      "sha256": "fc46025762644068c7a76ddd11397f19db4adc088691e65d536be5fb2ca0fbd4"
     },
     {
       "path": "image/equip/m/face/ours_face_1/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "5c82a0af94f4e6fb12c02207a31885f00ca385d596caae63db0d50d57c71c76d"
+      "sha256": "32cad1e75476d939ac18462e4bfee14d005c107debf02979465e790a132815f0"
     },
     {
       "path": "image/equip/m/face/ours_face_2/1/show.png",
       "width": 1000,
       "height": 312,
-      "sha256": "6143f248cc0c05dfacbb8603363c06f4a5b7dacf6ccb4013b9661566724217ee"
+      "sha256": "3fc2c5f4b3a405453c6424251fd5832413ede0981da37b657a48827d2eaad75b"
     },
     {
       "path": "image/equip/m/face/ours_face_2/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "c3f22d3b24647e3b51d33373a1064020998b3ec2031ee586ba2bea4f337b7cf9"
+      "sha256": "b875e849488b82bde66b940e0c2556bcf6ced34f361ca74d95464fc4846f7a7c"
     },
     {
       "path": "image/equip/m/face/ours_face_3/1/show.png",
       "width": 1000,
       "height": 312,
-      "sha256": "abdcaf650b6e81f7c1ab64a71bc1e62d7b684c29466fff92908ccfd1980fe90a"
+      "sha256": "811ddeddd7411de5e3496863d9b4c043e09ccea59aaa0486d7bd189347dc884a"
     },
     {
       "path": "image/equip/m/face/ours_face_3/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "f27d9242d32d871954e3fcd54715f6dcbce056703da13e6a32bdfc859a64cb56"
+      "sha256": "26100d6f069357576d6668ca03996bc183f4f4b3dedcf72c5de852c86e0d7940"
     },
     {
       "path": "image/equip/m/hair/ours_hair_1/1/A/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "62774f6ae82958ebf5e483b0fca3bf1c965c7f57421205baa8d70c03a3dc6090"
+      "sha256": "6ff524d675e265ab856e9309c2ee7115db1f9473aeec489470a691edb2b30c8a"
     },
     {
       "path": "image/equip/m/hair/ours_hair_1/1/B/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "c43c18cb42e58ad37e261c9cf1b5d08a928778ada2593133b9ce0dba4ca192d3"
+      "sha256": "bf2cdedd6875bd035ff1513b8581a9145519ff3b39b85bd8ecf0f9cffea12c72"
     },
     {
       "path": "image/equip/m/hair/ours_hair_1/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "3fae3fae088a0df268a183ed05af00098aaa3c6d850f96bda86c7c4653b034da"
+      "sha256": "d1c46305d0863e85dbd01f9c54b9078188a5a3f04ede01eb815780ed0cdae908"
     },
     {
       "path": "image/equip/m/hair/ours_hair_2/1/A/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "f5faaaba35669c1cd67629580785ef0f34338bd9eca85bf6bde09299740ec089"
+      "sha256": "50a8619edce340b15b015ec5d3378a73fa607ad8c00e0eedfaa976a6a8b217ea"
     },
     {
       "path": "image/equip/m/hair/ours_hair_2/1/B/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "a2c5a23c75040a376796b1a03343d68a0911a12254bf0f1072a9b482ad868331"
+      "sha256": "2ee7c569e2b8ace9c4084e5a8bc85ff5d1ff0cc8a37daf7a55a5e6f89d1e51f3"
     },
     {
       "path": "image/equip/m/hair/ours_hair_2/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "2ee1a1abc64049d9a030f2d5beb0d3367a7e3f60f026d8e2e6b5ffc4c14d86b6"
+      "sha256": "851e0028daaac90949acc61ca50c681e4e50dea3efe6b8e3e297d7a9d5b1be39"
     },
     {
       "path": "image/equip/m/hair/ours_hair_3/1/A/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "51f9cc38e85717b8d804963553a122a581e057ceadeb70d21f5d3804582c27c8"
+      "sha256": "cf9b59e2b4a615df14aa3bf9c4d6482b65353decb92e95f58f4b13d194f82aca"
     },
     {
       "path": "image/equip/m/hair/ours_hair_3/1/B/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "1acef2a44a46fd40d502163eb2737456caa984bbcd2517442d38a8d8f04cc37e"
+      "sha256": "fb96c37db4e0480eff5d5dc017393f6fc23ea979e52c84ba977b307c0d9b3cc7"
     },
     {
       "path": "image/equip/m/hair/ours_hair_3/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "5f3603a0c7fcb3b6bca672a24ef2d23144b2033b408a8c5334e86c48cbb45007"
+      "sha256": "f6df18c821af94800e3e09f5680e95ab9ff3cdb9c42cc839b37f9f5cdc59a831"
     },
     {
       "path": "image/equip/m/cloth/ours_cloth_1/1/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "49d86ca50955641d057015897ab2b4b6a37762f261f5914d19b30529d040cc8e"
+      "sha256": "d020f84a15a72e1f0d42a7112919b468b43edfc618b216d0bf8aaee979f339ce"
     },
     {
       "path": "image/equip/m/cloth/ours_cloth_1/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "99dd7408be1a23a790c6337418cb73d21c2f8befcec027f56221cfcaa0c01a2f"
+      "sha256": "d3ebf2aa7e0b8675a38b82c43198c18a0c8f2cca94bfdfe13044c8755a79632b"
     },
     {
       "path": "image/equip/m/cloth/ours_cloth_2/1/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "5fd8c93457682d1df4000f455e21dc7504f235bac5940ae4cf2f759d804691b0"
+      "sha256": "ed4cf60871c45fdfacb6863766821bfe3da56fac3ec054c313b55f1a66fc3898"
     },
     {
       "path": "image/equip/m/cloth/ours_cloth_2/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "a6a8e11150dc53f82f53fcd1a9d93f948f7fdc56eacb75c919f81af35b24a1df"
+      "sha256": "0c68d76bfefbb6f13d41b15dc80412587ca55d3b319ed654d611ff85ef2638eb"
     },
     {
       "path": "image/equip/m/cloth/ours_cloth_3/1/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "329e19aff08ef706f4521e3dad3f368ebf1299dd52da3ae8b7f4036f2a7a1684"
+      "sha256": "09ad07589a80a4e76bf8cae0d026e001cd0d8ecd55ee5825883def5e26869de4"
     },
     {
       "path": "image/equip/m/cloth/ours_cloth_3/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "3e3ee333f13b5c7bc19cd4ca84c3b9739e1ca47222676b2937d3ce7a1af77f62"
+      "sha256": "57bc98425271476dd47eab383d562d373bec0a20e0920ab8286bc98a0461ced0"
     },
     {
       "path": "image/equip/m/eff/ours_eff_1/1/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "f4262ce6d851f709b9c7036339dbd4cf52d15a2d78bedb220bf533216c2f76cd"
+      "sha256": "6db0688a673de270e7faf4e4c1fa92bd4c4a1f9048d4539b9f7a48f74c12e387"
     },
     {
       "path": "image/equip/m/eff/ours_eff_1/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "7420b17ad660dac614b3ba63c4bda83677e93b7e79300ffb82ea426ccc490b67"
+      "sha256": "0c4a230bc34ee020b3a824b079069d2f12ffaa1206b6a5105e08a03ef42cd45d"
     },
     {
       "path": "image/equip/m/eff/ours_eff_2/1/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "5a0337ba13368427261e90fcaec65fa8769ca450abe582589fc06544554448b3"
+      "sha256": "8d39d0a3a9af26fb495db368de1b02f5277ce045081d5ec4cfb47c50ff94951b"
     },
     {
       "path": "image/equip/m/eff/ours_eff_2/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "1d085b15caa9f9514e3ad953e8e0ab24adce9954d4c72a1b5c844a306a207aae"
+      "sha256": "c33f16144d176246d151d75f387dca3ee5de11cdd00502a4a03c14fab8939e6b"
     },
     {
       "path": "image/equip/m/head/ours_head_1/1/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "c868c23f447e23534639394adf6e51baeaccb36f64c9c7674e57a0ebc9f48cb3"
+      "sha256": "32bf03535fdad05e1d16b83de5d9a0b40f7a15ff46e49978859a7685c9985c52"
     },
     {
       "path": "image/equip/m/head/ours_head_1/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "2bc5130631133ec8c677641a854c8f1c2ced12c085042a829077405ba286da0a"
+      "sha256": "7a9c1bb35e89ba35ac6e1461fdf79d374e1dae0904d5dfce33690b3856dea470"
     }
   ],
   "calibration": {
+    "version": 2,
+    "mode": "uniform-shared-master",
     "master": [
       1254,
       1254
     ],
-    "head": {
-      "from": [
-        421,
-        202,
-        849,
-        627
-      ],
-      "to": [
-        42,
-        77,
-        166,
-        206
-      ]
-    },
-    "cloth": {
-      "from": [
-        455,
-        627,
-        815,
-        1208
-      ],
-      "to": [
-        58.415368639667705,
-        202,
-        146.4153686396677,
-        304
-      ]
-    },
+    "matrix": [
+      0.21075455333911536,
+      0,
+      0,
+      0.21075455333911536,
+      -32.59291891935706,
+      49.19774501300952
+    ],
     "origin": [
       0,
       0
     ],
     "alphaThreshold": 128,
+    "sourceTopY": 56,
+    "sourceGroundY": 1209,
+    "targetTopY": 61,
+    "targetGroundY": 304,
     "neckSource": [
       600,
       627
     ],
     "neckTarget": [
       93.85981308411215,
-      206
+      181.34084995663486
     ],
-    "note": "Revised 3/4-left master; shared fixed head and body family transforms with common neck x registration. Bounds are export calibration, not Flash attachment anchors."
+    "note": "One uniform matrix for head, hair, eyes, cheek details, cap and clothing. Preserve authored proportions inside canonical transparent canvases. Authoring landmarks are not Flash anatomical anchors."
   },
   "sourceHashes": {
-    "head-template.png": "219dfcfe340f82764839b06fa85581a547c9d1301f939b3729d11dd8c3acf60c",
-    "eyes-amber.png": "796bfdb63230b1f8cdd0307e2654db841333289a0148e3c954619743970f3bd9",
+    "head-template.png": "f1fcfec1726bbb7cdda19717bc3794a46511022a2c3282d8c159f30458ca4265",
+    "eyes-amber.png": "d720cb34a55db994b6a1ee173a85b76345f8caaed505c4af9c12ec510d50d5e6",
     "eyes-determined.png": "0a842b134e47fb3231ff25ec1994c6008010da9c764958de3a75efa841e9db28",
     "eyes-joy.png": "94b1a21c3e4779b79a7b55eb517c72dbccffb1a11804171c4197716c2df9eb71",
-    "hair-chestnut-under-hat.png": "6b7187d7e21ed5f1dad74a31adc5267f69e001d88f0f8314f2e5c06e64c4f398",
-    "hair-chestnut.png": "b62eb9f435332fc9a2a2e00222f4499f5d332a053d7cc5f8956f03fefc15f861",
-    "hair-teal-under-hat.png": "e90c722090dd327f8fd098517363488293781d381a85cdea0a44ce99816c79e8",
-    "hair-teal.png": "4dc26717ae9e1c9ebe3e60c98d91ee7a72d33df4da042ef894d967f8d0cc73e1",
-    "hair-silver-curls-under-hat.png": "a8f3dd2ffad3c17c4f1116711498c948afc944f13c570bee62cd8e5337d8460f",
-    "hair-silver-curls.png": "55c50c65c31279f6b8f87fc26a7666f3710608d2e4c1d512518315adebeed58e",
-    "clothing-traveler.png": "284e63b100a16e99e9b7c877a95ca5ae27e4f4b61296aafd9bd24817c33885cb",
-    "clothing-knight.png": "986753e0b2ae38c9a1bc74268489e3d05ec810bfda67c7c8ea7024ed0941e258",
-    "clothing-mage.png": "771d9626b39538f1537f3e3a07287c8ea0d1ce1972f45bb7c11309c395dc38da",
-    "face-scar.png": "4ae8971bf9476ef63431a017b699d4fd7a65ea870b80faa3988397f71c4cf088",
-    "face-blush.png": "ee3071f0fdc863ffffc6c9bfa7640bdcae922a87553d7a21f921c1be9a6e486c",
+    "hair-chestnut-under-hat.png": "0ca8ec54756f1e3b6127d31bffa342d6f5888799efb48a65a3d761d2af4bab33",
+    "hair-chestnut.png": "9229c41c1c600e632be4df5faa1db639f2c76f25a7cd9990d9edadb6eff8313d",
+    "hair-teal-under-hat.png": "a19d0a4045998d3156e3d9b0839ed68a6778a9e5be0a773dec9f73cb4c5564db",
+    "hair-teal.png": "2cae27b0f34d7604ad87c1e21d635fba80d99929c4641363102fa4648268c11f",
+    "hair-silver-curls-under-hat.png": "b41c0f385302db300a72c4d4b5a4973d5ba36668f3c136e47f593a485cbab18b",
+    "hair-silver-curls.png": "5524576e4165f97aac335ba15d5fd7b2ac5d98ee3852e2174dc813e81fb33095",
+    "clothing-traveler.png": "501ca3c630f6124504ec85c47635a4ef6aaa6e0f0465f718475056eb3cc4e215",
+    "clothing-knight.png": "7331329c08f4bba0a00380b95703fa7b68880494b160a34a1016f7554f0985dc",
+    "clothing-mage.png": "344ab5572195b0dfb2e64973009f7b6890301e25e452a8b6814b35743db16e3b",
+    "face-scar.png": "b74dc67cba0f4048a382a2ea241dc6581a542371c4c8d18bd0f2fb4cd0e457cb",
+    "face-blush.png": "00a621577566201b58da402410f34b726e41b2e4762240005d5b53614b0e37a4",
     "hat-adventurer.png": "a496a8bf57bf6e5a80e93d74d49e88b96d87b5f223a861ec2ad001f0ab6ec253"
   },
   "availability": {

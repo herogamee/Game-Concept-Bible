@@ -1,5 +1,6 @@
 import {showPlan,showSlots} from './format.mjs';
 import {drawPreparedFrame} from '/compositor.mjs';
+import {masterMatrix} from './registration.mjs';
 const status=document.querySelector('#compat-status');
 try {
   const [profile,catalog]=await Promise.all(['/api/ddt40-profile','/api/ddt40-catalog'].map(async url=>{const r=await fetch(url);if(!r.ok)throw new Error('อ่านข้อมูลไม่ได้');return r.json()}));
@@ -7,6 +8,7 @@ try {
   const state={sex:'m',base:'ours',selected:{},hidden:[]},images=new Map(),controls=new Map();let revision=0;
   const base=document.querySelector('#compat-base'),sex=document.querySelector('#compat-sex'),guides=document.querySelector('#compat-guides'),hide=document.querySelector('#compat-hide-head');
   const main=document.querySelector('#compat-character'),ref=document.querySelector('#compat-reference');
+  const masterPreview=document.querySelector('#compat-master'),clothPreview=document.querySelector('#compat-cloth-only');
   for(const slot of showSlots) {
     const label=document.createElement('label');label.textContent=names[slot];const select=document.createElement('select');select.id=`compat-${slot}`;label.append(select);document.querySelector('#compat-selectors').append(label);controls.set(slot,select);
     select.addEventListener('change',()=>{const before={...state.selected};state.selected[slot]=select.value||null;try{showPlan(profile,catalog,state);render()}catch(e){state.selected=before;select.value=before[slot]||'';status.textContent=e.message;status.className='error'}});
@@ -32,6 +34,8 @@ try {
     drawPreparedFrame(target,{plan,images:loaded});
     if(guides.checked){const c=target.getContext('2d');c.strokeStyle='#3b7551';c.lineWidth=.6;for(let x=0;x<250;x+=25){c.beginPath();c.moveTo(x,0);c.lineTo(x,342);c.stroke()}for(let y=0;y<342;y+=25){c.beginPath();c.moveTo(0,y);c.lineTo(250,y);c.stroke()}c.strokeRect(.5,.5,249,341);c.fillStyle='#2d6043';c.font='10px sans-serif';c.fillText('(0,0)',4,13)}
   }
+  const masterCtx=masterPreview.getContext('2d');masterCtx.imageSmoothingQuality='high';masterCtx.setTransform(...masterMatrix(catalog.calibration));masterCtx.drawImage(await image('/ddt40/master.png'),0,0);
+  document.querySelector('#compat-scale').textContent=`ย่อทุกชิ้นเท่ากัน ${(catalog.calibration.matrix[0]*100).toFixed(2)}% · รักษาสัดส่วนเดิม`;
   function pathRows(plan) {
     const tbody=document.querySelector('#compat-paths');tbody.replaceChildren();
     for(const l of plan.layers){const item=catalog.items.find(i=>i.id===l.id),a=item.slot==='hair'?item.assets[plan.hairVariant]:item.assets.main;
@@ -52,7 +56,10 @@ try {
       main.getContext('2d').clearRect(0,0,250,342);main.getContext('2d').drawImage(staging,0,0);
       ref.getContext('2d').clearRect(0,0,250,342);ref.getContext('2d').drawImage(referenceStaging,0,0);
       const ui=document.querySelector('#compat-ui');ui.getContext('2d').clearRect(0,0,120,165);ui.getContext('2d').drawImage(staging,0,0,120,165);
+      const clothStaging=document.createElement('canvas');await paint(clothStaging,{...plan,layers:plan.layers.filter(l=>l.slot==='cloth')});if(tick!==revision)return;
+      clothPreview.getContext('2d').clearRect(0,0,250,342);clothPreview.getContext('2d').drawImage(clothStaging,0,0);
       pathRows(plan);main.dataset.profile=profile.id;main.dataset.origin='0,0';main.dataset.view=catalog.view;main.dataset.equipment=JSON.stringify(plan.equipment);main.dataset.hairVariant=plan.hairVariant;
+      main.dataset.drawOrder=plan.layers.map(l=>l.slot).join(',');main.dataset.exportScale=String(catalog.calibration.matrix[0]);
       document.querySelector('#compat-look').textContent=`${state.base==='ours'?'เกมเรา · มุม 3/4':'DDTank'} · ผม ${plan.hairVariant} · 250 × 342`;
       status.textContent='ประกอบสำเร็จ · ทุก PNG วางที่ (0,0) · ไม่มีการปรับสเกลรายชิ้นขณะเล่น';
       for(const card of cards){if(tick!==revision)return;const p=showPlan(profile,catalog,{sex:'m',base:'ours',selected:{...(state.sex==='m'?state.selected:{}),hair:card.item.id},hidden:state.hidden});const cardStaging=document.createElement('canvas');await paint(cardStaging,p);if(tick!==revision)return;card.canvas.getContext('2d').clearRect(0,0,250,342);card.canvas.getContext('2d').drawImage(cardStaging,0,0);card.card.setAttribute('aria-pressed',String(plan.equipment.hair===card.item.id))}

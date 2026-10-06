@@ -35,7 +35,11 @@ export function showPlan(profile,catalog,{sex='m',base='ours',selected={},hidden
   if(hidden.includes('head'))equipment.head=defaults.head;
   const hat=byId.get(equipment.head),variant=hat?.hairType===1?'B':'A';
   const layers=[];
-  for(const slot of profile.show.drawOrder) {
+  // Authored clothing includes neck pixels behind the jaw. The installed-source
+  // default keeps its measured Flash order; this is an explicit original-art policy.
+  const clothes=byId.get(equipment.cloth);
+  const drawOrder=clothes?.headOverlap==='behind-face'?['cloth',...profile.show.drawOrder.filter(slot=>slot!=='cloth')]:profile.show.drawOrder;
+  for(const slot of drawOrder) {
     if(hidden.includes(slot)||!equipment[slot])continue;
     const item=byId.get(equipment[slot]),asset=slot==='hair'?item?.assets[variant]:item?.assets.main;
     if(!asset)throw new Error(`Missing ${slot}/${variant}`);

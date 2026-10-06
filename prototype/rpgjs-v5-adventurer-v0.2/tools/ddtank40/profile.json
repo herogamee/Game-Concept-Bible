@@ -53,6 +53,8 @@
     "Authoring masters may be larger; published assets must use the installed 4.0 resource layout.",
     "Runtime never fits, centers or scales an individual PNG layer to painted bounds.",
     "Category transforms are fixed once for a master template, shared by every item, recorded at export.",
+    "All layers authored on one shared master must use one uniform export scale and translation. Never squeeze the body or fit the head independently to source silhouettes.",
+    "Original clothing includes an overlapping neck behind the face. Preserve the measured installed-source order separately; anatomical interchange needs explicit validation.",
     "Do not trim transparent registration space. Enforce dimensions, relative origin, frame coverage and hair A/B.",
     "An absent pose remains unsupported; never certify repeated standing pixels as authored walking/shooting.",
     "Wing atlas conversion must preserve source crop origin and internal transforms; stage bounds are not artwork bounds.",

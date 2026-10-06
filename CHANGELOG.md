@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Preserve master proportions and overlap the clothing neck
+
+- Correct the export error that squeezed body height by 28.18% relative to width while enlarging the head separately. Apply one uniform 21.075% scale/translation to every shared-master layer; reject anisotropic and independent head/body transforms.
+- Restore default brown hair/amber features from the displayed full master, keeping all raw images and prompts. Extract a curved jaw and a shared neck behind it; draw original clothing before the face. Preserve the installed-source baseline order/pixels.
+- Add full-master/assembly comparison and clothing-only neck inspection to the lab. Record the rejected portrait and current comparison, 162 compositions, preserved body aspect ratios within 0.7% raster rounding and neck/jaw overlap. Canonical file sizes remain fixed; anatomical interchange and owner acceptance remain pending.
+
 ## 2026-10-06 — Match original standing art to the DDTank 3/4 view
 
 - Revise the original head, asymmetrical eyes, hair, clothing, cap and face details into the reference's three-quarter-left standing view. Retain 17 generated sources/exact prompts, including four unused wide-hair/cheek attempts; publish 16 native layers and 33 canonical PNGs with existing item IDs.

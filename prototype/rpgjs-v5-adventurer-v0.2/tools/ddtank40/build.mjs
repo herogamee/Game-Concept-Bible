@@ -5,26 +5,26 @@ import {resolve,dirname} from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {resourcePath,validateShowAsset} from './format.mjs';
+import {masterMatrix} from './registration.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 const profile=JSON.parse(await readFile(new URL('profile.json',import.meta.url),'utf8'));
 const authoring=JSON.parse(await readFile(resolve(root,'assets/ddtank40-three-quarter-v1/manifest.json'),'utf8'));
 const masterDirectory='assets/ddtank40-three-quarter-v1/layers';
 const masters=resolve(root,masterDirectory);
 const output=resolve(root,'assets/ddtank40-compatible-v1');
-// Family-wide export calibration of the revised standing template. Every item
-// uses the same transforms; no per-style fitting or runtime perspective warp.
+// All layers share one uniform conversion of the complete authored design.
 const calibration=authoring.calibration;
+const exportMatrix=masterMatrix(calibration);
 const sourceHashes={},files=[],items=[];
 async function load(name) {
   const b=await readFile(resolve(masters,name));sourceHashes[name]=createHash('sha256').update(b).digest('hex');
   const image=await loadImage(b);if(image.width!==1254||image.height!==1254)throw new Error('Unexpected master dimensions');return image;
 }
 function tile(){return createCanvas(...profile.show.ordinaryPng)}
-function registered(image,family='head') {
-  const result=tile(),ctx=result.getContext('2d'),{from:f,to:t}=calibration[family];
-  const sx=(t[2]-t[0])/(f[2]-f[0]),sy=(t[3]-t[1])/(f[3]-f[1]);
+function registered(image) {
+  const result=tile(),ctx=result.getContext('2d');
   ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
-  ctx.save();ctx.setTransform(sx,0,0,sy,t[0]-f[0]*sx,t[1]-f[1]*sy);ctx.drawImage(image,0,0);ctx.restore();return result;
+  ctx.save();ctx.setTransform(...exportMatrix);ctx.drawImage(image,0,0);ctx.restore();return result;
 }
 async function save(path,canvas) {
   const file=resolve(output,path);await mkdir(dirname(file),{recursive:true});
@@ -33,7 +33,7 @@ async function save(path,canvas) {
   return {path,width:canvas.width,height:canvas.height,url:`/ddt40/ours/${path}`};
 }
 async function item({number,slot,pic,label,source,hatSource,empty=false}) {
-  const entry={id:`ours-${number}`,templateId:number,name:label,slot,pic,sex:'m',source:'ours',hairType:slot==='head'&&!empty?2:1,assets:{},showFrames:slot==='face'?[0]:undefined};
+  const entry={id:`ours-${number}`,templateId:number,name:label,slot,pic,sex:'m',source:'ours',hairType:slot==='head'&&!empty?2:1,assets:{},showFrames:slot==='face'?[0]:undefined,headOverlap:slot==='cloth'?authoring.headOverlap:undefined};
   const variants=slot==='hair'?['A','B']:['main'];
   for(const variant of variants) {
     let canvas;
@@ -47,7 +47,7 @@ async function item({number,slot,pic,label,source,hatSource,empty=false}) {
       headCtx.putImageData(expressionPixels,0,0);
       canvas=createCanvas(...profile.show.faceSheet);canvas.getContext('2d').drawImage(head,0,0);
       // Slots 1..3 intentionally blank. Coverage [0] forbids using them as poses.
-    } else canvas=registered(await load(variant==='A'?hatSource:source),slot==='cloth'?'cloth':'head');
+    } else canvas=registered(await load(variant==='A'?hatSource:source));
     const path=resourcePath(profile,{slot,pic,variant,sex:'m'});
     entry.assets[variant]=await save(path,canvas);validateShowAsset(profile,entry,entry.assets[variant],{original:true});
   }
@@ -79,7 +79,7 @@ await item({number:410900002,slot:'eff',pic:'ours_eff_1',label:'รอยแผ�
 await item({number:410900003,slot:'eff',pic:'ours_eff_2',label:'แก้มแดงและกระ',source:'face-blush.png'});
 await item({number:110900002,slot:'head',pic:'ours_head_1',label:'หมวกนักเดินทาง',source:'hat-adventurer.png'});
 const registration=items.map(i=>({TemplateID:i.templateId,CategoryID:profile.categories[i.slot],NeedSex:1,Pic:i.pic,Name:i.name,Property1:i.hairType,Property8:'1',Level:1}));
-const pack={profile:profile.id,version:2,view:authoring.view,template:authoring.template,masterDirectory,authoringDirectory:'assets/ddtank40-three-quarter-v1',authoringSourceHashes:authoring.sourceHashes,contexts:['show'],defaults,items,files,calibration,sourceHashes,
+const pack={profile:profile.id,version:3,view:authoring.view,template:authoring.template,masterDirectory,authoringDirectory:'assets/ddtank40-three-quarter-v1',authoringSourceHashes:authoring.sourceHashes,contexts:['show'],defaults,items,files,calibration,sourceHashes,
   availability:{show:'Standing frame 0 only for original faces',game:'Not exported: 39 actual battle cells still required',virtual:'Not exported: matched front/back town poses still required',female:'Not authored',flashRegistration:'Registration fields exported; unchanged Flash-client ingestion has not been verified'},
   acceptance:'Revised 3/4-left standing artwork on a shared head/body template. Owner visual acceptance, complete action interchange and original Flash ingestion remain pending.'};
 await writeFile(resolve(output,'manifest.json'),JSON.stringify(pack,null,2)+'\n');
