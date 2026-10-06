@@ -1,5 +1,26 @@
 # Character appearance contract
 
+## Active DDTank 4.0 resource contract — 2026-10-06
+
+The owner now requires the installed DDTank 4.0 image dimensions, relative placement, frame layouts, category directory names and filenames as the canonical interoperability target. This supersedes the earlier front trial's 1254×1254 runtime layout. The immutable-template/category requirements below remain, but large images are authoring masters and must export through `tools/ddtank40/profile.json` and `tools/ddtank40/build.mjs`.
+
+- Portrait output250×342; ordinary PNG250×312; face sheet1000×312; icons78×78. Do not stretch a312px PNG to342px: preserve transparent padding. Runtime layers remain at(0,0); scale the completed body as a unit for120×165 UI display.
+- Battle sheet1482×285,13×3 cells of114×95, bitmap origin(−62,−83). Virtual head sheet360×150, body840×350, cell120×175. Wing sources keep their SWF symbol origin/transforms and special suit offsets. Measured legacy exceptions are recorded separately and do not justify new arbitrary layouts.
+- Export `eye_set` together with the immutable head into `face`; export `face_set` details into `eff`; integrated body/clothing into `cloth`; hat into `head`; hair under`A`/`B`; glasses into`glass`; full costumes into`suits`; wings into`wing`; weapons into`arm`. The file-format mapping does not merge authoring selections or server gameplay stats.
+- Use`image/equip/{m|f}/{slot}/{Pic}/{plane}/show.png` and`game.png`, with the additional`A|B` directory for hair, plus`icon_{plane}.png`. Virtual, wing and arm paths follow the profile. Preserve Pic/template identity and avoid collisions with installed equipment IDs. Export registration fields; copying PNGs alone does not register a new item in the Flash client.
+- Every item in a master family shares the same recorded category transform. Do not compute a fresh fit from each item's silhouette. Current conversion maps the earlier front master's fixed head/body boxes to the measured default source regions; those conversion calibrations are not anatomical anchors from Flash.
+- `/fixed-template` now reviews canonical exported original PNGs and external 4.0 PNGs through one compositor. Preserve the earlier master/animation trial at`/fixed-template-legacy`. This changes the lab, not the playable RPGJS save schema or the accepted v0.1 reference.
+- Current original exports supply15 standing items/33 PNGs; only original face expression0 is authored. Other expression columns remain transparent and are rejected as unsupported. Game/virtual exports, original female/full-costume/wing artwork and production pose coverage remain pending. The production coverage check must fail for the current pack.
+- Complete100% interoperability is a required acceptance target, not a result inferred from matching dimensions: verify every enabled pose/category, visual viewpoint and topology, internal SWF registration, source/target loaders and actual original Flash item registration. Earlier front-view art and DDTank's3/4 view still differ. Keep all commercial images/SWF/decompiled source and mixed reference screenshots outside this repository.
+
+Rebuild with`npm run assets:ddt40`; verify with`npm run verify:ddt40 -- D:/Codex/DDtank`. Local installed-source evidence belongs in`D:/Codex/DDtank/research/compatibility-4.0/`. Engine and saved appearance integration require a separate bounded adapter/migration with complete enabled-action artwork; preserve existing prototypes.
+
+### Format/portrait acceptance record
+
+`evidence/ddtank40-format/verification.json` records the bounded technical result: all33 exported PNG dimensions/hashes and unchanged master hashes;162 original standing combinations;12 bidirectional source/original layer substitutions; male/female reference defaults identical to the earlier local portrait adapter;3 distinct visible eye/brow/mouth exports; hat removal restores B; and rejection of1254px runtime layers, missing expressions and incomplete production coverage. Reference comparison is between the two local adapters using installed images, not execution of the original Flash client. Browser checks cover independent selections, hat hiding, female defaults, original clothing on the reference body, reset and console errors. Mixed proof pixels remain external.
+
+Visual review caught and corrected a double-transform bug that omitted exported eye features. These checks confirm file/portrait behavior; they do not certify anatomical art, all-action coverage, Flash item registration, playable integration or production scale. The original front master must be revised against the actual3/4 template before claiming visual interchange. The following front master/animation records are historical authoring evidence at`/fixed-template-legacy`; their1254px and384×512 layouts are superseded for future runtime resources by the active4.0 profile.
+
 ## Owner-defined fixed-template asset standard — 2026-10-06
 
 **Active authoring requirement, recorded from the owner's corrections and three game screenshots. This section supersedes earlier generic face/eyes and separate shirt/pants/shoes descriptions as the target for new artwork. It is a specification, not a claim that the runtime or production assets implement it.**
@@ -8,7 +29,7 @@ The normal character uses **one fixed head template and one fixed body template*
 
 ### Owner categories
 
-The design keys below name intended asset categories. The front lab implements eye/face/hair/hat/clothing selections across one stand and four front walk key poses for a bounded subset; the playable legacy save schema remains unchanged.
+The design keys below name intended asset categories. The preserved front lab implements eye/face/hair/hat/clothing selections across one stand and four front walk key poses for a bounded subset; the playable legacy save schema remains unchanged.
 
 | Design key | Owner category | Contents / replacement behavior |
 |---|---|---|
@@ -44,7 +65,7 @@ The immediate priority is a repeatable fixed-template asset-production process f
 |---|---|
 | Record owner categories and fixed-template rules | Defined in this contract. |
 | Freeze one normal head/body master and its coordinate/pose map | A front standing candidate is published in `assets/fixed-template-v1/manifest.json`: full 1254×1254 frames, origin (0,0), protected inherited head and unchanged dressed body/hair. Owner acceptance remains pending; the body example is clothed, not a new naked-body master. |
-| Separate eye sets from face sets on that master | Implemented as a bounded front proof at `/fixed-template`: three eye/brow/mouth sets, two cheek-detail face sets and no face set. Shared category masks preserve the protected head; exports retain bounded skin underpainting. Other face-set placements/poses remain unverified. |
+| Separate eye sets from face sets on that master | Implemented as a bounded front proof at `/fixed-template-legacy`: three eye/brow/mouth sets, two cheek-detail face sets and no face set. Shared category masks preserve the protected head; exports retain bounded skin underpainting. Other face-set placements/poses remain unverified. |
 | Prove new-shaped clothing and hair/hat compatibility | Knight/mage bundles, two new hairstyles and one cap now compose with the same front head. Cap coverage preserves selected hair. 162 looks and810 standing/walking compositions pass technical checks; owner acceptance and arbitrary topology remain pending. |
 | Carry the same cosmetic IDs across standing and walking | Original front stand plus four individually authored front walk key poses, all three outfits and the same eye/face/hair/cap exports. Equip/reset preserves phase. Gait/sole/sleeve polish, other directions/actions and playable integration remain unfinished. |
 | Define full-costume replacement/restoration and optional-item visibility | Category behavior is specified above; source assets and runtime policy are not implemented. |

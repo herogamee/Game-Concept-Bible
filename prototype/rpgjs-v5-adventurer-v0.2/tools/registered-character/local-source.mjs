@@ -25,6 +25,6 @@ export async function readLocalCatalog(labRoot) {
     if(!(assets.main||assets.B))continue;
     items.push({id:item.id,name:item.name,slot:item.slot,sex:item.sex,pic:item.pic,hairType:item.hair_type,assets});
   }
-  return {catalog:{source:'Local DDTank 4.0 research images; not original project artwork',items},files,
+  return {catalog:{source:'Local DDTank 4.0 research images; not original project artwork',items},files,equipmentIds:equipment.map(item=>item.id),
     references:{m:inside(labRoot,'tests/starter-m-show.png'),f:inside(labRoot,'tests/starter-f-show.png')}};
 }

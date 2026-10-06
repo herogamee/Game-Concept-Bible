@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-06 — DDTank 4.0 canonical character resources
+
+- Lock measured 4.0 sizes, relative origins, frame grids, category semantics and filenames in a versioned resource profile and repository agent guidance. Retain large authoring masters; retire their envelope as a runtime format.
+- Export 15 original standing items into 33 PNGs using fixed category transforms, common transparent origins, face sheets, hair A/B and DDTank directory names. Export proposed template registration fields without modifying the installed game.
+- Make `/fixed-template` the shared original/reference portrait laboratory, preserving the earlier front animation trial at `/fixed-template-legacy`. Keep every commercial asset and mixed proof screenshot in the external DDTank lab.
+- Add exact reference-pixel checks, independent combinations, bidirectional layer swaps and rejection of invalid dimensions/missing expression/full-production claims. Art viewpoint/topology, complete pose coverage, female originals, original Flash client ingestion and playable integration still require evidence; 100% interchange is the target, not a passed result.
+
 ## 2026-10-06 — Front hairstyle volume and authoring envelope
 
 - Repair the undersized blue hair through original ImageGen edits:460×314→532×396px, crown clearance13→97px. Preserve the original head/registration and earlier sources; retain failed edits and seam trials. Export the coherent revised hair with a source-specific matte, not a fitted scale or a claim of unchanged old fringe pixels.
