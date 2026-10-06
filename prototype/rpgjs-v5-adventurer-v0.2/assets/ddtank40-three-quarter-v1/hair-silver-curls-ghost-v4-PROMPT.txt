@@ -1,0 +1,9 @@
+Use case: precise-object-edit
+Asset type: HAIR-ONLY registered transparent chibi game sprite.
+Primary request: Make ONE local correction to Image1 silver hair: shorten/taper its RIGHT INNER SIDEBURN so the visible ear of the invisible head in Image2 is fully exposed. Preserve all other hairstyle, silver color, overall scale and exact placement.
+Inputs: Image1 hair is the edit target. Image2 blank head is geometry only; never render any head/skin/ear.
+Locked frame:1254 x1254. Hair bounds x255..1028,y79..648. Keep upper crown and both outer sides unchanged. Do not recenter or resize.
+Correction: In the area x810..900,y550..655, redraw the connected right inner locks as shorter tapered tips ending BEFORE y600 near x835..871. The entire rectangle x835..871,y610..654 must be truly transparent. The ear in Image2 lives there and will appear below the hair during composition. Do not punch a circular ear hole; draw natural short clean sideburn ends above it and keep rear locks behind/outside the ear. At left eye pixel(444,612) do not leave any paint.
+Everything else: Keep connected full rounded crown, same soft wavy silver arrangement, white/silver shading and outlines. Same original head fit, view and volume.
+Output contains HAIR ONLY with actual alpha transparency, no skin, head, ears, face, eyes, mouth, guide, text, body or checkerboard. Never generate a headed portrait and cut it out. Keep the lower half blank.
+Image3 blue hair is a supporting reference for how the natural short inner sideburn leaves that ear window empty; retain Image1 silver styling.

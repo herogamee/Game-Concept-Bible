@@ -67,7 +67,7 @@ for(const [i,id,label] of [['1','eyes-amber','ตาอำพัน · ยิ้
   const result=await item({number:610900000+Number(i),slot:'face',pic:`ours_face_${i}`,label,source:`${id}.png`});
   if(i==='1')defaults.m.face=result;
 }
-for(const [i,id,label] of [['1','hair-chestnut','ผมน้ำตาล'],['2','hair-teal','ผมปัดข้างสีฟ้า'],['3','hair-silver-curls','ผมหยักศกสีเงิน']]) {
+for(const [i,id,label] of [['1','hair-chestnut','ผมน้ำตาล'],['2','hair-teal','ผมปัดข้างสีฟ้า'],['3','hair-silver-curls','ผมหยักศกสีเงิน'],['4','hair-ghost-teal','ผมฟ้า · ทดลองหัวล่องหน']]) {
   const result=await item({number:310900000+Number(i),slot:'hair',pic:`ours_hair_${i}`,label,source:`${id}.png`,hatSource:`${id}-under-hat.png`});
   if(i==='1')defaults.m.hair=result;
 }

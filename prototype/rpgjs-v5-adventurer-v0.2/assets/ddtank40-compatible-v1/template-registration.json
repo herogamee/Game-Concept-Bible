@@ -90,6 +90,16 @@
     "Level": 1
   },
   {
+    "TemplateID": 310900004,
+    "CategoryID": 3,
+    "NeedSex": 1,
+    "Pic": "ours_hair_4",
+    "Name": "ผมฟ้า · ทดลองหัวล่องหน",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
     "TemplateID": 510900001,
     "CategoryID": 5,
     "NeedSex": 1,

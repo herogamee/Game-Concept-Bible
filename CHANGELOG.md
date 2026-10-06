@@ -446,3 +446,9 @@ Established:
 - Vertical-slice scope guardrails.
 - v0.2 world-building questions.
 
+# 2026-10-06 — Hair-only example using the standard head as an invisible guide
+
+- Add one selectable blue ghost-head trial and a head/hair/overlay proof with independent PNG links. Preserve the previous hairstyles and the same head, face, clothes and common export matrix.
+- Record the fixed generation-space import and a brown-volume rejection gate; verify36 canonical PNGs/216 compositions, unchanged head/brown fixtures and cap restoration.
+- Preserve all eight image outputs/prompts. Silver drafts still drifted and remain unpublished; this experiment does not certify100% generated geometry or catalog production.
+

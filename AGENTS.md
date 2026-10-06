@@ -12,6 +12,8 @@ Current owner-authorized direction: read `design/implementation-reset-2026-10-02
 
 - Eye/face ownership: derive eyes+brows+mouth from hairless sources, never from a portrait with bangs crossing those regions. The blank head and exported face must remain clean when displayed without any hair. Swapping the separate hair resource must not erase, redraw or repair the face. A clean standalone hairstyle alone does not prove a clean composed face.
 
+- Ghost-head hair authoring: the existing blank head is the geometric authority and stays unchanged. Supply it as a reference guide; output only hair with alpha transparency through the face/ear spaces. Brown hair may guide volume, but must not define a new head. Record generation-space imports explicitly and reject future item drift rather than fitting items at runtime. The current one-blue-hair trial needed eight image calls and calibrated registration; do not claim prompts guarantee100% geometry or a production catalog pipeline.
+
 - Main playable/product reference: `prototype/web-pixel-rpg-v0.1/`. Preserve its working code, original illustrated artwork, audio and save compatibility. Do not replace its renderer or migrate its save in an engine experiment.
 - `prototype/rpgjs-v5-adventurer-v0.2/` is a technical experiment. Functional/two-client acceptance has evidence; visual/input/product parity has NOT passed. Do not describe it as a better replacement or expand its scope yet.
 - Next implementation is one comparable village/meadow slice using v0.1 assets and behavior in the RPGJS candidate. Use adapters; Universal LPC is optional, not mandatory replacement art. Preserve attribution for every third-party asset. No commercial-game sprites.

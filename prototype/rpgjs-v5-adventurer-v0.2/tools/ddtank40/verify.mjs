@@ -11,6 +11,7 @@ import {drawPreparedFrame} from '../registered-character/compositor.mjs';
 import {compatibilityCatalog,ownRoot} from './local.mjs';
 import {showPlan,resourcePath,validateShowAsset,requireProductionCoverage} from './format.mjs';
 import {masterMatrix,masterPoint} from './registration.mjs';
+import {ghostHairImport} from './ghost-head-import.mjs';
 const labRoot=resolve(process.argv[2]||'D:/Codex/DDtank'),root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 const out=resolve(labRoot,'research/compatibility-4.0');await mkdir(out,{recursive:true});
 const profile=JSON.parse(await readFile(new URL('profile.json',import.meta.url),'utf8'));
@@ -87,6 +88,20 @@ for(const id of ['hair-chestnut','hair-teal','hair-silver-curls']){
 const oldHairIslands=components(await nativePixels('../../evidence/ddtank40-three-quarter-v1/hair-before-hair-only.png'),1254,1254);
 assert(oldHairIslands.slice(1).some(size=>size>32),'The regression fixture must expose the rejected detached patch');
 function alphaBounds(data,width,height){let x0=width,y0=height,x1=-1,y1=-1;for(let y=0;y<height;y++)for(let x=0;x<width;x++)if(data[(y*width+x)*4+3]>=128){x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y)}return {x:x0,y:y0,width:x1-x0+1,height:y1-y0+1};}
+const ghostStandard=JSON.parse(await readFile(new URL('ghost-head-standard.json',import.meta.url),'utf8'));
+for(const [name,hash] of [[ghostStandard.headTemplate,ghostStandard.headSha256],[ghostStandard.brownReference,ghostStandard.brownSha256]])assert.equal(createHash('sha256').update(await readFile(resolve(root,pack.authoringDirectory,name))).digest('hex'),hash,'The ghost-head trial must not modify the standard head or accepted brown reference');
+assert.deepEqual(authoring.ghostHeadHairRegistration.matrix,ghostStandard.newFamilyImport,'Do not fit new hair items individually');
+const ghostPixels=await nativePixels('layers/hair-ghost-teal.png'),brownPixels=await nativePixels(ghostStandard.brownReference),ghostRaw=await nativePixels(authoring.ghostHeadHairRegistration.rawSource);
+assert.deepEqual(await readFile(resolve(root,pack.masterDirectory,'hair-ghost-teal.png')),await readFile(resolve(root,pack.authoringDirectory,authoring.ghostHeadHairSources['hair-ghost-teal'])),'Ghost-head full hair must copy its registered source without cuts');
+for(let p=1000*1254;p<1254*1254;p++)assert(ghostRaw[p*4+3]<16,'Ghost-head raw source must not contain a body');
+for(let p=560*1254;p<1254*1254;p++)assert(ghostPixels[p*4+3]<16,'Ghost-head native hair contains lower face/neck/body artwork');
+for(const [x,y] of ghostStandard.emptyEyeMouth)assert.equal(ghostPixels[(y*1254+x)*4+3],0,'Ghost hair must leave the existing eye/mouth fixtures transparent');
+for(const [x,y] of ghostStandard.skullCoverage)assert(ghostPixels[(y*1254+x)*4+3]>240,'Ghost hair must cover the same fixed skull');
+const ghostIslands=components(ghostPixels,1254,1254);assert(!ghostIslands.slice(1).some(n=>n>32),'Detached ghost hair fragments');
+function ghostVolume(data){const b=alphaBounds(data,1254,1254),ref=alphaBounds(brownPixels,1254,1254),ratio=ghostStandard.widthAndHeightRatio;assert(b.width/ref.width>=ratio[0]&&b.width/ref.width<=ratio[1]&&b.height/ref.height>=ratio[0]&&b.height/ref.height<=ratio[1],'Hair volume differs from the fixed brown reference');assert(Math.abs(b.x-ref.x)<=ghostStandard.edgeTolerance&&Math.abs(b.x+b.width-ref.x-ref.width)<=ghostStandard.edgeTolerance&&Math.abs(b.y-ref.y)<=ghostStandard.crownYTolerance,'Hair placement drifted');let area=0,baseArea=0;for(let i=3;i<data.length;i+=4){if(data[i]>=128)area++;if(brownPixels[i]>=128)baseArea++;}assert(area/baseArea>=ghostStandard.opaqueAreaRatio[0]&&area/baseArea<=ghostStandard.opaqueAreaRatio[1],'Hair mass differs from the fixed reference');return {bounds:b,widthRatio:b.width/ref.width,heightRatio:b.height/ref.height,opaqueAreaRatio:area/baseArea};}
+const ghostFit=ghostVolume(ghostPixels);
+for(const id of ['hair-teal','hair-silver-curls']){const old=await nativePixels('layers/'+id+'.png');assert.throws(()=>ghostVolume(old),/volume differs/,'The new standard must reject the earlier small hairstyles');}
+const rejectedSilverImage=await loadImage(await ghostHairImport(await readFile(resolve(root,pack.authoringDirectory,'hair-silver-ghost-rejected-v5.png')))),rejectedSilverCanvas=createCanvas(1254,1254);rejectedSilverCanvas.getContext('2d').drawImage(rejectedSilverImage,0,0);assert.throws(()=>ghostVolume(pixels(rejectedSilverCanvas)),/volume differs/,'Do not publish the oversized silver draft under a different item fit');
 for(const id of ['clothing-traveler','clothing-knight','clothing-mage']){
   const data=await nativePixels('layers/'+id+'.png');
   // A large opaque "neck" count previously passed while it was actually chin.
@@ -117,11 +132,11 @@ const nativeJoin=createCanvas(1254,1254),joinCtx=nativeJoin.getContext('2d');
 for(const name of ['clothing-traveler','head-template'])joinCtx.drawImage(await loadImage(resolve(root,pack.masterDirectory,name+'.png')),0,0);
 const joinPixels=pixels(nativeJoin);let coveredJoinPixels=0;
 for(let y=627;y<644;y++)for(let x=596;x<641;x++){assert(joinPixels[(y*1254+x)*4+3]>230,'Background hole at jaw/neck join');coveredJoinPixels++;}
-for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hat-adventurer']){
+for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hair-ghost-teal','hat-adventurer']){
   const data=await nativePixels('layers/'+id+'.png');for(let y=491;y<527;y++)for(let x=795;x<824;x++)assert.equal(data[(y*1254+x)*4+3],0,`${id}: immutable ear covered`);
 }
 const capCrownChecks=[];
-for(const id of ['hair-chestnut','hair-teal','hair-silver-curls']){
+for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hair-ghost-teal']){
   const full=await nativePixels('layers/'+id+'.png'),under=await nativePixels('layers/'+id+'-under-hat.png');let restoredCrownPixels=0;
   for(let y=0;y<330;y++)for(let x=300;x<960;x++){
     const alpha=(y*1254+x)*4+3;
@@ -193,7 +208,7 @@ const report={profile:profile.id,view:pack.view,template:pack.template,originalI
   referenceDefaults:sourceDefaults,interchangeCases:blends.length,sourceMastersUnmodified:true,allOrigins:[0,0],
   rejectedInvalidDimensions:true,rejectedMissingExpressions:true,rejectedIncompleteProductionPack:true,
   authoredExpressionChecks:expressionChecks,hairFreeFaceLandmarks,eyeSources:authoring.eyeSources,rejectedBrownHairInAmberEyeSet:true,
-  bodyLandmarkPixels,exactLimbPixelInvariance:false,hairOnlyChecks,rejectedOldDetachedHairFragment:true,protectedEar:true,capCrownChecks,
+  bodyLandmarkPixels,exactLimbPixelInvariance:false,hairOnlyChecks,ghostHeadTrial:{id:'ours-310900004',headUnchanged:true,brownUnchanged:true,registeredCopyUnmodified:true,importMatrix:authoring.ghostHeadHairRegistration.matrix,fit:ghostFit,connectedComponents:ghostIslands,rejectedEarlierSmallHair:true,rejectedOversizedSilverDraft:true,sourceGeneratedAsHairOnly:true},rejectedOldDetachedHairFragment:true,protectedEar:true,capCrownChecks,
   exportMatrix:matrix,uniformAllLayers:true,rejectedAnisotropicBody:true,rejectedSeparateHeadBodyFits:true,proportionChecks,neckChecks,coveredJoinPixels,faceAboveClothing:true,
   acceptance:'File-format/portrait-renderer checks pass. Actual Flash-client item registration, anatomical/topology compatibility, all actions, female originals and owner visual acceptance remain pending.'};
 await writeFile(resolve(out,'verification.json'),JSON.stringify(report,null,2)+'\n');
