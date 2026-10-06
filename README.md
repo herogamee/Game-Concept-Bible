@@ -14,6 +14,7 @@ The core fantasy is not "be the chosen hero immediately." It is:
 
 ## Current Bible
 
+- [Game Concept Bible v0.3 — Combat & Classes Candidate](bible/GAME-CONCEPT-BIBLE-v0.3.md) — active prototype candidate; combat balance/final class structure not yet locked
 - [Game Concept Bible v0.2.1 — Player / NPC Boundary Correction](bible/GAME-CONCEPT-BIBLE-v0.2.1.md)
 - [Game Concept Bible v0.2 — preserved world/Guild proposal](bible/GAME-CONCEPT-BIBLE-v0.2.md)
 - [Game Concept Bible v0.1 — preserved foundation](bible/GAME-CONCEPT-BIBLE-v0.1.md)
@@ -25,27 +26,39 @@ v0.2.1 is the current direction correction. It preserves v0.2's useful world/Gui
 
 | Reader | Suggested sequence |
 |---|---|
-| New team member | v0.2.1 correction → v0.2 overview → vertical slice → first ten hours |
+| New team member | v0.2.1 correction → integration guardrails → consolidation audit → vertical slice → first ten hours |
 | Producer / programmer | Slice → contracts → NPC simulation → rank/promotion → economy |
-| World / narrative designer | World → starter region → factions → cast → magic/species |
+| World / narrative designer | Main story/world mystery → world expansion → starter region → factions → cast → magic/species |
 | Research / product reviewer | Market → community → reference study → decision register |
 
 ## Document map
 
-- World: [foundation](world/world-overview.md), [starter region and routes](world/starter-region.md), [ten factions](world/factions.md), [peoples/species](world/species.md), [magic](world/magic-system.md), [economy and budgets](world/economy.md).
+- Narrative: [main story and world mystery](story/MAIN-STORY-AND-WORLD-MYSTERY-v0.1.md), [post-S and life endgame](design/POST-S-AND-LIFE-ENDGAME-v0.1.md).
+- World: [foundation](world/world-overview.md), [world expansion](world/WORLD-EXPANSION-v0.1.md), [starter region and routes](world/starter-region.md), [ten factions](world/factions.md), [peoples/species](world/species.md), [magic](world/magic-system.md), [economy and budgets](world/economy.md).
 - Guild: [organization and physical hall](guild/adventurer-guild.md), [rank/eligibility](guild/rank-system.md), [promotion and practical exam](guild/promotion-system.md).
 - People: [28 starter NPCs](characters/starter-npcs.md), [player-first NPC roles and persistence](design/npc-simulation.md).
 - Playable planning: [first ten hours](design/first-10-hours.md), [18 authored contracts](design/starter-quests.md), [bounded vertical slice](design/vertical-slice.md).
-- Evidence: [market comparison](research/game-market-research.md), [community demand](research/community-demand.md), [reference study](research/anime-reference-study.md), [open-source implementation stack](research/open-source-game-development-stack-2026-10-02.md), [commercial-safe game audio resources](research/game-audio-sources-2026-10-02.md), [audio source/license matrix](research/evidence/game-audio-source-matrix-2026-10-02.csv), [dated Steam counts](research/evidence/steam-review-counts-2026-10-01.csv), [individual review index](research/evidence/community-review-index-2026-10-01.csv).
+- Progression & combat: [v0.3 combat/classes candidate](bible/GAME-CONCEPT-BIBLE-v0.3.md), [combat kernel](design/COMBAT-KERNEL-v0.1.md), [four-loadout matrix](design/COMBAT-APTITUDE-PROTOTYPE-MATRIX-v0.1.md), [playtest scorecard](design/COMBAT-PLAYTEST-SCORECARD-v0.1.md), [hybrid skills and mastery](design/SKILLS-AND-MASTERY-v0.1.md).
+- Creatures: [monster and boss design bible](creatures/MONSTER-AND-BOSS-BIBLE-v0.1.md).
+- Economy & treasure systems: [currency and money](economy/CURRENCY-AND-MONEY-v0.1.md), [treasures/artifacts/relics](items/TREASURES-ARTIFACTS-AND-RELICS-v0.1.md), [manuals/techniques/inheritance](items/MANUALS-TECHNIQUES-AND-INHERITANCE-v0.1.md), [hidden realms](world/HIDDEN-REALMS-AND-INHERITANCE-v0.1.md), [trade/auction/market](design/TRADE-AUCTION-AND-MARKET-v0.1.md).
+- Authored content Set 01: [50 treasures/relics](items/catalogues/ORAVEL-TREASURE-CATALOGUE-SET-01.md), [30 manuals/techniques](items/catalogues/ORAVEL-MANUALS-TECHNIQUES-SET-01.md), [10 hidden realms](world/catalogues/ORAVEL-HIDDEN-REALMS-SET-01.md), [rare materials and expedition medicines](items/catalogues/ORAVEL-RARE-MATERIALS-MEDICINES-SET-01.md).
+- Weapons & equipment: [equipment bible](items/WEAPONS-ARMOR-AND-EQUIPMENT-v0.1.md), [40-item equipment catalogue](items/catalogues/ORAVEL-WEAPONS-EQUIPMENT-SET-01.md), [Signature Gear and equipment legacy](design/SIGNATURE-GEAR-AND-EQUIPMENT-LEGACY-v0.1.md).
+- Artisan life: [crafting/gathering bible](design/CRAFTING-GATHERING-AND-ARTISAN-LIFE-v0.1.md), [blacksmithing](crafting/BLACKSMITHING-AND-EQUIPMENT-CRAFT-v0.1.md), [alchemy/apothecary](crafting/ALCHEMY-APOTHECARY-AND-MEDICINE-v0.1.md), [cooking/provisioning](crafting/COOKING-FOOD-AND-PROVISIONING-v0.1.md), [gathering/ecology](gathering/GATHERING-ECOLOGY-AND-STEWARDSHIP-v0.1.md), [first recipe/resource catalogue](crafting/catalogues/ORAVEL-ARTISAN-RECIPES-RESOURCES-SET-01.md).
+- Integration: [world/system guardrails](design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md), [current consolidation audit](design/CONSOLIDATION-AUDIT-2026-10-03.md), [historical 2026-10-02 expansion agenda](design/NEXT-DESIGN-FRONTIER-2026-10-02.md).
+- Evidence: [economy/treasure/xianxia systems research](research/ECONOMY-TREASURE-XIANXIA-SYSTEMS-RESEARCH-v0.1.md), [Chinese-fantasy treasure/manual/hidden-realm deep study](research/CHINESE-FANTASY-TREASURE-MANUAL-HIDDEN-REALM-STUDY-v0.1.md), [machine-readable Chinese-fantasy pattern matrix](research/evidence/chinese-fantasy-system-patterns-v0.1.csv), [market comparison](research/game-market-research.md), [community demand](research/community-demand.md), [reference study](research/anime-reference-study.md), [open-source implementation stack](research/open-source-game-development-stack-2026-10-02.md), [commercial-safe game audio resources](research/game-audio-sources-2026-10-02.md), [audio source/license matrix](research/evidence/game-audio-source-matrix-2026-10-02.csv), [dated Steam counts](research/evidence/steam-review-counts-2026-10-01.csv), [individual review index](research/evidence/community-review-index-2026-10-01.csv).
 - Review: [open decisions and Proposed Changes](design/decisions.md), [requirements coverage and audit](design/requirements-and-audit.md).
+
+## Coherence gate
+
+Before proposing another major system, use [World & System Integration Guardrails](design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md). New mechanics must identify their in-world location/owner, reuse existing progression language where possible, connect to the Adventurer Life loop, and define a bounded playable version before expanding. Housing/life-space work begins with [Ternhaven Housing, Workshop & Social Life](design/TERNHAVEN-HOUSING-WORKSHOP-SOCIAL-LIFE-v0.1.md), not a continent-wide property simulator.
 
 ## Source of truth and workflow
 
-Preserve previous Bible versions. Foundation locks and explicit owner approvals take priority; v0.2.1 supersedes v0.2 only where Player/NPC boundaries and shared-world direction conflict. v0.2 remains the current integrated world/Guild proposal, with linked specialist documents owning detailed rules. Research is supporting evidence, not canonical lore. The [decision register](design/decisions.md) records proposals before locked concepts change.
+Preserve previous Bible versions. Foundation locks and explicit owner approvals take priority; v0.2.1 supersedes v0.2 only where Player/NPC boundaries and shared-world direction conflict. v0.2 remains the current integrated world/Guild proposal, with linked specialist documents owning detailed rules. Research is supporting evidence, not canonical lore. The new story, world-expansion, skills, creature and post-S documents are working proposals layered on top of the current Bible; they do not silently lock Floor 100's final truth, final classes or combat balance. The [decision register](design/decisions.md) records proposals before locked concepts change.
 
 For each meaningful checkpoint, update the current Bible and CHANGELOG, check references and consistency, commit with a clear message and push to this repository. Never treat documentation completeness as proof that a mechanic is balanced or implemented.
 
-The next concept step after this correction is v0.3 Combat & Classes, supported by a small greybox career loop and combat comparison. The active [implementation reset](design/implementation-reset-2026-10-02.md) keeps v0.1 as the playable quality reference and RPGJS v0.2 as a technical experiment. Final engine selection awaits comparable visual/control and browser-cost evidence; read the [current handoff](prototype/CODEX-HANDOFF-QUALITY-PARITY.md). Shared-world intent does not justify MMO-scale implementation yet; avoid building networking at scale or the remaining 97 floors before the core loop is validated.
+The active concept step is v0.3 Combat & Classes Candidate, with a bounded four-loadout comparison. Feature breadth remains frozen while the core loop is validated. The implementation reset keeps v0.1 as the playable quality reference and RPGJS v0.2 as a technical experiment; original illustrated art is allowed and LPC is optional. Read design/implementation-reset-2026-10-02.md and prototype/CODEX-HANDOFF-QUALITY-PARITY.md before the historical migration and combat handoffs. Engine selection and product parity still require measured evidence and owner visual/control review. Shared-world intent does not justify MMO-scale scope or the remaining 97 floors.
 
 ## Design pillars
 
@@ -74,7 +87,7 @@ The Bible uses semantic-style concept versions:
 - v0.9 — Prototype specification
 - v1.0 — First complete pre-production Bible
 
-Last updated: 2026-10-02
+Last updated: 2026-10-06
 
 ## Playable prototypes and current direction
 

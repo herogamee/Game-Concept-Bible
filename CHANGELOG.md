@@ -106,6 +106,140 @@
 - Added camera follow, Y depth sorting, collision aligned with artwork and combat feedback while preserving the original game loop/save key.
 - Added modular source files, asset license/credits, dev/build scripts, regression checks and three screenshots.
 - Details: prototype/web-pixel-rpg-v0.1/CHANGELOG.md.
+## v0.3 — 2026-10-03 — Combat & Classes Prototype Candidate
+
+- Added `bible/GAME-CONCEPT-BIBLE-v0.3.md` as the active Combat & Classes prototype candidate while preserving v0.2.1's locked Player/NPC correction.
+- Selected readable real-time action combat for prototype validation, continuing the existing playable direction rather than changing genres before evidence.
+- Defined Starter Aptitudes as initial training/loan-kit packages rather than permanent classes.
+- Mapped the four slice aptitudes to four comparison loadouts: Fighter/Sword, Scout/Spear, Ranger/Bow and Mage/Staff-Focus.
+- Added one shared combat state machine with explicit windup → active → recovery timing and server-authoritative hit/reward rules.
+- Added a prototype shared `Effort` resource for defenses/techniques and bounded Pattern exertion; no separate Mana subsystem is added for the first comparison.
+- Added normalized starter attacks so initial testing compares weapon feel rather than item-level math.
+- Added distinct defenses: Sword Guard, Spear Brace, Bow Evade Step and Staff/Focus Ward.
+- Added `design/COMBAT-KERNEL-v0.1.md` with TypeScript-oriented attack/state/reward contracts and required tests.
+- Added `design/COMBAT-APTITUDE-PROTOTYPE-MATRIX-v0.1.md` and `design/COMBAT-PLAYTEST-SCORECARD-v0.1.md`.
+- Added `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md` for phased implementation on the RPGJS v5 migration target.
+- Updated the vertical slice so combat comparison now uses the same kernel and four weapon languages instead of comparing unrelated combat genres.
+- Recorded OD-21 as **Proposed for prototype validation**, not a final combat lock.
+- Continued the feature-breadth freeze: do not expand class trees, crafting, housing, PvP, mounts, pets or 100-floor content before the combat gates pass.
+- Added `prototype/PROTOTYPE-STATUS-2026-10-03.md` after verifying that the RPGJS v5 migration target folder is not yet present; the repository must not claim playable v0.3 code until bootstrap/build/tests are actually completed.
+- Updated prototype `AGENTS.md` so coding agents read the integration guardrails, consolidation audit, prototype status, RPGJS migration handoff and v0.3 combat handoff in the correct order.
+
+## v0.2.13 — 2026-10-03 — Consolidation Pass & Feature-Breadth Freeze
+
+- Added `design/CONSOLIDATION-AUDIT-2026-10-03.md` as the current cross-system audit and reading reference.
+- Kept Game Concept Bible v0.2.1 as the canonical correction; this checkpoint does not silently promote specialist proposals into canon.
+- Resolved the `Worn` terminology collision: Workmanship is Serviceable/Fine/Masterwork; Condition is Good/Worn/Damaged/Critical.
+- Consolidated market/social recognition onto existing concepts: Guild professional evidence, Local Standing, Artisan Reputation and named Relationships; no universal Social Level.
+- Reaffirmed Signature Gear and Relic as independent concepts rather than stacked combat rarity tiers.
+- Made Pattern Shard explicitly a noncanonical placeholder and blocked it from prototype implementation unless later approved.
+- Marked the 2026-10-02 Next Design Frontier as a historical planning agenda because most topics now have working proposals.
+- Replaced the stale Post-S future-system checklist with links to the integrated specialist documents.
+- Updated the Decision Register to record that the requested economy/treasure/crafting/housing pass is complete as proposals/research and that OD-20 now gates further breadth.
+- Updated README so new readers encounter the Integration Guardrails and Consolidation Audit before specialist expansion documents.
+- Established a temporary feature-breadth freeze: no major new mounts/pets/land/farming/kingdom/politics/currency/rank systems before v0.3 Combat & Classes and vertical-slice evidence.
+
+## v0.2.12 — 2026-10-03 — One-World Integration & Ternhaven Life Boundary
+
+- Added `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md` as the repository-wide coherence gate for future design work.
+- Recorded owner direction OD-20: new systems must belong to the same Adventurer Life world and reuse existing progression/institution terminology before inventing parallel mechanics.
+- Defined a source-of-truth hierarchy: locked owner principles → current Bible → preserved Bible material → Decision Register → specialist proposals → authored examples → research.
+- Added the seven-question One-Game Test requiring every future mechanic to name its world location, user, adventurer purpose, existing-system connection, reused terminology, removal impact and smallest playable version.
+- Consolidated the shared vocabulary for Guild Rank, mastery, professional evidence, local standing, artisan reputation, coin, Drift, Pattern Magic, Relics, Signature Gear and Hidden Realms.
+- Added hard coherence guardrails against SS/SSS rank inflation, duplicate progression ladders, global gear-score design, +99 enhancement, mandatory daily energy, full-loot PvP, land monopoly, autonomous NPC economy, instant global teleportation and factory-style passive production.
+- Added `design/TERNHAVEN-HOUSING-WORKSHOP-SOCIAL-LIFE-v0.1.md`, explicitly scoped to Ternhaven first.
+- Housing progresses from Guild/inn bed to rented room and optional small home/workspace; it supports rest, storage, display, collection, social visits, limited craft and small gardening.
+- Home gardening is deliberately low-volume so Aldermead remains meaningful as an agricultural community.
+- Home workshops do not passively craft offline and do not replace Bellcross or specialist facilities.
+- Reused existing social concepts instead of adding a new Social Level: Guild professional evidence, local standing, artisan reputation and named relationships.
+- Housing prototype is bounded to one Ternhaven rented room with rest, storage, a few display points, one work surface and decoration; land plots, livestock, NPC workers, shop automation and full farming remain outside initial scope.
+
+## v0.2.11 — 2026-10-03 — Crafting, Gathering & Artisan Life Foundation
+
+- Added a complete Gather → Process → Craft → Use/Trade → Maintain/Restore → Recycle/Requisition lifecycle.
+- Added `design/CRAFTING-GATHERING-AND-ARTISAN-LIFE-v0.1.md` covering artisan disciplines, material quality, refining, commissions, Guild requisitions, study/disassembly, provenance, failure and prototype scope.
+- Added dedicated Blacksmithing, Alchemy/Apothecary, Cooking/Provisioning and Gathering/Ecology design documents.
+- Added `crafting/catalogues/ORAVEL-ARTISAN-RECIPES-RESOURCES-SET-01.md` with 20 resource concepts, 24 initial craft/formula/dish entries and Guild requisition examples.
+- Craft mastery grows primarily from varied meaningful work rather than mass-producing identical junk.
+- Routine mastered recipes can be quick-crafted; important commissions, first crafts, Masterwork attempts and relic work retain deeper interaction.
+- Gathering progression emphasizes habitat, season, signs, extraction quality, ecology and substitutes rather than only tool tier.
+- Added bounded sustainable-harvest rules so resource competition does not create permanent player conflict.
+- Food supports daily life, recovery and expeditions without requiring stacked mandatory combat buffs.
+- Alchemy emphasizes stabilization, antidotes, environmental preparation and preservation rather than instant-reset healing.
+- Blacksmithing supports repair/reforge and Signature Gear provenance instead of a +99 enhancement treadmill.
+- Reference review used official FFXIV crafting/gathering documentation and Albion crafting/refining documentation as structural comparisons; Oravel systems remain original and intentionally reject mandatory daily Focus-style progression.
+
+## v0.2.10 — 2026-10-03 — Weapons, Equipment & Signature Gear Foundation
+
+- Added `items/WEAPONS-ARMOR-AND-EQUIPMENT-v0.1.md` defining weapon families, armor trade-offs, equipment slots, Pattern equipment, condition/repair, meaningful modifications, material expression, crafting identity and prototype scope.
+- Added `items/catalogues/ORAVEL-WEAPONS-EQUIPMENT-SET-01.md` with 40 original weapons, shields, armor pieces, tools and life-skill equipment concepts.
+- Added `design/SIGNATURE-GEAR-AND-EQUIPMENT-LEGACY-v0.1.md` so beloved equipment can accumulate bounded familiarity, physical modifications, provenance and story history across F→S play.
+- Rejected a generic +1→+99 enhancement treadmill as the core progression model; enhancement failure must not destroy beloved equipment.
+- Separated base form, workmanship, material, modification and relic/provenance significance so one rarity number does not define every item's value.
+- Defined an example E-rank Fine Bellcross sword that can remain relevant through Rank S without becoming automatic best-in-slot.
+- Added maker/restorer provenance and commission direction so player craftspeople can build reputation without mass-producing junk.
+- Added believable loot rules: creatures provide ecological materials; manufactured weapons come from believable owners, caches, craftspeople or institutions.
+- Preserved player trust: no full-loot PvP, random Signature Gear destruction or paid protection requirement.
+- First RPGJS validation scope remains intentionally small: Sword, Spear, Bow, Staff/Focus, optional Shield, three armor profiles, basic condition and one modification per weapon.
+
+## v0.2.9 — 2026-10-03 — Oravel Authored Content Set 01
+
+- Added the first authored content library rather than only system frameworks.
+- Added 50 original treasures/relics spanning F through post-S, with utility, provenance, mystery and world connections.
+- Added 30 original manuals/techniques across combat, survival, medicine, scholarship, exploration, Pattern Magic and ancient-system knowledge.
+- Added 10 clue-driven hidden realms from the Reedmark through post-S unknown-world exploration.
+- Added 15 rare materials and 10 expedition medicines/preparations.
+- Connected content into chains: treasure can reveal a realm, a realm can provide a manual/material, and later knowledge can reveal new functions in earlier objects.
+- Preserved multiplayer fairness: server-first prestige does not permanently deny later players meaningful story access.
+- Preserved noncombat value: several treasures, realms and techniques focus on ecology, investigation, mapping, crafting, restoration and scholarship.
+- Names and numerical balance remain reviewable authored proposals rather than immutable canon.
+
+## v0.2.8 — 2026-10-03 — Economy, Treasure, Technique, Hidden-Realm & Market Systems
+
+- Added `economy/CURRENCY-AND-MONEY-v0.1.md`: Copper/Silver/Gold foundation, currency sources/sinks, functional magical-resource direction, banking and inflation telemetry.
+- Added `items/TREASURES-ARTIFACTS-AND-RELICS-v0.1.md`: Treasure Desire Model, provenance, layered identification, relic growth, trade classes and multiplayer uniqueness rules.
+- Added `items/MANUALS-TECHNIQUES-AND-INHERITANCE-v0.1.md`: world-discovered techniques, manuals, fragments, copying, mentors, inheritance and dangerous-knowledge rules.
+- Added `world/HIDDEN-REALMS-AND-INHERITANCE-v0.1.md`: clue-driven secret areas, varied challenge types and shared-world access fairness.
+- Added `design/TRADE-AUCTION-AND-MARKET-v0.1.md`: Common Exchange, Specialist Exchange, Curated Auction, safe direct trade, price information, anti-monopoly and regional trade.
+- Explicitly separated money from Guild Rank, reputation, discovery and mastery so wealth cannot directly buy core progression.
+- Explicitly separated equipment workmanship from relic/lore significance to reduce pure gear-score inflation.
+- Preserved cooperative social direction: no forced PvP for essential resources, no first-hit boss ownership and no permanent monopoly over progression-critical hidden realms.
+- Exact economic balance values remain open for simulation; these documents are working proposals rather than canonical numerical locks.
+
+## v0.2.7 — 2026-10-03 — Chinese-Fantasy Treasure & Hidden-Realm Deep Study
+
+- Added research/CHINESE-FANTASY-TREASURE-MANUAL-HIDDEN-REALM-STUDY-v0.1.md.
+- Added research/evidence/chinese-fantasy-system-patterns-v0.1.csv.
+- Deepened the Chinese-fantasy reference study across six licensed/public novel sources.
+- Defined the Treasure Desire Model: Mystery, Utility, Provenance, Connection, Choice, Growth and Memory.
+- Proposed original narrative treasure categories, manuals/codices, technique fragments, layered appraisal, artifact restoration, rare-material ecology and hidden-realm access.
+- Proposed auction catalogues, proxy bids, requested exchanges, appraisal and provenance while rejecting real-money combat auctions and attendance pressure.
+- Added original Oravel treasure prototypes focused on exploration, investigation, collection and world mystery rather than only damage.
+- Added multiplayer fairness rules separating lore uniqueness and server-first prestige from permanent gameplay denial.
+- Existing fiction remains reference material only; protected names, techniques, artifacts, progression ladders and lore are not game canon.
+
+## v0.2.6 — 2026-10-03 — Economy, Treasure & Chinese-Fantasy Systems Research
+
+- Added `research/ECONOMY-TREASURE-XIANXIA-SYSTEMS-RESEARCH-v0.1.md`.
+- Studied currency sinks, item sinks, transparent markets, regional crafting economies and anti-inflation patterns from Guild Wars 2, Final Fantasy XIV, Albion Online and Path of Exile.
+- Expanded the Chinese-fantasy research direction using *A Record of a Mortal's Journey to Immortality* / **คัมภีร์วิถีเซียน** as a structural reference for functional currency-like resources, rare-item barter, auctions, manuals and hidden-realm discovery; no protected names/lore are adopted.
+- Proposed a two-layer economic direction: readable everyday coin plus future functional magical resources that can be consumed, crafted or traded.
+- Proposed Common Exchange + Curated Auction rather than forcing all goods through one market model.
+- Proposed peaceful item sinks (Guild requisitions, study/disassembly, donation, expedition consumables) rather than full-loot PvP.
+- Added treasure provenance, manual/technique, hidden-realm, regional-economy and cooperative anti-conflict research hypotheses.
+- Existing copper/silver/gold prototype values remain unchanged pending a dedicated economy design pass.
+
+## v0.2.5 — 2026-10-02 — Narrative, World Mystery & Long-Term Progression Framework
+
+- Added `story/MAIN-STORY-AND-WORLD-MYSTERY-v0.1.md` with an original F→S narrative escalation, Underfold/world-network mystery, rank-scale story arcs, Floor 100 junction direction and four-layer story model.
+- Added `world/WORLD-EXPANSION-v0.1.md` to expand Roven, Istrane, Ulreth, future settlements, forbidden regions, travel philosophy and post-S exploration without committing a giant production map.
+- Added `design/SKILLS-AND-MASTERY-v0.1.md` proposing a hybrid progression model: Weapon Skills + Adventurer Disciplines + Learned Skills + Pattern Magic + Life Skills.
+- Added `creatures/MONSTER-AND-BOSS-BIBLE-v0.1.md` with ecology-first monster rules, five boss classes, Named Monster discovery structure, non-kill resolutions and shared-world anti-monopolization direction.
+- Added `design/POST-S-AND-LIFE-ENDGAME-v0.1.md` so S-rank becomes access to legendary contracts, unknown regions, discovery, mastery, collection, craft/social legacy and relaxing noncombat play rather than automatic SS/SSS inflation.
+- Added `design/NEXT-DESIGN-FRONTIER-2026-10-02.md` recording the next owner-requested work: currency, weapons/armor, treasures/artifacts, technique manuals, hidden realms, trade, auction, collections, housing, cooperative social safety and anti-inflation design.
+- Recorded a future focused Chinese-fantasy/xianxia research pass, including the owner's interest in **คัมภีร์วิถีเซียน**, rare treasures, secret techniques, inheritance trials, hidden realms and long-form progression. Structural inspiration only; final IP remains original.
+- Preserved Game Concept Bible v0.2.1 as the current canonical correction and kept v0.3 Combat & Classes as the next canonical concept version. The new documents are working proposals, not silent locks on final combat, classes or Floor 100 truth.
+
 ## v0.2.4 — 2026-10-02 — Commercial-Safe Game Audio Research
 
 - Added `research/game-audio-sources-2026-10-02.md`, covering commercial-safe game music, SFX, ambience and open-source sound generators.

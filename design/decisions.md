@@ -1,12 +1,14 @@
 # Decision register and proposed changes
 
-**Date:** 2026-10-01. Owner approval is distinct from a writer using a coherent working draft.
+**Date:** 2026-10-03. Owner approval is distinct from a writer using a coherent working draft.
 
 ## Owner direction added in v0.2.1
 
 **Locked principle — Player-First Adventurer World:** real players are the primary adventurers. NPCs provide world life, story, services, rivals, mentors and companion support; they do not autonomously consume the core player contract/progression loop.
 
 **Product direction — Lightweight Shared World:** the intended final game is not single-player-only. It should pursue low hardware requirements, web-first accessibility where viable, real-player parties/social spaces and scalable zones/channels/instances. Exact engine, network stack, backend and concurrency architecture remain open pending prototypes.
+
+**Locked principle — One-World System Coherence:** new mechanics must strengthen the same Adventurer Life world rather than accumulate as disconnected feature sets. Reuse existing ranks, currencies, reputations, institutions, settlements and progression language where possible; attach new systems to an in-world place/actor/purpose before expanding scope.
 
 ## Foundation compatibility
 
@@ -28,6 +30,13 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 | OD-12 | Commercial model and price | Open | No sales/wishlist evidence sufficient to choose |
 | OD-13 | Calendar, technology and civic religious institutions | Proposed | Supports couriers, recovery and cultural context; no doctrine lock |
 | OD-14 | Player/NPC boundary | **Locked owner direction** | Player contracts, Main Dungeon breakthroughs, major bosses, prestige and important world-event outcomes remain player-centric; NPC activity is supportive/narrative |
+| OD-15 | Long-form story escalation F→S with Underfold/world-network mystery | Proposed / owner-requested framework | Add a narrative spine while preserving ordinary-life stories and avoiding chosen-one structure |
+| OD-16 | S-rank as gateway to legendary/unknown-world play; no automatic SS/SSS ladder | Proposed / owner-requested framework | Preserve meaningful endgame through discovery, legacy, mastery and world mysteries instead of pure number inflation |
+| OD-17 | Hybrid skill model: Weapon + Discipline + Learned Skill + Pattern Magic + Life Skill | Proposed for v0.3 validation | Supports flexible identity, world-discovered techniques and future rare-manual/mentor systems |
+| OD-18 | Ecology-first monsters, Named Monsters and non-kill boss resolutions | Proposed | Make creatures part of the world and reduce boss design to more than HP checks |
+| OD-19 | Future Chinese-fantasy/xianxia inspiration pass for treasures, manuals, hidden realms and inheritance | Research direction requested 2026-10-02 | Translate structural appeal into original IP; do not copy protected names, characters, techniques, artifacts or lore |
+| OD-20 | One-World System Coherence: new systems must connect to the existing Adventurer Life world and reuse shared concepts before inventing parallel currencies/ranks/reputations | **Locked owner direction** | Owner explicitly requested that growing documentation remain one coherent game rather than systems becoming increasingly mixed/disconnected; use the integration guardrails before future expansion |
+| OD-21 | v0.3 prototype combat direction: readable real-time action kernel, four Starter Aptitude loadouts (Sword/Spear/Bow/Staff-Focus), shared Effort resource, no permanent class lock | **Proposed for prototype validation** | Continues the existing playable real-time prototype while preserving web/mobile input limits and bounded Pattern Magic; promote only after combat gates/playtest evidence |
 
 ## Proposed Change PC-01 — prototype class subset
 
@@ -84,6 +93,38 @@ v0.1 is preserved byte-for-byte. Its §29 locked direction remains the basis of 
 **Risks:** repetitive state transitions; world may seem static outside the two chains. Make independent NPC changes visible and expand only if the core loop warrants it.
 
 **Decision:** Open scale decision; no reduction of the final living-world pillar.
+
+## Proposed Change PC-05 — narrative and post-S framework
+
+**Current design:** v0.1 establishes F→S, the 100-floor mystery, hidden discovery and the emotional arc from Nobody to Living Legend, but does not define a complete Main Story or post-S play loop.
+
+**Proposed design:** progressively connect local anomalies to a buried world-network mystery; treat Floor 100 as a possible junction rather than a default final-boss room; use S-rank as trusted access to legendary uncertain content, discovery, legacy, crafting/collection/social goals and unknown regions.
+
+**Reason:** players need long-horizon curiosity and reasons to remain in the world after reaching professional rank cap.
+
+**Advantages:** preserves the meaning of the S ceiling, avoids endless SS/SSS inflation, supports years of expansion and keeps small-town/lifestyle play relevant.
+
+**Risks:** world mystery could overshadow ordinary adventurer life; too many hidden systems could become wiki-dependent; high-rank content could become mandatory raid pressure.
+
+**Decision:** Working proposal approved for documentation and future validation, not final lore lock. Floor 100 truth remains open.
+
+## Proposed Change PC-06 — world-discovered mastery
+
+**Current design:** v0.1 names six archetypes and example evolutions but final class/skill implementation remains open.
+
+**Proposed design:** hybrid Weapon Skills + Adventurer Disciplines + Learned Skills + Pattern Magic + Life Skills. Important techniques may come from mentors, books, factions, hidden quests, ruins, achievements and future original rare-manual systems.
+
+**Reason:** makes progression part of the player's story and allows future treasure/secret-technique content without forcing permanent class lock-in.
+
+**Risks:** excessive freedom may blur roles or create balance complexity.
+
+**Decision:** Proposal for v0.3 Combat & Classes prototyping. Do not build the full tree before combat feel is validated.
+
+## Owner-requested design agenda — 2026-10-02 (integration status updated 2026-10-03)
+
+The requested pass on currency, equipment, treasure, manuals, hidden realms, trade/auction, crafting, housing/social life, anti-conflict safeguards and Chinese-fantasy reference research now exists as **working proposals/research**.
+
+This does not promote those documents into locked canon. Under OD-20, further breadth expansion is paused in favor of consolidation and v0.3 Combat & Classes validation. No standalone universal Social Reputation system will be added; existing contextual recognition concepts are reused.
 
 ## v0.2.1 interpretation rule
 
