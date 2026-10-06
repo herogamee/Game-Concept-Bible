@@ -1,7 +1,7 @@
 /** Original exports + live installed-source interchange; commercial proof PNGs stay in the external lab. */
 import assert from 'node:assert/strict';
 import {createCanvas,loadImage,GlobalFonts} from '@napi-rs/canvas';
-import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,access} from 'node:fs/promises';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
@@ -74,7 +74,7 @@ function components(data,width,height){
  }return sizes.sort((a,b)=>b-a);
 }
 const hairOnlyChecks=[];
-for(const id of ['hair-chestnut','hair-teal','hair-silver-curls']){
+for(const id of Object.keys(authoring.hairOnlySources)){
  const rawName=authoring.hairSourceRegistration.rawSources[id],registeredName=authoring.hairOnlySources[id],data=await nativePixels('layers/'+id+'.png'),raw=await nativePixels(rawName);
  assert(rawName.endsWith('-only-generated-v2.png'),'Do not reuse a headed portrait as a hair source');
  assert.deepEqual(await readFile(resolve(root,pack.masterDirectory,id+'.png')),await readFile(resolve(root,pack.authoringDirectory,registeredName)),id+': full hair must copy registered hair-only PNG without skin/ear cuts');
@@ -110,6 +110,11 @@ assert.deepEqual(await readFile(resolve(root,pack.masterDirectory,'hair-paired-t
 assert(!pairedBytes.equals(await readFile(resolve(root,pack.masterDirectory,'hair-ghost-teal.png'))),'Replacement must differ from rejected ghost hair');
 assert(!Object.hasOwn(pack.sourceHashes,'hair-ghost-teal.png'),'Rejected ghost hair must not be exported');
 const pairedItem=pack.items.find(i=>i.id==='ours-310900004');assert.equal(pairedItem.name,'ผมฟ้า · คู่ภาพหัวมาตรฐาน');
+assert.deepEqual(pack.items.filter(i=>i.slot==='hair').map(i=>i.id),['ours-310900001','ours-310900004'],'Only brown and paired blue hair remain selectable');
+for(const number of [2,3]){
+ assert(!catalog.items.some(i=>i.id==='ours-'+(310900000+number)),'Removed hair remains in the catalog');
+ for(const suffix of ['1/A/show.png','1/B/show.png','icon_1.png'])await assert.rejects(()=>access(resolve(ownRoot,`image/equip/m/hair/ours_hair_${number}/${suffix}`)),{code:'ENOENT'},'Removed runtime hair PNG remains on disk');
+}
 const pairedNative=await nativePixels('layers/hair-paired-teal.png'),pairedIslands=components(pairedNative,1254,1254);
 assert(!pairedIslands.slice(1).some(n=>n>32),'Detached paired hair fragments');
 for(const [x,y] of [[474,493],[635,498],[552,578],[812,520]])assert.equal(pairedNative[(y*1254+x)*4+3],0,'Paired hair contains skin/features in face or ear space');
@@ -149,11 +154,11 @@ const nativeJoin=createCanvas(1254,1254),joinCtx=nativeJoin.getContext('2d');
 for(const name of ['clothing-traveler','head-template'])joinCtx.drawImage(await loadImage(resolve(root,pack.masterDirectory,name+'.png')),0,0);
 const joinPixels=pixels(nativeJoin);let coveredJoinPixels=0;
 for(let y=627;y<644;y++)for(let x=596;x<641;x++){assert(joinPixels[(y*1254+x)*4+3]>230,'Background hole at jaw/neck join');coveredJoinPixels++;}
-for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hair-paired-teal','hat-adventurer']){
+for(const id of ['hair-chestnut','hair-paired-teal','hat-adventurer']){
   const data=await nativePixels('layers/'+id+'.png');for(let y=491;y<527;y++)for(let x=795;x<824;x++)assert.equal(data[(y*1254+x)*4+3],0,`${id}: immutable ear covered`);
 }
 const capCrownChecks=[];
-for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hair-paired-teal']){
+for(const id of ['hair-chestnut','hair-paired-teal']){
   const full=await nativePixels('layers/'+id+'.png'),under=await nativePixels('layers/'+id+'-under-hat.png');let restoredCrownPixels=0;
   for(let y=0;y<330;y++)for(let x=300;x<960;x++){
     const alpha=(y*1254+x)*4+3;
@@ -199,13 +204,13 @@ for(const base of ['ours','reference'])for(const slot of ['face','hair','cloth',
 }
 const own=await render(showPlan(profile,catalog,{base:'ours'}));await writeFile(resolve(out,'original-default.png'),own.toBuffer('image/png'));
 const mixed=await render(showPlan(profile,catalog,{base:'reference',selected:{cloth:'ours-510900002'},hidden:['arm']}));await writeFile(resolve(out,'reference-head-original-knight.png'),mixed.toBuffer('image/png'));
-const back=showPlan(profile,catalog,{base:'ours',selected:{head:'ours-110900002',hair:'ours-310900002'}});
-assert.equal(back.hairVariant,'A');assert.equal(showPlan(profile,catalog,{base:'ours',selected:{head:'ours-110900002',hair:'ours-310900002'},hidden:['head']}).hairVariant,'B');
+const back=showPlan(profile,catalog,{base:'ours',selected:{head:'ours-110900002',hair:'ours-310900004'}});
+assert.equal(back.hairVariant,'A');assert.equal(showPlan(profile,catalog,{base:'ours',selected:{head:'ours-110900002',hair:'ours-310900004'},hidden:['head']}).hairVariant,'B');
 if(process.platform==='win32')GlobalFonts.registerFromPath('C:/Windows/Fonts/tahoma.ttf','ProofFont');
 const gallery=createCanvas(750,1110),galleryCtx=gallery.getContext('2d');galleryCtx.fillStyle='#e2e8da';galleryCtx.fillRect(0,0,750,1110);galleryCtx.fillStyle='#313d31';galleryCtx.font='14px ProofFont, sans-serif';
-for(let row=0;row<3;row++)for(let col=0;col<3;col++){
+for(let row=0;row<3;row++)for(let col=0;col<(row===2?3:items('hair').length);col++){
   const hair=items('hair')[col],selected=row===2?{cloth:items('cloth')[col].id}:{hair:hair.id,...(row===1?{head:'ours-110900002'}:{})};
-  const image=await render(showPlan(profile,catalog,{base:'ours',selected}));galleryCtx.drawImage(image,col*250,row*370+24);galleryCtx.fillText(row===2?['TRAVELER','KNIGHT','MAGE'][col]:`${['BROWN','BLUE','SILVER'][col]} / CAP ${row?'ON':'OFF'}`,col*250+12,row*370+19);
+  const image=await render(showPlan(profile,catalog,{base:'ours',selected}));galleryCtx.drawImage(image,col*250,row*370+24);galleryCtx.fillText(row===2?['TRAVELER','KNIGHT','MAGE'][col]:`${['BROWN','PAIRED BLUE'][col]} / CAP ${row?'ON':'OFF'}`,col*250+12,row*370+19);
 }
 const originalEvidence=resolve(root,'evidence/ddtank40-three-quarter-v1');await mkdir(originalEvidence,{recursive:true});await writeFile(resolve(originalEvidence,'original-standing-gallery.png'),gallery.toBuffer('image/png'));
 // Large native-layer evidence is necessary: a reduced portrait concealed the

@@ -1,5 +1,7 @@
 # Blank-head / hair-only pair — 2026-10-06
 
+Latest owner removal: retire side-swept blue `ours-310900002` and silver curls `ours-310900003`. The active lab now contains only brown `ours-310900001` and paired blue `ours-310900004`; IDs remain stable. Remove the two catalog entries, gallery choices, active native routes and six runtime PNGs. Preserve raw sources and failed historical evidence. Rebuild/verification pass with 14 items, 30 PNGs, 108 standing combinations and 14 active native layers. `two-hair-catalog-verification.json` records this checkpoint; earlier counts below are historical. Browser proof: `D:/Codex/DDtank/research/compatibility-4.0/two-hair-catalog-browser.png`.
+
 Owner-directed replacement for the rejected ghost-head method: generate the standard head wearing the intended hairstyle first, then derive a hair-only transparent PNG from that exact master. The owner corrected the initial eyed preview: both final images must have no eyes, eyebrows or mouth. Those features remain an independent eye set.
 
 Built-in ImageGen made an initial eyed preview, a corrected blank-head/hair master, and the matching hair-only output. Exact prompts and original PNGs are preserved in `assets/ddtank40-three-quarter-v1/hair-pair-v1/`. `blank-head-hair.png` and `hair-only.png` are the delivered pair. Pre-correction references/preview remain in its `history/` subdirectory, not in the delivered view.

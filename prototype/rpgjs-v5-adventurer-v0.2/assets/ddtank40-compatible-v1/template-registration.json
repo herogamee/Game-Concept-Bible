@@ -70,26 +70,6 @@
     "Level": 1
   },
   {
-    "TemplateID": 310900002,
-    "CategoryID": 3,
-    "NeedSex": 1,
-    "Pic": "ours_hair_2",
-    "Name": "ผมปัดข้างสีฟ้า",
-    "Property1": 1,
-    "Property8": "1",
-    "Level": 1
-  },
-  {
-    "TemplateID": 310900003,
-    "CategoryID": 3,
-    "NeedSex": 1,
-    "Pic": "ours_hair_3",
-    "Name": "ผมหยักศกสีเงิน",
-    "Property1": 1,
-    "Property8": "1",
-    "Level": 1
-  },
-  {
     "TemplateID": 310900004,
     "CategoryID": 3,
     "NeedSex": 1,

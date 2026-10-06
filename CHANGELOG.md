@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-06 — Remove two retired hairstyles from the lab
+
+- Remove side-swept blue and silver curls from the active DDTank-compatible catalog, gallery, native route and their six runtime PNGs. Keep brown and the newer paired blue with their existing IDs.
+- Preserve raw authoring/history files. Verify the exact two active hair IDs and absent retired runtime files; rebuilt pack passes 108 standing compositions with 14 items/30 PNGs.
+
 ## 2026-10-06 — Use paired hair in the actual lab character
 
 - Replace the rejected blue ghost hair on existing item310900004 with the new paired hair-only PNG; rename it “ผมฟ้า · คู่ภาพหัวมาตรฐาน”. Preserve the ID/path and other appearance resources.

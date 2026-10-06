@@ -1,5 +1,7 @@
 # Character appearance contract
 
+Current hair catalog after the owner removal (2026-10-06): brown ours-310900001 and paired blue ours-310900004 only. Old side-swept blue and silver curls are absent from the active catalog/gallery/native route/runtime PNGs; raw history is preserved. Current pack: 14 items, 30 PNGs, 108 standing combinations and 14 active native layers. Counts in earlier checkpoints below are historical.
+
 ## Active DDTank 4.0 resource contract — 2026-10-06
 
 ### Revised 3/4-left standing art

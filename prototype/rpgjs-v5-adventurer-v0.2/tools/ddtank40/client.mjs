@@ -65,7 +65,7 @@ try {
       const faceLayer=plan.layers.find(l=>l.slot==='face');faceSourceLink.hidden=!faceLayer;if(faceLayer)faceSourceLink.href=faceLayer.url;
       const hairStaging=document.createElement('canvas');await paint(hairStaging,{...plan,layers:plan.layers.filter(l=>l.slot==='hair')});if(tick!==revision)return;
       hairPreview.getContext('2d').clearRect(0,0,250,342);hairPreview.getContext('2d').drawImage(hairStaging,0,0);
-      const ownHairNames={'ours-310900001':'hair-chestnut','ours-310900002':'hair-teal','ours-310900003':'hair-silver-curls','ours-310900004':'hair-paired-teal'},nativeHair=ownHairNames[plan.equipment.hair];
+      const ownHairNames={'ours-310900001':'hair-chestnut','ours-310900004':'hair-paired-teal'},nativeHair=ownHairNames[plan.equipment.hair];
       hairSource.hidden=hairSourceLink.hidden=!nativeHair;
       if(nativeHair){hairSource.src=hairSourceLink.href=`/ddt40/native/${nativeHair}.png`;hairSource.alt='ไฟล์เฉพาะทรงผม '+nativeHair+' · 1254 × 1254';}
       pathRows(plan);main.dataset.profile=profile.id;main.dataset.origin='0,0';main.dataset.view=catalog.view;main.dataset.equipment=JSON.stringify(plan.equipment);main.dataset.hairVariant=plan.hairVariant;

@@ -52,7 +52,8 @@ const capPath='M 344 326 Q 353 300 403 289 Q 400 228 431 209 Q 519 133 632 139 Q
 const cap=createCanvas(width,height),cc=cap.getContext('2d');cc.fillStyle='#fff';cc.fill(new Path2D(capPath));const capMask=cc.getImageData(0,0,width,height).data;
 const capCoverage=[[300,330],[430,330],[580,363],[700,349],[880,442],[960,470]];
 function belowCap(x,y){for(let i=1;i<capCoverage.length;i++){const [a,b]=capCoverage[i-1],[c,d]=capCoverage[i];if(x<=c)return y>=b+(d-b)*(x-a)/(c-a);}return y>=470;}
-const hairSources={'hair-chestnut':'hair-chestnut-only-v2.png','hair-teal':'hair-teal-only-v2.png','hair-silver-curls':'hair-silver-curls-only-v2.png'};
+const hairSources={'hair-chestnut':'hair-chestnut-only-v2.png'};
+const retiredHairSources={'hair-teal':'hair-teal-only-v2.png','hair-silver-curls':'hair-silver-curls-only-v2.png'};
 const ghostHairSources={'hair-ghost-teal':'hair-teal-ghost-v5.png'};
 const pairedHairSources={'hair-paired-teal':'hair-pair-v1/hair-only.png'};
 await writeFile(resolve(dir,'ghost-head-guide-v5.png'),await ghostGenerationGuide(await readFile(resolve(out,'head-template.png'))));
@@ -83,6 +84,7 @@ const manifest={version:6,template:'ddtank40-standing-three-quarter-left-v1',vie
  calibration:{version:2,mode:'uniform-shared-master',master:[width,height],matrix,origin:[0,0],alphaThreshold:128,sourceTopY,sourceGroundY,targetTopY,targetGroundY,neckSource:[neckX,627],neckTarget:[targetNeckX,627*scale+matrix[5]],note:'One uniform matrix for head, hair, eyes, cheek details, cap and clothing. Preserve authored proportions inside canonical transparent canvases. Authoring landmarks are not Flash anatomical anchors.'},
  scope:'Standing frame0 only. Native category masks and source-specific extraction are a bounded art trial; other views/actions, naked anatomical master, animation and production throughput remain unverified.'};
 manifest.version=7;
+manifest.retiredHairSources=retiredHairSources;
 manifest.pairedHairSources=pairedHairSources;
 manifest.pairedHairRegistration={version:1,matrix:[1,0,0,1,0,0],designMaster:'hair-pair-v1/blank-head-hair.png',rawSource:pairedHairSources['hair-paired-teal'],headTemplate:'layers/head-template.png',headReferenceSha256:manifest.ghostHeadHairRegistration.headReferenceSha256,replacesItem:'ours-310900004',policy:'Copy the delivered paired hair-only PNG byte-for-byte at its existing coordinates. The blank-head/hair design image remains a preview; do not stack its skin above selectable eyes. No additional import/fitting; apply only the shared character export and common cap coverage.'};
 manifest.ghostHeadHairRegistration.status='Owner rejected; preserved historical source, no longer published in the catalog';
