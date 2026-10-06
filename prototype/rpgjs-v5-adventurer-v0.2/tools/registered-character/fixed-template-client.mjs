@@ -20,12 +20,22 @@ try {
   const load = url => images.get(url);
   const compiled = document.createElement('canvas');
   const character = document.querySelector('#fixed-character'), head = document.querySelector('#fixed-head');
-  const eyeSelect = document.querySelector('#fixed-eyes'), faceSelect = document.querySelector('#fixed-face');
+  const eyeSelect = document.querySelector('#fixed-eyes'), faceSelect = document.querySelector('#fixed-face'), clothingSelect = document.querySelector('#fixed-clothing');
   const showHair = document.querySelector('#fixed-show-hair'), showEyes = document.querySelector('#fixed-show-eyes'), guides = document.querySelector('#fixed-guides');
-  for (const [select, slot, defaultLabel] of [[eyeSelect, 'eye_set', 'ค่าเริ่มต้น · ตาอำพัน'], [faceSelect, 'face_set', 'ไม่มีชุดใบหน้า']]) {
+  for (const [select, slot, defaultLabel] of [[eyeSelect, 'eye_set', 'ค่าเริ่มต้น · ตาอำพัน'], [faceSelect, 'face_set', 'ไม่มีชุดใบหน้า'], [clothingSelect, 'clothing', 'ค่าเริ่มต้น · ชุดนักเดินทาง']]) {
     select.add(new Option(defaultLabel, ''));
     for (const item of manifest.items.filter(item => item.slot === slot)) select.add(new Option(item.label, item.id));
     select.addEventListener('change', () => { selection.equip(slot, select.value || null); render(); });
+  }
+  const clothingCards = [];
+  for (const item of manifest.items.filter(item => item.slot === 'clothing')) {
+    const card = document.createElement('button'); card.type = 'button'; card.className = 'card'; card.setAttribute('aria-label', item.label);
+    const image = document.createElement('canvas'); image.width = 248; image.height = 490;
+    const title = document.createElement('span'); title.textContent = item.label;
+    card.append(image, title);
+    card.addEventListener('click', () => { selection.equip('clothing', item.id); clothingSelect.value = item.id; render(); });
+    document.querySelector('#fixed-clothing-gallery').append(card);
+    clothingCards.push({card, image, item});
   }
   function view(target, source, rect) {
     const ctx = target.getContext('2d');
@@ -60,17 +70,23 @@ try {
     view(character, compiled, manifest.views.character); view(head, compiled, manifest.views.head);
     if (guides.checked) { drawGuides(character, manifest.views.character); drawGuides(head, manifest.views.head); }
     const resolved = resolveFixedSelection(manifest, selection.selected);
-    status.textContent = `${selection.showEyes ? resolved.eye_set.label : 'ซ่อนชุดดวงตา · เก็บชุดที่เลือกไว้'} · ${resolved.face_set?.label || 'ใบหน้าเดิม'} · ${selection.showHair ? 'ใส่ผมเดิม' : 'ถอดผม'}`;
+    status.textContent = `${resolved.clothing.label} · ${selection.showEyes ? resolved.eye_set.label : 'ซ่อนชุดดวงตา · เก็บชุดที่เลือกไว้'} · ${resolved.face_set?.label || 'ใบหน้าเดิม'} · ${selection.showHair ? 'ใส่ผมเดิม' : 'ถอดผม'}`;
     character.dataset.selected = JSON.stringify(selection.selected);
     character.dataset.template = manifest.template;
     character.dataset.origin = JSON.stringify(manifest.origin);
     character.dataset.showHair = String(selection.showHair); character.dataset.showEyes = String(selection.showEyes);
     for (const card of cards) card.card.setAttribute('aria-pressed', String(card.eyeID === resolved.eye_set.id && card.faceID === (resolved.face_set?.id || null)));
+    for (const card of clothingCards) {
+      const plan = fixedPlan(manifest, {...selection.selected, clothing: card.item.id}, selection);
+      drawPreparedFrame(compiled, {plan, images: plan.layers.map(layer => load(layer.url))});
+      view(card.image, compiled, manifest.views.character);
+      card.card.setAttribute('aria-pressed', String(card.item.id === resolved.clothing.id));
+    }
   }
   showHair.addEventListener('change', () => { selection.showHair = showHair.checked; render(); });
   showEyes.addEventListener('change', () => { selection.showEyes = showEyes.checked; render(); });
   guides.addEventListener('change', render);
-  document.querySelector('#fixed-reset').addEventListener('click', () => { selection.reset(); eyeSelect.value = faceSelect.value = ''; showEyes.checked = showHair.checked = true; render(); });
+  document.querySelector('#fixed-reset').addEventListener('click', () => { selection.reset(); eyeSelect.value = faceSelect.value = clothingSelect.value = ''; showEyes.checked = showHair.checked = true; render(); });
   render();
   const titles = {head_template: 'โครงหัวเดิม', eye_set: 'ชุดดวงตา', face_set: 'ชุดใบหน้า', hair: 'ผมเดิม', clothing: 'ชุดเดิม'};
   for (const layer of [{slot: 'head_template', file: manifest.head.file, label: ''}, ...manifest.items]) {

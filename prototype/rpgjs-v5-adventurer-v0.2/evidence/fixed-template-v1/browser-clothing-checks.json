@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "case": "knight-green-scar",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-scar\",\"hair\":null,\"clothing\":\"clothing-knight\"}",
+      "showEyes": "true",
+      "showHair": "true",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "mage-retains-green-scar",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-scar\",\"hair\":null,\"clothing\":\"clothing-mage\"}",
+      "showEyes": "true",
+      "showHair": "true",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "head-gallery-retains-mage",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-joy\",\"face_set\":\"face-blush\",\"hair\":null,\"clothing\":\"clothing-mage\"}",
+      "showEyes": "true",
+      "showHair": "true",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "outfit-gallery-retains-eyes-face-bald",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-joy\",\"face_set\":\"face-blush\",\"hair\":null,\"clothing\":\"clothing-knight\"}",
+      "showEyes": "true",
+      "showHair": "false",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "reset-restores-default-outfit",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":null,\"face_set\":null,\"hair\":null,\"clothing\":null}",
+      "showEyes": "true",
+      "showHair": "true",
+      "template": "fixed-front-v1"
+    },
+    {
+      "case": "final-mage-green-blush",
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":null,\"clothing\":\"clothing-mage\"}",
+      "showEyes": "true",
+      "showHair": "true",
+      "template": "fixed-front-v1"
+    }
+  ],
+  "pageErrors": []
+}

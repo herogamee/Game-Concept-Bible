@@ -1,6 +1,7 @@
 /** Fixed front-pose authoring: one immutable head, common category masks. */
-import {createCanvas, loadImage, GlobalFonts} from '@napi-rs/canvas';
+import {createCanvas, loadImage, GlobalFonts, Path2D} from '@napi-rs/canvas';
 import {readFile, writeFile, copyFile, mkdir} from 'node:fs/promises';
+import {clothingLayout} from './fixed-clothing-template.mjs';
 
 const dir = 'assets/fixed-template-v1';
 const evidence = 'evidence/fixed-template-v1';
@@ -55,6 +56,37 @@ if (process.argv.includes('--base-only')) {
   process.exit(0);
 }
 
+// Whole clothing bundles retain the original exposed body on one shared mask.
+// Generated head pixels are discarded; this is not a per-item fitting step.
+const inheritedBody = await source(`${previous}/body-traveler.png`);
+const protection = canvas(), protectionCtx = protection.getContext('2d');
+protectionCtx.fillStyle = '#fff';
+for (const part of clothingLayout.protectedPaths) protectionCtx.fill(new Path2D(part.path));
+const protectedPixels = protectionCtx.getImageData(0, 0, width, height).data;
+const clothes = [
+  {id: 'clothing-knight', label: 'ชุดอัศวินฝึกหัด'},
+  {id: 'clothing-mage', label: 'ชุดนักเวทฝึกหัด'}
+];
+for (const item of clothes) {
+  const input = await source(`${dir}/${item.id}-generated.png`);
+  const pixels = canvas().getContext('2d').createImageData(width, height);
+  for (let p = width * clothingLayout.splitY; p < width * height; p++) {
+    const i = p * 4;
+    const origin = protectedPixels[i + 3] ? inheritedBody : input;
+    for (let k = 0; k < 4; k++) pixels.data[i + k] = origin.data[i + k];
+  }
+  await writeFile(`${dir}/${item.id}.png`, writePixels(pixels).toBuffer('image/png'));
+}
+await writeFile(`${dir}/body-protection-guide.png`, (() => {
+  const c = canvas(), ctx = c.getContext('2d');
+  ctx.drawImage(writePixels(inheritedBody), 0, 0);
+  ctx.fillStyle = '#14ac9980'; ctx.strokeStyle = '#157468'; ctx.lineWidth = 2;
+  for (const part of clothingLayout.protectedPaths) {
+    ctx.fill(new Path2D(part.path)); ctx.stroke(new Path2D(part.path));
+  }
+  return c.toBuffer('image/png');
+})());
+
 function categoryLayer(input, regions) {
   const data = canvas().getContext('2d').createImageData(width, height);
   for (let p = 0; p < width * height; p++) {
@@ -89,11 +121,13 @@ const manifest = {
   items: [
     ...sources.map(([id, slot, , , label]) => ({id, slot, file: `${id}.png`, label})),
     {id: 'hair-chestnut', slot: 'hair', file: 'hair-chestnut.png', label: 'ผมน้ำตาลเดิม'},
-    {id: 'clothing-traveler', slot: 'clothing', file: 'clothing-traveler.png', label: 'ชุดนักเดินทางเดิม'}
+    {id: 'clothing-traveler', slot: 'clothing', file: 'clothing-traveler.png', label: 'ชุดนักเดินทางเดิม'},
+    ...clothes.map(item => ({...item, slot: 'clothing', file: `${item.id}.png`}))
   ].map(item => ({...item, template: 'fixed-front-v1', pose: 'stand-front'})),
   masks: {eye_set: eyeRegions, face_set: faceRegions, featherFraction: .12},
+  clothingLayout,
   layerOrder: ['clothing', 'head_template', 'eye_set', 'face_set', 'hair'],
-  scope: 'One front standing pose. Immutable inherited head contour and dressed body. Three eye sets and two cheek-detail face sets; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline.'
+  scope: 'One front standing pose. Immutable inherited head and shared protected exposed-body regions. Three eye sets, two cheek-detail face sets, the original outfit and two new clothing bundles; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline.'
 };
 await writeFile(`${dir}/manifest.json`, JSON.stringify(manifest, null, 2) + '\n');
 
@@ -113,4 +147,19 @@ for (let row = 0; row < eyeIDs.length; row++) for (let col = 0; col < faceIDs.le
   ctx.drawImage(composed, ...manifest.views.catalogHead, x, y + 47, 450, 380);
 }
 await writeFile(`${evidence}/nine-head-combinations.png`, review.toBuffer('image/png'));
-console.log('Exported fixed registered head, three eye sets and two face sets. Visual acceptance pending.');
+const clothingReview = createCanvas(930, 710), clothingCtx = clothingReview.getContext('2d');
+clothingCtx.fillStyle = '#efe9d9'; clothingCtx.fillRect(0, 0, 930, 710);
+clothingCtx.font = '18px FixedReview'; clothingCtx.fillStyle = '#303b29'; clothingCtx.textAlign = 'center';
+const commonHair = writePixels(await source(`${dir}/hair-chestnut.png`));
+for (const [index, item] of manifest.items.filter(item => item.slot === 'clothing').entries()) {
+  const assembled = canvas(), c = assembled.getContext('2d');
+  c.drawImage(writePixels(await source(`${dir}/${item.file}`)), 0, 0);
+  c.drawImage(layers.get('head-template'), 0, 0);
+  c.drawImage(layers.get('eyes-determined'), 0, 0);
+  c.drawImage(layers.get('face-blush'), 0, 0);
+  c.drawImage(commonHair, 0, 0);
+  clothingCtx.fillText(item.label, index * 310 + 155, 30);
+  clothingCtx.drawImage(assembled, ...manifest.views.character, index * 310, 50, 310, 612.5);
+}
+await writeFile(`${evidence}/three-clothing-combinations.png`, clothingReview.toBuffer('image/png'));
+console.log('Exported fixed head, independent eye/face sets, original outfit and two new clothing bundles. Visual acceptance pending.');

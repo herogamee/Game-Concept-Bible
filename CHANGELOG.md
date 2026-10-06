@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Two integrated clothing sets on the fixed front template
+
+- Create exactly two original ImageGen outfit edits: novice knight and novice mage, each combining top, shorts and boots. Preserve both source PNGs and exact prompts; retain the original default outfit.
+- Export full registered dressed-body bundles with one shared original neck/arm/hand/knee protection mask. Discard generated head pixels and add independent clothing selection plus a three-outfit comparison gallery at `/fixed-template`.
+- Pass 108 front-pose selection/visibility cases, head/body fixture preservation, independent IDs/defaults, sole-baseline checks, route smoke and actual browser review. Record the measured 1–2px boot-bottom difference without repositioning. Owner art acceptance, other clothing topology, animation and production throughput remain pending; playable saves/engine APIs are unchanged.
+
 ## 2026-10-06 — Fixed front template with independent eye and face sets
 
 - Publish one protected front head candidate and preserve the original dressed body/hair. Export three combined eye/brow/mouth sets and two cheek-detail face sets on the same 1254×1254 canvas/origin, using common category masks and bounded skin underpainting; keep exact prompts, nine generation outputs and four unused cheek-placement attempts.

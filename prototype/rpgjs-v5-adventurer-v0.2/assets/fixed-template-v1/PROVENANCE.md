@@ -1,6 +1,6 @@
 # Fixed front-template proof — 2026-10-06
 
-Status: a review candidate for one front standing pose, three eye sets and two cheek-detail face sets. The owner has not accepted this master or its visual quality. It does not implement the full clothing, hair, hat, glasses, wings, full-costume or animated authoring standard.
+Status: a review candidate for one front standing pose, three eye sets, two cheek-detail face sets, the original outfit and two new clothing bundles. The owner has not accepted this master or its visual quality. Full clothing topology, hair/hat/glasses/wings, full costumes and animation remain unfinished.
 
 ## Preserved original inputs
 
@@ -28,7 +28,7 @@ Generated with the built-in OpenAI ImageGen tool, transparent background request
 
 The blank-head edit used the inherited head as target. Eye/initial face edits used the newly published blank head. Numeric face corrections used the previous face result plus the blank head. Final face edits used the blank head plus [cheek-placement-guide.png](cheek-placement-guide.png), a native Canvas engineering annotation of the same canonical cheek boxes. Blue guide marks are not part of the published character artwork.
 
-## Registered export procedure
+## Eye/face registered export procedure
 
 `tools/build-fixed-template.mjs` requires **1254 × 1254** sources. It never fits, scales, recentres, rotates or moves an item. Every runtime layer retains that full canvas and shared origin **(0,0)**. [manifest.json](manifest.json) records template `fixed-front-v1`, pose `stand-front`, defaults, fixed reference coordinates, draw order and display rectangles.
 
@@ -40,4 +40,17 @@ The blank-head edit used the inherited head as target. Eye/initial face edits us
 
 Generate the engineering guide with `node tools/fixed-template-authoring-guide.mjs`. Rebuild exported runtime files with `npm run assets:fixed-template`; verify with `npm run verify:fixed-template`.
 
-Nine generation jobs were used for this small trial, including four unused face attempts. Production time/repair throughput was not benchmarked. This is evidence that one bounded template can accept independent feature sets, **not evidence that the process reliably authors thousands of items**. See [the review](../../evidence/fixed-template-v1/REVIEW.md) for tested scope and unfinished work.
+The earlier eye/face trial used nine generation jobs, including four unused face attempts. Production time/repair throughput was not benchmarked. This is evidence that one bounded template can accept independent feature sets, **not evidence that the process reliably authors thousands of items**. See [the earlier review](../../evidence/fixed-template-v1/REVIEW.md) and [clothing follow-up](../../evidence/fixed-template-v1/CLOTHING-REVIEW.md).
+
+## Two clothing edits on the same front pose
+
+The owner requested two new outfits. The built-in ImageGen tool edited `../character-master/head-hair/bald-edit-master.png` separately for each set, with genuine transparency requested:
+
+| Retained original result | Original output filename | Exact submitted prompt | Derived runtime file |
+|---|---|---|---|
+| [clothing-knight-generated.png](clothing-knight-generated.png) | `exec-301025d3-a9e0-4db3-94f6-2403dd34a700.png` | [clothing-knight-PROMPT.txt](clothing-knight-PROMPT.txt) | [clothing-knight.png](clothing-knight.png) |
+| [clothing-mage-generated.png](clothing-mage-generated.png) | `exec-16b8459a-7225-4adf-bf94-576b355837d3.png` | [clothing-mage-PROMPT.txt](clothing-mage-PROMPT.txt) | [clothing-mage.png](clothing-mage.png) |
+
+Both raw PNGs remain unchanged. No generated head pixels enter the exports. `tools/build-fixed-template.mjs` discards all rows above y543 and uses the same template-owned neck/arm/hand/knee protection paths from `tools/fixed-clothing-template.mjs` for both outfits. Within those paths it copies the original `body-traveler.png` pixels and alpha; elsewhere below y543 it retains the new generated clothing pixels/alpha. This is a shared source-coordinate partition, with no per-item fitting, recentering or variant-colour extraction. [body-protection-guide.png](body-protection-guide.png) is an engineering annotation only.
+
+Each clothing ID contains a complete dressed-body raster: top, shorts and boots together, with protected exposed body regions. The knight has steel armour/tabard construction; the mage has an embroidered tunic/rope belt. These are two designs beyond the original outfit, not two recolours. The original outfit/hair files remain byte-identical. This procedure does not reconstruct covered anatomy or validate arbitrary sleeves/skirts; shared protection is specific to this front pose and exposed-limb layout. Two clothing generation jobs were used, with no corrective generation. See the clothing review for 108 rendered cases, boot-baseline measurements and browser evidence.

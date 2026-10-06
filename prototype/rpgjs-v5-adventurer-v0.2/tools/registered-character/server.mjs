@@ -13,7 +13,7 @@ staticFiles.set('/original-assets/master.png',fileURLToPath(new URL('../../asset
 const walkDir=new URL('../../assets/walk-side-v1/',import.meta.url);
 for(const name of ['face-amber.png','face-calm.png','body-traveler.png','body-blue.png','hair-chestnut.png','hair-silver.png'])staticFiles.set(`/walk-assets/${name}`,fileURLToPath(new URL(name,walkDir)));
 const fixedDir=new URL('../../assets/fixed-template-v1/',import.meta.url);
-for(const name of ['head-template.png','clothing-traveler.png','hair-chestnut.png','eyes-amber.png','eyes-determined.png','eyes-joy.png','face-scar.png','face-blush.png'])staticFiles.set(`/fixed-assets/${name}`,fileURLToPath(new URL(name,fixedDir)));
+for(const name of ['head-template.png','clothing-traveler.png','clothing-knight.png','clothing-mage.png','hair-chestnut.png','eyes-amber.png','eyes-determined.png','eyes-joy.png','face-scar.png','face-blush.png'])staticFiles.set(`/fixed-assets/${name}`,fileURLToPath(new URL(name,fixedDir)));
 createServer(async(req,res)=>{
   try {
     const path=new URL(req.url,'http://127.0.0.1').pathname;

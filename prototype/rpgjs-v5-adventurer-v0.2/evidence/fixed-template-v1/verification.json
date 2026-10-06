@@ -1,5 +1,5 @@
 {
-  "scope": "One front standing pose. Immutable inherited head contour and dressed body. Three eye sets and two cheek-detail face sets; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline.",
+  "scope": "One front standing pose. Immutable inherited head and shared protected exposed-body regions. Three eye sets, two cheek-detail face sets, the original outfit and two new clothing bundles; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline.",
   "dimensions": {
     "width": 1254,
     "height": 1254
@@ -34,440 +34,1412 @@
       1214
     ]
   },
-  "cases": 36,
-  "visibleCombinations": 18,
+  "cases": 108,
+  "visibleCombinations": 54,
   "selections": [
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": false,
       "hash": "2337f475bfb2dafe5bb5e1e6cd0a5b7548937360aaf1e23aca8680db967f2af3",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": true,
       "hash": "159c3bc30f58c8c3e80743594f564a801774c39cc50e2ffdae5ca7a12ac6f628",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": false,
       "hash": "79d99a67c3fb198eae2a11f1cef3fbb2a092a8ba3233643a723bc54c461eeb2e",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": true,
       "hash": "ef4146d038025710489355123f6a85cee461a74696742dde331bcf798d46d12c",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": false,
       "hash": "771d28bf680cc79b9b86254847acc29991e04ee0ad1439b0db7e85109ad28b3c",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": true,
       "hash": "87af40da3c093f4ffd6909842bd551709781a4f640dba0e9a03471180c85516e",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": false,
       "hash": "2337f475bfb2dafe5bb5e1e6cd0a5b7548937360aaf1e23aca8680db967f2af3",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": true,
       "hash": "b1ac6b20b004d6135cf24d2b502586b29e97e9cd22c144bc93f131c57f17bf88",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": false,
       "hash": "79d99a67c3fb198eae2a11f1cef3fbb2a092a8ba3233643a723bc54c461eeb2e",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": true,
       "hash": "46a671c11d6d6159d41ae6225e44198a655c43c067c0f4a83474002a10d61730",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": false,
       "hash": "771d28bf680cc79b9b86254847acc29991e04ee0ad1439b0db7e85109ad28b3c",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": true,
       "hash": "9a0499c4d2ab98d4a6da46c8feae6a793ab1d22a1c4b6a22631ce630247c988d",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": false,
       "hash": "2337f475bfb2dafe5bb5e1e6cd0a5b7548937360aaf1e23aca8680db967f2af3",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": true,
       "hash": "3404f3b0a004710f3b729a84747c16ff28424b83f64136c21f51b276affa9de3",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": false,
       "hash": "79d99a67c3fb198eae2a11f1cef3fbb2a092a8ba3233643a723bc54c461eeb2e",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": true,
       "hash": "2d9e6c5b9e37aa1faff1281f487951ab4be25099474c928b66c4dfc544f9627f",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": false,
       "hash": "771d28bf680cc79b9b86254847acc29991e04ee0ad1439b0db7e85109ad28b3c",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": false,
       "showEyes": true,
       "hash": "c212ce1cf422dabc874ab3913595d86f02624ff93312f6243659ecc15da6ac75",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": false,
       "hash": "05820fd3528ff6a5de90386b21ab2c767bf9ef23530ccf83419d31900cc835f1",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": true,
       "hash": "6fbd6f4fb4b7df6262a44ae569bf1a7ff2ab91d6ca9594cbd8b09bd0a42d8cfc",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": false,
       "hash": "a00a5b8774b2d205eb92bb91305f80cd3a1031768c79a46b5ea6d55ac94ac2b8",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": true,
       "hash": "8295a9d017f639a3e6c0bb168cb74e17c2c0271cd40aec4af949cacc62cd3bd0",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": false,
       "hash": "03b2a73859b2b93ac5af37a0f2a336abafa34868f53c3df667add8a2f2c0c1f3",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-amber",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": true,
       "hash": "1b23851e0819e5eb64c03bbc6e8e0d677939f61551bac319bb71d1e755b1e0f1",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": false,
       "hash": "05820fd3528ff6a5de90386b21ab2c767bf9ef23530ccf83419d31900cc835f1",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": true,
       "hash": "86afe77ab336285f56e4aad20198f4feb3babae3d04f2e35e635750c5329e0be",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": false,
       "hash": "a00a5b8774b2d205eb92bb91305f80cd3a1031768c79a46b5ea6d55ac94ac2b8",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": true,
       "hash": "71917636647d64d009a921cabf71c7576f6540a9dcb187fb87aa462bc6396610",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": false,
       "hash": "03b2a73859b2b93ac5af37a0f2a336abafa34868f53c3df667add8a2f2c0c1f3",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-determined",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": true,
       "hash": "2dc168c45adbd4a227f46f39e57034753b4a7f80bb2b76a601d5d8aa6a455ae1",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": false,
       "hash": "05820fd3528ff6a5de90386b21ab2c767bf9ef23530ccf83419d31900cc835f1",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": null
+        "face_set": null,
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": true,
       "hash": "13d982938eb32f9da710e802c7ec07a7dd9c073b1e015c5eebf1fe7c97bd2198",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": false,
       "hash": "a00a5b8774b2d205eb92bb91305f80cd3a1031768c79a46b5ea6d55ac94ac2b8",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": "face-scar"
+        "face_set": "face-scar",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": true,
       "hash": "d167d20593982b7b91b61f62376224b457133fa2a474c98402eca6e302696c8b",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": false,
       "hash": "03b2a73859b2b93ac5af37a0f2a336abafa34868f53c3df667add8a2f2c0c1f3",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
     },
     {
       "selected": {
         "eye_set": "eyes-joy",
-        "face_set": "face-blush"
+        "face_set": "face-blush",
+        "clothing": "clothing-traveler"
       },
       "showHair": true,
       "showEyes": true,
       "hash": "4c98baae0d887019856644df19e7f9ec0b90129aec911f7ebac7f8d8955613c7",
       "registered": true,
       "protectedPixelsIdentical": true,
-      "alphaFootprintIdentical": true
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "e62f0997fc98582d9af07fd412348ad0b9f6db6aef260222e9c065fa1bcd7672",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "94537da7a0685a1c4fa43d33012c1d29e5d9ddb9c34023c6327b3d05bbb46044",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "9ddf9bc9adb801b502c145ac063566fee49cc8610726f525b532868205937fb4",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "dea77807f9fc8a36b292002e37977c20d8f0ade9b6d269d437440a2f5ced7063",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "9e18ab51a8ad7878e17e61a3517de99e6a0180c1a022a235842c2349bb413746",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "f20acdc2cb5dcf5c58b8add238a6351e1a7c1659dc5a4b92c9f898d46067b969",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "e62f0997fc98582d9af07fd412348ad0b9f6db6aef260222e9c065fa1bcd7672",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "da024b71c4c73749df1eb9209605133931cd2e1370f90615ba52b9133c41cfc3",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "9ddf9bc9adb801b502c145ac063566fee49cc8610726f525b532868205937fb4",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "2d3b3cc3e359e798ad6f389ee80d681352ec913f459668afc6e0553c3819d9c4",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "9e18ab51a8ad7878e17e61a3517de99e6a0180c1a022a235842c2349bb413746",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "80a17f26f658f362a7715681854649cb8d50eea9898eac27d36a27fc43db1393",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "e62f0997fc98582d9af07fd412348ad0b9f6db6aef260222e9c065fa1bcd7672",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "b3bbfd025a393e09376a039dad436c11473c0c9008acaae0d4614b8bb6988b25",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "9ddf9bc9adb801b502c145ac063566fee49cc8610726f525b532868205937fb4",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "17f078ad8a4db9303592e0528bde63e9e05c1229cae1f8b6261171f32e5f2ec8",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "9e18ab51a8ad7878e17e61a3517de99e6a0180c1a022a235842c2349bb413746",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "68e71623598345d41ba5051281a9ee19578a878cb1cbd9f246f69efef914be05",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "d1281be4b69ac0cef66285e2f948064db74dec71c24ce2d311b0de7748f0fd30",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "fbdc6e9c718b37b341caa3fa13e9c07357263d1cdfa887dfac58a07926b38c9c",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "2aee5932a3120fc077d5fce99961f96ae4fc78c197f7d0a8ca31a5df5a98969a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "82af6b7b7d5623c25c420512cd5b5ac818009f4a064f093fded9fc1c19d6e108",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "b886bd62c5be273f706e995d524f1e6211fb697d1358b033a075b10e9982db7a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "8eca4a3fc76131ee4af3804d7a2d35a1d936ed181c8c3a3abc7bb7b22e16f53e",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "d1281be4b69ac0cef66285e2f948064db74dec71c24ce2d311b0de7748f0fd30",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "18bd239dbff1ccd5d6bbac9c67e948f2abee2e78ad0121c86a723710a784ab69",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "2aee5932a3120fc077d5fce99961f96ae4fc78c197f7d0a8ca31a5df5a98969a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "fe77bb308ff7c62aaa09ba49e5230bd4e45b401c866b794e2f4cdc6a7cd4df95",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "b886bd62c5be273f706e995d524f1e6211fb697d1358b033a075b10e9982db7a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "24e5544159d69fa190613e1d20dc3b12bf6038680fca494250011e536b18ee4f",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "d1281be4b69ac0cef66285e2f948064db74dec71c24ce2d311b0de7748f0fd30",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null,
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "b0b891485869f3f475452a4c40e24c323452763c3d57844c8c5c30458f4063a7",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "2aee5932a3120fc077d5fce99961f96ae4fc78c197f7d0a8ca31a5df5a98969a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "24741ba2749481c3d50ba050d0db00c3d957a41eebd0a94d3316ac83b3b27fcc",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "b886bd62c5be273f706e995d524f1e6211fb697d1358b033a075b10e9982db7a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush",
+        "clothing": "clothing-knight"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "52ce437483c8cc9eb350c2a80b4c3a1f7794c0b39624a2afe20d7949f371c753",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "b3ab7197e0da5c78670483e42deefbf332e29768bc57e96971524349b1d65c65",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "9b3cb51b607e6cc4483776867bb2a0548034766297b722100b3a6c468b20afab",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "e056fc32ef168588227cd9e36ffbd134e0684ad3efc459f3cf9899444d658e65",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "ccd236efc3dd6d45c84a8c394ffb0475e4cbe08ac9abff589c4a4c4da20ca393",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "43d5ca6e26ac6a65e2cf49a603bc4ea052f49abb7baf206463f157f5e73df21a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "7b639115f8650568d465b076e6552d198efac91a620419b8ed19c0d80fc5c09e",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "b3ab7197e0da5c78670483e42deefbf332e29768bc57e96971524349b1d65c65",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "ce35efb3d61c6a6d312633a0438b49cc27c2894fc8196017c601871a97469200",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "e056fc32ef168588227cd9e36ffbd134e0684ad3efc459f3cf9899444d658e65",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "0d1f3cbd9b903bfe0af0218c3bbaa33f66e7860f1890ab66b561958d597bd751",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "43d5ca6e26ac6a65e2cf49a603bc4ea052f49abb7baf206463f157f5e73df21a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "d30fed628a36f87dd0bd73883b13aadad3e852e384e811a79325021ff06f3aef",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "b3ab7197e0da5c78670483e42deefbf332e29768bc57e96971524349b1d65c65",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "dda31813aadcc823e6b005ccc5996b8361b3fc04ad4dfa00833c64362a27392a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "e056fc32ef168588227cd9e36ffbd134e0684ad3efc459f3cf9899444d658e65",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "e578758e90ebfb59b46bfa13ca14fe0da2364e5374882a651dde78e9f4370306",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": false,
+      "hash": "43d5ca6e26ac6a65e2cf49a603bc4ea052f49abb7baf206463f157f5e73df21a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": false,
+      "showEyes": true,
+      "hash": "15d86e93cb0ff53c206ca7491caf94a9259c6830e5025250fe95cadbad6d5e68",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "cc4c7db71a09597e98285d5dd3656549dc7e3f3d2f2af0bcce37bf9302823c04",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "9bb6de5ffb562b417a03025ec34f257493e8c35a7e89eeba8267480f004133b9",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "37991f7ad50444f1b2a7fed74771e05fba64ce01dc9753a21e551d54a19a6b78",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "4d43b8fad985a659eabb550ab3e4ed746377ba0620580c8430c83b12914272ce",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "8be6116f5c39f8c13ee9da61cfe44c983f2071494b9f58e671e2f90a19e8da5e",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-amber",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "cf836242efc97fb41777a5173760470625365f55f462597721df6b7f51ac4163",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "cc4c7db71a09597e98285d5dd3656549dc7e3f3d2f2af0bcce37bf9302823c04",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "071336b4a3776fc5d9de884ab62ce55ec23afc73ab6e564f994c7e74529fdbaf",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "37991f7ad50444f1b2a7fed74771e05fba64ce01dc9753a21e551d54a19a6b78",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "802dd86ad289a0cd2e7c79b9ee822474fb43e4ca194f8a283d4ae41b6ca5d353",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "8be6116f5c39f8c13ee9da61cfe44c983f2071494b9f58e671e2f90a19e8da5e",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-determined",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "82bef4414ae2fa2cd3f1ef351ec810af98dea02658eb70c2da6485e021f6dc85",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "cc4c7db71a09597e98285d5dd3656549dc7e3f3d2f2af0bcce37bf9302823c04",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": null,
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "4cdd92cbb1631ffb33b7f03106cd67af24790912e29734cad2e36f20cca8d186",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "37991f7ad50444f1b2a7fed74771e05fba64ce01dc9753a21e551d54a19a6b78",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-scar",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "03a8af39b790efb136c8c2a1071175b82149d8962587661b1a8c96a15c255416",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": false,
+      "hash": "8be6116f5c39f8c13ee9da61cfe44c983f2071494b9f58e671e2f90a19e8da5e",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
+    },
+    {
+      "selected": {
+        "eye_set": "eyes-joy",
+        "face_set": "face-blush",
+        "clothing": "clothing-mage"
+      },
+      "showHair": true,
+      "showEyes": true,
+      "hash": "8ff1b39a99ccbdf37ffa8cd70d5e68b43a2b9352fd1cc6f06fb0d324ec722c6a",
+      "registered": true,
+      "protectedPixelsIdentical": true,
+      "alphaFootprintIdenticalWithinOutfit": true
     }
   ],
   "inheritedHeadAlphaIdentical": true,
@@ -482,6 +1454,44 @@
     {
       "id": "face-blush",
       "visibleInkPixels": 576
+    }
+  ],
+  "clothingItems": 3,
+  "newClothingItems": 2,
+  "clothingSwapPreservesHeadAndExposedBodyFixtures": true,
+  "soles": [
+    {
+      "id": "clothing-traveler",
+      "bottoms": [
+        1217,
+        1216
+      ],
+      "defaultBottoms": [
+        1217,
+        1216
+      ]
+    },
+    {
+      "id": "clothing-knight",
+      "bottoms": [
+        1218,
+        1218
+      ],
+      "defaultBottoms": [
+        1217,
+        1216
+      ]
+    },
+    {
+      "id": "clothing-mage",
+      "bottoms": [
+        1217,
+        1218
+      ],
+      "defaultBottoms": [
+        1217,
+        1216
+      ]
     }
   ],
   "defaultsRetainNullSelections": true,

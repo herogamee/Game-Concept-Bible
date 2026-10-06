@@ -1,5 +1,7 @@
 # Fixed head, independent eye and face sets — 2026-10-06
 
+This records the earlier eye/face-only checkpoint. The [new clothing follow-up](CLOTHING-REVIEW.md) adds exactly two outfits and expands current verification to 108 cases. The earlier screenshots and 36-case observations below remain historical evidence.
+
 The new local `/fixed-template` page implements the first **front-pose subset** of the owner's [fixed-template contract](../../CHARACTER-APPEARANCE.md). It uses one unchanged published head and the previous dressed body/hair, with three eye/brow/mouth sets and two cheek-detail face sets plus no face set. Owner art acceptance remains pending.
 
 ## Run and review
