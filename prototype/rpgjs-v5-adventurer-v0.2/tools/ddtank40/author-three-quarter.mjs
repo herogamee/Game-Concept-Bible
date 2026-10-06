@@ -15,11 +15,11 @@ const blank=await source('blank-head-generated.png'),master=await source('master
 const fresh=()=>createCanvas(width,height).getContext('2d').createImageData(width,height);
 // The jaw is a curved silhouette; the clothing owns the neck behind it. Keep
 // overlap instead of cutting both layers at the same horizontal scanline.
-const jawPath='M 0 0 H 1254 V 590 H 748 Q 706 596 649 615 Q 578 639 523 620 Q 459 600 441 558 H 0 Z';
-const neckPath='M 548 653 L 548 617 Q 589 597 658 598 L 658 653 Z';
+const jawPath='M 0 0 H 1254 V 568 H 750 L 725 586 L 700 601 L 675 612 L 650 617 L 625 623 L 600 628 L 575 631 L 550 629 L 525 623 L 500 615 L 475 603 L 450 580 L 430 558 H 0 Z';
 const jawCanvas=createCanvas(width,height),jawCtx=jawCanvas.getContext('2d');jawCtx.fillStyle='#fff';jawCtx.fill(new Path2D(jawPath));const jawMask=jawCtx.getImageData(0,0,width,height).data;
-const neckCanvas=createCanvas(width,height),neckCtx=neckCanvas.getContext('2d');neckCtx.fillStyle='#fff';neckCtx.fill(new Path2D(neckPath));const neckMask=neckCtx.getImageData(0,0,width,height).data;
-const head=fresh();for(let p=0;p<splitY*width;p++){const i=p*4;head.data.set(blank.data.subarray(i,i+4),i);head.data[i+3]=Math.round(blank.data[i+3]*jawMask[i+3]/255);}await save('head-template.png',head);
+// Keep the complete jaw from the single blank-head template, including below
+// y627. Never hide a truncated face by leaving chin pixels in the clothing.
+const head=fresh();for(let p=0;p<650*width;p++){const i=p*4;head.data.set(blank.data.subarray(i,i+4),i);head.data[i+3]=Math.round(blank.data[i+3]*jawMask[i+3]/255);}await save('head-template.png',head);
 const eyeRegions=[{cx:473,cy:469,rx:51,ry:85},{cx:637,cy:469,rx:92,ry:96},{cx:552,cy:578,rx:55,ry:34}];
 const cheekRegions=[{cx:476,cy:575,rx:29,ry:27},{cx:682,cy:567,rx:47,ry:34}];
 function weight(x,y,regions){let w=0;for(const r of regions){const d=Math.hypot((x-r.cx)/r.rx,(y-r.cy)/r.ry);w=Math.max(w,Math.max(0,Math.min(1,(1-d)/.15)));}return w;}
@@ -27,15 +27,18 @@ async function feature(name,input,regions){const raw=await source(input),data=fr
 for(const id of ['eyes-amber','eyes-determined','eyes-joy'])await feature(id+'.png',id==='eyes-amber'?'master.png':id+'-generated.png',eyeRegions);
 await feature('face-scar.png','face-scar-generated.png',cheekRegions);
 await feature('face-blush.png','face-blush-correction-generated.png',cheekRegions);
-// Common body fixtures preserve exposed skin/limb geometry across every outfit.
-const protectedPaths=[
- 'M 477 796 L 514 799 L 502 839 L 494 862 L 510 883 L 513 902 L 494 908 L 473 901 L 460 882 L 459 854 Z',
- 'M 747 790 L 787 789 L 804 840 L 818 900 L 804 925 L 777 936 L 744 919 L 729 896 L 733 873 L 739 846 Z',
- 'M 531 980 L 593 980 L 600 1041 L 537 1043 Z',
- 'M 641 982 L 701 982 L 728 1068 L 663 1071 Z'
-];
-const protect=createCanvas(width,height),pc=protect.getContext('2d');pc.fillStyle='#fff';for(const path of protectedPaths)pc.fill(new Path2D(path));const protection=pc.getImageData(0,0,width,height).data;
-for(const id of ['clothing-traveler','clothing-knight','clothing-mage']){const raw=id==='clothing-traveler'?master:await source(id+'-generated.png'),data=fresh();for(let p=0;p<count;p++){const i=p*4;if(p<splitY*width){if(neckMask[i+3]){data.data.set(master.data.subarray(i,i+4),i);data.data[i+3]=Math.round(master.data[i+3]*neckMask[i+3]/255);}continue;}const use=protection[i+3]>127?master:raw;data.data.set(use.data.subarray(i,i+4),i);}await save(id+'.png',data);}
+// Body-only sources are authored without a head, with a complete neck/collar.
+// Copy the PNG byte-for-byte. The old limb patches also produced sleeve seams;
+// source limb alignment now needs art review instead of an opaque repair patch.
+const headlessClothingSources={
+ 'clothing-traveler':'clothing-traveler-headless-v2.png',
+ 'clothing-knight':'clothing-knight-headless-v2.png',
+ 'clothing-mage':'clothing-mage-headless-v2.png'
+};
+for(const id of ['clothing-traveler','clothing-knight','clothing-mage']){
+ await source(headlessClothingSources[id]);
+ await writeFile(resolve(out,id+'.png'),await readFile(resolve(dir,headlessClothingSources[id])));files.push(id+'.png');
+}
 // Hair is partitioned from blank-faced inputs. The same skin seeds, closure,
 // support and protected ear window are used for all three styles. No fitting.
 const n=width*splitY;
@@ -56,8 +59,8 @@ const scale=(targetGroundY-targetTopY)/(sourceGroundY-sourceTopY),neckX=600,targ
 const matrix=[scale,0,0,scale,targetNeckX-neckX*scale,targetGroundY-sourceGroundY*scale];
 const directoryFiles=await readdir(dir);
 for(const name of directoryFiles.filter(f=>f.endsWith('.png')))if(!hashes[name])hashes[name]=createHash('sha256').update(await readFile(resolve(dir,name))).digest('hex');
-const manifest={version:2,template:'ddtank40-standing-three-quarter-left-v1',view:'three-quarter-left',width,height,splitY,origin:[0,0],eyeRegions,cheekRegions,protectedPaths,jawPath,neckPath,headOverlap:'behind-face',capPath,capCoverage,files,sourceHashes:hashes,
- generation:{tool:'built-in image_gen',prompts:directoryFiles.filter(f=>f.endsWith('-PROMPT.txt')),unusedSources:['hair-chestnut-generated.png','hair-chestnut-compact-generated.png','hair-teal-compact-generated.png','hair-silver-curls-compact-generated.png','eyes-amber-generated.png','face-blush-generated.png'],activeHairSources:hairSources,defaultEyeSource:'master.png',referenceRole:'External DDTank portrait used for camera/proportions only; original identity/costume artwork edited.'},
+const manifest={version:4,template:'ddtank40-standing-three-quarter-left-v1',view:'three-quarter-left',width,height,splitY,origin:[0,0],eyeRegions,cheekRegions,jawPath,headlessClothingSources,clothingAuthoring:'Complete body-only source PNGs copied byte-for-byte; no head/jaw/collar masks or limb repair patches. Shared canvas/pose registration is fixed; exact anatomical invariance across generated outfits needs art review.',headOverlap:'behind-face',capPath,capCoverage,files,sourceHashes:hashes,
+ generation:{tool:'built-in image_gen',prompts:directoryFiles.filter(f=>f.endsWith('-PROMPT.txt')),unusedSources:['hair-chestnut-generated.png','hair-chestnut-compact-generated.png','hair-teal-compact-generated.png','hair-silver-curls-compact-generated.png','eyes-amber-generated.png','face-blush-generated.png','clothing-knight-generated.png','clothing-mage-generated.png'],activeHairSources:hairSources,defaultEyeSource:'master.png',headlessReferenceSources:{'clothing-traveler-headless-v2.png':'master.png','clothing-knight-headless-v2.png':'clothing-knight-generated.png','clothing-mage-headless-v2.png':'clothing-mage-generated.png'},referenceRole:'External DDTank portrait used for camera/proportions only; original identity/costume artwork edited.'},
  calibration:{version:2,mode:'uniform-shared-master',master:[width,height],matrix,origin:[0,0],alphaThreshold:128,sourceTopY,sourceGroundY,targetTopY,targetGroundY,neckSource:[neckX,627],neckTarget:[targetNeckX,627*scale+matrix[5]],note:'One uniform matrix for head, hair, eyes, cheek details, cap and clothing. Preserve authored proportions inside canonical transparent canvases. Authoring landmarks are not Flash anatomical anchors.'},
  scope:'Standing frame0 only. Native category masks and source-specific extraction are a bounded art trial; other views/actions, naked anatomical master, animation and production throughput remain unverified.'};
 await writeFile(resolve(dir,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log(`Authored ${files.length} registered native layers on one 3/4-left master.`);

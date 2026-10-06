@@ -6,6 +6,8 @@ Current owner-authorized direction: read `design/implementation-reset-2026-10-02
 
 - Owner correction on proportions/neck: all parts sharing one authoring master use one uniform export matrix. Do not independently stretch head/body to match painted source bounds. Clothing owns a neck that overlaps behind the curved jaw; render authored clothing before the face, then hair/details/headwear. Keep the installed-source default's measured composition separate. Preserve the full master and compare it beside the assembled result; passing dimensions/combinations does not prove the drawn proportions match.
 
+- Owner correction on clothing sources: author each dressed-body asset without a head/face from the outset, with a complete neck, scarf and collar. Do not generate a headed outfit portrait and then cut off its head to manufacture a clothing layer. No jaw/chin ink may remain on clothing. Review the standalone source at native scale as well as the assembled portrait before reporting a fix.
+
 - Main playable/product reference: `prototype/web-pixel-rpg-v0.1/`. Preserve its working code, original illustrated artwork, audio and save compatibility. Do not replace its renderer or migrate its save in an engine experiment.
 - `prototype/rpgjs-v5-adventurer-v0.2/` is a technical experiment. Functional/two-client acceptance has evidence; visual/input/product parity has NOT passed. Do not describe it as a better replacement or expand its scope yet.
 - Next implementation is one comparable village/meadow slice using v0.1 assets and behavior in the RPGJS candidate. Use adapters; Universal LPC is optional, not mandatory replacement art. Preserve attribution for every third-party asset. No commercial-game sprites.

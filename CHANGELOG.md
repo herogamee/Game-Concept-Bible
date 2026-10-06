@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Author clothing without heads from the outset
+
+- Replace clothing extracted from headed portraits with three body-only ImageGen sources, complete necks/scarf/collars and saved exact prompts. Copy source PNGs into native clothing layers byte-for-byte; remove neck/jaw extraction and limb repair patches that left chin ink, clipped cloth and sleeve seams.
+- Keep the complete jaw on the single face template, the shared uniform export matrix, canonical 33 PNG dimensions/category paths and installed-source baseline pixels. Add source-identity/head-region/neck/collar and native join checks plus large standalone clothing evidence.
+- The former neck pixel counts did not prove ownership, and forced limb pixel equality did not prove good art. Record that exact limb invariance, owner visual acceptance, production poses and actual Flash integration remain unverified.
+
 ## 2026-10-06 — Preserve master proportions and overlap the clothing neck
 
 - Correct the export error that squeezed body height by 28.18% relative to width while enlarging the head separately. Apply one uniform 21.075% scale/translation to every shared-master layer; reject anisotropic and independent head/body transforms.

@@ -2,6 +2,8 @@
 
 The owner compared the full generated master with the assembled portrait and rejected the compressed body. They also required clothing to include a neck, with the face above that join, and supplied the external DDTank female `cloth/cloth2/1/show.png` as evidence of a body/neck resource.
 
+**Superseded neck implementation:** the owner subsequently rejected the neck mask described below because it retained chin/face ink and clipped the scarf. The 2608/2222 pixel counts were a failed gate. Current clothing uses complete body-only sources; see [HEADLESS-CLOTHING-REVIEW.md](HEADLESS-CLOTHING-REVIEW.md). The shared uniform export correction remains active. The image galleries now show current body-only clothing, not the superseded mask result.
+
 ## What failed
 
 | Former export | Horizontal scale | Vertical scale | Effect |

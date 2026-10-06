@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 4,
   "template": "ddtank40-standing-three-quarter-left-v1",
   "view": "three-quarter-left",
   "width": 1254,
@@ -43,14 +43,13 @@
       "ry": 34
     }
   ],
-  "protectedPaths": [
-    "M 477 796 L 514 799 L 502 839 L 494 862 L 510 883 L 513 902 L 494 908 L 473 901 L 460 882 L 459 854 Z",
-    "M 747 790 L 787 789 L 804 840 L 818 900 L 804 925 L 777 936 L 744 919 L 729 896 L 733 873 L 739 846 Z",
-    "M 531 980 L 593 980 L 600 1041 L 537 1043 Z",
-    "M 641 982 L 701 982 L 728 1068 L 663 1071 Z"
-  ],
-  "jawPath": "M 0 0 H 1254 V 590 H 748 Q 706 596 649 615 Q 578 639 523 620 Q 459 600 441 558 H 0 Z",
-  "neckPath": "M 548 653 L 548 617 Q 589 597 658 598 L 658 653 Z",
+  "jawPath": "M 0 0 H 1254 V 568 H 750 L 725 586 L 700 601 L 675 612 L 650 617 L 625 623 L 600 628 L 575 631 L 550 629 L 525 623 L 500 615 L 475 603 L 450 580 L 430 558 H 0 Z",
+  "headlessClothingSources": {
+    "clothing-traveler": "clothing-traveler-headless-v2.png",
+    "clothing-knight": "clothing-knight-headless-v2.png",
+    "clothing-mage": "clothing-mage-headless-v2.png"
+  },
+  "clothingAuthoring": "Complete body-only source PNGs copied byte-for-byte; no head/jaw/collar masks or limb repair patches. Shared canvas/pose registration is fixed; exact anatomical invariance across generated outfits needs art review.",
   "headOverlap": "behind-face",
   "capPath": "M 344 326 Q 353 300 403 289 Q 400 228 431 209 Q 519 133 632 139 Q 677 117 718 153 Q 817 178 876 288 Q 920 345 891 407 L 877 439 L 801 403 L 734 371 L 702 348 Q 638 369 577 362 L 430 331 Q 381 375 348 350 Z",
   "capCoverage": [
@@ -104,11 +103,14 @@
     "eyes-joy-generated.png": "910844242f3a779be12c3880dc92ad36111e86ee8bce46ebd2039d7461d92cf0",
     "face-scar-generated.png": "00b1cdfaa6ffbeda8f43f7d83581245f83e6ab41643368cb430bf3919e807144",
     "face-blush-correction-generated.png": "744a9756ba25b4c16c8e03b309d3050d2381c5c1b5575c5426a4c6cf5ecec229",
-    "clothing-knight-generated.png": "09c940217a47b1f200121caf6a59d3cb2e4561ddd4dc00d66ba8f5d7a671d7b2",
-    "clothing-mage-generated.png": "d3c1b784e9b0b5f7887a226da7bbb4aee6ceac842c485b69e7faba18ab663e28",
+    "clothing-traveler-headless-v2.png": "42872a6d00a3beff742fb7285ff49cdad6743bbf26200087a7940d1ed6fd2438",
+    "clothing-knight-headless-v2.png": "ac41ead4961b535c9290421e2dc23f41242eb8f5294bb6ceebc02be252416180",
+    "clothing-mage-headless-v2.png": "be11a331540363193aead8b5c10f1cc3d65ff47efcdccc2c349fb99e8176e55a",
     "hair-teal-generated.png": "1a8867f2b311259d1eef7c4d5931c54600d551993baf3d973af95025329375a5",
     "hair-silver-curls-generated.png": "2bb0e311aba831f2c53ae19e58b9060ac095b5d51d7f397c8a1d3ae60a150dad",
     "hat-adventurer-generated.png": "73d06313597fa768a0a8e8a17ae15bde84fd8521d6c44fe288ad823c1c3ad0fb",
+    "clothing-knight-generated.png": "09c940217a47b1f200121caf6a59d3cb2e4561ddd4dc00d66ba8f5d7a671d7b2",
+    "clothing-mage-generated.png": "d3c1b784e9b0b5f7887a226da7bbb4aee6ceac842c485b69e7faba18ab663e28",
     "eyes-amber-generated.png": "cff766cc27de4ac4342f65a223a71dd0a683b4a6f9b93d33efe45973d1497c76",
     "face-blush-generated.png": "899c5ecfcded8ea6fb8c0aa36ff1029950f64268547bee972bc1fd2d5c9cfeeb",
     "hair-chestnut-compact-generated.png": "bd6f231fb28d818cfdb348dcf250db8e75b0391615b91239c67b0a2ed6627a80",
@@ -120,8 +122,11 @@
     "tool": "built-in image_gen",
     "prompts": [
       "blank-head-PROMPT.txt",
+      "clothing-knight-headless-v2-PROMPT.txt",
       "clothing-knight-PROMPT.txt",
+      "clothing-mage-headless-v2-PROMPT.txt",
       "clothing-mage-PROMPT.txt",
+      "clothing-traveler-headless-v2-PROMPT.txt",
       "eyes-amber-PROMPT.txt",
       "eyes-determined-PROMPT.txt",
       "eyes-joy-PROMPT.txt",
@@ -143,7 +148,9 @@
       "hair-teal-compact-generated.png",
       "hair-silver-curls-compact-generated.png",
       "eyes-amber-generated.png",
-      "face-blush-generated.png"
+      "face-blush-generated.png",
+      "clothing-knight-generated.png",
+      "clothing-mage-generated.png"
     ],
     "activeHairSources": {
       "hair-chestnut": "master.png",
@@ -151,6 +158,11 @@
       "hair-silver-curls": "hair-silver-curls-generated.png"
     },
     "defaultEyeSource": "master.png",
+    "headlessReferenceSources": {
+      "clothing-traveler-headless-v2.png": "master.png",
+      "clothing-knight-headless-v2.png": "clothing-knight-generated.png",
+      "clothing-mage-headless-v2.png": "clothing-mage-generated.png"
+    },
     "referenceRole": "External DDTank portrait used for camera/proportions only; original identity/costume artwork edited."
   },
   "calibration": {
