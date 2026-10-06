@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Remove brown hair baked into the amber eye set
+
+- Fix the default eye source: its feature-region extraction from the full master included brown bangs, visible under blue/silver hair. Reuse the existing clean hairless amber source and require the same hairless source family for all three eye sets.
+- Preserve the fixed head, hair PNGs and common export matrix. Add contaminated before fixtures and forehead skin regression checks; rebuild the default face/icon. Verify33 dimensions/hashes,162 combinations and unchanged reference defaults.
+- Expose face-only inspection and its actual PNG link in the lab. Record that earlier hair-only checks missed face contamination; standalone hair cleanliness did not certify the composite. Owner visual acceptance remains pending.
+
 ## 2026-10-06 — Author hair as independent transparent artwork
 
 - Replace all three standing hairstyles extracted from headed sources with new hair-only ImageGen PNGs and exact prompts. Remove skin-seed segmentation, morphological closure, support cropping and punched ear masks from full hair.

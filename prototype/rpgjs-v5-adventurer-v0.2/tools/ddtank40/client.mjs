@@ -9,6 +9,7 @@ try {
   const base=document.querySelector('#compat-base'),sex=document.querySelector('#compat-sex'),guides=document.querySelector('#compat-guides'),hide=document.querySelector('#compat-hide-head');
   const main=document.querySelector('#compat-character'),ref=document.querySelector('#compat-reference');
   const masterPreview=document.querySelector('#compat-master'),clothPreview=document.querySelector('#compat-cloth-only');
+  const facePreview=document.querySelector('#compat-face-only'),faceSourceLink=document.querySelector('#compat-face-source-link');
   const hairPreview=document.querySelector('#compat-hair-only'),hairSource=document.querySelector('#compat-hair-source'),hairSourceLink=document.querySelector('#compat-hair-source-link');
   for(const slot of showSlots) {
     const label=document.createElement('label');label.textContent=names[slot];const select=document.createElement('select');select.id=`compat-${slot}`;label.append(select);document.querySelector('#compat-selectors').append(label);controls.set(slot,select);
@@ -59,6 +60,9 @@ try {
       const ui=document.querySelector('#compat-ui');ui.getContext('2d').clearRect(0,0,120,165);ui.getContext('2d').drawImage(staging,0,0,120,165);
       const clothStaging=document.createElement('canvas');await paint(clothStaging,{...plan,layers:plan.layers.filter(l=>l.slot==='cloth')});if(tick!==revision)return;
       clothPreview.getContext('2d').clearRect(0,0,250,342);clothPreview.getContext('2d').drawImage(clothStaging,0,0);
+      const faceStaging=document.createElement('canvas');await paint(faceStaging,{...plan,layers:plan.layers.filter(l=>l.slot==='face'||l.slot==='eff')});if(tick!==revision)return;
+      facePreview.getContext('2d').clearRect(0,0,250,342);facePreview.getContext('2d').drawImage(faceStaging,0,0);
+      const faceLayer=plan.layers.find(l=>l.slot==='face');faceSourceLink.hidden=!faceLayer;if(faceLayer)faceSourceLink.href=faceLayer.url;
       const hairStaging=document.createElement('canvas');await paint(hairStaging,{...plan,layers:plan.layers.filter(l=>l.slot==='hair')});if(tick!==revision)return;
       hairPreview.getContext('2d').clearRect(0,0,250,342);hairPreview.getContext('2d').drawImage(hairStaging,0,0);
       const ownHairNames={'ours-310900001':'hair-chestnut','ours-310900002':'hair-teal','ours-310900003':'hair-silver-curls'},nativeHair=ownHairNames[plan.equipment.hair];

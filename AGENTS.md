@@ -10,6 +10,8 @@ Current owner-authorized direction: read `design/implementation-reset-2026-10-02
 
 - Owner correction on hair sources: author hair alone on transparency from the outset. Do not manufacture a hairstyle by deleting skin/ears from a rendered head. Preserve raw hair-only sources and prompts; inspect intact bang/sideburn edges and the standalone PNG as well as the assembled head. A declared family-wide uniform import may resize a new source family into the fixed template before the common character export; never fit individual items or cut ear-shaped holes to repair them.
 
+- Eye/face ownership: derive eyes+brows+mouth from hairless sources, never from a portrait with bangs crossing those regions. The blank head and exported face must remain clean when displayed without any hair. Swapping the separate hair resource must not erase, redraw or repair the face. A clean standalone hairstyle alone does not prove a clean composed face.
+
 - Main playable/product reference: `prototype/web-pixel-rpg-v0.1/`. Preserve its working code, original illustrated artwork, audio and save compatibility. Do not replace its renderer or migrate its save in an engine experiment.
 - `prototype/rpgjs-v5-adventurer-v0.2/` is a technical experiment. Functional/two-client acceptance has evidence; visual/input/product parity has NOT passed. Do not describe it as a better replacement or expand its scope yet.
 - Next implementation is one comparable village/meadow slice using v0.1 assets and behavior in the RPGJS candidate. Use adapters; Universal LPC is optional, not mandatory replacement art. Preserve attribution for every third-party asset. No commercial-game sprites.

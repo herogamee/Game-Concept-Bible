@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "template": "ddtank40-standing-three-quarter-left-v1",
   "view": "three-quarter-left",
   "width": 1254,
@@ -29,6 +29,11 @@
       "ry": 34
     }
   ],
+  "eyeSources": {
+    "eyes-amber": "eyes-amber-generated.png",
+    "eyes-determined": "eyes-determined-generated.png",
+    "eyes-joy": "eyes-joy-generated.png"
+  },
   "cheekRegions": [
     {
       "cx": 476,
@@ -99,6 +104,7 @@
   "sourceHashes": {
     "blank-head-generated.png": "9d29eccd2cf4d778049e36bf30295c8cc7cdf55eb046e4694cefca2ce9b1eaa2",
     "master.png": "c3935fc8c254842c7fc33f1049054da13d4137fd0e60ed822d0873052cb3b75d",
+    "eyes-amber-generated.png": "cff766cc27de4ac4342f65a223a71dd0a683b4a6f9b93d33efe45973d1497c76",
     "eyes-determined-generated.png": "ac3ab05325ff7017f32b2f29ec78ddeffa9e8267c2e9fb7f4947bb758ad4af0c",
     "eyes-joy-generated.png": "910844242f3a779be12c3880dc92ad36111e86ee8bce46ebd2039d7461d92cf0",
     "face-scar-generated.png": "00b1cdfaa6ffbeda8f43f7d83581245f83e6ab41643368cb430bf3919e807144",
@@ -112,7 +118,6 @@
     "hat-adventurer-generated.png": "73d06313597fa768a0a8e8a17ae15bde84fd8521d6c44fe288ad823c1c3ad0fb",
     "clothing-knight-generated.png": "09c940217a47b1f200121caf6a59d3cb2e4561ddd4dc00d66ba8f5d7a671d7b2",
     "clothing-mage-generated.png": "d3c1b784e9b0b5f7887a226da7bbb4aee6ceac842c485b69e7faba18ab663e28",
-    "eyes-amber-generated.png": "cff766cc27de4ac4342f65a223a71dd0a683b4a6f9b93d33efe45973d1497c76",
     "face-blush-generated.png": "899c5ecfcded8ea6fb8c0aa36ff1029950f64268547bee972bc1fd2d5c9cfeeb",
     "hair-chestnut-compact-generated.png": "bd6f231fb28d818cfdb348dcf250db8e75b0391615b91239c67b0a2ed6627a80",
     "hair-chestnut-generated.png": "c8fc9acc65a78aba9a45172597d24507b2e951cfefafdd37652a1c8eb0ae249f",
@@ -188,7 +193,6 @@
       "hair-silver-curls-generated.png",
       "hair-teal-compact-generated.png",
       "hair-silver-curls-compact-generated.png",
-      "eyes-amber-generated.png",
       "face-blush-generated.png",
       "clothing-knight-generated.png",
       "clothing-mage-generated.png"
@@ -198,7 +202,7 @@
       "hair-teal": "hair-teal-only-v2.png",
       "hair-silver-curls": "hair-silver-curls-only-v2.png"
     },
-    "defaultEyeSource": "master.png",
+    "defaultEyeSource": "eyes-amber-generated.png",
     "headlessReferenceSources": {
       "clothing-traveler-headless-v2.png": "master.png",
       "clothing-knight-headless-v2.png": "clothing-knight-generated.png",

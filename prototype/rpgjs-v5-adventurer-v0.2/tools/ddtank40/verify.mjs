@@ -46,6 +46,16 @@ const nativePixels=async name=>{const im=await loadImage(await readFile(resolve(
 let bodyLandmarkPixels=0;
 const nativeHeadPixels=await nativePixels('layers/head-template.png'),templatePixels=await nativePixels('blank-head-generated.png'),neckChecks=[],proportionChecks=[];
 const authoring=JSON.parse(await readFile(resolve(root,pack.authoringDirectory,'manifest.json'),'utf8'));
+assert.equal(authoring.generation.defaultEyeSource,'eyes-amber-generated.png','Amber eyes must not use the brown-haired full master');
+assert.deepEqual(authoring.eyeSources,{'eyes-amber':'eyes-amber-generated.png','eyes-determined':'eyes-determined-generated.png','eyes-joy':'eyes-joy-generated.png'},'All eye sets use the hairless source family');
+const amberPixels=await nativePixels('layers/eyes-amber.png'),oldAmberPixels=await nativePixels('../../evidence/ddtank40-three-quarter-v1/eyes-amber-before-hair-free.png');
+const hairFreeFaceLandmarks=[[615,401],[612,410],[698,418]];
+for(const [x,y] of hairFreeFaceLandmarks){
+ const i=(y*1254+x)*4;assert(amberPixels[i+3]>220,'Hair-free forehead fixture must be visible');
+ assert(amberPixels[i]>225&&amberPixels[i+1]>145&&amberPixels[i+2]>95,'Brown bangs remain inside the amber eye-set');
+ for(let channel=0;channel<3;channel++)assert(Math.abs(amberPixels[i+channel]-templatePixels[i+channel])<12,'Amber forehead must match the same clean head skin');
+ assert(oldAmberPixels[i]<180&&oldAmberPixels[i+3]>220,'Regression fixture must contain the rejected brown hair');
+}
 assert(authoring.headlessClothingSources&&!authoring.garmentCutPaths&&!authoring.neckPath,'Clothing must use body-only sources, not a jaw/collar extraction mask');
 assert(authoring.hairOnlySources&&authoring.hairSourceRegistration,'Full hair must use independently authored hair-only sources');
 assert.deepEqual(authoring.hairSourceRegistration.matrix,[.72,0,0,.72,168,3],'All new hair sources share one declared import, never per-item fitting');
@@ -182,7 +192,7 @@ await writeFile(resolve(originalEvidence,'master-uniform-preview.png'),masterPre
 const report={profile:profile.id,view:pack.view,template:pack.template,originalItems:pack.items.length,files:pack.files.length,originalCombinations:count,
   referenceDefaults:sourceDefaults,interchangeCases:blends.length,sourceMastersUnmodified:true,allOrigins:[0,0],
   rejectedInvalidDimensions:true,rejectedMissingExpressions:true,rejectedIncompleteProductionPack:true,
-  authoredExpressionChecks:expressionChecks,
+  authoredExpressionChecks:expressionChecks,hairFreeFaceLandmarks,eyeSources:authoring.eyeSources,rejectedBrownHairInAmberEyeSet:true,
   bodyLandmarkPixels,exactLimbPixelInvariance:false,hairOnlyChecks,rejectedOldDetachedHairFragment:true,protectedEar:true,capCrownChecks,
   exportMatrix:matrix,uniformAllLayers:true,rejectedAnisotropicBody:true,rejectedSeparateHeadBodyFits:true,proportionChecks,neckChecks,coveredJoinPixels,faceAboveClothing:true,
   acceptance:'File-format/portrait-renderer checks pass. Actual Flash-client item registration, anatomical/topology compatibility, all actions, female originals and owner visual acceptance remain pending.'};
