@@ -66,17 +66,17 @@ export function deformPoint([x,y],pose){
 }
 export function canonicalPoint([x,y]){const [a,b,c,d,e,f]=walkRig.matrix;return [a*x+c*y+e,b*x+d*y+f];}
 export class GaitSession{
-  constructor(){this.phaseMs=0;this.x=480;this.direction=-1;this.destination=null;this.preview=false;this.paused=false;this.rate=1;this.blend=0;this.axis=0;}
-  get frame(){return Math.floor(this.phaseMs/walkRig.frameMs)%walkRig.frames;}
+  constructor({frames=walkRig.frames,frameMs=walkRig.frameMs,speed=walkRig.speed}={}){this.frames=frames;this.frameMs=frameMs;this.speed=speed;this.phaseMs=0;this.x=480;this.direction=-1;this.destination=null;this.preview=false;this.paused=false;this.rate=1;this.blend=0;this.axis=0;}
+  get frame(){return Math.floor(this.phaseMs/this.frameMs)%this.frames;}
   tick(ms,axis=0,bounds=[100,860]){
     const dt=clamp(ms,0,50),old=this.x;
     if(this.paused){this.axis=0;return;}
     if(!axis&&this.destination!==null){const distance=this.destination-this.x;if(Math.abs(distance)<.5){this.x=this.destination;this.destination=null;}else axis=Math.sign(distance);}
     this.axis=axis;
-    if(axis){this.direction=axis;let target=this.x+axis*walkRig.speed*dt*.001*this.rate;if(this.destination!==null&&axis*(target-this.destination)>0)target=this.destination;this.x=clamp(target,...bounds);}
+    if(axis){this.direction=axis;let target=this.x+axis*this.speed*dt*.001*this.rate;if(this.destination!==null&&axis*(target-this.destination)>0)target=this.destination;this.x=clamp(target,...bounds);}
     const moving=this.preview||Math.abs(old-this.x)>.001;
     this.blend=clamp(this.blend+(moving?1:-1)*dt/140);
-    if(moving)this.phaseMs=(this.phaseMs+dt*this.rate)%(walkRig.frames*walkRig.frameMs);
+    if(moving)this.phaseMs=(this.phaseMs+dt*this.rate)%(this.frames*this.frameMs);
   }
-  step(){this.paused=true;this.blend=1;this.phaseMs=((this.frame+1)%walkRig.frames)*walkRig.frameMs;}
+  step(){this.paused=true;this.blend=1;this.phaseMs=((this.frame+1)%this.frames)*this.frameMs;}
 }

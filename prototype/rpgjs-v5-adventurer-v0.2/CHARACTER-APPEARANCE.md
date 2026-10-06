@@ -2,6 +2,8 @@
 
 Current hair catalog after the owner removal (2026-10-06): brown ours-310900001 and paired blue ours-310900004 only. Old side-swept blue and silver curls are absent from the active catalog/gallery/native route/runtime PNGs; raw history is preserved. Current pack: 14 items, 30 PNGs, 108 standing combinations and 14 active native layers. Counts in earlier checkpoints below are historical.
 
+Current walking artwork: the owner liked the new raw images and requested live use. `/fixed-template-walk` now uses four registered250×342 body poses from the headless keyframe source, with one shared family import and unchanged canonical head/eyes/hair/cap. One outfit,48 compositions; part atlas is visible but not yet rigged. Preserve the rejected mesh at `/fixed-template-walk-legacy`. See `evidence/ddtank40-keyframe-walk-v1/REVIEW.md`. Earlier unpublished/rejected-source status below is historical; source limitations remain documented. No production engine/Flash integration is claimed.
+
 Walking trial (2026-10-07): `/fixed-template-walk` is Canvas-only and visually rejected for poor joint bending/duck-like gait. Its8-frame clock and192 functional compositions do not certify animation art. Joint anchors are authored experiment data, not DDTank4.0 measurements. Separate-part and four-keyframe ImageGen drafts failed anatomical-scale/alternating-leg checks and remain unpublished. Standing exports, head/hair and playable engines are unchanged; no Godot/Phaser adapter has been implemented.
 
 ## Active DDTank 4.0 resource contract — 2026-10-06

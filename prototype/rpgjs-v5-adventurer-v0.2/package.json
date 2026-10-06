@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "main": "index.js",
   "scripts": {
+    "assets:ddt40-keyframe-walk": "node tools/ddtank40/build-keyframe-walk.mjs",
+    "verify:ddt40-keyframe-walk": "node tools/ddtank40/verify-keyframe-walk.mjs",
     "assets:ddt40-walk": "node tools/ddtank40/build-walk.mjs",
     "verify:ddt40-walk": "node tools/ddtank40/verify-walk.mjs",
     "assets:ddt40": "node tools/ddtank40/author-three-quarter.mjs && node tools/ddtank40/build.mjs",

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-07 — Put selected new walking artwork into the live lab
+
+- Replace active standing-texture deformation with four registered sprite poses from the existing, owner-liked headless body image. Keep source PNGs and canonical head/eyes/hair/hat unchanged; swaps retain the motion phase.
+- Preserve the rejected mesh/two-outfit lab on its legacy route. Publish one new outfit; show the body-part source separately and explicitly identify its pending rig status.
+- Verify all source pixels remain within the frame, exact declared import,48 compositions,144 neck-join samples and live browser equipment/phase behavior. The composed gait still needs review; this is Canvas playback, not Godot/Phaser or full DDTank integration.
+
 ## 2026-10-07 — Record rejected standing-texture walking trial
 
 - Add an isolated Canvas walking lab with two clothing sheets, shared motion/equipment clock, keyboard/button/click controls and frame inspection. Preserve the standing resources and existing playable.

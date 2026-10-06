@@ -2,6 +2,8 @@
 
 # Willowbrook — RPGJS v5 Adventurer v0.2
 
+Current walking lab, 2026-10-07: after the owner liked the new source images and requested live use, `/fixed-template-walk` now plays the existing four-pose headless body PNG, exported to registered250×342 frames. The head, interchangeable eyes/hair/cap stay unchanged. One new outfit is available; the part atlas is shown separately and is not yet rigged.48 composition checks and browser equipment/phase playback pass. See `evidence/ddtank40-keyframe-walk-v1/REVIEW.md`. The rejected mesh remains at `/fixed-template-walk-legacy`. This supersedes the prior active-page status below; natural gait refinement and engine/Flash integration remain unfinished.
+
 Walking lab, 2026-10-07: `/fixed-template-walk` is a standalone HTML/Canvas experiment using two outfits, two hairstyles, three eye sets and one shared8-frame clock. The owner rejected its joint bending and duck-like gait; the page labels that failure.192 composition/session checks do not prove natural walking. See `evidence/ddtank40-walk-v1/REVIEW.md`. An independent-part ImageGen draft is preserved for diagnosis and is not used at runtime. Motion landmarks are original trial authoring data, not DDTank measurements. No Godot/Phaser loader or runtime has been added.
 
 Current hair catalog (owner removal, 2026-10-06): only brown `ours-310900001` and paired blue `ours-310900004` remain in `/fixed-template`. The old side-swept blue and silver curls are removed from the active catalog, gallery, native route and six runtime PNGs. Source/history artifacts remain archival. Rebuild and verification pass: 14 items, 30 PNGs, 108 standing compositions, 14 active native layers. Earlier counts below describe historical checkpoints.
