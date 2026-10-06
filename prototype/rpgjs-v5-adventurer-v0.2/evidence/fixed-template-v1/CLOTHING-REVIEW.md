@@ -1,5 +1,7 @@
 # Two clothing bundles on the fixed front template — 2026-10-06
 
+Later checkpoint: [hair/cap compatibility and shared front-motion wardrobe](../fixed-front-motion-v1/REVIEW.md). This document preserves the standing-clothing review at its original checkpoint.
+
 The owner requested **only two new clothing designs**. The local `/fixed-template` page now offers novice knight and novice mage outfits, alongside the unchanged default traveler outfit. Each clothing ID selects shirt + lower garment + shoes together and remains independent of the selected eye set, face set and hair visibility.
 
 ## Authored assets and registration

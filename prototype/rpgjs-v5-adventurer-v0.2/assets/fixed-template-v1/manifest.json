@@ -61,7 +61,8 @@
     "eye_set": "eyes-amber",
     "face_set": null,
     "hair": "hair-chestnut",
-    "clothing": "clothing-traveler"
+    "clothing": "clothing-traveler",
+    "hat": null
   },
   "items": [
     {
@@ -109,6 +110,33 @@
       "slot": "hair",
       "file": "hair-chestnut.png",
       "label": "ผมน้ำตาลเดิม",
+      "hatFile": "hair-chestnut-under-hat.png",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    },
+    {
+      "id": "hair-teal",
+      "label": "ผมปัดข้างสีฟ้า",
+      "slot": "hair",
+      "file": "hair-teal.png",
+      "hatFile": "hair-teal-under-hat.png",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    },
+    {
+      "id": "hair-silver-curls",
+      "label": "ผมหยักศกสีเงิน",
+      "slot": "hair",
+      "file": "hair-silver-curls.png",
+      "hatFile": "hair-silver-curls-under-hat.png",
+      "template": "fixed-front-v1",
+      "pose": "stand-front"
+    },
+    {
+      "id": "hat-adventurer",
+      "slot": "hat",
+      "file": "hat-adventurer.png",
+      "label": "หมวกนักผจญภัย",
       "template": "fixed-front-v1",
       "pose": "stand-front"
     },
@@ -275,12 +303,18 @@
     ],
     "maxSoleDrift": 2
   },
+  "hatPolicy": {
+    "id": "upper-hair-covered-v1",
+    "cutY": 310,
+    "description": "All hairstyles use the same upper-hair mask when the cap is worn. Fringe remains; selected hair is retained."
+  },
   "layerOrder": [
     "clothing",
     "head_template",
     "eye_set",
     "face_set",
-    "hair"
+    "hair",
+    "hat"
   ],
-  "scope": "One front standing pose. Immutable inherited head and shared protected exposed-body regions. Three eye sets, two cheek-detail face sets, the original outfit and two new clothing bundles; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline."
+  "scope": "Fixed front standing template with three eye sets, two cheek-detail face sets, three clothing bundles, three hairstyles and one cap. Front walking uses a separate authored pose atlas and the same IDs. Owner visual acceptance, other directions/actions, full costumes and production scale remain pending."
 }

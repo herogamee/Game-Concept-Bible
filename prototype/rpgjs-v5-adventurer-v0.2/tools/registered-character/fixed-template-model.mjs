@@ -1,5 +1,5 @@
 /** Cosmetic selections for one locked, registered front-pose template. */
-export const fixedSlots = ['eye_set', 'face_set', 'hair', 'clothing'];
+export const fixedSlots = ['eye_set', 'face_set', 'hair', 'clothing', 'hat'];
 
 export function resolveFixedSelection(manifest, selected = {}) {
   if (manifest.origin.x !== 0 || manifest.origin.y !== 0) throw new Error('Unregistered template origin');
@@ -19,10 +19,12 @@ export function resolveFixedSelection(manifest, selected = {}) {
 
 export function fixedPlan(manifest, selected = {}, {showEyes = true, showHair = true} = {}) {
   const items = resolveFixedSelection(manifest, selected);
+  if(showHair&&items.hat&&items.hair&&!items.hair.hatFile)throw new Error(`Missing hat-compatible hairstyle: ${items.hair.id}`);
   const layers = [{slot: 'clothing', file: items.clothing.file}, {slot: 'head_template', file: manifest.head.file}];
   if (showEyes) layers.push({slot: 'eye_set', file: items.eye_set.file});
   if (items.face_set) layers.push({slot: 'face_set', file: items.face_set.file});
-  if (showHair && items.hair) layers.push({slot: 'hair', file: items.hair.file});
+  if (showHair && items.hair) layers.push({slot: 'hair', file: items.hat ? items.hair.hatFile : items.hair.file});
+  if (items.hat) layers.push({slot: 'hat', file: items.hat.file});
   return {
     width: manifest.width, height: manifest.height,
     layers: layers.map(layer => ({...layer, url: `/fixed-assets/${layer.file}`, x: 0, y: 0,

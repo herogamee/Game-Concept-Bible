@@ -8,7 +8,7 @@ The normal character uses **one fixed head template and one fixed body template*
 
 ### Owner categories
 
-The design keys below name intended asset categories. The front lab now implements eye/face/hair/clothing selections for a bounded subset; the playable legacy save schema remains unchanged.
+The design keys below name intended asset categories. The front lab implements eye/face/hair/hat/clothing selections across one stand and four front walk key poses for a bounded subset; the playable legacy save schema remains unchanged.
 
 | Design key | Owner category | Contents / replacement behavior |
 |---|---|---|
@@ -45,7 +45,8 @@ The immediate priority is a repeatable fixed-template asset-production process f
 | Record owner categories and fixed-template rules | Defined in this contract. |
 | Freeze one normal head/body master and its coordinate/pose map | A front standing candidate is published in `assets/fixed-template-v1/manifest.json`: full 1254×1254 frames, origin (0,0), protected inherited head and unchanged dressed body/hair. Owner acceptance remains pending; the body example is clothed, not a new naked-body master. |
 | Separate eye sets from face sets on that master | Implemented as a bounded front proof at `/fixed-template`: three eye/brow/mouth sets, two cheek-detail face sets and no face set. Shared category masks preserve the protected head; exports retain bounded skin underpainting. Other face-set placements/poses remain unverified. |
-| Prove new-shaped clothing and hair/hat compatibility | Two distinct front clothing bundles (knight and mage) now work with the same head and protected exposed-body regions. 108 composition/visibility cases pass; owner art acceptance, arbitrary clothing topology and hair/hat compatibility remain pending. |
+| Prove new-shaped clothing and hair/hat compatibility | Knight/mage bundles, two new hairstyles and one cap now compose with the same front head. Cap coverage preserves selected hair. 162 looks and810 standing/walking compositions pass technical checks; owner acceptance and arbitrary topology remain pending. |
+| Carry the same cosmetic IDs across standing and walking | Original front stand plus four individually authored front walk key poses, all three outfits and the same eye/face/hair/cap exports. Equip/reset preserves phase. Gait/sole/sleeve polish, other directions/actions and playable integration remain unfinished. |
 | Define full-costume replacement/restoration and optional-item visibility | Category behavior is specified above; source assets and runtime policy are not implemented. |
 | Repeat the same authoring/export/review procedure for varied new items | Not verified. Record time and repair effort before projecting capacity to hundreds/thousands. |
 
@@ -55,7 +56,7 @@ The current `/original` and `/walk` pages remain preserved experiments. Their `f
 
 The [earlier fixed-front proof](evidence/fixed-template-v1/REVIEW.md) demonstrated independent eye and cheek-detail face selections on one published head. At that checkpoint, all 36 combinations/visibility cases passed technical registration checks. It preserved the previous dressed body/hair without adding different garments, hair/hat compatibility, full costumes, animation coverage or measured production throughput. Its nine generated inputs include four unused cheek-placement attempts; do not treat that trial as a validated scalable authoring pipeline.
 
-The [clothing follow-up](evidence/fixed-template-v1/CLOTHING-REVIEW.md) adds exactly two new shirt/shorts/boot bundles beside the original default. Shared canonical protection preserves original neck/arm/hand/knee pixels; head and other cosmetic IDs remain independent. All 108 front-pose cases pass technical checks. Clothes remain complete dressed-body rasters rather than a fully undressed body master; long sleeves/skirts, other poses and production throughput remain unverified.
+The [clothing follow-up](evidence/fixed-template-v1/CLOTHING-REVIEW.md) adds exactly two new shirt/shorts/boot bundles beside the original default, with108 front-standing checks. The later [headwear/front-motion proof](evidence/fixed-front-motion-v1/REVIEW.md) covers three hairstyles, one cap, original stand and four walk key poses with162 looks/810 compositions. It discards failed whole-sheet attempts, preserves exact prompts/sources, and uses source-specific exposed-limb protection shared across outfits. Clothes remain complete dressed-body rasters rather than a fully undressed anatomical master. Gait, foot-support, sleeve boundaries, arbitrary clothing topology, broader action coverage and production throughput remain unverified; the front gait still needs owner art/feel acceptance.
 
 ## Continuing requirement — customization across every action
 

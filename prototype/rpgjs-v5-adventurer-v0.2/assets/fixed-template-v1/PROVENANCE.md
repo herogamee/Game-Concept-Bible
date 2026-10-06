@@ -1,6 +1,6 @@
 # Fixed front-template proof — 2026-10-06
 
-Status: a review candidate for one front standing pose, three eye sets, two cheek-detail face sets, the original outfit and two new clothing bundles. The owner has not accepted this master or its visual quality. Full clothing topology, hair/hat/glasses/wings, full costumes and animation remain unfinished.
+Status: a review candidate for the fixed front appearance. Later [headwear and front-motion sources](../fixed-front-motion-v1/PROVENANCE.md) add two hairstyles, one cap and four individually authored walk key poses for the same three clothing IDs. The owner has not accepted this master or gait. Broad clothing topology, other equipment/actions, full costumes and production scale remain unfinished. The following sections retain the earlier head/eye/face/clothing authoring record.
 
 ## Preserved original inputs
 

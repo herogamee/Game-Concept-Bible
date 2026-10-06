@@ -13,6 +13,10 @@ staticFiles.set('/original-assets/master.png',fileURLToPath(new URL('../../asset
 const walkDir=new URL('../../assets/walk-side-v1/',import.meta.url);
 for(const name of ['face-amber.png','face-calm.png','body-traveler.png','body-blue.png','hair-chestnut.png','hair-silver.png'])staticFiles.set(`/walk-assets/${name}`,fileURLToPath(new URL(name,walkDir)));
 const fixedDir=new URL('../../assets/fixed-template-v1/',import.meta.url);
+for(const name of ['front-motion-model.mjs','front-motion-client.mjs'])staticFiles.set(`/${name}`,fileURLToPath(new URL(name,import.meta.url)));
+const frontMotionDir=new URL('../../assets/fixed-front-motion-v1/',import.meta.url);
+for(const name of ['hair-teal.png','hair-silver-curls.png','hat-adventurer.png','hair-chestnut-under-hat.png','hair-teal-under-hat.png','hair-silver-curls-under-hat.png'])staticFiles.set(`/fixed-assets/${name}`,fileURLToPath(new URL(name,fixedDir)));
+for(const name of ['head-template.png','hair-chestnut.png','hair-teal.png','hair-silver-curls.png','hat-adventurer.png','hair-chestnut-under-hat.png','hair-teal-under-hat.png','hair-silver-curls-under-hat.png','eyes-amber.png','eyes-determined.png','eyes-joy.png','face-scar.png','face-blush.png',...['clothing-traveler','clothing-knight','clothing-mage'].flatMap(id=>[`${id}-stand.png`,`${id}-walk.png`])])staticFiles.set(`/front-motion-assets/${name}`,fileURLToPath(new URL(name,frontMotionDir)));
 for(const name of ['head-template.png','clothing-traveler.png','clothing-knight.png','clothing-mage.png','hair-chestnut.png','eyes-amber.png','eyes-determined.png','eyes-joy.png','face-scar.png','face-blush.png'])staticFiles.set(`/fixed-assets/${name}`,fileURLToPath(new URL(name,fixedDir)));
 createServer(async(req,res)=>{
   try {
@@ -26,6 +30,7 @@ createServer(async(req,res)=>{
     }
     if(path==='/api/walk'){res.setHeader('Content-Type','application/json; charset=utf-8');res.end(await readFile(new URL('layers.json',walkDir),'utf8'));return;}
     if(path==='/api/fixed-template'){res.setHeader('Content-Type','application/json; charset=utf-8');res.end(await readFile(new URL('manifest.json',fixedDir),'utf8'));return;}
+    if(path==='/api/front-motion'){res.setHeader('Content-Type','application/json; charset=utf-8');res.end(await readFile(new URL('manifest.json',frontMotionDir),'utf8'));return;}
     const asset=path.startsWith('/assets/')?source.files.get(path.slice(8)):null;
     const reference=path==='/reference/m'?source.references.m:path==='/reference/f'?source.references.f:null;
     const file=asset||reference||staticFiles.get(path==='/'?'/index.html':path==='/original'?'/original.html':path==='/walk'?'/walk.html':path==='/fixed-template'?'/fixed-template.html':path);

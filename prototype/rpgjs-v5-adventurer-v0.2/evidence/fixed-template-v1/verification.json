@@ -1,5 +1,5 @@
 {
-  "scope": "One front standing pose. Immutable inherited head and shared protected exposed-body regions. Three eye sets, two cheek-detail face sets, the original outfit and two new clothing bundles; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline.",
+  "scope": "Fixed front standing template with three eye sets, two cheek-detail face sets, three clothing bundles, three hairstyles and one cap. Front walking uses a separate authored pose atlas and the same IDs. Owner visual acceptance, other directions/actions, full costumes and production scale remain pending.",
   "dimensions": {
     "width": 1254,
     "height": 1254

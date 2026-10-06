@@ -5,6 +5,9 @@
   "scripts": {
     "assets:fixed-template": "node tools/build-fixed-template.mjs",
     "verify:fixed-template": "node tools/registered-character/verify-fixed-template.mjs",
+    "verify:headwear": "node tools/registered-character/verify-headwear.mjs",
+    "assets:front-motion": "node tools/build-front-motion.mjs",
+    "verify:front-motion": "node tools/registered-character/verify-front-motion.mjs",
     "assets:walk-side": "node tools/build-walk-side.mjs",
     "verify:walk-side": "node tools/registered-character/verify-walk.mjs",
     "assets:head-hair": "node tools/build-original-head-hair.mjs",

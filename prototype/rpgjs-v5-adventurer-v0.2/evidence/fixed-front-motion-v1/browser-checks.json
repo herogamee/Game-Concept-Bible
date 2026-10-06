@@ -1,0 +1,85 @@
+[
+  {
+    "check": "walking-knight",
+    "state": {
+      "action": "walk",
+      "frame": "0",
+      "phase": "0.6536000000000072",
+      "playing": "true",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":\"hair-silver-curls\",\"clothing\":\"clothing-knight\",\"hat\":\"hat-adventurer\"}"
+    }
+  },
+  {
+    "check": "equip-mage-during-walk",
+    "state": {
+      "action": "walk",
+      "frame": "1",
+      "phase": "1.5542000000000422",
+      "playing": "true",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":\"hair-silver-curls\",\"clothing\":\"clothing-mage\",\"hat\":\"hat-adventurer\"}"
+    }
+  },
+  {
+    "check": "all-head-slots-keep-paused-pose",
+    "phaseBefore": "2",
+    "state": {
+      "action": "walk",
+      "frame": "2",
+      "phase": "2",
+      "playing": "false",
+      "selected": "{\"eye_set\":\"eyes-joy\",\"face_set\":\"face-scar\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":null}"
+    }
+  },
+  {
+    "check": "hat-remains-when-hair-hidden",
+    "state": {
+      "origin": "{\"x\":0,\"y\":0}",
+      "selected": "{\"eye_set\":\"eyes-joy\",\"face_set\":\"face-scar\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":\"hat-adventurer\"}",
+      "showEyes": "true",
+      "showHair": "false",
+      "template": "fixed-front-v1"
+    }
+  },
+  {
+    "check": "stand-keeps-choices-and-restores-teal-hair",
+    "state": {
+      "action": "stand",
+      "frame": "2",
+      "phase": "2",
+      "playing": "false",
+      "selected": "{\"eye_set\":\"eyes-joy\",\"face_set\":\"face-scar\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":null}"
+    }
+  },
+  {
+    "check": "reset-defaults-keeps-paused-motion-phase",
+    "phaseBefore": "3",
+    "state": {
+      "action": "walk",
+      "frame": "3",
+      "phase": "3",
+      "playing": "false",
+      "selected": "{\"eye_set\":null,\"face_set\":null,\"hair\":null,\"clothing\":null,\"hat\":null}"
+    }
+  },
+  {
+    "check": "headwear-gallery-swap-keeps-walking-mage-and-eye-face",
+    "state": {
+      "action": "walk",
+      "frame": "1",
+      "phase": "1.303999999999999",
+      "playing": "true",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":\"hat-adventurer\"}"
+    }
+  },
+  {
+    "check": "slow-playback-final-mage-teal-cap",
+    "rate": "0.5",
+    "state": {
+      "action": "walk",
+      "frame": "1",
+      "phase": "1.1545000000000625",
+      "playing": "true",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":\"hat-adventurer\"}"
+    }
+  }
+]

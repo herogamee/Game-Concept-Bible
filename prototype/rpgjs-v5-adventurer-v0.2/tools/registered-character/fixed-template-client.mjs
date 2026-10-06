@@ -1,5 +1,6 @@
 import {prepareRegisteredFrame, drawPreparedFrame} from './compositor.mjs';
 import {FixedTemplateSelection, fixedPlan, resolveFixedSelection} from './fixed-template-model.mjs';
+import {mountFrontMotion} from './front-motion-client.mjs';
 
 const status = document.querySelector('#fixed-status');
 try {
@@ -7,7 +8,7 @@ try {
   if (!response.ok) throw new Error('อ่านข้อมูลแม่แบบไม่สำเร็จ');
   const manifest = await response.json();
   const selection = new FixedTemplateSelection(manifest), images = new Map();
-  const files = [manifest.head.file, ...manifest.items.map(item => item.file)];
+  const files = [...new Set([manifest.head.file, ...manifest.items.flatMap(item => [item.file,item.hatFile].filter(Boolean))])];
   await Promise.all(files.map(file => new Promise((resolve, reject) => {
     const image = new Image();
     image.onload = () => {
@@ -21,13 +22,23 @@ try {
   const compiled = document.createElement('canvas');
   const character = document.querySelector('#fixed-character'), head = document.querySelector('#fixed-head');
   const eyeSelect = document.querySelector('#fixed-eyes'), faceSelect = document.querySelector('#fixed-face'), clothingSelect = document.querySelector('#fixed-clothing');
+  const hairSelect=document.querySelector('#fixed-hair'),hatSelect=document.querySelector('#fixed-hat');
   const showHair = document.querySelector('#fixed-show-hair'), showEyes = document.querySelector('#fixed-show-eyes'), guides = document.querySelector('#fixed-guides');
-  for (const [select, slot, defaultLabel] of [[eyeSelect, 'eye_set', 'ค่าเริ่มต้น · ตาอำพัน'], [faceSelect, 'face_set', 'ไม่มีชุดใบหน้า'], [clothingSelect, 'clothing', 'ค่าเริ่มต้น · ชุดนักเดินทาง']]) {
+  for (const [select, slot, defaultLabel] of [[eyeSelect, 'eye_set', 'ค่าเริ่มต้น · ตาอำพัน'], [faceSelect, 'face_set', 'ไม่มีชุดใบหน้า'], [clothingSelect, 'clothing', 'ค่าเริ่มต้น · ชุดนักเดินทาง'],[hairSelect,'hair','ค่าเริ่มต้น · ผมน้ำตาล'],[hatSelect,'hat','ไม่ใส่หมวก']]) {
     select.add(new Option(defaultLabel, ''));
     for (const item of manifest.items.filter(item => item.slot === slot)) select.add(new Option(item.label, item.id));
     select.addEventListener('change', () => { selection.equip(slot, select.value || null); render(); });
   }
   const clothingCards = [];
+  const headwearCards=[];
+  for(const hat of [null,...manifest.items.filter(i=>i.slot==='hat')])for(const hair of manifest.items.filter(i=>i.slot==='hair')){
+    const card=document.createElement('button');card.type='button';card.className='card';
+    const image=document.createElement('canvas');image.width=310;image.height=270;
+    const title=document.createElement('span');title.textContent=`${hair.label} · ${hat?'ใส่หมวก':'ไม่ใส่หมวก'}`;
+    card.setAttribute('aria-label',title.textContent);card.append(image,title);
+    card.addEventListener('click',()=>{selection.equip('hair',hair.id);selection.equip('hat',hat?.id||null);selection.showHair=true;showHair.checked=true;hairSelect.value=hair.id;hatSelect.value=hat?.id||'';render();});
+    document.querySelector('#fixed-headwear-gallery').append(card);headwearCards.push({card,image,hair,hat});
+  }
   for (const item of manifest.items.filter(item => item.slot === 'clothing')) {
     const card = document.createElement('button'); card.type = 'button'; card.className = 'card'; card.setAttribute('aria-label', item.label);
     const image = document.createElement('canvas'); image.width = 248; image.height = 490;
@@ -70,7 +81,7 @@ try {
     view(character, compiled, manifest.views.character); view(head, compiled, manifest.views.head);
     if (guides.checked) { drawGuides(character, manifest.views.character); drawGuides(head, manifest.views.head); }
     const resolved = resolveFixedSelection(manifest, selection.selected);
-    status.textContent = `${resolved.clothing.label} · ${selection.showEyes ? resolved.eye_set.label : 'ซ่อนชุดดวงตา · เก็บชุดที่เลือกไว้'} · ${resolved.face_set?.label || 'ใบหน้าเดิม'} · ${selection.showHair ? 'ใส่ผมเดิม' : 'ถอดผม'}`;
+    status.textContent = `${resolved.clothing.label} · ${selection.showEyes ? resolved.eye_set.label : 'ซ่อนชุดดวงตา'} · ${resolved.face_set?.label || 'ใบหน้าเดิม'} · ${selection.showHair ? resolved.hair.label : 'ถอดผม'} · ${resolved.hat?.label||'ไม่ใส่หมวก'}`;
     character.dataset.selected = JSON.stringify(selection.selected);
     character.dataset.template = manifest.template;
     character.dataset.origin = JSON.stringify(manifest.origin);
@@ -82,20 +93,26 @@ try {
       view(card.image, compiled, manifest.views.character);
       card.card.setAttribute('aria-pressed', String(card.item.id === resolved.clothing.id));
     }
+    for(const card of headwearCards){
+      const plan=fixedPlan(manifest,{...selection.selected,hair:card.hair.id,hat:card.hat?.id||null},{...selection,showHair:true});
+      drawPreparedFrame(compiled,{plan,images:plan.layers.map(l=>load(l.url))});view(card.image,compiled,manifest.views.head);
+      card.card.setAttribute('aria-pressed',String(selection.showHair&&card.hair.id===resolved.hair.id&&(card.hat?.id||null)===(resolved.hat?.id||null)));
+    }
   }
   showHair.addEventListener('change', () => { selection.showHair = showHair.checked; render(); });
   showEyes.addEventListener('change', () => { selection.showEyes = showEyes.checked; render(); });
   guides.addEventListener('change', render);
-  document.querySelector('#fixed-reset').addEventListener('click', () => { selection.reset(); eyeSelect.value = faceSelect.value = clothingSelect.value = ''; showEyes.checked = showHair.checked = true; render(); });
+  document.querySelector('#fixed-reset').addEventListener('click', () => { selection.reset(); eyeSelect.value = faceSelect.value = clothingSelect.value = hairSelect.value = hatSelect.value = ''; showEyes.checked = showHair.checked = true; render(); });
   render();
   const titles = {head_template: 'โครงหัวเดิม', eye_set: 'ชุดดวงตา', face_set: 'ชุดใบหน้า', hair: 'ผมเดิม', clothing: 'ชุดเดิม'};
   for (const layer of [{slot: 'head_template', file: manifest.head.file, label: ''}, ...manifest.items]) {
     const figure = document.createElement('figure'), image = document.createElement('canvas');
-    const rect = layer.slot === 'clothing' ? manifest.views.character : layer.slot === 'hair' ? manifest.views.head : manifest.views.catalogHead;
+    const rect = layer.slot === 'clothing' ? manifest.views.character : ['hair','hat'].includes(layer.slot) ? manifest.views.head : manifest.views.catalogHead;
     image.width = rect[2]; image.height = rect[3]; view(image, images.get(`/fixed-assets/${layer.file}`), rect);
     const title = document.createElement('figcaption'); title.textContent = layer.label || titles[layer.slot];
     figure.append(image, title); document.querySelector('#fixed-layers').append(figure);
   }
+  await mountFrontMotion(manifest,selection);
 } catch (error) {
   status.textContent = error.message; status.classList.add('errors');
 }

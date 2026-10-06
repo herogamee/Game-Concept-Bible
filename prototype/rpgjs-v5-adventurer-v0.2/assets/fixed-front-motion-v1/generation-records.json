@@ -1,0 +1,270 @@
+{
+  "date": "2026-10-06",
+  "jobs": 21,
+  "records": [
+    {
+      "id": "hair-teal",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-405543e4-2fc5-4299-9666-f819e1da7fab.png",
+      "retainedSource": "assets/fixed-template-v1/hair-teal-generated.png",
+      "exactPromptFile": "assets/fixed-template-v1/hair-teal-PROMPT.txt",
+      "references": [
+        "assets/fixed-template-v1/head-template.png"
+      ],
+      "status": "used registered overlay"
+    },
+    {
+      "id": "hair-silver-curls",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-b996530c-f34b-4b26-9ab5-0bdbac910eb5.png",
+      "retainedSource": "assets/fixed-template-v1/hair-silver-curls-generated.png",
+      "exactPromptFile": "assets/fixed-template-v1/hair-silver-curls-PROMPT.txt",
+      "references": [
+        "assets/fixed-template-v1/head-template.png"
+      ],
+      "status": "used registered overlay"
+    },
+    {
+      "id": "hat-adventurer",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-80b350c8-4d8e-42e1-82f3-d4dda3cbe900.png",
+      "retainedSource": "assets/fixed-template-v1/hat-adventurer-generated.png",
+      "exactPromptFile": "assets/fixed-template-v1/hat-adventurer-PROMPT.txt",
+      "references": [
+        "assets/fixed-template-v1/head-template.png"
+      ],
+      "status": "unused cap sits too low"
+    },
+    {
+      "id": "hat-second",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-58be3e72-7699-45d0-bb1f-d737c7bccb57.png",
+      "retainedSource": "assets/fixed-template-v1/hat-adventurer-second-generated.png",
+      "exactPromptFile": "assets/fixed-template-v1/hat-adventurer-correction-PROMPT.txt",
+      "references": [
+        "assets/fixed-template-v1/head-template.png",
+        "assets/fixed-template-v1/hat-adventurer-generated.png"
+      ],
+      "status": "unused cap still too low"
+    },
+    {
+      "id": "hat-final",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-6bd5ea64-e03e-40bb-9412-2b79f77e79d4.png",
+      "retainedSource": "assets/fixed-template-v1/hat-adventurer-corrected-generated.png",
+      "exactPromptFile": "assets/fixed-template-v1/hat-adventurer-final-PROMPT.txt",
+      "references": [
+        "assets/fixed-template-v1/hat-adventurer-second-generated.png",
+        "assets/fixed-template-v1/head-template.png"
+      ],
+      "status": "used registered overlay"
+    },
+    {
+      "id": "atlas-first",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-456ba5de-cad5-43a4-9f01-350c2c8c4cee.png",
+      "retainedSource": "assets/fixed-front-motion-v1/traveler-first-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/traveler-PROMPT.txt",
+      "references": [
+        "placement-guide.png",
+        "../character-master/head-hair/assembled.png"
+      ],
+      "status": "unused atlas; pose size/neck/grid drift"
+    },
+    {
+      "id": "atlas-second",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-ac21487a-c9d5-4606-867e-eaab1385c347.png",
+      "retainedSource": "assets/fixed-front-motion-v1/traveler-second-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/traveler-correction-PROMPT.txt",
+      "references": [
+        "traveler-first-generated.png",
+        "placement-guide.png"
+      ],
+      "status": "unused atlas; pose size/neck/grid drift"
+    },
+    {
+      "id": "atlas-body",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-768ae039-4f0f-4e08-991e-078903f22f21.png",
+      "retainedSource": "assets/fixed-front-motion-v1/traveler-body-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/traveler-body-PROMPT.txt",
+      "references": [
+        "body-only-guide.png"
+      ],
+      "status": "unused atlas; pose size/neck/grid drift"
+    },
+    {
+      "id": "left-contact-traveler",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-7b9a85a9-7265-48ca-87b7-cb934ca934e3.png",
+      "retainedSource": "assets/fixed-front-motion-v1/left-contact-traveler-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/left-contact-traveler-PROMPT.txt",
+      "references": [
+        "assets/character-master/head-hair/bald-edit-master.png"
+      ],
+      "status": "used body pose; source job name may differ from final anatomical phase"
+    },
+    {
+      "id": "right-passing-traveler",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-1d384056-675a-4ffc-a3f6-5890b2796181.png",
+      "retainedSource": "assets/fixed-front-motion-v1/right-passing-traveler-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/right-passing-traveler-PROMPT.txt",
+      "references": [
+        "assets/character-master/head-hair/bald-edit-master.png"
+      ],
+      "status": "used body pose; source job name may differ from final anatomical phase"
+    },
+    {
+      "id": "right-contact-traveler",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-aaa8a0b0-8ac7-447d-b77c-c3894881d12c.png",
+      "retainedSource": "assets/fixed-front-motion-v1/right-contact-traveler-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/right-contact-traveler-PROMPT.txt",
+      "references": [
+        "assets/character-master/head-hair/bald-edit-master.png"
+      ],
+      "status": "unused contact leads with wrong foot"
+    },
+    {
+      "id": "left-passing-traveler",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-b51a40e8-8a9c-4d91-9c01-ce8d640d2649.png",
+      "retainedSource": "assets/fixed-front-motion-v1/left-passing-traveler-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/left-passing-traveler-PROMPT.txt",
+      "references": [
+        "assets/character-master/head-hair/bald-edit-master.png"
+      ],
+      "status": "used body pose; source job name may differ from final anatomical phase"
+    },
+    {
+      "id": "right-contact-corrected-traveler",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-a9aa9cb8-4704-4c69-a0f1-1dd2c4754122.png",
+      "retainedSource": "assets/fixed-front-motion-v1/right-contact-corrected-traveler-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/right-contact-corrected-traveler-PROMPT.txt",
+      "references": [
+        "assets/fixed-front-motion-v1/right-contact-traveler-generated.png"
+      ],
+      "status": "used left-foot contact body pose"
+    },
+    {
+      "id": "left-contact-knight",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-df5426f5-77fb-440b-9270-7fbc06e6192c.png",
+      "retainedSource": "assets/fixed-front-motion-v1/left-contact-knight-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/left-contact-knight-PROMPT.txt",
+      "references": [
+        "assets/fixed-front-motion-v1/left-contact-traveler-generated.png",
+        "assets/fixed-template-v1/clothing-knight-generated.png"
+      ],
+      "status": "used corresponding outfit pose"
+    },
+    {
+      "id": "left-contact-mage",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-e120c09d-85dc-47ac-abdf-bd7c76cb95eb.png",
+      "retainedSource": "assets/fixed-front-motion-v1/left-contact-mage-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/left-contact-mage-PROMPT.txt",
+      "references": [
+        "assets/fixed-front-motion-v1/left-contact-traveler-generated.png",
+        "assets/fixed-template-v1/clothing-mage-generated.png"
+      ],
+      "status": "used corresponding outfit pose"
+    },
+    {
+      "id": "right-passing-knight",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-65b2031d-98b3-46d7-a076-d9ae63ac129c.png",
+      "retainedSource": "assets/fixed-front-motion-v1/right-passing-knight-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/right-passing-knight-PROMPT.txt",
+      "references": [
+        "assets/fixed-front-motion-v1/right-passing-traveler-generated.png",
+        "assets/fixed-template-v1/clothing-knight-generated.png"
+      ],
+      "status": "used corresponding outfit pose"
+    },
+    {
+      "id": "right-passing-mage",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-9fbebafe-2424-4ca0-91d0-fabc4f67fc60.png",
+      "retainedSource": "assets/fixed-front-motion-v1/right-passing-mage-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/right-passing-mage-PROMPT.txt",
+      "references": [
+        "assets/fixed-front-motion-v1/right-passing-traveler-generated.png",
+        "assets/fixed-template-v1/clothing-mage-generated.png"
+      ],
+      "status": "used corresponding outfit pose"
+    },
+    {
+      "id": "left-passing-knight",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-5d8295f9-3842-49a8-9255-01195012e1e1.png",
+      "retainedSource": "assets/fixed-front-motion-v1/left-passing-knight-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/left-passing-knight-PROMPT.txt",
+      "references": [
+        "assets/fixed-front-motion-v1/left-passing-traveler-generated.png",
+        "assets/fixed-template-v1/clothing-knight-generated.png"
+      ],
+      "status": "used corresponding outfit pose"
+    },
+    {
+      "id": "left-passing-mage",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-8e10bc7e-6613-418d-8ff3-d32c4edc3859.png",
+      "retainedSource": "assets/fixed-front-motion-v1/left-passing-mage-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/left-passing-mage-PROMPT.txt",
+      "references": [
+        "assets/fixed-front-motion-v1/left-passing-traveler-generated.png",
+        "assets/fixed-template-v1/clothing-mage-generated.png"
+      ],
+      "status": "used corresponding outfit pose"
+    },
+    {
+      "id": "right-contact-corrected-knight",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-ba79b722-02d9-4534-bc8c-861918ea6081.png",
+      "retainedSource": "assets/fixed-front-motion-v1/right-contact-corrected-knight-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/right-contact-corrected-knight-PROMPT.txt",
+      "references": [
+        "assets/fixed-front-motion-v1/right-contact-corrected-traveler-generated.png",
+        "assets/fixed-template-v1/clothing-knight-generated.png"
+      ],
+      "status": "used corresponding outfit pose"
+    },
+    {
+      "id": "right-contact-corrected-mage",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:\\Users\\Gamee\\.codex\\generated_images\\01a10f4c-08c6-74b0-a73d-a7aa1e81e592\\exec-91ecc382-23b1-4a09-aeb1-6271835562fb.png",
+      "retainedSource": "assets/fixed-front-motion-v1/right-contact-corrected-mage-generated.png",
+      "exactPromptFile": "assets/fixed-front-motion-v1/right-contact-corrected-mage-PROMPT.txt",
+      "references": [
+        "assets/fixed-front-motion-v1/right-contact-corrected-traveler-generated.png",
+        "assets/fixed-template-v1/clothing-mage-generated.png"
+      ],
+      "status": "used corresponding outfit pose"
+    }
+  ]
+}

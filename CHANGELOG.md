@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Hair/cap compatibility and front animated wardrobe
+
+- Add two registered original hairstyles and one cap; apply the same upper-hair coverage rule and restore selected hair on cap removal. Preserve exact prompts/raw outputs and unused cap attempts.
+- Author four separate front walk key poses and the same knight/mage designs for every pose, after rejecting three misregistered whole-sheet attempts and repairing a wrong-foot contact. Pack common384×512 frames with a template-wide mapping; original head categories remain independent and generated pose heads are discarded. Source-specific limb protection excludes disconnected garment pixels.
+- Add stand/walk transitions, slow playback and frame inspection to `/fixed-template`; equip/reset keeps the motion phase. Pass162 headwear looks,810 pose compositions, neck/body fixtures, coverage rejection, syntax/routes and actual browser behavior. Preserve v0.1, existing labs and playable saves/engine APIs. Four-pose cadence, foot support, sleeve polish, owner acceptance, other actions and measured production scale remain pending.
+
 ## 2026-10-06 — Two integrated clothing sets on the fixed front template
 
 - Create exactly two original ImageGen outfit edits: novice knight and novice mage, each combining top, shorts and boots. Preserve both source PNGs and exact prompts; retain the original default outfit.

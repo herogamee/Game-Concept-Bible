@@ -67,6 +67,20 @@ const clothes = [
   {id: 'clothing-knight', label: 'ชุดอัศวินฝึกหัด'},
   {id: 'clothing-mage', label: 'ชุดนักเวทฝึกหัด'}
 ];
+const newHair = [{id:'hair-teal',label:'ผมปัดข้างสีฟ้า'}, {id:'hair-silver-curls',label:'ผมหยักศกสีเงิน'}];
+for (const item of newHair) {
+  await source(`${dir}/${item.id}-generated.png`);
+  await copyFile(`${dir}/${item.id}-generated.png`,`${dir}/${item.id}.png`);
+}
+await source(`${dir}/hat-adventurer-corrected-generated.png`);
+await copyFile(`${dir}/hat-adventurer-corrected-generated.png`,`${dir}/hat-adventurer.png`);
+// One authored hat policy for all hairstyles: keep fringe below the same cut.
+// Selected hairstyle is preserved; removing the cap restores its full pixels.
+for(const id of ['hair-chestnut',...newHair.map(i=>i.id)]) {
+  const input=await source(`${dir}/${id}.png`);
+  input.data.fill(0,0,width*310*4);
+  await writeFile(`${dir}/${id}-under-hat.png`,writePixels(input).toBuffer('image/png'));
+}
 for (const item of clothes) {
   const input = await source(`${dir}/${item.id}-generated.png`);
   const pixels = canvas().getContext('2d').createImageData(width, height);
@@ -117,17 +131,20 @@ const manifest = {
   anchors: {head: [625, 357], eyeLeft: [534, 407], eyeRight: [704, 407], mouth: [625, 487], neck: [625, 543], ground: [625, 1214]},
   views: {character: [320, 15, 620, 1225], head: [320, 15, 620, 540], catalogHead: [390, 170, 450, 380]},
   head: {file: 'head-template.png'},
-  defaults: {eye_set: 'eyes-amber', face_set: null, hair: 'hair-chestnut', clothing: 'clothing-traveler'},
+  defaults: {eye_set: 'eyes-amber', face_set: null, hair: 'hair-chestnut', clothing: 'clothing-traveler', hat:null},
   items: [
     ...sources.map(([id, slot, , , label]) => ({id, slot, file: `${id}.png`, label})),
     {id: 'hair-chestnut', slot: 'hair', file: 'hair-chestnut.png', label: 'ผมน้ำตาลเดิม'},
+    ...newHair.map(item=>({...item,slot:'hair',file:`${item.id}.png`})),
+    {id:'hat-adventurer',slot:'hat',file:'hat-adventurer.png',label:'หมวกนักผจญภัย'},
     {id: 'clothing-traveler', slot: 'clothing', file: 'clothing-traveler.png', label: 'ชุดนักเดินทางเดิม'},
     ...clothes.map(item => ({...item, slot: 'clothing', file: `${item.id}.png`}))
-  ].map(item => ({...item, template: 'fixed-front-v1', pose: 'stand-front'})),
+  ].map(item => ({...item, ...(item.slot==='hair'?{hatFile:`${item.id}-under-hat.png`}:{}), template: 'fixed-front-v1', pose: 'stand-front'})),
   masks: {eye_set: eyeRegions, face_set: faceRegions, featherFraction: .12},
   clothingLayout,
-  layerOrder: ['clothing', 'head_template', 'eye_set', 'face_set', 'hair'],
-  scope: 'One front standing pose. Immutable inherited head and shared protected exposed-body regions. Three eye sets, two cheek-detail face sets, the original outfit and two new clothing bundles; hair removal. Not a naked body, animated wardrobe, full-costume system or validated mass-production pipeline.'
+  hatPolicy:{id:'upper-hair-covered-v1',cutY:310,description:'All hairstyles use the same upper-hair mask when the cap is worn. Fringe remains; selected hair is retained.'},
+  layerOrder: ['clothing', 'head_template', 'eye_set', 'face_set', 'hair', 'hat'],
+  scope: 'Fixed front standing template with three eye sets, two cheek-detail face sets, three clothing bundles, three hairstyles and one cap. Front walking uses a separate authored pose atlas and the same IDs. Owner visual acceptance, other directions/actions, full costumes and production scale remain pending.'
 };
 await writeFile(`${dir}/manifest.json`, JSON.stringify(manifest, null, 2) + '\n');
 
