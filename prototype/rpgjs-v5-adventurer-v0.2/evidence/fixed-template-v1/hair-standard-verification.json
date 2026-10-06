@@ -1,0 +1,110 @@
+{
+  "layout": {
+    "id": "fixed-front-short-hair-v1",
+    "alphaThreshold": 128,
+    "headAxisX": 625,
+    "scalpTopY": 179,
+    "sourceWindow": [
+      320,
+      15,
+      620,
+      510
+    ],
+    "envelope": {
+      "width": [
+        490,
+        570
+      ],
+      "aboveScalp": [
+        55,
+        155
+      ],
+      "maxBottomY": 524
+    },
+    "references": {
+      "head": [
+        625,
+        357
+      ],
+      "scalpTop": [
+        625,
+        179
+      ],
+      "temples": [
+        [
+          462,
+          300
+        ],
+        [
+          788,
+          300
+        ]
+      ],
+      "ears": [
+        [
+          440,
+          435
+        ],
+        [
+          808,
+          435
+        ]
+      ],
+      "neck": [
+        625,
+        543
+      ]
+    },
+    "scope": "Trial envelope for the three current short front hairstyles. Shared skull/registration and cap policy; outer silhouettes vary by style. Not a standard for back/side views, long hair or a production catalog. Owner visual review pending."
+  },
+  "measurements": {
+    "hair-chestnut": {
+      "left": 350,
+      "top": 37,
+      "right": 904,
+      "bottom": 513,
+      "width": 555,
+      "height": 477,
+      "aboveScalp": 142,
+      "pixels": 123690
+    },
+    "hair-teal": {
+      "left": 356,
+      "top": 82,
+      "right": 887,
+      "bottom": 477,
+      "width": 532,
+      "height": 396,
+      "aboveScalp": 97,
+      "pixels": 119765
+    },
+    "hair-silver-curls": {
+      "left": 382,
+      "top": 117,
+      "right": 871,
+      "bottom": 465,
+      "width": 490,
+      "height": 349,
+      "aboveScalp": 62,
+      "pixels": 90421
+    }
+  },
+  "previousBlue": {
+    "left": 389,
+    "top": 166,
+    "right": 848,
+    "bottom": 479,
+    "width": 460,
+    "height": 314,
+    "aboveScalp": 13,
+    "pixels": 73276
+  },
+  "previousBlueRejected": [
+    "width 460 outside 490..570",
+    "crown clearance 13 outside 55..155"
+  ],
+  "allCanvasSizesEqual": true,
+  "faceAndNeckFixturesUncovered": true,
+  "headOriginUnchanged": true,
+  "acceptance": "Front short-hair technical size check only. Owner art acceptance and other view/category standards pending."
+}

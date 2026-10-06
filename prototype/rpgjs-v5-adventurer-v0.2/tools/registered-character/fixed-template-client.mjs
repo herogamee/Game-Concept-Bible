@@ -34,7 +34,7 @@ try {
   for(const hat of [null,...manifest.items.filter(i=>i.slot==='hat')])for(const hair of manifest.items.filter(i=>i.slot==='hair')){
     const card=document.createElement('button');card.type='button';card.className='card';
     const image=document.createElement('canvas');image.width=310;image.height=270;
-    const title=document.createElement('span');title.textContent=`${hair.label} · ${hat?'ใส่หมวก':'ไม่ใส่หมวก'}`;
+    const title=document.createElement('span'),size=manifest.hairLayout.measurements[hair.id];title.textContent=`${hair.label} · ${hat?'ใส่หมวก':`${size.width}×${size.height} px`}`;
     card.setAttribute('aria-label',title.textContent);card.append(image,title);
     card.addEventListener('click',()=>{selection.equip('hair',hair.id);selection.equip('hat',hat?.id||null);selection.showHair=true;showHair.checked=true;hairSelect.value=hair.id;hatSelect.value=hat?.id||'';render();});
     document.querySelector('#fixed-headwear-gallery').append(card);headwearCards.push({card,image,hair,hat});
@@ -55,6 +55,15 @@ try {
   }
   function drawGuides(target, rect) {
     const ctx = target.getContext('2d'); ctx.save(); ctx.strokeStyle = '#246dba'; ctx.lineWidth = 1;
+    const layout = manifest.hairLayout;
+    const map = (x,y) => [(x-rect[0])*target.width/rect[2],(y-rect[1])*target.height/rect[3]];
+    const line = (x1,y1,x2,y2) => {ctx.beginPath();ctx.moveTo(...map(x1,y1));ctx.lineTo(...map(x2,y2));ctx.stroke();};
+    ctx.setLineDash([5,4]);
+    line(320,layout.scalpTopY,940,layout.scalpTopY);
+    line(layout.headAxisX,15,layout.headAxisX,543);
+    ctx.strokeStyle='#b5722c';
+    for(const clearance of layout.envelope.aboveScalp)line(340,layout.scalpTopY-clearance,920,layout.scalpTopY-clearance);
+    ctx.setLineDash([]);ctx.strokeStyle='#246dba';
     for (const [name, point] of Object.entries(manifest.anchors)) {
       const x = (point[0] - rect[0]) * target.width / rect[2], y = (point[1] - rect[1]) * target.height / rect[3];
       ctx.beginPath(); ctx.moveTo(x - 7, y); ctx.lineTo(x + 7, y); ctx.moveTo(x, y - 7); ctx.lineTo(x, y + 7); ctx.stroke();
@@ -81,6 +90,8 @@ try {
     view(character, compiled, manifest.views.character); view(head, compiled, manifest.views.head);
     if (guides.checked) { drawGuides(character, manifest.views.character); drawGuides(head, manifest.views.head); }
     const resolved = resolveFixedSelection(manifest, selection.selected);
+    const hairSize=manifest.hairLayout.measurements[resolved.hair.id];
+    document.querySelector('#fixed-hair-size').textContent=`${resolved.hair.label}: ${hairSize.width} × ${hairSize.height} px · ยอดผมเหนือกระหม่อม ${hairSize.aboveScalp} px · หัวและจุดวางเดิม`;
     status.textContent = `${resolved.clothing.label} · ${selection.showEyes ? resolved.eye_set.label : 'ซ่อนชุดดวงตา'} · ${resolved.face_set?.label || 'ใบหน้าเดิม'} · ${selection.showHair ? resolved.hair.label : 'ถอดผม'} · ${resolved.hat?.label||'ไม่ใส่หมวก'}`;
     character.dataset.selected = JSON.stringify(selection.selected);
     character.dataset.template = manifest.template;

@@ -58,6 +58,12 @@ The [earlier fixed-front proof](evidence/fixed-template-v1/REVIEW.md) demonstrat
 
 The [clothing follow-up](evidence/fixed-template-v1/CLOTHING-REVIEW.md) adds exactly two new shirt/shorts/boot bundles beside the original default, with108 front-standing checks. The later [headwear/front-motion proof](evidence/fixed-front-motion-v1/REVIEW.md) covers three hairstyles, one cap, original stand and four walk key poses with162 looks/810 compositions. It discards failed whole-sheet attempts, preserves exact prompts/sources, and uses source-specific exposed-limb protection shared across outfits. Clothes remain complete dressed-body rasters rather than a fully undressed anatomical master. Gait, foot-support, sleeve boundaries, arbitrary clothing topology, broader action coverage and production throughput remain unverified; the front gait still needs owner art/feel acceptance.
 
+## Front short-hair authoring envelope — trial, 2026-10-06
+
+The owner's size review exposed a separate art gate: equal source canvases/origins do not make painted hair volume consistent. `tools/fixed-hair-template.mjs` now fixes the skull references and checks an envelope for the current three short front hairstyles: full1254×1254 source, origin(0,0), head axis x625/scalp top y179, painted width490–570px and crown clearance55–155px at alpha≥128. It measures item bounds for validation only; it never uses them for scaling or placement. The lab displays measurements and common guides.
+
+Blue hair was repainted from460×314 to532×396px, clearance13→97px, with the immutable head/categories preserved. Its new coherent fringe also differs from the old artwork; no claim of byte-identical fringe preservation is made. A source-specific blue matte removes the generated portrait before export. This limited source extraction and four-edit repair do not validate a production pipeline. Side/back views, long hair and other families need explicit profiles and owner review. See [repair evidence and limits](evidence/fixed-template-v1/HAIR-REVIEW.md).
+
 ## Continuing requirement — customization across every action
 
 The independently selected eye set, face set, hair, clothing and other supported equipment must persist through every supported direction and action: standing, walking, sword attacks, gun shooting and later authored actions. This remains a product requirement, not a claim about the current prototype or every internal DDTank implementation. The fixed-template categories above govern authoring.

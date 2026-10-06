@@ -2,6 +2,8 @@
 
 # Willowbrook — RPGJS v5 Adventurer v0.2
 
+Hair-size repair: the [front short-hair review](evidence/fixed-template-v1/HAIR-REVIEW.md) records the blue overlay change460×314→532×396px and a bounded size envelope shared by the three current front hairstyles. The lab shows actual dimensions and common crown guides; `npm run verify:hair-standard` rejects the previous undersized source. The immutable head and common origin remain fixed. This is a front-only trial standard awaiting owner art review, not validated catalog production.
+
 HD art checkpoint: original clean-outline chibi hero and matching HUD avatar, higher-density NPC/slime/props from preserved masters, and terrain rendered at2× density. World geometry and saved appearance IDs stay compatible. See `evidence/art-hd/REVIEW.md` for actual source resolution, validation and unfinished art scope. Rebuild exports with `npm run assets:parity`.
 
 Bounded RPGJS v5 presentation/control experiment using the original v0.1 artwork. v0.1 remains the default playable until owner review. See `PARITY-REVIEW.md` for current results.

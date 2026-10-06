@@ -8,7 +8,9 @@ The owner authorized two new hairstyles, one hat, and a standing/walking trial t
 - One original neutral front stand and four individually authored front walk key poses, at6fps with a120ms transition. All three clothing IDs cover every enabled pose. Head/eye/face/hair/hat selections share the same original source layers across every frame. These are raster walking poses, not rotations of cut-out limbs or a translated standing PNG.
 - Independent eye sets(3), face states(none/scar/blush), hair(3), hat(none/cap) and clothing(3): **162 visible looks**. Preloaded assets let swaps preserve the motion clock. Slow playback and frame stepping support inspection.
 
-Eight-frame sheet generation failed registration and was replaced with four separate key-pose sources. All three failed sheets, a wrong-foot contact attempt, cap repairs, original outputs and exact prompts remain retained. [Provenance](../../assets/fixed-front-motion-v1/PROVENANCE.md) and [21 generation records](../../assets/fixed-front-motion-v1/generation-records.json) describe actual tool work. This repair effort is evidence against assuming automatic catalog throughput.
+Eight-frame sheet generation failed registration and was replaced with four separate key-pose sources. All three failed sheets, a wrong-foot contact attempt, cap repairs, original outputs and exact prompts remain retained. [Provenance](../../assets/fixed-front-motion-v1/PROVENANCE.md) and [generation records](../../assets/fixed-front-motion-v1/generation-records.json) describe the initial21 jobs and4 subsequent blue-hair repairs. This repair effort is evidence against assuming automatic catalog throughput.
+
+Later hair-size repair: the [front blue-hair review](../fixed-template-v1/HAIR-REVIEW.md) records the larger coherent overlay, shared trial envelope and refreshed cap/walk exports. Earlier browser screenshots below remain the initial checkpoint; [current headwear screenshot](../fixed-template-v1/browser-hair-size.png) and [current size/browser checks](../fixed-template-v1/hair-standard-verification.json) record this revision. The810 pose-composition checks were rerun after the replacement.
 
 ## Technical checks
 

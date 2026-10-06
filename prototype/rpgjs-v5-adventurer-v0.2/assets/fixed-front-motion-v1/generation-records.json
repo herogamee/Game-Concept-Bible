@@ -1,6 +1,6 @@
 {
   "date": "2026-10-06",
-  "jobs": 21,
+  "jobs": 25,
   "records": [
     {
       "id": "hair-teal",
@@ -12,7 +12,7 @@
       "references": [
         "assets/fixed-template-v1/head-template.png"
       ],
-      "status": "used registered overlay"
+      "status": "superseded runtime overlay; retained style/registration reference and undersized regression fixture"
     },
     {
       "id": "hair-silver-curls",
@@ -72,10 +72,14 @@
       "retainedSource": "assets/fixed-front-motion-v1/traveler-first-generated.png",
       "exactPromptFile": "assets/fixed-front-motion-v1/traveler-PROMPT.txt",
       "references": [
+        "assets/fixed-front-motion-v1/placement-guide.png",
+        "assets/character-master/head-hair/assembled.png"
+      ],
+      "status": "unused atlas; pose size/neck/grid drift",
+      "referencePathsAtCall": [
         "placement-guide.png",
         "../character-master/head-hair/assembled.png"
-      ],
-      "status": "unused atlas; pose size/neck/grid drift"
+      ]
     },
     {
       "id": "atlas-second",
@@ -85,10 +89,14 @@
       "retainedSource": "assets/fixed-front-motion-v1/traveler-second-generated.png",
       "exactPromptFile": "assets/fixed-front-motion-v1/traveler-correction-PROMPT.txt",
       "references": [
+        "assets/fixed-front-motion-v1/traveler-first-generated.png",
+        "assets/fixed-front-motion-v1/placement-guide.png"
+      ],
+      "status": "unused atlas; pose size/neck/grid drift",
+      "referencePathsAtCall": [
         "traveler-first-generated.png",
         "placement-guide.png"
-      ],
-      "status": "unused atlas; pose size/neck/grid drift"
+      ]
     },
     {
       "id": "atlas-body",
@@ -98,9 +106,12 @@
       "retainedSource": "assets/fixed-front-motion-v1/traveler-body-generated.png",
       "exactPromptFile": "assets/fixed-front-motion-v1/traveler-body-PROMPT.txt",
       "references": [
-        "body-only-guide.png"
+        "assets/fixed-front-motion-v1/body-only-guide.png"
       ],
-      "status": "unused atlas; pose size/neck/grid drift"
+      "status": "unused atlas; pose size/neck/grid drift",
+      "referencePathsAtCall": [
+        "body-only-guide.png"
+      ]
     },
     {
       "id": "left-contact-traveler",
@@ -265,6 +276,78 @@
         "assets/fixed-template-v1/clothing-mage-generated.png"
       ],
       "status": "used corresponding outfit pose"
+    },
+    {
+      "id": "hair-teal-volume-first",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:/Users/Gamee/.codex/generated_images/01a10f4c-08c6-74b0-a73d-a7aa1e81e592/exec-08f95dc1-9d4b-4b13-8db4-4b77896acd73.png",
+      "retainedSource": "assets/fixed-template-v1/hair-teal-volume-first-generated.png",
+      "exactPromptFile": "assets/fixed-template-v1/hair-teal-volume-PROMPT.txt",
+      "references": [
+        "assets/fixed-template-v1/hair-teal-generated.png",
+        "assets/fixed-template-v1/head-template.png",
+        "assets/fixed-template-v1/hair-teal-volume-guide.png"
+      ],
+      "status": "unused; crown remains too low at y154",
+      "referencePathsAtCall": [
+        "assets/fixed-template-v1/hair-teal.png",
+        "assets/fixed-template-v1/head-template.png",
+        "assets/fixed-template-v1/hair-teal-volume-guide.png"
+      ],
+      "referenceNote": "The earlier hair-teal.png was byte-identical to the retained immutable hair-teal-generated.png at call time. Reference snapshots point to that original; runtime hair-teal.png is now replaced."
+    },
+    {
+      "id": "hair-teal-volume-second",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:/Users/Gamee/.codex/generated_images/01a10f4c-08c6-74b0-a73d-a7aa1e81e592/exec-f5a7461e-79cb-4455-9c22-a7c5357a0715.png",
+      "retainedSource": "assets/fixed-template-v1/hair-teal-volume-second-generated.png",
+      "exactPromptFile": "assets/fixed-template-v1/hair-teal-volume-second-PROMPT.txt",
+      "references": [
+        "assets/fixed-template-v1/hair-teal-volume-filled-guide.png",
+        "assets/fixed-template-v1/hair-teal-generated.png"
+      ],
+      "status": "unused; isolated hair enlarged and displaced; no fitted correction applied",
+      "referencePathsAtCall": [
+        "assets/fixed-template-v1/hair-teal-volume-filled-guide.png",
+        "assets/fixed-template-v1/hair-teal.png"
+      ],
+      "referenceNote": "The earlier hair-teal.png was byte-identical to the retained immutable hair-teal-generated.png at call time. Reference snapshots point to that original; runtime hair-teal.png is now replaced."
+    },
+    {
+      "id": "hair-teal-volume-third",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:/Users/Gamee/.codex/generated_images/01a10f4c-08c6-74b0-a73d-a7aa1e81e592/exec-e28e9d80-c366-424f-8ec0-4843df9b6844.png",
+      "retainedSource": "assets/fixed-template-v1/hair-teal-volume-third-generated.png",
+      "exactPromptFile": "assets/fixed-template-v1/hair-teal-volume-third-PROMPT.txt",
+      "references": [
+        "assets/fixed-template-v1/hair-teal-volume-edit-guide.png",
+        "assets/fixed-template-v1/hair-teal-generated.png"
+      ],
+      "status": "intermediate larger crown source for seam guide; not direct runtime artwork",
+      "referencePathsAtCall": [
+        "assets/fixed-template-v1/hair-teal-volume-edit-guide.png",
+        "assets/fixed-template-v1/hair-teal.png"
+      ],
+      "referenceNote": "The earlier hair-teal.png was byte-identical to the retained immutable hair-teal-generated.png at call time. Reference snapshots point to that original; runtime hair-teal.png is now replaced."
+    },
+    {
+      "id": "hair-teal-volume-seam",
+      "mode": "built-in ImageGen edit",
+      "transparentBackgroundRequested": true,
+      "originalOutput": "C:/Users/Gamee/.codex/generated_images/01a10f4c-08c6-74b0-a73d-a7aa1e81e592/exec-a66f150b-f802-494a-b61e-0bc53ddc6b19.png",
+      "retainedSource": "assets/fixed-template-v1/hair-teal-volume-seam-generated.png",
+      "exactPromptFile": "assets/fixed-template-v1/hair-teal-volume-seam-PROMPT.txt",
+      "references": [
+        "assets/fixed-template-v1/hair-teal-volume-seam-guide.png"
+      ],
+      "status": "used coherent blue hair; source-specific colour matte discards generated head/neck; full fixed canvas and origin retained",
+      "referencePathsAtCall": [
+        "assets/fixed-template-v1/hair-teal-volume-seam-guide.png"
+      ],
+      "referenceNote": "The earlier hair-teal.png was byte-identical to the retained immutable hair-teal-generated.png at call time. Reference snapshots point to that original; runtime hair-teal.png is now replaced."
     }
   ]
 }

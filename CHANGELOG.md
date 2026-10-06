@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Front hairstyle volume and authoring envelope
+
+- Repair the undersized blue hair through original ImageGen edits:460×314→532×396px, crown clearance13→97px. Preserve the original head/registration and earlier sources; retain failed edits and seam trials. Export the coherent revised hair with a source-specific matte, not a fitted scale or a claim of unchanged old fringe pixels.
+- Record fixed skull references and a trial width/crown-height envelope for the three current front short hairstyles. Reject undersized sources during build; display measurements and shared guides in the existing lab. Regenerate standing/hat-compatible/front-motion hair exports.
+- Pass the size gate including rejection of the old source,108 standing cases,162 headwear looks and810 pose compositions; inspect live cap removal during walking and record browser evidence. Owner visual acceptance, other views/styles and mass production remain pending.
+
 ## 2026-10-06 — Hair/cap compatibility and front animated wardrobe
 
 - Add two registered original hairstyles and one cap; apply the same upper-hair coverage rule and restore selected hair on cap removal. Preserve exact prompts/raw outputs and unused cap attempts.

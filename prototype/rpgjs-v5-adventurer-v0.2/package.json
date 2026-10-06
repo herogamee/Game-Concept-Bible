@@ -6,6 +6,7 @@
     "assets:fixed-template": "node tools/build-fixed-template.mjs",
     "verify:fixed-template": "node tools/registered-character/verify-fixed-template.mjs",
     "verify:headwear": "node tools/registered-character/verify-headwear.mjs",
+    "verify:hair-standard": "node tools/registered-character/verify-hair-standard.mjs",
     "assets:front-motion": "node tools/build-front-motion.mjs",
     "verify:front-motion": "node tools/registered-character/verify-front-motion.mjs",
     "assets:walk-side": "node tools/build-walk-side.mjs",

@@ -2,6 +2,7 @@
 import {createCanvas, loadImage, GlobalFonts, Path2D} from '@napi-rs/canvas';
 import {readFile, writeFile, copyFile, mkdir} from 'node:fs/promises';
 import {clothingLayout} from './fixed-clothing-template.mjs';
+import {fixedHairLayout, blueHairOwnsPixel, measureHair, hairEnvelopeFailures} from './fixed-hair-template.mjs';
 
 const dir = 'assets/fixed-template-v1';
 const evidence = 'evidence/fixed-template-v1';
@@ -68,9 +69,33 @@ const clothes = [
   {id: 'clothing-mage', label: 'ชุดนักเวทฝึกหัด'}
 ];
 const newHair = [{id:'hair-teal',label:'ผมปัดข้างสีฟ้า'}, {id:'hair-silver-curls',label:'ผมหยักศกสีเงิน'}];
+const preparedHair = new Map();
 for (const item of newHair) {
-  await source(`${dir}/${item.id}-generated.png`);
-  await copyFile(`${dir}/${item.id}-generated.png`,`${dir}/${item.id}.png`);
+  if (item.id === 'hair-teal') {
+    const input = await source(`${dir}/hair-teal-volume-seam-generated.png`);
+    const output = canvas().getContext('2d').createImageData(width, height);
+    for (let p = 0; p < width * height; p++) {
+      const i = p * 4;
+      if (blueHairOwnsPixel(p % width, Math.floor(p / width), input.data[i], input.data[i + 1], input.data[i + 2])) {
+        output.data.set(input.data.subarray(i, i + 4), i);
+      }
+    }
+    preparedHair.set(item.id, output);
+  } else {
+    preparedHair.set(item.id, await source(`${dir}/${item.id}-generated.png`));
+  }
+}
+const hairMeasurements = {};
+for (const id of ['hair-chestnut', ...newHair.map(i => i.id)]) {
+  const input = preparedHair.get(id) || await source(`${dir}/${id}.png`);
+  hairMeasurements[id] = measureHair(input.data, width, height);
+  const failures = hairEnvelopeFailures(hairMeasurements[id]);
+  if (failures.length) throw new Error(`${id} fails front short-hair trial: ${failures.join('; ')}`);
+}
+// Publish only after every hair candidate passes the authored envelope.
+for (const item of newHair) {
+  if (item.id === 'hair-teal') await writeFile(`${dir}/${item.id}.png`, writePixels(preparedHair.get(item.id)).toBuffer('image/png'));
+  else await copyFile(`${dir}/${item.id}-generated.png`, `${dir}/${item.id}.png`);
 }
 await source(`${dir}/hat-adventurer-corrected-generated.png`);
 await copyFile(`${dir}/hat-adventurer-corrected-generated.png`,`${dir}/hat-adventurer.png`);
@@ -142,6 +167,7 @@ const manifest = {
   ].map(item => ({...item, ...(item.slot==='hair'?{hatFile:`${item.id}-under-hat.png`}:{}), template: 'fixed-front-v1', pose: 'stand-front'})),
   masks: {eye_set: eyeRegions, face_set: faceRegions, featherFraction: .12},
   clothingLayout,
+  hairLayout: {...fixedHairLayout, measurements: hairMeasurements},
   hatPolicy:{id:'upper-hair-covered-v1',cutY:310,description:'All hairstyles use the same upper-hair mask when the cap is worn. Fringe remains; selected hair is retained.'},
   layerOrder: ['clothing', 'head_template', 'eye_set', 'face_set', 'hair', 'hat'],
   scope: 'Fixed front standing template with three eye sets, two cheek-detail face sets, three clothing bundles, three hairstyles and one cap. Front walking uses a separate authored pose atlas and the same IDs. Owner visual acceptance, other directions/actions, full costumes and production scale remain pending.'
