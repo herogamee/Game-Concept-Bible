@@ -6,6 +6,12 @@ Canonical design repository for the original fantasy **Adventurer Life RPG** pro
 
 The RPGJS candidate now has a **[Character Lab](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-LAB.md)** at `http://localhost:5173/lab.html` for frame inspection, local costume/face layers, sword timing and actual-game Slime testing with a separate save. Gait art and class gameplay remain pending review/development.
 
+The local modular limb experiment failed owner visual review. Its [review record](prototype/rpgjs-v5-adventurer-v0.2/evidence/modular/REVIEW.md) includes a front-only continuous-body and head/hair registration study; these review PNGs are not integrated animation assets or an accepted replacement for the playable character.
+
+A [new complete front character candidate](prototype/rpgjs-v5-adventurer-v0.2/evidence/character-master/front-v1-review.png) starts the art review again from one coherent drawing. Its [source and provenance](prototype/rpgjs-v5-adventurer-v0.2/assets/character-master/PROVENANCE.md) record the generated PNG and exact prompt. A [first original head/hair proof](prototype/rpgjs-v5-adventurer-v0.2/evidence/character-master/head-hair/REVIEW.md) now toggles one separate hairstyle at `http://127.0.0.1:5199/original`, using a reconstructed scalp and three fixed-frame layers. Owner design review, alternate hairstyles/clothing and animation remain pending.
+
+A separate [registered-layer web proof](prototype/rpgjs-v5-adventurer-v0.2/evidence/registered-character/REVIEW.md) now changes face, hair and clothing using local 4.0 reference images without part fitting. Sixteen combinations and male/female Godot-reference pixel comparisons were checked. It reads commercial reference images externally; the original-art wardrobe remains unresolved.
+
 The player begins as an ordinary **F-rank adventurer**, chooses a profession, joins an Adventurer Guild, accepts ranked quests, travels through towns and villages, forms relationships and parties, grows toward S-rank, and explores a mysterious 100-floor dungeon.
 
 The core fantasy is not "be the chosen hero immediately." It is:

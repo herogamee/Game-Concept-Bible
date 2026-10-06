@@ -1,0 +1,123 @@
+{
+  "scope": "one original front-pose head/hair pair; visual owner review pending",
+  "canvas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "layers": [
+    {
+      "slot": "body",
+      "x": 0,
+      "y": 0,
+      "source": {
+        "x": 0,
+        "y": 0,
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "slot": "face",
+      "x": 0,
+      "y": 0,
+      "source": {
+        "x": 0,
+        "y": 0,
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
+      "slot": "hair",
+      "x": 0,
+      "y": 0,
+      "source": {
+        "x": 0,
+        "y": 0,
+        "width": 1254,
+        "height": 1254
+      }
+    }
+  ],
+  "immutableZones": [
+    {
+      "zone": "leftIris",
+      "rect": {
+        "x": 518,
+        "y": 400,
+        "width": 48,
+        "height": 45
+      },
+      "hash": "16f24e47d2106cd58c7438621a79cfebd0f47fcad56341f39cf0f51bb68c667a",
+      "identical": true,
+      "nonzeroHairPixels": 0
+    },
+    {
+      "zone": "rightIris",
+      "rect": {
+        "x": 686,
+        "y": 400,
+        "width": 48,
+        "height": 45
+      },
+      "hash": "c642aa13bde6f97b5e349b66180f098ebd126acf9844e47521295a1f3ce4a8f8",
+      "identical": true,
+      "nonzeroHairPixels": 0
+    },
+    {
+      "zone": "leftEarCore",
+      "rect": {
+        "x": 418,
+        "y": 429,
+        "width": 20,
+        "height": 38
+      },
+      "hash": "04d03ed1ff986ae61852e5658efbcb0a1bb9a9d303d917f5d4f2bb8e7e1c4c56",
+      "identical": true,
+      "nonzeroHairPixels": 0
+    },
+    {
+      "zone": "rightEarCore",
+      "rect": {
+        "x": 801,
+        "y": 429,
+        "width": 20,
+        "height": 38
+      },
+      "hash": "1929e80dd92601355ac8ce4c70810a2c532cc8d9a20dae1546d7ac6dec35e1ad",
+      "identical": true,
+      "nonzeroHairPixels": 0
+    },
+    {
+      "zone": "mouth",
+      "rect": {
+        "x": 573,
+        "y": 475,
+        "width": 105,
+        "height": 42
+      },
+      "hash": "24fc577ec96632076b3d938e6616d012a3ff39065a29f798af2dcf7d80be49d0",
+      "identical": true,
+      "nonzeroHairPixels": 0
+    },
+    {
+      "zone": "neckAndBody",
+      "rect": {
+        "x": 0,
+        "y": 543,
+        "width": 1254,
+        "height": 711
+      },
+      "hash": "9415d28ce1d21030f8439144305fe710543348cff286f036610c234bdc728710",
+      "identical": true,
+      "nonzeroHairPixels": 0
+    }
+  ],
+  "roundtripToOriginal": {
+    "meanPremultipliedChannelDifference": 0.42320654047993883,
+    "maxPremultipliedChannelDifference": 251.01568627450982,
+    "pixelsOverDifference3": 24202,
+    "note": "Not pixel-identical: generated bald underpainting and authored segmentation alter some head/edge pixels; body retained from original."
+  },
+  "repeatEquipStable": true
+}

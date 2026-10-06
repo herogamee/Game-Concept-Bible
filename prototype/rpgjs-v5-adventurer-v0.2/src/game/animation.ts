@@ -1,5 +1,6 @@
 import { Direction, Animation } from '@rpgjs/common';
 import props from './props.json';
+import {wardrobeForGraphic} from './modular-rig';
 export type CharacterAnim = 'idle'|'walk'|'slash'|'thrust'|'shoot'|'spellcast'|'hurt'|'dead';
 export type Facing = 'north'|'west'|'south'|'east';
 export const facingVector = { north:{x:0,y:-1},west:{x:-1,y:0},south:{x:0,y:1},east:{x:1,y:0} };
@@ -21,6 +22,11 @@ export function paintedSheet() {
       }};
   }
   return {id:'adventurer',image:'willowbrook/hd/chibi-hero-v2.png',width:1536,height:1536,rectWidth:192,rectHeight:192,displayScale:1/3,framesWidth:8,framesHeight:8,anchor:[.5,.625],opacity:1,textures};
+}
+/** Resolve only catalog combinations requested by synchronized appearance. */
+export function modularSheet(id:string){
+  if(!wardrobeForGraphic(id))return undefined;
+  return {...paintedSheet(),id,image:`modular/${id}.png`};
 }
 export function paintedSupportingSheets() {
   const animated=(id:string,image:string,size:number,columns:number,rows:number,standRow=0,walkRow=0)=>({

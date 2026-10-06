@@ -8,6 +8,8 @@ Bounded RPGJS v5 presentation/control experiment using the original v0.1 artwork
 
 Current checkpoint: selectable smooth/native-density or original pixel rendering; a synchronized, saved cosmetic schema for body/face/eyes/pants/shoes/shirt/hair/hat/weapon. Real separate costume layers are not authored yet. Read `CHARACTER-APPEARANCE.md`, `../../PROJECT-STATUS.md` and `../../DEVELOPING.md` for the precise scope and portable setup.
 
+Separate original-art study: [the first head/hair proof](evidence/character-master/head-hair/REVIEW.md) runs at `http://127.0.0.1:5199/original` through `npm run lab:registered -- D:/Codex/DDtank 5199`. It toggles one hairstyle using three registered front-pose layers, with a reconstructed scalp and unchanged dressed body. It is not integrated into the playable appearance; alternate hairstyles/outfits, animation and owner visual acceptance remain pending. Rebuild with `npm run assets:head-hair` and verify with `npm run verify:head-hair`.
+
 Camera/movement follow-up: settings now save camera distance (80–150%), vertical framing and steady/follow behavior. Desktop default distance is 125%; the view fits the authored map. WASD/arrows support normalized diagonals; click routes continue through intermediate waypoints; static scenery is anchored to authored coordinates. See `evidence/camera/REVIEW.md` for measured results and limits.
 
 Responsive checkpoint: continuous walking cadence, larger overhead labels, compact action dock, scrollable responsive dialogs, saved UI scale and a touch joystick foundation. See `MOBILE-FOUNDATION.md` for device targets and remaining acceptance checks.

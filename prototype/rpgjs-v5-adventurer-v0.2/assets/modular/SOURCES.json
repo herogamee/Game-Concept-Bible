@@ -1,0 +1,58 @@
+[
+  {
+    "file": "base-parts.png",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 842354,
+    "sha256": "612be0f0efd4c753f19effffc9301ce1155248b272210c9bad8c690ec70312e4"
+  },
+  {
+    "file": "hair-chestnut.png",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1113298,
+    "sha256": "28cef8e7ab9291eaa0807d65ce18fdbe0303caead2c191213ead473bb9d07cbc"
+  },
+  {
+    "file": "hair-silver.png",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1223623,
+    "sha256": "db5407fba4e7dda9926a01ce4e70a75d841be3fb87d82a2ceafdf8202ffca6d1"
+  },
+  {
+    "file": "boots.png",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 725174,
+    "sha256": "3fa6caf29ef296f1fe1d9fbfd229154b72fba6625b400e62f5e8a38d6ef5b6cc"
+  },
+  {
+    "file": "hat.png",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 864564,
+    "sha256": "a0f873161e2715f0b7e5f90e02d161b3e3f039087504ee041778d4bc4cad0182"
+  },
+  {
+    "file": "shirt-traveler.png",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1041656,
+    "sha256": "84321772a414d2dd770a8a7f9d8f5252756560cde7abea8db34c4cd660ba5f11"
+  },
+  {
+    "file": "shirt-blue.png",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 1055618,
+    "sha256": "2f0ec92066db355e97021d49d0e4f7216effef2b8f0cfb1ce4628fe5089c852a"
+  },
+  {
+    "file": "sword.png",
+    "width": 1024,
+    "height": 1536,
+    "bytes": 1095655,
+    "sha256": "3a6207ceb50b9787fe426f12692b14d8cae3689274a275a6daf78681a937379e"
+  }
+]

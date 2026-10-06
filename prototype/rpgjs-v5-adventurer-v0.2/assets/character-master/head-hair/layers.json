@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "width": 1254,
+  "height": 1254,
+  "origin": {
+    "x": 0,
+    "y": 0
+  },
+  "master": "../front-v1.png",
+  "layers": [
+    {
+      "slot": "body",
+      "file": "body-traveler.png"
+    },
+    {
+      "slot": "face",
+      "file": "head-face.png"
+    },
+    {
+      "slot": "hair",
+      "file": "hair-chestnut.png"
+    }
+  ],
+  "authoring": {
+    "headBodySplitY": 543,
+    "mask": "skin-seeded enclosed-feature mask plus canonical hair supports; source pixels unchanged"
+  },
+  "scope": "one front standing pose, one hairstyle; owner review pending"
+}

@@ -1,5 +1,5 @@
 import {Direction} from '@rpgjs/common';
-import {paintedSheet,paintedSupportingSheets,type Facing,type CharacterAnim} from '../game/animation';
+import {paintedSheet,paintedSupportingSheets,modularSheet,type Facing,type CharacterAnim} from '../game/animation';
 export type LabAction=CharacterAnim;
 export interface LabFrame {x:number;y:number;atMs:number}
 export interface LabClip {frames:LabFrame[];durationMs:number;fps:number;available:boolean;message:string}
@@ -9,6 +9,7 @@ const hero=paintedSheet(),support=paintedSupportingSheets();
 const oldSheet=(hd:boolean)=>({...hero,image:hd?'willowbrook/hd/adventurer.png':'willowbrook/adventurer.png',width:hd?1024:512,height:hd?1024:512,rectWidth:hd?128:64,rectHeight:hd?128:64,displayScale:hd?.5:1,textures:Object.fromEntries(Object.entries(hero.textures).map(([key,value])=>[key,{...(value as any),offset:{x:0,y:(value as any).offset.y?(hd?512:256):0}}]))});
 export const labAssets:LabAsset[]=[{id:'chibi',name:'Chibi v2',sheet:hero,supported:['idle','walk','slash'],foot:172},{id:'painted',name:'Painted v1 · 64px',sheet:oldSheet(false),supported:['idle','walk','slash']},{id:'painted-hd',name:'Painted v1 · HD',sheet:oldSheet(true),supported:['idle','walk','slash']},...['elder','merchant','guide'].map(id=>({id,name:{elder:'ผู้ใหญ่บ้าน',merchant:'พ่อค้า',guide:'รุ่นพี่'}[id]!,sheet:support.find(s=>s.id===`npc-${id}`),supported:['idle'] as LabAction[]})),{id:'slime',name:'Slime',sheet:support.find(s=>s.id==='slime'),supported:['idle','walk','hurt','dead']}];
 const animationKey={idle:'stand',walk:'walk',slash:'slash',hurt:'hurt',dead:'dead',shoot:'shoot',thrust:'thrust',spellcast:'spellcast'};
+labAssets.push({id:'modular',name:'Chibi · แยกชิ้น / ชุดเริ่มต้น',sheet:modularSheet('chibi-chestnut-traveler-0-1'),supported:['idle','walk','slash'],foot:183});
 const directions={north:Direction.Up,south:Direction.Down,west:Direction.Left,east:Direction.Right};
 export function clipFor(asset:LabAsset,action:LabAction,facing:Facing):LabClip{
  if(!asset.supported.includes(action))return {frames:[],durationMs:0,fps:0,available:false,message:'ยังไม่มีท่านี้ในชุดภาพจริง — ไม่ใช้ท่าอื่นแทน'};

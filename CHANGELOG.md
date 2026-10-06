@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-06 — First original head/hair toggle
+
+- Derive full-frame original head/face, chestnut hair and dressed-body layers from the coherent front master, reconstructing the covered scalp with an ImageGen edit. Preserve the wrongly scaled generated hair extraction as unused; export hair from the original raster without part fitting.
+- Add `/original` to the local research page, with working remove/re-equip controls, fixed head comparisons and individual layer views. Verify protected iris/ear/mouth/neck/body regions remain identical when toggling hair and that the original body source is preserved. Record nonzero reassembly differences, exact prompts and browser evidence.
+- Scope remains one standing front pose, one hairstyle and the existing outfit. Owner visual acceptance, alternate items, animation and playable-game integration remain pending.
+
+## 2026-10-06 — Registered-layer web composition proof
+
+- Implement a separate frame-preserving bitmap compositor and local wardrobe page with face/hair/clothing changes, sex defaults, expression frames, hat A/B selection, per-layer visibility and a combination gallery. Read local 4.0 reference images externally rather than copying them into the original-game repository.
+- Verify sixteen combinations, male/female Godot-reference pixels, empty-slot fallback and invalid-source handling; inspect browser swaps and reset. This proves reference composition only. Compatible original-art layers, animation and game integration remain unresolved.
+
+## 2026-10-06 — Complete front character candidate
+
+- Generate one original full standing character in a single drawing, preserving source PNG, exact prompt, provenance and light-background review. This is an owner-review candidate, not an accepted master, layered wardrobe or gameplay replacement. No rejected cutout parts or commercial-game pixels were used in the image.
+
+## 2026-10-06 — Local character review, not accepted
+
+- Record owner rejection of the detached-limb experiment and preserve the previous painted character as the new-player default.
+- Study the locally verified DDTank portrait composition using original project artwork: one continuous dressed body, registered head and hair layers. Keep commercial game pixels out of this repository.
+- Export a front-only head/hair placement study with uniform scaling and shared untrimmed canvases, plus enlarged before/after and separate-layer evidence. The owner rejected this revision too: matching output canvases after guessed placement does not prove compatible source artwork. Character work is unfinished local work; the art-authoring gate remains failed.
+
 ## 2026-10-03 — Character Lab
 
 - Add an inspector using actual character/NPC/Slime atlases and frame timings, with slow motion, stepping, filmstrip, foot/grid overlays and cadence controls.

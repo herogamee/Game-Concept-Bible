@@ -39,7 +39,7 @@ function rebuildFilmstrip(){const strip=el('filmstrip');strip.replaceChildren();
 }
 function seek(index:number){if(!clip.available)return;playing=false;frame=Math.max(0,Math.min(index,clip.frames.length-1));clipStart=clock-(clip.frames[frame]?.atMs??0)*clip.fps/Number(input('fps').value);swing=undefined;setPlayLabel();draw();}
 function setPlayLabel(){el('play').textContent=playing?'หยุดชั่วคราว':'เล่นแอนิเมชัน';}
-function beginSwing(){if(asset.id!=='chibi'&&asset.id!=='painted'&&asset.id!=='painted-hd'){message('เลือกตัวละครนักผจญภัยเพื่อทดสอบดาบ');return;}
+function beginSwing(){if(asset.id!=='chibi'&&asset.id!=='painted'&&asset.id!=='painted-hd'&&asset.id!=='modular'){message('เลือกตัวละครนักผจญภัยเพื่อทดสอบดาบ');return;}
  const next=startSwing(swing,clock,facing);if(!next)return;swing=next;hit=false;action='slash';select('action').value=action;clip=clipFor(asset,action,facing);input('fps').value=String(clip.fps);clipStart=clock;playing=true;el('stage-title').textContent=asset.name+' / '+actionLabels[action];el('asset-status').textContent=clip.message;rebuildFilmstrip();setPlayLabel();updateOutputs();battleNotice='เริ่มเหวี่ยงดาบ';}
 function download(name:string,data:Blob){const anchor=document.createElement('a'),href=URL.createObjectURL(data);anchor.href=href;anchor.download=name;anchor.click();setTimeout(()=>URL.revokeObjectURL(href),1500);}
 function draw(){const rect=canvas.getBoundingClientRect(),dpr=Math.min(2,devicePixelRatio||1),w=rect.width,h=rect.height;

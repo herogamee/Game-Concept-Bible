@@ -9,6 +9,8 @@ import StaticProp from './static-prop.ce';
 import {isCharacterLab} from './save-key';
 import {camera,viewSize,setPresentationEngine,canvasPoint,setGroundMap,displayQuality,setDisplayQuality,cameraSettings,setCameraSettings} from './presentation';
 import {setupTouchControls,touchDirection,releaseTouch} from './touch-controls';
+import {setupWardrobe} from './wardrobe-ui';
+let updateWardrobe:ReturnType<typeof setupWardrobe>;
 const read=(v:any):any=>typeof v==='function'?read(v()):Array.isArray(v)?v.map(read):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).filter(([k])=>!k.startsWith('_')).map(([k,v])=>[k,read(v)])):v;
 let socket:AbstractWebsocket,engine:RpgClientEngine,lastRender=0,lastMonsters='',lastPeers='',inventory=false;
 let frameTimes:number[]=[],lastFrame=0,lastLevel=0;
@@ -20,6 +22,7 @@ let panel:'inventory'|'settings'|undefined;
 function steer(direction:Direction|{x:number;y:number}){const now=performance.now(),input=JSON.stringify(direction);if(panel||document.hidden||steering&&input===lastSteerInput&&now-lastSteer<80)return;send('steer',direction);lastSteer=now;lastSteerInput=input;steering=true;}
 function showPanel(value:typeof panel){
   panel=value;inventory=value==='inventory';held.clear();releaseTouch();send('cancel');
+  document.getElementById('panel-scrim')!.hidden=!value;
   for(const id of ['inventory','settings'])document.getElementById(id)!.hidden=id!==value;
   document.getElementById('settings-toggle')!.setAttribute('aria-expanded',String(value==='settings'));
   if(value)document.getElementById(value)!.focus();else document.getElementById('settings-toggle')!.focus();
@@ -33,6 +36,7 @@ function setup(e:RpgClientEngine){
     if(badge)badge.textContent='✦ CHARACTER LAB · เซฟทดสอบ';
   }
   engine=e;setPresentationEngine(e);socket=inject<AbstractWebsocket>(WebSocketToken);
+  updateWardrobe=setupWardrobe(send);
   e.addEventComponentResolver(sprite=>{
     const prop=[...maps.village.objects,...maps.meadow.objects].find(o=>o.type==='prop'&&o.id===sprite.id);
     if(!prop)return null;
@@ -42,7 +46,7 @@ function setup(e:RpgClientEngine){
   // Start at the reference framing; presentation crops it to the actual viewport.
   e.width.set('800');e.height.set('450');e.renderer.resize(800,450);e.setCameraFollow(null,false);
   socket.on('adventure:sound',(payload:any)=>sound(payload.kind));
-  document.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(b=>b.addEventListener('click',()=>send(b.dataset.action!)));
+  document.querySelectorAll<HTMLButtonElement>('[data-action]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.action==='travel')showPanel(undefined);send(b.dataset.action!);}));
   document.getElementById('inventory-toggle')!.addEventListener('click',()=>showPanel(panel==='inventory'?undefined:'inventory'));
   document.getElementById('inventory-close')!.addEventListener('click',()=>showPanel(undefined));
   document.getElementById('settings-toggle')!.addEventListener('click',()=>showPanel(panel==='settings'?undefined:'settings'));
@@ -92,8 +96,9 @@ function render(e:RpgClientEngine){
   if(direction&&!panel&&!document.hidden){
     steer(direction);
   }else if(steering){e.interruptCurrentPlayerMovement();send('cancel');steering=false;}
-  if(performance.now()-lastRender<100)return;lastRender=performance.now();
   const p=e.getCurrentPlayer() as any;if(!p)return;
+  updateWardrobe?.(read(p.appearance),inventory);
+  if(performance.now()-lastRender<100)return;lastRender=performance.now();
   const progress=JSON.parse(read(p.adventure)||'null') as Progress,view=JSON.parse(read(p.worldView)||'null') as WorldView;
   if(!progress||!view)return;
   setGroundMap(view.map);

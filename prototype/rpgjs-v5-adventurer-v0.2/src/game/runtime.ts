@@ -3,7 +3,7 @@ import { type RpgPlayer, type RpgEvent, type RpgMap, type RpgWritableSignal } fr
 import contentData from './content.json';
 import { facingOf, engineAnimation, type Facing } from './animation';
 import { route, type Point } from './navigation';
-import {defaultAppearance,parseAppearance,appearanceGraphics} from './appearance';
+import {defaultAppearance,parseAppearance,appearanceGraphics,equipAppearance} from './appearance';
 import { newProgress, sword, slimeDefinition, phaseAt, startSwing, swordCanHit, confirmKill, questTalk, usePotion, takeDamage, type Progress, type Swing, type Phase, type SlimeState } from './rules';
 export const content = contentData;
 export const progressOf=(p:RpgPlayer):Progress=>JSON.parse(p.adventure());
@@ -63,9 +63,17 @@ export function action(p:RpgPlayer,name:string,data:unknown) {
   const r=runtime(p),now=Date.now();
   if(name==='cancel'){stopNavigation(p);return;}
   // Steering direction changes must not inherit the attack/item debounce.
-  if(name!=='steer'){if(now-r.lastAction<60)return;r.lastAction=now;}
+  if(name!=='steer'&&name!=='equip'){if(now-r.lastAction<60)return;r.lastAction=now;}
   if(progressOf(p).hp<=0)return;
   switch(name){
+    case 'equip': {
+      if(r.swing||now<r.hurtUntil)return;
+      const appearance=equipAppearance(parseAppearance(p.appearance()),data);if(!appearance)return;
+      if(JSON.stringify(appearance)===p.appearance())return;
+      stopNavigation(p);p.appearance.set(JSON.stringify(appearance));applyAppearance(p);
+      p.animationFixed=false;p.setGraphicAnimation(engineAnimation('idle'));p.animationFixed=true;
+      p.notice.set('เปลี่ยนรูปลักษณ์แล้ว');checkpoint(p);break;
+    }
     case 'steer': {
       const vector=steeringVector(data);if(!vector)return;
       // Heartbeats extend the lease without stopping the movement already running.
