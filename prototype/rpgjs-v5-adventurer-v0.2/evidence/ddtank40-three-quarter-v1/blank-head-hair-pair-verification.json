@@ -25,5 +25,12 @@
     "meanChannelDifference": 12.305093131614365,
     "pixelIdentity": false
   },
-  "scope": "Review-only authoring pair. Generated hair-only image redraws some pixels. The generated master does not replace the immutable head; reassembly uses the original head. No new catalog item or production/Flash integration certified. Owner visual acceptance pending."
+  "scope": "Paired hair-only source replaces the rejected hair on the existing lab item; the generated master never replaces the immutable head. No production/Flash integration or exact pair identity certified. Owner visual acceptance pending.",
+  "catalogUse": {
+    "id": "ours-310900004",
+    "name": "ผมฟ้า · คู่ภาพหัวมาตรฐาน",
+    "native": "layers/hair-paired-teal.png",
+    "replaces": "hair-ghost-teal",
+    "designImageUsedAsHairLayer": false
+  }
 }

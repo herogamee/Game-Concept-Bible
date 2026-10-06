@@ -5,7 +5,7 @@ import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {registeredHairOnly,hairOnlyImportMatrix} from './hair-only-import.mjs';
-import {ghostHairImport,ghostHeadHairMatrix,ghostGenerationGuide} from './ghost-head-import.mjs';
+import {ghostHeadHairMatrix,ghostGenerationGuide} from './ghost-head-import.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 const dir=resolve(root,'assets/ddtank40-three-quarter-v1'),out=resolve(dir,'layers');
 const width=1254,height=1254,splitY=627,count=width*height;
@@ -44,7 +44,8 @@ for(const id of ['clothing-traveler','clothing-knight','clothing-mage']){
  await source(headlessClothingSources[id]);
  await writeFile(resolve(out,id+'.png'),await readFile(resolve(dir,headlessClothingSources[id])));files.push(id+'.png');
 }
-// Full hair is authored alone on alpha, never partitioned from a painted head.
+// Full hair copies a transparent source. The new pair derives it with ImageGen
+// from a blank-head/hair master; no manual face cuts occur in the build.
 // Copy B byte-for-byte. Only the fixed cap-coverage rule derives A from B.
 const n=width*splitY;
 const capPath='M 344 326 Q 353 300 403 289 Q 400 228 431 209 Q 519 133 632 139 Q 677 117 718 153 Q 817 178 876 288 Q 920 345 891 407 L 877 439 L 801 403 L 734 371 L 702 348 Q 638 369 577 362 L 430 331 Q 381 375 348 350 Z';
@@ -53,13 +54,14 @@ const capCoverage=[[300,330],[430,330],[580,363],[700,349],[880,442],[960,470]];
 function belowCap(x,y){for(let i=1;i<capCoverage.length;i++){const [a,b]=capCoverage[i-1],[c,d]=capCoverage[i];if(x<=c)return y>=b+(d-b)*(x-a)/(c-a);}return y>=470;}
 const hairSources={'hair-chestnut':'hair-chestnut-only-v2.png','hair-teal':'hair-teal-only-v2.png','hair-silver-curls':'hair-silver-curls-only-v2.png'};
 const ghostHairSources={'hair-ghost-teal':'hair-teal-ghost-v5.png'};
+const pairedHairSources={'hair-paired-teal':'hair-pair-v1/hair-only.png'};
 await writeFile(resolve(dir,'ghost-head-guide-v5.png'),await ghostGenerationGuide(await readFile(resolve(out,'head-template.png'))));
-for(const id of Object.keys({...hairSources,...ghostHairSources})){
+for(const id of Object.keys({...hairSources,...pairedHairSources})){
  // Generation made this source family too large. Import all three with the
  // same declared uniform affine, retaining alpha and every connected lock.
- const ghost=Object.hasOwn(ghostHairSources,id),registeredName=ghost?ghostHairSources[id]:hairSources[id];
- const bytes=await readFile(resolve(dir,ghost?'hair-teal-ghost-generated-v5.png':id+'-only-generated-v2.png'));
- await writeFile(resolve(dir,registeredName),await (ghost?ghostHairImport(bytes):registeredHairOnly(bytes)));
+ const paired=Object.hasOwn(pairedHairSources,id),registeredName=paired?pairedHairSources[id]:hairSources[id];
+ const bytes=await readFile(resolve(dir,paired?registeredName:id+'-only-generated-v2.png'));
+ if(!paired)await writeFile(resolve(dir,registeredName),await registeredHairOnly(bytes));
  const raw=await source(registeredName),under=fresh();
  await writeFile(resolve(out,id+'.png'),await readFile(resolve(dir,registeredName)));files.push(id+'.png');
  for(let y=0;y<height;y++)for(let x=0;x<width;x++){const i=(y*width+x)*4;if(!capMask[i+3]&&belowCap(x,y))under.data.set(raw.data.subarray(i,i+4),i);}
@@ -72,6 +74,7 @@ const sourceTopY=56,sourceGroundY=1209,targetTopY=61,targetGroundY=304;
 const scale=(targetGroundY-targetTopY)/(sourceGroundY-sourceTopY),neckX=600,targetNeckX=42+(600-421)*124/428;
 const matrix=[scale,0,0,scale,targetNeckX-neckX*scale,targetGroundY-sourceGroundY*scale];
 const directoryFiles=await readdir(dir);
+await source('hair-pair-v1/blank-head-hair.png');
 for(const name of directoryFiles.filter(f=>f.endsWith('.png')))if(!hashes[name])hashes[name]=createHash('sha256').update(await readFile(resolve(dir,name))).digest('hex');
 const manifest={version:6,template:'ddtank40-standing-three-quarter-left-v1',view:'three-quarter-left',width,height,splitY,origin:[0,0],eyeRegions,eyeSources,cheekRegions,jawPath,headlessClothingSources,clothingAuthoring:'Complete body-only source PNGs copied byte-for-byte; no head/jaw/collar masks or limb repair patches. Shared canvas/pose registration is fixed; exact anatomical invariance across generated outfits needs art review.',headOverlap:'behind-face',capPath,capCoverage,files,sourceHashes:hashes,
  hairOnlySources:hairSources,hairSourceRegistration:{version:1,input:[1254,1254],output:[1254,1254],matrix:hairOnlyImportMatrix,rawSources:Object.fromEntries(Object.keys(hairSources).map(id=>[id,id+'-only-generated-v2.png'])),policy:'All three preserved hair-only images share one fixed uniform import before the shared full-character export. No trim, face/skin segmentation, ear punches or per-item fitting. Keep every generated alpha contour. Registered full hair copies byte-for-byte into B; only the common cap coverage rule derives A.'},
@@ -79,4 +82,8 @@ const manifest={version:6,template:'ddtank40-standing-three-quarter-left-v1',vie
  generation:{tool:'built-in image_gen',prompts:directoryFiles.filter(f=>f.endsWith('-PROMPT.txt')),unusedSources:['hair-chestnut-generated.png','hair-chestnut-compact-generated.png','hair-teal-generated.png','hair-silver-curls-generated.png','hair-teal-compact-generated.png','hair-silver-curls-compact-generated.png','face-blush-generated.png','clothing-knight-generated.png','clothing-mage-generated.png'],activeHairSources:hairSources,defaultEyeSource:eyeSources['eyes-amber'],headlessReferenceSources:{'clothing-traveler-headless-v2.png':'master.png','clothing-knight-headless-v2.png':'clothing-knight-generated.png','clothing-mage-headless-v2.png':'clothing-mage-generated.png'},hairOnlyReferenceRole:'Rejected hair layers guide design only; blank head guides placement only. New sources contain hair alone, never a rendered head.',referenceRole:'External DDTank portrait used for camera/proportions only; original identity/costume artwork edited.'},
  calibration:{version:2,mode:'uniform-shared-master',master:[width,height],matrix,origin:[0,0],alphaThreshold:128,sourceTopY,sourceGroundY,targetTopY,targetGroundY,neckSource:[neckX,627],neckTarget:[targetNeckX,627*scale+matrix[5]],note:'One uniform matrix for head, hair, eyes, cheek details, cap and clothing. Preserve authored proportions inside canonical transparent canvases. Authoring landmarks are not Flash anatomical anchors.'},
  scope:'Standing frame0 only. Native category masks and source-specific extraction are a bounded art trial; other views/actions, naked anatomical master, animation and production throughput remain unverified.'};
+manifest.version=7;
+manifest.pairedHairSources=pairedHairSources;
+manifest.pairedHairRegistration={version:1,matrix:[1,0,0,1,0,0],designMaster:'hair-pair-v1/blank-head-hair.png',rawSource:pairedHairSources['hair-paired-teal'],headTemplate:'layers/head-template.png',headReferenceSha256:manifest.ghostHeadHairRegistration.headReferenceSha256,replacesItem:'ours-310900004',policy:'Copy the delivered paired hair-only PNG byte-for-byte at its existing coordinates. The blank-head/hair design image remains a preview; do not stack its skin above selectable eyes. No additional import/fitting; apply only the shared character export and common cap coverage.'};
+manifest.ghostHeadHairRegistration.status='Owner rejected; preserved historical source, no longer published in the catalog';
 await writeFile(resolve(dir,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log(`Authored ${files.length} registered native layers on one 3/4-left master.`);

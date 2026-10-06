@@ -12,7 +12,7 @@ const compatible=await compatibilityCatalog(source,profile);
 const staticFiles=new Map(['index.html','client.mjs','compositor.mjs','portrait-adapter.mjs','original.html','original-client.mjs','walk.html','walk-client.mjs','walk-model.mjs','fixed-template.html','fixed-template-client.mjs','fixed-template-model.mjs'].map(name=>[`/${name}`,fileURLToPath(new URL(name,import.meta.url))]));
 for(const name of ['index.html','client.mjs','format.mjs','registration.mjs'])staticFiles.set(`/ddt40/${name}`,fileURLToPath(new URL(`../ddtank40/${name}`,import.meta.url)));
 staticFiles.set('/ddt40/master.png',fileURLToPath(new URL('../../assets/ddtank40-three-quarter-v1/master.png',import.meta.url)));
-for(const name of ['head-template','hair-chestnut','hair-teal','hair-silver-curls','hair-ghost-teal'])staticFiles.set(`/ddt40/native/${name}.png`,fileURLToPath(new URL(`../../assets/ddtank40-three-quarter-v1/layers/${name}.png`,import.meta.url)));
+for(const name of ['head-template','hair-chestnut','hair-teal','hair-silver-curls','hair-ghost-teal','hair-paired-teal'])staticFiles.set(`/ddt40/native/${name}.png`,fileURLToPath(new URL(`../../assets/ddtank40-three-quarter-v1/layers/${name}.png`,import.meta.url)));
 staticFiles.set('/ddt40/ghost-head-review.png',fileURLToPath(new URL('../../evidence/ddtank40-three-quarter-v1/ghost-head-native-review.png',import.meta.url)));
 staticFiles.set('/ddt40/hair-pair-review.png',fileURLToPath(new URL('../../evidence/ddtank40-three-quarter-v1/blank-head-hair-pair-review.png',import.meta.url)));
 for(const name of ['blank-head-hair','hair-only','reassembled-blank-head'])staticFiles.set(`/ddt40/hair-pair/${name}.png`,fileURLToPath(new URL(`../../assets/ddtank40-three-quarter-v1/hair-pair-v1/${name}.png`,import.meta.url)));

@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "template": "ddtank40-standing-three-quarter-left-v1",
   "view": "three-quarter-left",
   "width": 1254,
@@ -99,8 +99,8 @@
     "hair-teal-under-hat.png",
     "hair-silver-curls.png",
     "hair-silver-curls-under-hat.png",
-    "hair-ghost-teal.png",
-    "hair-ghost-teal-under-hat.png",
+    "hair-paired-teal.png",
+    "hair-paired-teal-under-hat.png",
     "hat-adventurer.png"
   ],
   "sourceHashes": {
@@ -116,8 +116,9 @@
     "hair-chestnut-only-v2.png": "b4ca3a964c9f656d0157ef662b8c70af484cb118374626f5a330a5374d91b386",
     "hair-teal-only-v2.png": "c192da3bd6e6ec9beec97ec263a972e044409d2d2b69cc735ec154df9c444ed9",
     "hair-silver-curls-only-v2.png": "35ac3faa78c25f8f79d3bd8c1dff79858342b581b08fe26c71739f0a9fac76da",
-    "hair-teal-ghost-v5.png": "1baa16b1b9c59eb1b6aa258ecc7fc66c79831cf48f151275d5c5fcd18d59cb64",
+    "hair-pair-v1/hair-only.png": "625e910945159ad4339c866ba64bbad0fed72f14c86a9db4c1dbf9934108d45d",
     "hat-adventurer-generated.png": "73d06313597fa768a0a8e8a17ae15bde84fd8521d6c44fe288ad823c1c3ad0fb",
+    "hair-pair-v1/blank-head-hair.png": "ee03497ad1790a3eddab83fc821834e9cb0bb65fc86e6c6a8b61281e3cc93364",
     "clothing-knight-generated.png": "09c940217a47b1f200121caf6a59d3cb2e4561ddd4dc00d66ba8f5d7a671d7b2",
     "clothing-mage-generated.png": "d3c1b784e9b0b5f7887a226da7bbb4aee6ceac842c485b69e7faba18ab663e28",
     "face-blush-generated.png": "899c5ecfcded8ea6fb8c0aa36ff1029950f64268547bee972bc1fd2d5c9cfeeb",
@@ -145,6 +146,7 @@
     "hair-teal-ghost-generated-v5.png": "deecaf0e5355832678cea5751136d02c5e6f64c10259cd636791ebb3f4323cdb",
     "hair-teal-ghost-v3.png": "0402900bc07e9039a92138ef6b58b34fea0806a03c06db56629e45478b4e95f4",
     "hair-teal-ghost-v4.png": "0b3c10a501485a2ec26ec1cfaad5cc383da2b8a4f8d3305049dbffb0f668d889",
+    "hair-teal-ghost-v5.png": "1baa16b1b9c59eb1b6aa258ecc7fc66c79831cf48f151275d5c5fcd18d59cb64",
     "hair-teal-only-generated-v2.png": "18126013528afff1c92d38ba55dc82e657ba54986483be46915cb237767b721c",
     "master.png": "c3935fc8c254842c7fc33f1049054da13d4137fd0e60ed822d0873052cb3b75d"
   },
@@ -203,7 +205,8 @@
     "headTemplate": "layers/head-template.png",
     "headReferenceSha256": "b9227919413cabb4dae769f2059134035ce06575614e0fd6869c3f3a39c146b1",
     "generationGuide": "ghost-head-guide-v5.png",
-    "policy": "Fixed generation-space import calibrated for this new source family; future items must use the same import and pass head/volume checks. The source was authored as hair alone using a transformed blank-head guide, never a headed portrait. No facial deletion, ear punches or runtime fit. Eight built-in image attempts were needed for this trial; silver attempts remain rejected."
+    "policy": "Fixed generation-space import calibrated for this new source family; future items must use the same import and pass head/volume checks. The source was authored as hair alone using a transformed blank-head guide, never a headed portrait. No facial deletion, ear punches or runtime fit. Eight built-in image attempts were needed for this trial; silver attempts remain rejected.",
+    "status": "Owner rejected; preserved historical source, no longer published in the catalog"
   },
   "generation": {
     "tool": "built-in image_gen",
@@ -299,5 +302,25 @@
     ],
     "note": "One uniform matrix for head, hair, eyes, cheek details, cap and clothing. Preserve authored proportions inside canonical transparent canvases. Authoring landmarks are not Flash anatomical anchors."
   },
-  "scope": "Standing frame0 only. Native category masks and source-specific extraction are a bounded art trial; other views/actions, naked anatomical master, animation and production throughput remain unverified."
+  "scope": "Standing frame0 only. Native category masks and source-specific extraction are a bounded art trial; other views/actions, naked anatomical master, animation and production throughput remain unverified.",
+  "pairedHairSources": {
+    "hair-paired-teal": "hair-pair-v1/hair-only.png"
+  },
+  "pairedHairRegistration": {
+    "version": 1,
+    "matrix": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "designMaster": "hair-pair-v1/blank-head-hair.png",
+    "rawSource": "hair-pair-v1/hair-only.png",
+    "headTemplate": "layers/head-template.png",
+    "headReferenceSha256": "b9227919413cabb4dae769f2059134035ce06575614e0fd6869c3f3a39c146b1",
+    "replacesItem": "ours-310900004",
+    "policy": "Copy the delivered paired hair-only PNG byte-for-byte at its existing coordinates. The blank-head/hair design image remains a preview; do not stack its skin above selectable eyes. No additional import/fitting; apply only the shared character export and common cap coverage."
+  }
 }

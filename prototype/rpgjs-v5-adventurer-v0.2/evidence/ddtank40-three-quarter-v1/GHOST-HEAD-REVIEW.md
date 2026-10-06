@@ -1,5 +1,7 @@
 # Hair around an invisible standard head — 2026-10-06
 
+Historical failed art checkpoint: the owner rejected this resource's fit/eye occlusion after the numerical checks below passed. Item `ours-310900004` / `ours_hair_4` now publishes the paired hair-only source as “ผมฟ้า · คู่ภาพหัวมาตรฐาน”; it no longer publishes `hair-ghost-teal.png`. Original rejected masters remain preserved. See [current pair/replacement review](HAIR-PAIR-REVIEW.md). The publication descriptions below record the earlier state.
+
 The owner requires the existing blank head to be the geometric authority. Hair is authored as a separate transparent resource; the head is an input guide, never part of the hair output. Brown hair supplies a volume comparison, not replacement head geometry.
 
 ## Published example

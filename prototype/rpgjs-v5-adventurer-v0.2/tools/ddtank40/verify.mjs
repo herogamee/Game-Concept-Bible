@@ -100,6 +100,23 @@ for(const [x,y] of ghostStandard.skullCoverage)assert(ghostPixels[(y*1254+x)*4+3
 const ghostIslands=components(ghostPixels,1254,1254);assert(!ghostIslands.slice(1).some(n=>n>32),'Detached ghost hair fragments');
 function ghostVolume(data){const b=alphaBounds(data,1254,1254),ref=alphaBounds(brownPixels,1254,1254),ratio=ghostStandard.widthAndHeightRatio;assert(b.width/ref.width>=ratio[0]&&b.width/ref.width<=ratio[1]&&b.height/ref.height>=ratio[0]&&b.height/ref.height<=ratio[1],'Hair volume differs from the fixed brown reference');assert(Math.abs(b.x-ref.x)<=ghostStandard.edgeTolerance&&Math.abs(b.x+b.width-ref.x-ref.width)<=ghostStandard.edgeTolerance&&Math.abs(b.y-ref.y)<=ghostStandard.crownYTolerance,'Hair placement drifted');let area=0,baseArea=0;for(let i=3;i<data.length;i+=4){if(data[i]>=128)area++;if(brownPixels[i]>=128)baseArea++;}assert(area/baseArea>=ghostStandard.opaqueAreaRatio[0]&&area/baseArea<=ghostStandard.opaqueAreaRatio[1],'Hair mass differs from the fixed reference');return {bounds:b,widthRatio:b.width/ref.width,heightRatio:b.height/ref.height,opaqueAreaRatio:area/baseArea};}
 const ghostFit=ghostVolume(ghostPixels);
+// The rejected ghost resource remains historical evidence. Item 4 must now
+// export the paired source directly, never accidentally retain that resource.
+assert.deepEqual(authoring.pairedHairRegistration.matrix,[1,0,0,1,0,0],'The paired hair must keep its supplied coordinates');
+const pairedSource=authoring.pairedHairSources['hair-paired-teal'];
+assert.equal(pairedSource,'hair-pair-v1/hair-only.png');
+const pairedBytes=await readFile(resolve(root,pack.authoringDirectory,pairedSource));
+assert.deepEqual(await readFile(resolve(root,pack.masterDirectory,'hair-paired-teal.png')),pairedBytes,'Active hair must copy the new paired PNG byte-for-byte');
+assert(!pairedBytes.equals(await readFile(resolve(root,pack.masterDirectory,'hair-ghost-teal.png'))),'Replacement must differ from rejected ghost hair');
+assert(!Object.hasOwn(pack.sourceHashes,'hair-ghost-teal.png'),'Rejected ghost hair must not be exported');
+const pairedItem=pack.items.find(i=>i.id==='ours-310900004');assert.equal(pairedItem.name,'ผมฟ้า · คู่ภาพหัวมาตรฐาน');
+const pairedNative=await nativePixels('layers/hair-paired-teal.png'),pairedIslands=components(pairedNative,1254,1254);
+assert(!pairedIslands.slice(1).some(n=>n>32),'Detached paired hair fragments');
+for(const [x,y] of [[474,493],[635,498],[552,578],[812,520]])assert.equal(pairedNative[(y*1254+x)*4+3],0,'Paired hair contains skin/features in face or ear space');
+for(let p=560*1254;p<1254*1254;p++)assert(pairedNative[p*4+3]<16,'Paired hair contains lower face/neck/body');
+const pairedExport=createCanvas(250,312),pairedCtx=pairedExport.getContext('2d');pairedCtx.imageSmoothingEnabled=true;pairedCtx.imageSmoothingQuality='high';pairedCtx.setTransform(...matrix);pairedCtx.drawImage(await loadImage(pairedBytes),0,0);
+const activeFull=createCanvas(250,312);activeFull.getContext('2d').drawImage(await image(pairedItem.assets.B.url),0,0);
+assert.deepEqual(pixels(activeFull),pixels(pairedExport),'Published item 4 must contain the new paired hair under the common export');
 for(const id of ['hair-teal','hair-silver-curls']){const old=await nativePixels('layers/'+id+'.png');assert.throws(()=>ghostVolume(old),/volume differs/,'The new standard must reject the earlier small hairstyles');}
 const rejectedSilverImage=await loadImage(await ghostHairImport(await readFile(resolve(root,pack.authoringDirectory,'hair-silver-ghost-rejected-v5.png')))),rejectedSilverCanvas=createCanvas(1254,1254);rejectedSilverCanvas.getContext('2d').drawImage(rejectedSilverImage,0,0);assert.throws(()=>ghostVolume(pixels(rejectedSilverCanvas)),/volume differs/,'Do not publish the oversized silver draft under a different item fit');
 for(const id of ['clothing-traveler','clothing-knight','clothing-mage']){
@@ -132,11 +149,11 @@ const nativeJoin=createCanvas(1254,1254),joinCtx=nativeJoin.getContext('2d');
 for(const name of ['clothing-traveler','head-template'])joinCtx.drawImage(await loadImage(resolve(root,pack.masterDirectory,name+'.png')),0,0);
 const joinPixels=pixels(nativeJoin);let coveredJoinPixels=0;
 for(let y=627;y<644;y++)for(let x=596;x<641;x++){assert(joinPixels[(y*1254+x)*4+3]>230,'Background hole at jaw/neck join');coveredJoinPixels++;}
-for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hair-ghost-teal','hat-adventurer']){
+for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hair-paired-teal','hat-adventurer']){
   const data=await nativePixels('layers/'+id+'.png');for(let y=491;y<527;y++)for(let x=795;x<824;x++)assert.equal(data[(y*1254+x)*4+3],0,`${id}: immutable ear covered`);
 }
 const capCrownChecks=[];
-for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hair-ghost-teal']){
+for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hair-paired-teal']){
   const full=await nativePixels('layers/'+id+'.png'),under=await nativePixels('layers/'+id+'-under-hat.png');let restoredCrownPixels=0;
   for(let y=0;y<330;y++)for(let x=300;x<960;x++){
     const alpha=(y*1254+x)*4+3;
@@ -211,5 +228,8 @@ const report={profile:profile.id,view:pack.view,template:pack.template,originalI
   bodyLandmarkPixels,exactLimbPixelInvariance:false,hairOnlyChecks,ghostHeadTrial:{id:'ours-310900004',headUnchanged:true,brownUnchanged:true,registeredCopyUnmodified:true,importMatrix:authoring.ghostHeadHairRegistration.matrix,fit:ghostFit,connectedComponents:ghostIslands,rejectedEarlierSmallHair:true,rejectedOversizedSilverDraft:true,sourceGeneratedAsHairOnly:true},rejectedOldDetachedHairFragment:true,protectedEar:true,capCrownChecks,
   exportMatrix:matrix,uniformAllLayers:true,rejectedAnisotropicBody:true,rejectedSeparateHeadBodyFits:true,proportionChecks,neckChecks,coveredJoinPixels,faceAboveClothing:true,
   acceptance:'File-format/portrait-renderer checks pass. Actual Flash-client item registration, anatomical/topology compatibility, all actions, female originals and owner visual acceptance remain pending.'};
+report.ghostHeadTrial.status='Historical resource only; owner rejected it and item 4 now uses paired hair';
+report.ghostHeadTrial.id=null;
+report.pairedHairReplacement={id:pairedItem.id,source:pairedSource,sourceCopiedByteForByte:true,identityImport:true,exportMatchesNewSource:true,rejectedOldHairNotExported:true,connectedComponents:pairedIslands,headAndEyeResourcesUnchanged:true,ownerVisualAcceptance:'pending'};
 await writeFile(resolve(out,'verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));

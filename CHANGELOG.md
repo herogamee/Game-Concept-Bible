@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Use paired hair in the actual lab character
+
+- Replace the rejected blue ghost hair on existing item310900004 with the new paired hair-only PNG; rename it “ผมฟ้า · คู่ภาพหัวมาตรฐาน”. Preserve the ID/path and other appearance resources.
+- Copy its native B byte-for-byte without an extra import; derive A through the common cap coverage and export both250×312 frames. Verify the published item matches the new source and no longer exports the rejected PNG.
+- Inspect actual character eye swaps and cap A/B in the browser. The blank-head/hair master stays a preview; numerical checks do not establish owner art acceptance or exact pair identity.
+
 ## 2026-10-06 — Review blank-head / hair-only asset pairs
 
 - Follow the owner's corrected sequence: blank standard head wearing hair first, then its hair-only transparent counterpart; both exclude eyes, brows and mouth. Preserve both ImageGen outputs and exact prompts.

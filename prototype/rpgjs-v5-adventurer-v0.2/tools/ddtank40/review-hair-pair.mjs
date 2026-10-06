@@ -36,5 +36,7 @@ for(const [col,label,im] of [[0,'1. BLANK HEAD + HAIR',images.master.canvas],[1,
 }
 await writeFile(resolve(out,'blank-head-hair-pair-review.png'),proof.toBuffer('image/png'));
 const report={canvas:[1254,1254],pair:['blank-head-hair.png','hair-only.png'],tool:'built-in image_gen',headTemplateSha256:headHash,headTemplateUnchanged:true,drawOrigin:[0,0],resizingOrFitting:false,facialFeatures:'No eyes, eyebrows or mouth in either delivered image; visually inspected.',hairAlphaSamplesPass:true,comparison:{method:'Blue-pixel classification at alpha>=128; diagnostic only, not exact segmentation',masterPixels,hairPixels,silhouetteIoU:intersection/union,meanChannelDifference:colourError/(intersection*3),pixelIdentity:false},scope:'Review-only authoring pair. Generated hair-only image redraws some pixels. The generated master does not replace the immutable head; reassembly uses the original head. No new catalog item or production/Flash integration certified. Owner visual acceptance pending.'};
+report.catalogUse={id:'ours-310900004',name:'ผมฟ้า · คู่ภาพหัวมาตรฐาน',native:'layers/hair-paired-teal.png',replaces:'hair-ghost-teal',designImageUsedAsHairLayer:false};
+report.scope='Paired hair-only source replaces the rejected hair on the existing lab item; the generated master never replaces the immutable head. No production/Flash integration or exact pair identity certified. Owner visual acceptance pending.';
 await writeFile(resolve(out,'blank-head-hair-pair-verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));
