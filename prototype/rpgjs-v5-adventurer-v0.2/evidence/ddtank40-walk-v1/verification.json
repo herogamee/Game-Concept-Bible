@@ -1,0 +1,17 @@
+{
+  "rig": "three-quarter-walk-rig-v1",
+  "frames": 8,
+  "outfits": 2,
+  "hair": 2,
+  "eyes": 3,
+  "hats": 2,
+  "combinations": 192,
+  "stanceChecks": 10,
+  "neckSamples": 192,
+  "sourceHashesUnchanged": true,
+  "boneLengthsPreserved": true,
+  "frameBoundariesClear": true,
+  "movementPauseArrivalBoundsPass": true,
+  "scope": "Original two-outfit gait experiment; deterministic mesh deformation of canonical standing PNGs. Not authored DDTank game/virtual sheets or accepted natural-motion art.",
+  "artAcceptance": "Pending owner review; mesh bend/occlusion remains an experiment, no other actions/views/Flash interoperability claimed."
+}

@@ -2,6 +2,8 @@
 
 # Willowbrook — RPGJS v5 Adventurer v0.2
 
+Walking lab, 2026-10-07: `/fixed-template-walk` is a standalone HTML/Canvas experiment using two outfits, two hairstyles, three eye sets and one shared8-frame clock. The owner rejected its joint bending and duck-like gait; the page labels that failure.192 composition/session checks do not prove natural walking. See `evidence/ddtank40-walk-v1/REVIEW.md`. An independent-part ImageGen draft is preserved for diagnosis and is not used at runtime. Motion landmarks are original trial authoring data, not DDTank measurements. No Godot/Phaser loader or runtime has been added.
+
 Current hair catalog (owner removal, 2026-10-06): only brown `ours-310900001` and paired blue `ours-310900004` remain in `/fixed-template`. The old side-swept blue and silver curls are removed from the active catalog, gallery, native route and six runtime PNGs. Source/history artifacts remain archival. Rebuild and verification pass: 14 items, 30 PNGs, 108 standing compositions, 14 active native layers. Earlier counts below describe historical checkpoints.
 
 Current lab replacement: the new paired hair-only PNG now replaces the rejected ghost hair on existing item `ours-310900004`, named “ผมฟ้า · คู่ภาพหัวมาตรฐาน”. Native `hair-paired-teal.png` copies the delivered source byte-for-byte; A/B exports keep `ours_hair_4` and the shared character matrix. Choose the item to see it on the actual dressed character. Head, eye sets and other items remain unchanged. `verify:ddt40` checks source/export identity and216 standing compositions. The following initial review-only status is historical; artwork and exact generated-pair identity remain unaccepted.

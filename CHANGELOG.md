@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-07 — Record rejected standing-texture walking trial
+
+- Add an isolated Canvas walking lab with two clothing sheets, shared motion/equipment clock, keyboard/button/click controls and frame inspection. Preserve the standing resources and existing playable.
+- Record the owner's rejection: poor joint bending and duck-like gait.192 functional composites do not certify natural movement. Label the lab as unaccepted and explicitly identify its Canvas implementation; no Godot/Phaser integration or DDTank motion-anchor claim.
+- Preserve a standalone-body-part ImageGen draft with its exact prompt and failed anatomical-scale review; do not use it as runtime artwork.
+
 ## 2026-10-06 — Remove two retired hairstyles from the lab
 
 - Remove side-swept blue and silver curls from the active DDTank-compatible catalog, gallery, native route and their six runtime PNGs. Keep brown and the newer paired blue with their existing IDs.

@@ -11,6 +11,8 @@ const profile=JSON.parse(await readFile(new URL('../ddtank40/profile.json',impor
 const compatible=await compatibilityCatalog(source,profile);
 const staticFiles=new Map(['index.html','client.mjs','compositor.mjs','portrait-adapter.mjs','original.html','original-client.mjs','walk.html','walk-client.mjs','walk-model.mjs','fixed-template.html','fixed-template-client.mjs','fixed-template-model.mjs'].map(name=>[`/${name}`,fileURLToPath(new URL(name,import.meta.url))]));
 for(const name of ['index.html','client.mjs','format.mjs','registration.mjs'])staticFiles.set(`/ddt40/${name}`,fileURLToPath(new URL(`../ddtank40/${name}`,import.meta.url)));
+for(const name of ['walk.html','walk-client.mjs','walk-rig.mjs'])staticFiles.set(`/ddt40/${name}`,fileURLToPath(new URL(`../ddtank40/${name}`,import.meta.url)));
+for(const name of ['manifest.json','cloth-1-walk.png','cloth-2-walk.png'])staticFiles.set(`/ddt40/walk-assets/${name}`,fileURLToPath(new URL(`../../assets/ddtank40-walk-v1/${name}`,import.meta.url)));
 staticFiles.set('/ddt40/master.png',fileURLToPath(new URL('../../assets/ddtank40-three-quarter-v1/master.png',import.meta.url)));
 for(const name of ['head-template','hair-chestnut','hair-ghost-teal','hair-paired-teal'])staticFiles.set(`/ddt40/native/${name}.png`,fileURLToPath(new URL(`../../assets/ddtank40-three-quarter-v1/layers/${name}.png`,import.meta.url)));
 staticFiles.set('/ddt40/ghost-head-review.png',fileURLToPath(new URL('../../evidence/ddtank40-three-quarter-v1/ghost-head-native-review.png',import.meta.url)));
@@ -44,9 +46,9 @@ createServer(async(req,res)=>{
     if(path==='/api/front-motion'){res.setHeader('Content-Type','application/json; charset=utf-8');res.end(await readFile(new URL('manifest.json',frontMotionDir),'utf8'));return;}
     const asset=path.startsWith('/assets/')?source.files.get(path.slice(8)):null;
     const reference=path==='/reference/m'?source.references.m:path==='/reference/f'?source.references.f:null;
-    const file=compatible.files.get(path)||asset||reference||staticFiles.get(path==='/'?'/index.html':path==='/original'?'/original.html':path==='/walk'?'/walk.html':path==='/fixed-template'?'/ddt40/index.html':path==='/fixed-template-legacy'?'/fixed-template.html':path);
+    const file=compatible.files.get(path)||asset||reference||staticFiles.get(path==='/'?'/index.html':path==='/original'?'/original.html':path==='/walk'?'/walk.html':path==='/fixed-template-walk'?'/ddt40/walk.html':path==='/fixed-template'?'/ddt40/index.html':path==='/fixed-template-legacy'?'/fixed-template.html':path);
     if(!file){res.writeHead(404);res.end('Not found');return;}
     const bytes=await readFile(file);
-    res.setHeader('Content-Type',asset||reference||file.endsWith('.png')?'image/png':path.endsWith('.mjs')?'text/javascript; charset=utf-8':'text/html; charset=utf-8');res.end(bytes);
+    res.setHeader('Content-Type',asset||reference||file.endsWith('.png')?'image/png':file.endsWith('.json')?'application/json; charset=utf-8':path.endsWith('.mjs')?'text/javascript; charset=utf-8':'text/html; charset=utf-8');res.end(bytes);
   }catch(error){res.writeHead(500);res.end('Could not read local source');console.error(error.message);}
 }).listen(port,'127.0.0.1',()=>console.log(`Registered wardrobe proof: http://127.0.0.1:${port} (${source.catalog.items.length} local items; no asset copies)`));
