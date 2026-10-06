@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Author hair as independent transparent artwork
+
+- Replace all three standing hairstyles extracted from headed sources with new hair-only ImageGen PNGs and exact prompts. Remove skin-seed segmentation, morphological closure, support cropping and punched ear masks from full hair.
+- Import the new source family with one fixed uniform affine (72%, translation168,3), retaining the complete alpha artwork. Copy each registered full source byte-for-byte to its native B layer; derive A only through the existing common cap-coverage rule. Keep the full-character export matrix, 4.0 dimensions/origins and equipment IDs.
+- Add a native hair-only/assembled-head review, rejected-fragment regression fixture and source-identity/connected-lock/ear/cap checks. The browser now exposes a standalone hair preview and native PNG link; verify selection, A/B restoration/reset and 162 compositions. Owner visual acceptance and all-action/Flash interoperability remain pending.
+
 ## 2026-10-06 — Author clothing without heads from the outset
 
 - Replace clothing extracted from headed portraits with three body-only ImageGen sources, complete necks/scarf/collars and saved exact prompts. Copy source PNGs into native clothing layers byte-for-byte; remove neck/jaw extraction and limb repair patches that left chin ink, clipped cloth and sleeve seams.

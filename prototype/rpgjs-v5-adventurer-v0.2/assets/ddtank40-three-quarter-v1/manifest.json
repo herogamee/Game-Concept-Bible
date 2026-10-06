@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "template": "ddtank40-standing-three-quarter-left-v1",
   "view": "three-quarter-left",
   "width": 1254,
@@ -106,8 +106,9 @@
     "clothing-traveler-headless-v2.png": "42872a6d00a3beff742fb7285ff49cdad6743bbf26200087a7940d1ed6fd2438",
     "clothing-knight-headless-v2.png": "ac41ead4961b535c9290421e2dc23f41242eb8f5294bb6ceebc02be252416180",
     "clothing-mage-headless-v2.png": "be11a331540363193aead8b5c10f1cc3d65ff47efcdccc2c349fb99e8176e55a",
-    "hair-teal-generated.png": "1a8867f2b311259d1eef7c4d5931c54600d551993baf3d973af95025329375a5",
-    "hair-silver-curls-generated.png": "2bb0e311aba831f2c53ae19e58b9060ac095b5d51d7f397c8a1d3ae60a150dad",
+    "hair-chestnut-only-v2.png": "b4ca3a964c9f656d0157ef662b8c70af484cb118374626f5a330a5374d91b386",
+    "hair-teal-only-v2.png": "c192da3bd6e6ec9beec97ec263a972e044409d2d2b69cc735ec154df9c444ed9",
+    "hair-silver-curls-only-v2.png": "35ac3faa78c25f8f79d3bd8c1dff79858342b581b08fe26c71739f0a9fac76da",
     "hat-adventurer-generated.png": "73d06313597fa768a0a8e8a17ae15bde84fd8521d6c44fe288ad823c1c3ad0fb",
     "clothing-knight-generated.png": "09c940217a47b1f200121caf6a59d3cb2e4561ddd4dc00d66ba8f5d7a671d7b2",
     "clothing-mage-generated.png": "d3c1b784e9b0b5f7887a226da7bbb4aee6ceac842c485b69e7faba18ab663e28",
@@ -115,8 +116,43 @@
     "face-blush-generated.png": "899c5ecfcded8ea6fb8c0aa36ff1029950f64268547bee972bc1fd2d5c9cfeeb",
     "hair-chestnut-compact-generated.png": "bd6f231fb28d818cfdb348dcf250db8e75b0391615b91239c67b0a2ed6627a80",
     "hair-chestnut-generated.png": "c8fc9acc65a78aba9a45172597d24507b2e951cfefafdd37652a1c8eb0ae249f",
+    "hair-chestnut-only-generated-v2.png": "fc4cac88cfa9524f20a2acbb38d80edcce2e91e5f5a5eb4b753b93afe3882424",
     "hair-silver-curls-compact-generated.png": "32e3c785f02352a7e277b1230210b4ddbdc41a19dc41ef8903ce4a590e8a4edd",
-    "hair-teal-compact-generated.png": "4aa0e53078d947bef185c3fe7e72e87e2696ea513127bc71a1f928604fe11daf"
+    "hair-silver-curls-generated.png": "2bb0e311aba831f2c53ae19e58b9060ac095b5d51d7f397c8a1d3ae60a150dad",
+    "hair-silver-curls-only-generated-v2.png": "f6930f8641ff775b1e6f179c811caffd1634768e5914ea8cfa51e7dd36508fec",
+    "hair-teal-compact-generated.png": "4aa0e53078d947bef185c3fe7e72e87e2696ea513127bc71a1f928604fe11daf",
+    "hair-teal-generated.png": "1a8867f2b311259d1eef7c4d5931c54600d551993baf3d973af95025329375a5",
+    "hair-teal-only-generated-v2.png": "18126013528afff1c92d38ba55dc82e657ba54986483be46915cb237767b721c"
+  },
+  "hairOnlySources": {
+    "hair-chestnut": "hair-chestnut-only-v2.png",
+    "hair-teal": "hair-teal-only-v2.png",
+    "hair-silver-curls": "hair-silver-curls-only-v2.png"
+  },
+  "hairSourceRegistration": {
+    "version": 1,
+    "input": [
+      1254,
+      1254
+    ],
+    "output": [
+      1254,
+      1254
+    ],
+    "matrix": [
+      0.72,
+      0,
+      0,
+      0.72,
+      168,
+      3
+    ],
+    "rawSources": {
+      "hair-chestnut": "hair-chestnut-only-generated-v2.png",
+      "hair-teal": "hair-teal-only-generated-v2.png",
+      "hair-silver-curls": "hair-silver-curls-only-generated-v2.png"
+    },
+    "policy": "All three new hair-only images share one fixed uniform import before the shared full-character export. No trim, face/skin segmentation, ear punches or per-item fitting. Keep every generated alpha contour. Registered full hair copies byte-for-byte into B; only the common cap coverage rule derives A."
   },
   "generation": {
     "tool": "built-in image_gen",
@@ -134,10 +170,13 @@
       "face-blush-PROMPT.txt",
       "face-scar-PROMPT.txt",
       "hair-chestnut-compact-PROMPT.txt",
+      "hair-chestnut-only-v2-PROMPT.txt",
       "hair-chestnut-PROMPT.txt",
       "hair-silver-curls-compact-PROMPT.txt",
+      "hair-silver-curls-only-v2-PROMPT.txt",
       "hair-silver-curls-PROMPT.txt",
       "hair-teal-compact-PROMPT.txt",
+      "hair-teal-only-v2-PROMPT.txt",
       "hair-teal-PROMPT.txt",
       "hat-adventurer-PROMPT.txt",
       "master-PROMPT.txt"
@@ -145,6 +184,8 @@
     "unusedSources": [
       "hair-chestnut-generated.png",
       "hair-chestnut-compact-generated.png",
+      "hair-teal-generated.png",
+      "hair-silver-curls-generated.png",
       "hair-teal-compact-generated.png",
       "hair-silver-curls-compact-generated.png",
       "eyes-amber-generated.png",
@@ -153,9 +194,9 @@
       "clothing-mage-generated.png"
     ],
     "activeHairSources": {
-      "hair-chestnut": "master.png",
-      "hair-teal": "hair-teal-generated.png",
-      "hair-silver-curls": "hair-silver-curls-generated.png"
+      "hair-chestnut": "hair-chestnut-only-v2.png",
+      "hair-teal": "hair-teal-only-v2.png",
+      "hair-silver-curls": "hair-silver-curls-only-v2.png"
     },
     "defaultEyeSource": "master.png",
     "headlessReferenceSources": {
@@ -163,6 +204,7 @@
       "clothing-knight-headless-v2.png": "clothing-knight-generated.png",
       "clothing-mage-headless-v2.png": "clothing-mage-generated.png"
     },
+    "hairOnlyReferenceRole": "Rejected hair layers guide design only; blank head guides placement only. New sources contain hair alone, never a rendered head.",
     "referenceRole": "External DDTank portrait used for camera/proportions only; original identity/costume artwork edited."
   },
   "calibration": {

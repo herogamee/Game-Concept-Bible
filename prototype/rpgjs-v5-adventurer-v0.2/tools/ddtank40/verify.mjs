@@ -47,6 +47,35 @@ let bodyLandmarkPixels=0;
 const nativeHeadPixels=await nativePixels('layers/head-template.png'),templatePixels=await nativePixels('blank-head-generated.png'),neckChecks=[],proportionChecks=[];
 const authoring=JSON.parse(await readFile(resolve(root,pack.authoringDirectory,'manifest.json'),'utf8'));
 assert(authoring.headlessClothingSources&&!authoring.garmentCutPaths&&!authoring.neckPath,'Clothing must use body-only sources, not a jaw/collar extraction mask');
+assert(authoring.hairOnlySources&&authoring.hairSourceRegistration,'Full hair must use independently authored hair-only sources');
+assert.deepEqual(authoring.hairSourceRegistration.matrix,[.72,0,0,.72,168,3],'All new hair sources share one declared import, never per-item fitting');
+function components(data,width,height){
+ const visited=new Uint8Array(width*height),queue=new Int32Array(width*height),sizes=[];
+ for(let p=0;p<visited.length;p++){
+  if(visited[p]||data[p*4+3]<32)continue;
+  let start=0,end=1;queue[0]=p;visited[p]=1;
+  while(start<end){const at=queue[start++],x=at%width,y=Math.floor(at/width);
+   for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+    const xx=x+dx,yy=y+dy;if(xx<0||xx>=width||yy<0||yy>=height)continue;
+    const next=yy*width+xx;if(!visited[next]&&data[next*4+3]>=32){visited[next]=1;queue[end++]=next;}
+   }
+  }sizes.push(end);
+ }return sizes.sort((a,b)=>b-a);
+}
+const hairOnlyChecks=[];
+for(const id of ['hair-chestnut','hair-teal','hair-silver-curls']){
+ const rawName=authoring.hairSourceRegistration.rawSources[id],registeredName=authoring.hairOnlySources[id],data=await nativePixels('layers/'+id+'.png'),raw=await nativePixels(rawName);
+ assert(rawName.endsWith('-only-generated-v2.png'),'Do not reuse a headed portrait as a hair source');
+ assert.deepEqual(await readFile(resolve(root,pack.masterDirectory,id+'.png')),await readFile(resolve(root,pack.authoringDirectory,registeredName)),id+': full hair must copy registered hair-only PNG without skin/ear cuts');
+ for(let p=800*1254;p<1254*1254;p++)assert(raw[p*4+3]<16,id+': generated hair-only source contains visible lower body artwork');
+ for(let p=560*1254;p<1254*1254;p++)assert(data[p*4+3]<16,id+': unexpected visible face/neck/body artwork below the short hair');
+ for(const [x,y] of [[474,493],[635,498],[552,578]])assert.equal(data[(y*1254+x)*4+3],0,id+': actual eye/mouth regions must remain empty');
+ const islands=components(data,1254,1254);assert(islands[0]>10000,id+': missing hair');assert(!islands.slice(1).some(size=>size>32),id+': detached hair fragments remain');
+ hairOnlyChecks.push({id,generatedHairOnlySource:rawName,registeredSource:registeredName,nativeCopiedByteForByte:true,headAndBodyAbsent:true,eyeMouthRegionsEmpty:true,connectedComponents:islands,importMatrix:authoring.hairSourceRegistration.matrix});
+}
+// The rejected brown layer visibly contained a detached remnant under the ear.
+const oldHairIslands=components(await nativePixels('../../evidence/ddtank40-three-quarter-v1/hair-before-hair-only.png'),1254,1254);
+assert(oldHairIslands.slice(1).some(size=>size>32),'The regression fixture must expose the rejected detached patch');
 function alphaBounds(data,width,height){let x0=width,y0=height,x1=-1,y1=-1;for(let y=0;y<height;y++)for(let x=0;x<width;x++)if(data[(y*width+x)*4+3]>=128){x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y)}return {x:x0,y:y0,width:x1-x0+1,height:y1-y0+1};}
 for(const id of ['clothing-traveler','clothing-knight','clothing-mage']){
   const data=await nativePixels('layers/'+id+'.png');
@@ -154,7 +183,7 @@ const report={profile:profile.id,view:pack.view,template:pack.template,originalI
   referenceDefaults:sourceDefaults,interchangeCases:blends.length,sourceMastersUnmodified:true,allOrigins:[0,0],
   rejectedInvalidDimensions:true,rejectedMissingExpressions:true,rejectedIncompleteProductionPack:true,
   authoredExpressionChecks:expressionChecks,
-  bodyLandmarkPixels,exactLimbPixelInvariance:false,protectedEar:true,capCrownChecks,
+  bodyLandmarkPixels,exactLimbPixelInvariance:false,hairOnlyChecks,rejectedOldDetachedHairFragment:true,protectedEar:true,capCrownChecks,
   exportMatrix:matrix,uniformAllLayers:true,rejectedAnisotropicBody:true,rejectedSeparateHeadBodyFits:true,proportionChecks,neckChecks,coveredJoinPixels,faceAboveClothing:true,
   acceptance:'File-format/portrait-renderer checks pass. Actual Flash-client item registration, anatomical/topology compatibility, all actions, female originals and owner visual acceptance remain pending.'};
 await writeFile(resolve(out,'verification.json'),JSON.stringify(report,null,2)+'\n');

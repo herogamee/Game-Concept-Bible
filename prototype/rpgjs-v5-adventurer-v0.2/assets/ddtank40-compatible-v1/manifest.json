@@ -15,8 +15,9 @@
     "clothing-traveler-headless-v2.png": "42872a6d00a3beff742fb7285ff49cdad6743bbf26200087a7940d1ed6fd2438",
     "clothing-knight-headless-v2.png": "ac41ead4961b535c9290421e2dc23f41242eb8f5294bb6ceebc02be252416180",
     "clothing-mage-headless-v2.png": "be11a331540363193aead8b5c10f1cc3d65ff47efcdccc2c349fb99e8176e55a",
-    "hair-teal-generated.png": "1a8867f2b311259d1eef7c4d5931c54600d551993baf3d973af95025329375a5",
-    "hair-silver-curls-generated.png": "2bb0e311aba831f2c53ae19e58b9060ac095b5d51d7f397c8a1d3ae60a150dad",
+    "hair-chestnut-only-v2.png": "b4ca3a964c9f656d0157ef662b8c70af484cb118374626f5a330a5374d91b386",
+    "hair-teal-only-v2.png": "c192da3bd6e6ec9beec97ec263a972e044409d2d2b69cc735ec154df9c444ed9",
+    "hair-silver-curls-only-v2.png": "35ac3faa78c25f8f79d3bd8c1dff79858342b581b08fe26c71739f0a9fac76da",
     "hat-adventurer-generated.png": "73d06313597fa768a0a8e8a17ae15bde84fd8521d6c44fe288ad823c1c3ad0fb",
     "clothing-knight-generated.png": "09c940217a47b1f200121caf6a59d3cb2e4561ddd4dc00d66ba8f5d7a671d7b2",
     "clothing-mage-generated.png": "d3c1b784e9b0b5f7887a226da7bbb4aee6ceac842c485b69e7faba18ab663e28",
@@ -24,8 +25,13 @@
     "face-blush-generated.png": "899c5ecfcded8ea6fb8c0aa36ff1029950f64268547bee972bc1fd2d5c9cfeeb",
     "hair-chestnut-compact-generated.png": "bd6f231fb28d818cfdb348dcf250db8e75b0391615b91239c67b0a2ed6627a80",
     "hair-chestnut-generated.png": "c8fc9acc65a78aba9a45172597d24507b2e951cfefafdd37652a1c8eb0ae249f",
+    "hair-chestnut-only-generated-v2.png": "fc4cac88cfa9524f20a2acbb38d80edcce2e91e5f5a5eb4b753b93afe3882424",
     "hair-silver-curls-compact-generated.png": "32e3c785f02352a7e277b1230210b4ddbdc41a19dc41ef8903ce4a590e8a4edd",
-    "hair-teal-compact-generated.png": "4aa0e53078d947bef185c3fe7e72e87e2696ea513127bc71a1f928604fe11daf"
+    "hair-silver-curls-generated.png": "2bb0e311aba831f2c53ae19e58b9060ac095b5d51d7f397c8a1d3ae60a150dad",
+    "hair-silver-curls-only-generated-v2.png": "f6930f8641ff775b1e6f179c811caffd1634768e5914ea8cfa51e7dd36508fec",
+    "hair-teal-compact-generated.png": "4aa0e53078d947bef185c3fe7e72e87e2696ea513127bc71a1f928604fe11daf",
+    "hair-teal-generated.png": "1a8867f2b311259d1eef7c4d5931c54600d551993baf3d973af95025329375a5",
+    "hair-teal-only-generated-v2.png": "18126013528afff1c92d38ba55dc82e657ba54986483be46915cb237767b721c"
   },
   "contexts": [
     "show"
@@ -419,55 +425,55 @@
       "path": "image/equip/m/hair/ours_hair_1/1/A/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "6ff524d675e265ab856e9309c2ee7115db1f9473aeec489470a691edb2b30c8a"
+      "sha256": "2d0430ec60105d8fb81f4c7a9299477edcff2d57c66d8b81b6a1c1bc85dc23c3"
     },
     {
       "path": "image/equip/m/hair/ours_hair_1/1/B/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "bf2cdedd6875bd035ff1513b8581a9145519ff3b39b85bd8ecf0f9cffea12c72"
+      "sha256": "64df099ccee49d38f0bd3188cf426c73691cd4a2925cfdbe3c517e613bf08b51"
     },
     {
       "path": "image/equip/m/hair/ours_hair_1/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "d1c46305d0863e85dbd01f9c54b9078188a5a3f04ede01eb815780ed0cdae908"
+      "sha256": "3fe2488e8dd08dce6f6284729152a8978219d638083be01b536a52d84307252b"
     },
     {
       "path": "image/equip/m/hair/ours_hair_2/1/A/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "50a8619edce340b15b015ec5d3378a73fa607ad8c00e0eedfaa976a6a8b217ea"
+      "sha256": "3b51864397d1e13e7bfe10c0ee34aa515f97c2fb0d265c495252cd633ca3ee64"
     },
     {
       "path": "image/equip/m/hair/ours_hair_2/1/B/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "2ee7c569e2b8ace9c4084e5a8bc85ff5d1ff0cc8a37daf7a55a5e6f89d1e51f3"
+      "sha256": "472a3624a929aad751c4c4c2c99382df41a47d9d2474b15724b62be3bd6090da"
     },
     {
       "path": "image/equip/m/hair/ours_hair_2/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "851e0028daaac90949acc61ca50c681e4e50dea3efe6b8e3e297d7a9d5b1be39"
+      "sha256": "bae0989022c645c57a5c9eb256ae22378671dccaaad11baa5dc3f10ec168a924"
     },
     {
       "path": "image/equip/m/hair/ours_hair_3/1/A/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "cf9b59e2b4a615df14aa3bf9c4d6482b65353decb92e95f58f4b13d194f82aca"
+      "sha256": "ca70b63f4434cfa167dfc58cdc7977b9fb39ecc31f56463f07a02682dc34428e"
     },
     {
       "path": "image/equip/m/hair/ours_hair_3/1/B/show.png",
       "width": 250,
       "height": 312,
-      "sha256": "fb96c37db4e0480eff5d5dc017393f6fc23ea979e52c84ba977b307c0d9b3cc7"
+      "sha256": "dd805393aa7c0f2b14cda75fb162bbf356ffd98d1bcb142f4dd700e28b3b6c5b"
     },
     {
       "path": "image/equip/m/hair/ours_hair_3/icon_1.png",
       "width": 78,
       "height": 78,
-      "sha256": "f6df18c821af94800e3e09f5680e95ab9ff3cdb9c42cc839b37f9f5cdc59a831"
+      "sha256": "25f3fa8c0baec0ef78433f139c2dc49362f70f0e03a0ec9e38b20e5452776ba8"
     },
     {
       "path": "image/equip/m/cloth/ours_cloth_1/1/show.png",
@@ -581,12 +587,12 @@
     "eyes-amber.png": "d720cb34a55db994b6a1ee173a85b76345f8caaed505c4af9c12ec510d50d5e6",
     "eyes-determined.png": "0a842b134e47fb3231ff25ec1994c6008010da9c764958de3a75efa841e9db28",
     "eyes-joy.png": "94b1a21c3e4779b79a7b55eb517c72dbccffb1a11804171c4197716c2df9eb71",
-    "hair-chestnut-under-hat.png": "0ca8ec54756f1e3b6127d31bffa342d6f5888799efb48a65a3d761d2af4bab33",
-    "hair-chestnut.png": "9229c41c1c600e632be4df5faa1db639f2c76f25a7cd9990d9edadb6eff8313d",
-    "hair-teal-under-hat.png": "a19d0a4045998d3156e3d9b0839ed68a6778a9e5be0a773dec9f73cb4c5564db",
-    "hair-teal.png": "2cae27b0f34d7604ad87c1e21d635fba80d99929c4641363102fa4648268c11f",
-    "hair-silver-curls-under-hat.png": "b41c0f385302db300a72c4d4b5a4973d5ba36668f3c136e47f593a485cbab18b",
-    "hair-silver-curls.png": "5524576e4165f97aac335ba15d5fd7b2ac5d98ee3852e2174dc813e81fb33095",
+    "hair-chestnut-under-hat.png": "d0d467f9ff5b87c15660194386f7f9c0285997eb8bf6c066cde7ae456e642efe",
+    "hair-chestnut.png": "b4ca3a964c9f656d0157ef662b8c70af484cb118374626f5a330a5374d91b386",
+    "hair-teal-under-hat.png": "d0ff4ca4f02a5970a4f42e69121a44d15cf7e28c69f4ebe2f0f588808eeda947",
+    "hair-teal.png": "c192da3bd6e6ec9beec97ec263a972e044409d2d2b69cc735ec154df9c444ed9",
+    "hair-silver-curls-under-hat.png": "f493a622dba3c3524bbcbd490a909b27bf39d395ffd6078eb8e510637643f099",
+    "hair-silver-curls.png": "35ac3faa78c25f8f79d3bd8c1dff79858342b581b08fe26c71739f0a9fac76da",
     "clothing-traveler.png": "42872a6d00a3beff742fb7285ff49cdad6743bbf26200087a7940d1ed6fd2438",
     "clothing-knight.png": "ac41ead4961b535c9290421e2dc23f41242eb8f5294bb6ceebc02be252416180",
     "clothing-mage.png": "be11a331540363193aead8b5c10f1cc3d65ff47efcdccc2c349fb99e8176e55a",

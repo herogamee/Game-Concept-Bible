@@ -9,6 +9,7 @@ try {
   const base=document.querySelector('#compat-base'),sex=document.querySelector('#compat-sex'),guides=document.querySelector('#compat-guides'),hide=document.querySelector('#compat-hide-head');
   const main=document.querySelector('#compat-character'),ref=document.querySelector('#compat-reference');
   const masterPreview=document.querySelector('#compat-master'),clothPreview=document.querySelector('#compat-cloth-only');
+  const hairPreview=document.querySelector('#compat-hair-only'),hairSource=document.querySelector('#compat-hair-source'),hairSourceLink=document.querySelector('#compat-hair-source-link');
   for(const slot of showSlots) {
     const label=document.createElement('label');label.textContent=names[slot];const select=document.createElement('select');select.id=`compat-${slot}`;label.append(select);document.querySelector('#compat-selectors').append(label);controls.set(slot,select);
     select.addEventListener('change',()=>{const before={...state.selected};state.selected[slot]=select.value||null;try{showPlan(profile,catalog,state);render()}catch(e){state.selected=before;select.value=before[slot]||'';status.textContent=e.message;status.className='error'}});
@@ -58,6 +59,11 @@ try {
       const ui=document.querySelector('#compat-ui');ui.getContext('2d').clearRect(0,0,120,165);ui.getContext('2d').drawImage(staging,0,0,120,165);
       const clothStaging=document.createElement('canvas');await paint(clothStaging,{...plan,layers:plan.layers.filter(l=>l.slot==='cloth')});if(tick!==revision)return;
       clothPreview.getContext('2d').clearRect(0,0,250,342);clothPreview.getContext('2d').drawImage(clothStaging,0,0);
+      const hairStaging=document.createElement('canvas');await paint(hairStaging,{...plan,layers:plan.layers.filter(l=>l.slot==='hair')});if(tick!==revision)return;
+      hairPreview.getContext('2d').clearRect(0,0,250,342);hairPreview.getContext('2d').drawImage(hairStaging,0,0);
+      const ownHairNames={'ours-310900001':'hair-chestnut','ours-310900002':'hair-teal','ours-310900003':'hair-silver-curls'},nativeHair=ownHairNames[plan.equipment.hair];
+      hairSource.hidden=hairSourceLink.hidden=!nativeHair;
+      if(nativeHair){hairSource.src=hairSourceLink.href=`/ddt40/native/${nativeHair}.png`;hairSource.alt='ไฟล์เฉพาะทรงผม '+nativeHair+' · 1254 × 1254';}
       pathRows(plan);main.dataset.profile=profile.id;main.dataset.origin='0,0';main.dataset.view=catalog.view;main.dataset.equipment=JSON.stringify(plan.equipment);main.dataset.hairVariant=plan.hairVariant;
       main.dataset.drawOrder=plan.layers.map(l=>l.slot).join(',');main.dataset.exportScale=String(catalog.calibration.matrix[0]);
       document.querySelector('#compat-look').textContent=`${state.base==='ours'?'เกมเรา · มุม 3/4':'DDTank'} · ผม ${plan.hairVariant} · 250 × 342`;

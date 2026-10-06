@@ -12,6 +12,7 @@ const compatible=await compatibilityCatalog(source,profile);
 const staticFiles=new Map(['index.html','client.mjs','compositor.mjs','portrait-adapter.mjs','original.html','original-client.mjs','walk.html','walk-client.mjs','walk-model.mjs','fixed-template.html','fixed-template-client.mjs','fixed-template-model.mjs'].map(name=>[`/${name}`,fileURLToPath(new URL(name,import.meta.url))]));
 for(const name of ['index.html','client.mjs','format.mjs','registration.mjs'])staticFiles.set(`/ddt40/${name}`,fileURLToPath(new URL(`../ddtank40/${name}`,import.meta.url)));
 staticFiles.set('/ddt40/master.png',fileURLToPath(new URL('../../assets/ddtank40-three-quarter-v1/master.png',import.meta.url)));
+for(const name of ['hair-chestnut','hair-teal','hair-silver-curls'])staticFiles.set(`/ddt40/native/${name}.png`,fileURLToPath(new URL(`../../assets/ddtank40-three-quarter-v1/layers/${name}.png`,import.meta.url)));
 const originalDir=new URL('../../assets/character-master/head-hair/',import.meta.url);
 for(const name of ['head-face.png','hair-chestnut.png','body-traveler.png'])staticFiles.set(`/original-assets/${name}`,fileURLToPath(new URL(name,originalDir)));
 staticFiles.set('/original-assets/master.png',fileURLToPath(new URL('../../assets/character-master/front-v1.png',import.meta.url)));
