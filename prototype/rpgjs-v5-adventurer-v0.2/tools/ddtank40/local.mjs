@@ -19,6 +19,6 @@ export async function compatibilityCatalog(source,profile) {
   for(const sex of profile.sexFolders)defaults.reference[sex]=Object.fromEntries(Object.entries(profile.defaults[sex]).filter(([slot])=>profile.show.drawOrder.includes(slot)).map(([slot,id])=>[slot,`ddt-${id}`]));
   const existingIds=new Set(source.equipmentIds);
   for(const item of own.items)if(existingIds.has(item.templateId))throw new Error(`TemplateID collision: ${item.templateId}`);
-  return {catalog:{profile:profile.id,defaults,items,availability:own.availability,acceptance:own.acceptance,
+  return {catalog:{profile:profile.id,view:own.view,template:own.template,defaults,items,availability:own.availability,acceptance:own.acceptance,
                   originalFiles:own.files,calibration:own.calibration,rejectedReferenceItems:rejected},files};
 }

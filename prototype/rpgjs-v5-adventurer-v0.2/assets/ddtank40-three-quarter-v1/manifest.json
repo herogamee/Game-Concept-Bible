@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "template": "ddtank40-standing-three-quarter-left-v1",
+  "view": "three-quarter-left",
+  "width": 1254,
+  "height": 1254,
+  "splitY": 627,
+  "origin": [
+    0,
+    0
+  ],
+  "eyeRegions": [
+    {
+      "cx": 473,
+      "cy": 469,
+      "rx": 51,
+      "ry": 85
+    },
+    {
+      "cx": 637,
+      "cy": 469,
+      "rx": 92,
+      "ry": 96
+    },
+    {
+      "cx": 552,
+      "cy": 578,
+      "rx": 55,
+      "ry": 34
+    }
+  ],
+  "cheekRegions": [
+    {
+      "cx": 476,
+      "cy": 575,
+      "rx": 29,
+      "ry": 27
+    },
+    {
+      "cx": 682,
+      "cy": 567,
+      "rx": 47,
+      "ry": 34
+    }
+  ],
+  "protectedPaths": [
+    "M 477 796 L 514 799 L 502 839 L 494 862 L 510 883 L 513 902 L 494 908 L 473 901 L 460 882 L 459 854 Z",
+    "M 747 790 L 787 789 L 804 840 L 818 900 L 804 925 L 777 936 L 744 919 L 729 896 L 733 873 L 739 846 Z",
+    "M 531 980 L 593 980 L 600 1041 L 537 1043 Z",
+    "M 641 982 L 701 982 L 728 1068 L 663 1071 Z"
+  ],
+  "capPath": "M 344 326 Q 353 300 403 289 Q 400 228 431 209 Q 519 133 632 139 Q 677 117 718 153 Q 817 178 876 288 Q 920 345 891 407 L 877 439 L 801 403 L 734 371 L 702 348 Q 638 369 577 362 L 430 331 Q 381 375 348 350 Z",
+  "capCoverage": [
+    [
+      300,
+      330
+    ],
+    [
+      430,
+      330
+    ],
+    [
+      580,
+      363
+    ],
+    [
+      700,
+      349
+    ],
+    [
+      880,
+      442
+    ],
+    [
+      960,
+      470
+    ]
+  ],
+  "files": [
+    "head-template.png",
+    "eyes-amber.png",
+    "eyes-determined.png",
+    "eyes-joy.png",
+    "face-scar.png",
+    "face-blush.png",
+    "clothing-traveler.png",
+    "clothing-knight.png",
+    "clothing-mage.png",
+    "hair-chestnut.png",
+    "hair-chestnut-under-hat.png",
+    "hair-teal.png",
+    "hair-teal-under-hat.png",
+    "hair-silver-curls.png",
+    "hair-silver-curls-under-hat.png",
+    "hat-adventurer.png"
+  ],
+  "sourceHashes": {
+    "blank-head-generated.png": "9d29eccd2cf4d778049e36bf30295c8cc7cdf55eb046e4694cefca2ce9b1eaa2",
+    "master.png": "c3935fc8c254842c7fc33f1049054da13d4137fd0e60ed822d0873052cb3b75d",
+    "eyes-amber-generated.png": "cff766cc27de4ac4342f65a223a71dd0a683b4a6f9b93d33efe45973d1497c76",
+    "eyes-determined-generated.png": "ac3ab05325ff7017f32b2f29ec78ddeffa9e8267c2e9fb7f4947bb758ad4af0c",
+    "eyes-joy-generated.png": "910844242f3a779be12c3880dc92ad36111e86ee8bce46ebd2039d7461d92cf0",
+    "face-scar-generated.png": "00b1cdfaa6ffbeda8f43f7d83581245f83e6ab41643368cb430bf3919e807144",
+    "face-blush-correction-generated.png": "744a9756ba25b4c16c8e03b309d3050d2381c5c1b5575c5426a4c6cf5ecec229",
+    "clothing-knight-generated.png": "09c940217a47b1f200121caf6a59d3cb2e4561ddd4dc00d66ba8f5d7a671d7b2",
+    "clothing-mage-generated.png": "d3c1b784e9b0b5f7887a226da7bbb4aee6ceac842c485b69e7faba18ab663e28",
+    "hair-chestnut-compact-generated.png": "bd6f231fb28d818cfdb348dcf250db8e75b0391615b91239c67b0a2ed6627a80",
+    "hair-teal-compact-generated.png": "4aa0e53078d947bef185c3fe7e72e87e2696ea513127bc71a1f928604fe11daf",
+    "hair-silver-curls-compact-generated.png": "32e3c785f02352a7e277b1230210b4ddbdc41a19dc41ef8903ce4a590e8a4edd",
+    "hat-adventurer-generated.png": "73d06313597fa768a0a8e8a17ae15bde84fd8521d6c44fe288ad823c1c3ad0fb",
+    "face-blush-generated.png": "899c5ecfcded8ea6fb8c0aa36ff1029950f64268547bee972bc1fd2d5c9cfeeb",
+    "hair-chestnut-generated.png": "c8fc9acc65a78aba9a45172597d24507b2e951cfefafdd37652a1c8eb0ae249f",
+    "hair-silver-curls-generated.png": "2bb0e311aba831f2c53ae19e58b9060ac095b5d51d7f397c8a1d3ae60a150dad",
+    "hair-teal-generated.png": "1a8867f2b311259d1eef7c4d5931c54600d551993baf3d973af95025329375a5"
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "prompts": [
+      "blank-head-PROMPT.txt",
+      "clothing-knight-PROMPT.txt",
+      "clothing-mage-PROMPT.txt",
+      "eyes-amber-PROMPT.txt",
+      "eyes-determined-PROMPT.txt",
+      "eyes-joy-PROMPT.txt",
+      "face-blush-correction-PROMPT.txt",
+      "face-blush-PROMPT.txt",
+      "face-scar-PROMPT.txt",
+      "hair-chestnut-compact-PROMPT.txt",
+      "hair-chestnut-PROMPT.txt",
+      "hair-silver-curls-compact-PROMPT.txt",
+      "hair-silver-curls-PROMPT.txt",
+      "hair-teal-compact-PROMPT.txt",
+      "hair-teal-PROMPT.txt",
+      "hat-adventurer-PROMPT.txt",
+      "master-PROMPT.txt"
+    ],
+    "unusedSources": [
+      "hair-chestnut-generated.png",
+      "hair-teal-generated.png",
+      "hair-silver-curls-generated.png",
+      "face-blush-generated.png"
+    ],
+    "referenceRole": "External DDTank portrait used for camera/proportions only; original identity/costume artwork edited."
+  },
+  "calibration": {
+    "master": [
+      1254,
+      1254
+    ],
+    "head": {
+      "from": [
+        421,
+        202,
+        849,
+        627
+      ],
+      "to": [
+        42,
+        77,
+        166,
+        206
+      ]
+    },
+    "cloth": {
+      "from": [
+        455,
+        627,
+        815,
+        1208
+      ],
+      "to": [
+        58.415368639667705,
+        202,
+        146.4153686396677,
+        304
+      ]
+    },
+    "origin": [
+      0,
+      0
+    ],
+    "alphaThreshold": 128,
+    "neckSource": [
+      600,
+      627
+    ],
+    "neckTarget": [
+      93.85981308411215,
+      206
+    ],
+    "note": "Revised 3/4-left master; shared fixed head and body family transforms with common neck x registration. Bounds are export calibration, not Flash attachment anchors."
+  },
+  "scope": "Standing frame0 only. Native category masks and source-specific extraction are a bounded art trial; other views/actions, naked anatomical master, animation and production throughput remain unverified."
+}

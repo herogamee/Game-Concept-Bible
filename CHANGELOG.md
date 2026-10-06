@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Match original standing art to the DDTank 3/4 view
+
+- Revise the original head, asymmetrical eyes, hair, clothing, cap and face details into the reference's three-quarter-left standing view. Retain 17 generated sources/exact prompts, including four unused wide-hair/cheek attempts; publish 16 native layers and 33 canonical PNGs with existing item IDs.
+- Preserve one blank head/ear contour across eye sets, fixed exposed limbs across outfits and shared category transforms with matching neck x registration. Repaint excessive side hair volume; mask every hairstyle's crown under the same tilted cap boundary and restore B on removal.
+- Pass 162 standing combinations, 12 source/original layer substitutions, exact head-alpha checks, 5874 protected limb-pixel checks, protected-ear and cap-crown coverage/restoration checks. Original-only gallery stays in the repo; mixed browser evidence stays external. Improve narrow-screen comparison so both portraits remain side by side; verify independent selections, cap hiding/reset and no console errors. Standing-only artwork, owner visual acceptance, other actions/directions and actual Flash ingestion remain pending.
+
 ## 2026-10-06 — DDTank 4.0 canonical character resources
 
 - Lock measured 4.0 sizes, relative origins, frame grids, category semantics and filenames in a versioned resource profile and repository agent guidance. Retain large authoring masters; retire their envelope as a runtime format.

@@ -1,0 +1,5 @@
+Use case: precise-object-edit.
+Asset type: selectable cheek marks on a fixed three-quarter-left head.
+Edit target Image 1: our generated blush/freckles blank-headed character. Image 2: same head with eyes, ONLY for locating the lower cheeks so marks will not cover eyes.
+Move ONLY all blush and freckles DOWN onto the lower cheeks. Near/viewer-right freckles and blush must be centered around raw x685,y578 on this1254-square canvas, far/viewer-left around x475,y575. Every colored freckle must be BELOW y560; no dots or red patch in either eye area. Keep markings inside the face, away from the mouth.
+Preserve EXACT blank-head contour, ears, nose, head rotation, skull shading everywhere else, body, costume, hands, feet, canvas1254×1254, registration and genuine transparency. Do not add eyes, eyebrows or mouth to the edit target. Do not shift or scale the figure. No text, floor, shadow or extra objects.

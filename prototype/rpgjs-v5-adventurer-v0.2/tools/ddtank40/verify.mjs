@@ -1,6 +1,6 @@
 /** Original exports + live installed-source interchange; commercial proof PNGs stay in the external lab. */
 import assert from 'node:assert/strict';
-import {createCanvas,loadImage} from '@napi-rs/canvas';
+import {createCanvas,loadImage,GlobalFonts} from '@napi-rs/canvas';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve,dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -22,21 +22,46 @@ function pixels(c){return c.getContext('2d').getImageData(0,0,c.width,c.height).
 // A visible head alone is not sufficient: every exported face must contain its
 // actual expression in the registered eye/mouth region, rather than blank skin.
 const bareHead=createCanvas(250,312),bareCtx=bareHead.getContext('2d');
+bareCtx.imageSmoothingEnabled=true;bareCtx.imageSmoothingQuality='high';
 const {from:headFrom,to:headTo}=pack.calibration.head;
 const scaleX=(headTo[2]-headTo[0])/(headFrom[2]-headFrom[0]),scaleY=(headTo[3]-headTo[1])/(headFrom[3]-headFrom[1]);
 bareCtx.setTransform(scaleX,0,0,scaleY,headTo[0]-headFrom[0]*scaleX,headTo[1]-headFrom[1]*scaleY);
-bareCtx.drawImage(await loadImage(await readFile(resolve(root,'assets/fixed-template-v1/head-template.png'))),0,0);
+bareCtx.drawImage(await loadImage(await readFile(resolve(root,pack.masterDirectory,'head-template.png'))),0,0);
 const barePixels=pixels(bareHead),expressionHashes=new Set(),expressionChecks=[];
 for(const face of pack.items.filter(i=>i.slot==='face')){
   const tile=createCanvas(250,312);tile.getContext('2d').drawImage(await image(face.assets.main.url),0,0,250,312,0,0,250,312);
   const data=pixels(tile);let featurePixels=0;
+  for(let p=3;p<data.length;p+=4)assert.equal(data[p],barePixels[p],`${face.id}: head contour changed with expression`);
   for(let y=118;y<200;y++)for(let x=55;x<150;x++){const offset=(y*250+x)*4;if([0,1,2].some(c=>Math.abs(data[offset+c]-barePixels[offset+c])>20))featurePixels++;}
   assert(featurePixels>500,`${face.id}: missing registered eyes/brows/mouth`);
-  expressionHashes.add(createHash('sha256').update(data).digest('hex'));expressionChecks.push({id:face.id,featurePixels});
+  expressionHashes.add(createHash('sha256').update(data).digest('hex'));expressionChecks.push({id:face.id,featurePixels,headContourIdentical:true});
 }
 assert.equal(expressionHashes.size,3,'Expression selections must produce distinct faces');
+const nativePixels=async name=>{const im=await loadImage(await readFile(resolve(root,pack.authoringDirectory,name))),c=createCanvas(im.width,im.height);c.getContext('2d').drawImage(im,0,0);return pixels(c);};
+const masterPixels=await nativePixels('master.png');let protectedBodyPixels=0;
+for(const id of ['clothing-traveler','clothing-knight','clothing-mage']){
+  const data=await nativePixels('layers/'+id+'.png');
+  for(const [x,y,w,h] of [[482,855,12,24],[780,860,15,34],[550,996,20,27],[676,1010,20,31]])for(let row=y;row<y+h;row++)for(let col=x;col<x+w;col++){
+    const p=(row*1254+col)*4;for(let channel=0;channel<4;channel++)assert.equal(data[p+channel],masterPixels[p+channel],`${id}: fixed exposed limb changed`);protectedBodyPixels++;
+  }
+}
+for(const id of ['hair-chestnut','hair-teal','hair-silver-curls','hat-adventurer']){
+  const data=await nativePixels('layers/'+id+'.png');for(let y=491;y<527;y++)for(let x=795;x<824;x++)assert.equal(data[(y*1254+x)*4+3],0,`${id}: immutable ear covered`);
+}
+const capCrownChecks=[];
+for(const id of ['hair-chestnut','hair-teal','hair-silver-curls']){
+  const full=await nativePixels('layers/'+id+'.png'),under=await nativePixels('layers/'+id+'-under-hat.png');let restoredCrownPixels=0;
+  for(let y=0;y<330;y++)for(let x=300;x<960;x++){
+    const alpha=(y*1254+x)*4+3;
+    assert.equal(under[alpha],0,`${id}: crown protrudes above cap`);
+    if(full[alpha]>0)restoredCrownPixels++;
+  }
+  assert(restoredCrownPixels>1000,`${id}: removing cap must restore the authored crown`);
+  capCrownChecks.push({id,coveredWithCap:true,restoredCrownPixels});
+}
 for(const f of pack.files){const bytes=await readFile(resolve(ownRoot,f.path)),im=await loadImage(bytes);assert.deepEqual([im.width,im.height],[f.width,f.height]);assert.equal(createHash('sha256').update(bytes).digest('hex'),f.sha256)}
-for(const [name,hash] of Object.entries(pack.sourceHashes))assert.equal(createHash('sha256').update(await readFile(resolve(root,'assets/fixed-template-v1',name))).digest('hex'),hash,'Original master changed');
+for(const [name,hash] of Object.entries(pack.sourceHashes))assert.equal(createHash('sha256').update(await readFile(resolve(root,pack.masterDirectory,name))).digest('hex'),hash,'Original master changed');
+for(const [name,hash] of Object.entries(pack.authoringSourceHashes))assert.equal(createHash('sha256').update(await readFile(resolve(root,pack.authoringDirectory,name))).digest('hex'),hash,'Generated source changed');
 assert.equal(resourcePath(profile,{slot:'hair',pic:'test',variant:'A'}),'image/equip/m/hair/test/1/A/show.png');
 assert.equal(resourcePath(profile,{slot:'eff',pic:'test'}),'image/equip/m/eff/test/1/show.png');
 assert.equal(resourcePath(profile,{slot:'cloth',pic:'test',kind:'game'}),'image/equip/m/cloth/test/1/game.png');
@@ -71,10 +96,18 @@ const own=await render(showPlan(profile,catalog,{base:'ours'}));await writeFile(
 const mixed=await render(showPlan(profile,catalog,{base:'reference',selected:{cloth:'ours-510900002'},hidden:['arm']}));await writeFile(resolve(out,'reference-head-original-knight.png'),mixed.toBuffer('image/png'));
 const back=showPlan(profile,catalog,{base:'ours',selected:{head:'ours-110900002',hair:'ours-310900002'}});
 assert.equal(back.hairVariant,'A');assert.equal(showPlan(profile,catalog,{base:'ours',selected:{head:'ours-110900002',hair:'ours-310900002'},hidden:['head']}).hairVariant,'B');
-const report={profile:profile.id,originalItems:pack.items.length,files:pack.files.length,originalCombinations:count,
+if(process.platform==='win32')GlobalFonts.registerFromPath('C:/Windows/Fonts/tahoma.ttf','ProofFont');
+const gallery=createCanvas(750,1110),galleryCtx=gallery.getContext('2d');galleryCtx.fillStyle='#e2e8da';galleryCtx.fillRect(0,0,750,1110);galleryCtx.fillStyle='#313d31';galleryCtx.font='14px ProofFont, sans-serif';
+for(let row=0;row<3;row++)for(let col=0;col<3;col++){
+  const hair=items('hair')[col],selected=row===2?{cloth:items('cloth')[col].id}:{hair:hair.id,...(row===1?{head:'ours-110900002'}:{})};
+  const image=await render(showPlan(profile,catalog,{base:'ours',selected}));galleryCtx.drawImage(image,col*250,row*370+24);galleryCtx.fillText(row===2?['TRAVELER','KNIGHT','MAGE'][col]:`${['BROWN','BLUE','SILVER'][col]} / CAP ${row?'ON':'OFF'}`,col*250+12,row*370+19);
+}
+const originalEvidence=resolve(root,'evidence/ddtank40-three-quarter-v1');await mkdir(originalEvidence,{recursive:true});await writeFile(resolve(originalEvidence,'original-standing-gallery.png'),gallery.toBuffer('image/png'));
+const report={profile:profile.id,view:pack.view,template:pack.template,originalItems:pack.items.length,files:pack.files.length,originalCombinations:count,
   referenceDefaults:sourceDefaults,interchangeCases:blends.length,sourceMastersUnmodified:true,allOrigins:[0,0],
   rejectedInvalidDimensions:true,rejectedMissingExpressions:true,rejectedIncompleteProductionPack:true,
   authoredExpressionChecks:expressionChecks,
+  protectedBodyPixels,protectedEar:true,capCrownChecks,
   acceptance:'File-format/portrait-renderer checks pass. Actual Flash-client item registration, anatomical/topology compatibility, all actions, female originals and owner visual acceptance remain pending.'};
 await writeFile(resolve(out,'verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));

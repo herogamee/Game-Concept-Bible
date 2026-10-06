@@ -1,5 +1,7 @@
 {
   "profile": "ddtank-4.0-local-2026-10-06",
+  "view": "three-quarter-left",
+  "template": "ddtank40-standing-three-quarter-left-v1",
   "originalItems": 15,
   "files": 33,
   "originalCombinations": 162,
@@ -25,26 +27,72 @@
   "authoredExpressionChecks": [
     {
       "id": "ours-610900001",
-      "featurePixels": 1549
+      "featurePixels": 1433,
+      "headContourIdentical": true
     },
     {
       "id": "ours-610900002",
-      "featurePixels": 1380
+      "featurePixels": 1316,
+      "headContourIdentical": true
     },
     {
       "id": "ours-610900003",
-      "featurePixels": 722
+      "featurePixels": 561,
+      "headContourIdentical": true
+    }
+  ],
+  "protectedBodyPixels": 5874,
+  "protectedEar": true,
+  "capCrownChecks": [
+    {
+      "id": "hair-chestnut",
+      "coveredWithCap": true,
+      "restoredCrownPixels": 62791
+    },
+    {
+      "id": "hair-teal",
+      "coveredWithCap": true,
+      "restoredCrownPixels": 85130
+    },
+    {
+      "id": "hair-silver-curls",
+      "coveredWithCap": true,
+      "restoredCrownPixels": 51868
     }
   ],
   "acceptance": "File-format/portrait-renderer checks pass. Actual Flash-client item registration, anatomical/topology compatibility, all actions, female originals and owner visual acceptance remain pending.",
-  "browserChecks": [
-    "independent original eyes/hair/clothing/face details/hat",
-    "hat A and hidden-hat B recovery",
-    "reference female default",
-    "original knight clothing on reference male",
-    "three hair cards",
-    "responsive character preview",
-    "no browser error/warning logs",
-    "reset restores all original defaults without retaining the hat"
-  ]
+  "browserChecks": {
+    "page": "http://127.0.0.1:5199/fixed-template",
+    "view": "three-quarter-left",
+    "independentSecondSelections": true,
+    "independentThirdSelections": {
+      "hair": "ours-310900003",
+      "face": "ours-610900003",
+      "cloth": "ours-510900003",
+      "eff": "ours-410900002"
+    },
+    "blueHairCapAAndHiddenB": true,
+    "resetRestoresOriginalDefaults": true,
+    "pairedPreviewsInExistingNarrowViewport": true,
+    "consoleErrors": 0,
+    "externalScreenshot": "D:/Codex/DDtank/research/compatibility-4.0/three-quarter-portrait-lab.png",
+    "visualAcceptance": "Owner review pending; manual browser comparison does not certify exact art identity or full topology interchange."
+  },
+  "smokeChecks": {
+    "syntax": true,
+    "routes": [
+      "/fixed-template",
+      "/fixed-template-legacy",
+      "/original",
+      "/walk",
+      "/api/ddt40-profile",
+      "/api/ddt40-catalog",
+      "/ddt40/client.mjs"
+    ],
+    "canonicalAsset": {
+      "url": "/ddt40/ours/image/equip/m/face/ours_face_1/1/show.png",
+      "status": 200,
+      "contentType": "image/png"
+    }
+  }
 }

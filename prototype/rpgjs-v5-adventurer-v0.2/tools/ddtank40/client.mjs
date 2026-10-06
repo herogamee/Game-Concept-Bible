@@ -52,8 +52,8 @@ try {
       main.getContext('2d').clearRect(0,0,250,342);main.getContext('2d').drawImage(staging,0,0);
       ref.getContext('2d').clearRect(0,0,250,342);ref.getContext('2d').drawImage(referenceStaging,0,0);
       const ui=document.querySelector('#compat-ui');ui.getContext('2d').clearRect(0,0,120,165);ui.getContext('2d').drawImage(staging,0,0,120,165);
-      pathRows(plan);main.dataset.profile=profile.id;main.dataset.origin='0,0';main.dataset.equipment=JSON.stringify(plan.equipment);main.dataset.hairVariant=plan.hairVariant;
-      document.querySelector('#compat-look').textContent=`${state.base==='ours'?'เกมเรา':'DDTank'} · ผม ${plan.hairVariant} · กรอบ 250 × 342`;
+      pathRows(plan);main.dataset.profile=profile.id;main.dataset.origin='0,0';main.dataset.view=catalog.view;main.dataset.equipment=JSON.stringify(plan.equipment);main.dataset.hairVariant=plan.hairVariant;
+      document.querySelector('#compat-look').textContent=`${state.base==='ours'?'เกมเรา · มุม 3/4':'DDTank'} · ผม ${plan.hairVariant} · 250 × 342`;
       status.textContent='ประกอบสำเร็จ · ทุก PNG วางที่ (0,0) · ไม่มีการปรับสเกลรายชิ้นขณะเล่น';
       for(const card of cards){if(tick!==revision)return;const p=showPlan(profile,catalog,{sex:'m',base:'ours',selected:{...(state.sex==='m'?state.selected:{}),hair:card.item.id},hidden:state.hidden});const cardStaging=document.createElement('canvas');await paint(cardStaging,p);if(tick!==revision)return;card.canvas.getContext('2d').clearRect(0,0,250,342);card.canvas.getContext('2d').drawImage(cardStaging,0,0);card.card.setAttribute('aria-pressed',String(plan.equipment.hair===card.item.id))}
     }catch(e){if(tick===revision){status.textContent=e.message;status.className='error'}}

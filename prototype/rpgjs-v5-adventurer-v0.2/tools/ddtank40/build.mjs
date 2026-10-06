@@ -7,18 +7,13 @@ import {fileURLToPath} from 'node:url';
 import {resourcePath,validateShowAsset} from './format.mjs';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'../..');
 const profile=JSON.parse(await readFile(new URL('profile.json',import.meta.url),'utf8'));
-const masters=resolve(root,'assets/fixed-template-v1');
+const authoring=JSON.parse(await readFile(resolve(root,'assets/ddtank40-three-quarter-v1/manifest.json'),'utf8'));
+const masterDirectory='assets/ddtank40-three-quarter-v1/layers';
+const masters=resolve(root,masterDirectory);
 const output=resolve(root,'assets/ddtank40-compatible-v1');
-// One head-family transform, one clothing-family transform. Never recalculated
-// from an individual hairstyle or outfit. Reference boxes are audit alpha>=128.
-// These are explicit conversion calibrations, not anatomical anchors in Flash.
-const calibration={
-  master:[1254,1254],
-  head:{from:[414,179,837,543],to:[42,77,166,206]},
-  cloth:{from:[410,543,841,1219],to:[54,202,142,304]},
-  origin:[0,0],alphaThreshold:128,
-  note:'Fixed category resampling of earlier front-view art. This proves format/registration, not 3/4-view artistic interchange.'
-};
+// Family-wide export calibration of the revised standing template. Every item
+// uses the same transforms; no per-style fitting or runtime perspective warp.
+const calibration=authoring.calibration;
 const sourceHashes={},files=[],items=[];
 async function load(name) {
   const b=await readFile(resolve(masters,name));sourceHashes[name]=createHash('sha256').update(b).digest('hex');
@@ -45,7 +40,11 @@ async function item({number,slot,pic,label,source,hatSource,empty=false}) {
     if(empty){canvas=createCanvas(...(profile.show.emptyDefaultPng[slot]||profile.show.ordinaryPng));}
     else if(slot==='face') {
       const head=registered(await load('head-template.png')),eye=registered(await load(source));
-      head.getContext('2d').drawImage(eye,0,0);
+      const headCtx=head.getContext('2d'),basePixels=headCtx.getImageData(0,0,head.width,head.height);
+      headCtx.drawImage(eye,0,0);
+      const expressionPixels=headCtx.getImageData(0,0,head.width,head.height);
+      for(let p=3;p<expressionPixels.data.length;p+=4)expressionPixels.data[p]=basePixels.data[p];
+      headCtx.putImageData(expressionPixels,0,0);
       canvas=createCanvas(...profile.show.faceSheet);canvas.getContext('2d').drawImage(head,0,0);
       // Slots 1..3 intentionally blank. Coverage [0] forbids using them as poses.
     } else canvas=registered(await load(variant==='A'?hatSource:source),slot==='cloth'?'cloth':'head');
@@ -80,9 +79,9 @@ await item({number:410900002,slot:'eff',pic:'ours_eff_1',label:'รอยแผ�
 await item({number:410900003,slot:'eff',pic:'ours_eff_2',label:'แก้มแดงและกระ',source:'face-blush.png'});
 await item({number:110900002,slot:'head',pic:'ours_head_1',label:'หมวกนักเดินทาง',source:'hat-adventurer.png'});
 const registration=items.map(i=>({TemplateID:i.templateId,CategoryID:profile.categories[i.slot],NeedSex:1,Pic:i.pic,Name:i.name,Property1:i.hairType,Property8:'1',Level:1}));
-const pack={profile:profile.id,version:1,contexts:['show'],defaults,items,files,calibration,sourceHashes,
+const pack={profile:profile.id,version:2,view:authoring.view,template:authoring.template,masterDirectory,authoringDirectory:'assets/ddtank40-three-quarter-v1',authoringSourceHashes:authoring.sourceHashes,contexts:['show'],defaults,items,files,calibration,sourceHashes,
   availability:{show:'Standing frame 0 only for original faces',game:'Not exported: 39 actual battle cells still required',virtual:'Not exported: matched front/back town poses still required',female:'Not authored',flashRegistration:'Registration fields exported; unchanged Flash-client ingestion has not been verified'},
-  acceptance:'Format/placement prototype. Front art differs from the 3/4 source template; owner topology/art acceptance and complete action interchange pending.'};
+  acceptance:'Revised 3/4-left standing artwork on a shared head/body template. Owner visual acceptance, complete action interchange and original Flash ingestion remain pending.'};
 await writeFile(resolve(output,'manifest.json'),JSON.stringify(pack,null,2)+'\n');
 await writeFile(resolve(output,'template-registration.json'),JSON.stringify(registration,null,2)+'\n');
 console.log(`Exported ${items.length} original items / ${files.length} canonical PNGs to ${output}. Missing poses remain unsupported.`);

@@ -1,0 +1,5 @@
+Use case: precise-object-edit.
+Asset type: independently selectable registered character layer.
+Input image: EDIT TARGET, our fixed three-quarter-left standing template.
+Change ONLY the clothing bundle into our novice knight outfit: short dark charcoal tunic with a simple silver chainmail chest, small shoulder pieces, muted red-brown shorts, belt and matching brown ankle boots with small steel trim. Same relaxed three-quarter LEFT standing pose. Keep the existing body silhouette, exposed neck/arms/hands/knees, all positions and sole locations fixed. This is shirt + shorts + boots together as one selectable outfit; no sword or shield.
+STRICT: edit only the requested category; exact1254×1254 square frame and original figure registration. Keep three-quarter-left viewpoint, head contour, nose, ear, neck and all unchanged parts at their original positions. Do not recenter, enlarge or fit the character. Original clean brown-outline 2D cel-shaded game art. Actual transparent RGBA background, no floor/shadow/text/extra objects. One complete character only.

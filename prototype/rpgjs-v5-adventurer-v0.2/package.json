@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "main": "index.js",
   "scripts": {
-    "assets:ddt40": "node tools/ddtank40/build.mjs",
+    "assets:ddt40": "node tools/ddtank40/author-three-quarter.mjs && node tools/ddtank40/build.mjs",
     "verify:ddt40": "node tools/ddtank40/verify.mjs",
     "assets:fixed-template": "node tools/build-fixed-template.mjs",
     "verify:fixed-template": "node tools/registered-character/verify-fixed-template.mjs",
