@@ -14,6 +14,8 @@ for(const name of ['index.html','client.mjs','format.mjs','registration.mjs'])st
 staticFiles.set('/ddt40/master.png',fileURLToPath(new URL('../../assets/ddtank40-three-quarter-v1/master.png',import.meta.url)));
 for(const name of ['head-template','hair-chestnut','hair-teal','hair-silver-curls','hair-ghost-teal'])staticFiles.set(`/ddt40/native/${name}.png`,fileURLToPath(new URL(`../../assets/ddtank40-three-quarter-v1/layers/${name}.png`,import.meta.url)));
 staticFiles.set('/ddt40/ghost-head-review.png',fileURLToPath(new URL('../../evidence/ddtank40-three-quarter-v1/ghost-head-native-review.png',import.meta.url)));
+staticFiles.set('/ddt40/hair-pair-review.png',fileURLToPath(new URL('../../evidence/ddtank40-three-quarter-v1/blank-head-hair-pair-review.png',import.meta.url)));
+for(const name of ['blank-head-hair','hair-only','reassembled-blank-head'])staticFiles.set(`/ddt40/hair-pair/${name}.png`,fileURLToPath(new URL(`../../assets/ddtank40-three-quarter-v1/hair-pair-v1/${name}.png`,import.meta.url)));
 const originalDir=new URL('../../assets/character-master/head-hair/',import.meta.url);
 for(const name of ['head-face.png','hair-chestnut.png','body-traveler.png'])staticFiles.set(`/original-assets/${name}`,fileURLToPath(new URL(name,originalDir)));
 staticFiles.set('/original-assets/master.png',fileURLToPath(new URL('../../assets/character-master/front-v1.png',import.meta.url)));

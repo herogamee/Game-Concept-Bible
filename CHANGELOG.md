@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-06 — Review blank-head / hair-only asset pairs
+
+- Follow the owner's corrected sequence: blank standard head wearing hair first, then its hair-only transparent counterpart; both exclude eyes, brows and mouth. Preserve both ImageGen outputs and exact prompts.
+- Add the two-image review and unchanged-head reassembly to the lab; mark the prior ghost-head art as visually rejected. No new catalog item, runtime fit or template replacement.
+- Record silhouette/shading drift between generated counterparts rather than claiming pixel identity. Canonical exports and game/save behavior remain unchanged.
+
 ## 2026-10-06 — Remove brown hair baked into the amber eye set
 
 - Fix the default eye source: its feature-region extraction from the full master included brown bangs, visible under blue/silver hair. Reuse the existing clean hairless amber source and require the same hairless source family for all three eye sets.

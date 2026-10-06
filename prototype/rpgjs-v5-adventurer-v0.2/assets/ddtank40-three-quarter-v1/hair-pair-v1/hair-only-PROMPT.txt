@@ -1,0 +1,6 @@
+Use case: background-extraction.
+Asset type: second PNG in a matched head-plus-hair / hair-only resource pair.
+The single input is the approved-design BLANK HEAD WITH BLUE HAIR master, with NO eyes, eyebrows or mouth. Make its matching HAIR-ONLY transparent PNG.
+Keep the entire teal-blue hairstyle EXACTLY at the same pixel coordinates and original scale as the input: every outer tuft, crown, asymmetric bang, highlight, ink edge, temple lock and sideburn. Do not invent, restyle, expand, shrink, shift, rotate, recenter or zoom the hair. Same 1254x1254 canvas and same large empty margin below.
+Render ALL non-hair regions as truly transparent alpha: the head, skin, ear, nose and face become invisible. Leave a transparent opening underneath the existing irregular fringe. Do not create new hair in the face opening. Do not keep peach skin outlines or head outlines. The hair alone must align with the input master when superimposed at (0,0), with no fitting or adjustment.
+Preserve smooth intact antialiased hair contours rather than jagged polygon cuts. No body, no neck, no eyes, no eyebrows, no mouth, no ear, no skin, no label, no border, no painted checkerboard. Genuine transparent background. This output will be used as the independently swappable hair layer while the first blank-head-plus-hair PNG is retained as the design/preview master.
