@@ -1,4 +1,12 @@
-# Implemented game status — 2026-10-03
+# Project status
+
+## Current character-authoring direction — 2026-10-06
+
+The owner clarified the [fixed-template asset standard](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-APPEARANCE.md#owner-defined-fixed-template-asset-standard--2026-10-06): one normal head/body with invariant proportions and pose registration; separate eye sets (eyes + brows + mouth), face sets, hair, glasses, hats, wings, integrated clothing (top + trousers/skirt + shoes), and full-costume replacement. These requirements and remaining authoring deliverables are now recorded. The immediate work is to establish a repeatable asset-production process before catalog expansion or engine migration.
+
+The local `/original` and `/walk` studies and their technical checks are preserved. `/walk` combines head/facial-feature images, two hairstyles and two outfit colourways across one right-facing eight-frame clip. It does not separately implement the owner's eye/face sets or prove fixed-template production at thousands of items. An accepted protected master, new-shaped clothing compatibility, full-costume policy, broad action coverage and production throughput remain unfinished. The playable legacy schema/save behavior was not changed by this specification update.
+
+## Historical implemented game checkpoint — 2026-10-03
 
 We are at a **small playable village/meadow prototype**, not a full RPG/MMO. Bible version numbers describe design documents; they are not percentages of implemented gameplay. v0.1 remains the product reference. The RPGJS v0.2 candidate is reviewable, with visual/control acceptance still pending.
 

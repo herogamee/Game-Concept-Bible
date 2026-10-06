@@ -4,6 +4,8 @@ Canonical design repository for the original fantasy **Adventurer Life RPG** pro
 
 ## Current direction
 
+The current character-authoring priority is the owner's [fixed-template asset standard](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-APPEARANCE.md#owner-defined-fixed-template-asset-standard--2026-10-06): one normal head and body, fixed registration, separate eye sets (eyes/brows/mouth) and face sets, integrated clothing sets, and full-costume replacement. This supersedes the old generic face/eyes and shirt/pants/shoes target. The requirement is recorded; the original labs and legacy runtime do not yet implement it. Establish a repeatable production process before projecting a catalog of thousands or moving the art study into another engine.
+
 The RPGJS candidate now has a **[Character Lab](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-LAB.md)** at `http://localhost:5173/lab.html` for frame inspection, local costume/face layers, sword timing and actual-game Slime testing with a separate save. Gait art and class gameplay remain pending review/development.
 
 The local modular limb experiment failed owner visual review. Its [review record](prototype/rpgjs-v5-adventurer-v0.2/evidence/modular/REVIEW.md) includes a front-only continuous-body and head/hair registration study; these review PNGs are not integrated animation assets or an accepted replacement for the playable character.
@@ -12,7 +14,7 @@ A [new complete front character candidate](prototype/rpgjs-v5-adventurer-v0.2/ev
 
 A separate [registered-layer web proof](prototype/rpgjs-v5-adventurer-v0.2/evidence/registered-character/REVIEW.md) now changes face, hair and clothing using local 4.0 reference images without part fitting. Sixteen combinations and male/female Godot-reference pixel comparisons were checked. It reads commercial reference images externally; the original-art wardrobe remains unresolved.
 
-The owner requires independent face/hair/clothing choices to persist across every supported motion and action. The [appearance contract](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-APPEARANCE.md) requires two faces × two hairstyles × two dressed bodies through all frames of the first walking direction; a fixed-costume walking study alone cannot pass customization acceptance.
+The owner requires independent eye-set/face-set/hair/clothing choices to persist across every supported motion and action. The earlier eight-combination walking study remains evidence; it does not pass the current fixed-template production standard or implement separate eye and face sets.
 
 A [first original side-walk study](prototype/rpgjs-v5-adventurer-v0.2/evidence/walk-side-v1/REVIEW.md) now runs at `http://127.0.0.1:5199/walk`: two face variants, two hairstyles and two outfit colourways through eight frames, with live changes that preserve position/phase. All 64 composition cases were checked. Natural gait, source-edge quality and owner acceptance remain pending; neutral idle, other views and combat actions are not implemented for this character.
 

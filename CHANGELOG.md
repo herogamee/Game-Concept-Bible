@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-06 — Owner fixed-template asset specification
+
+- Record one normal head/body template with fixed proportions, pose coordinates and equipment registration; prohibit per-item fitting or placement repairs as a production strategy.
+- Correct the owner categories: eye sets contain eyes/brows/mouth; face sets contain marks/details on the same head; clothing is one top + trousers/skirt + shoes set; full costumes intentionally replace the normal appearance. Include hair, glasses, hats and wings and independent default/restoration behavior.
+- Make repeatable asset authoring the immediate priority before large catalog claims or engine migration. Mark the original labs, recoloured walk outfits and legacy separate garment schema as incomplete under this specification; preserve their evidence and existing saves/runtime.
+- Update the appearance contract and entry-point status documents. No new artwork, renderer, save migration or full-costume implementation is claimed.
+
 ## 2026-10-06 — Original side-walk wardrobe study
 
 - Generate and preserve an original right-facing eight-frame source, two face/hair variants and a second outfit colourway, with complete prompts/provenance. Retain the repeated first walk and displaced first blue edit as unused inputs; export fixed-grid head, hair and complete dressed-body layers without part fitting.
