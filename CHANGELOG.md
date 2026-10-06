@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-06 — Animated customization requirement
+
+- Record the owner's requirement that independently selected faces, hair and clothing remain consistent across standing, walking, sword attacks, gun shooting and future supported actions, including changes during motion.
+- Define a first walking review of two faces × two hairstyles × two dressed bodies across every frame, with shared registration, action coverage, default handling and stable motion/combat phase. The current single-hair standing proof and rejected rig do not pass this gate; this is a documented requirement, not a new animation implementation.
+
 ## 2026-10-06 — First original head/hair toggle
 
 - Derive full-frame original head/face, chestnut hair and dressed-body layers from the coherent front master, reconstructing the covered scalp with an ImageGen edit. Preserve the wrongly scaled generated hair extraction as unused; export hair from the original raster without part fitting.

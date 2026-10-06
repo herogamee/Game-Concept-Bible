@@ -28,4 +28,6 @@ Before saving the repository checkpoint, `git diff --check`, `npm run typecheck`
 
 The generated bald edit is not a layered source drawing and changed some outer head/ear details. The extraction masks are specific to this pose. Hair-edge quality and the art itself still need owner review. A second independently authored compatible hairstyle, complete outfit replacement, sex defaults, hats, other directions, animation and integration into the playable character remain unimplemented for this original character. The earlier limb and head/hair experiments remain rejected.
 
+The owner explicitly requires independent face/hair/clothing changes in every supported pose and action. The [appearance contract](../../../CHARACTER-APPEARANCE.md) now specifies an eight-combination walking review and persistent selection through action changes. This one-face/one-hair/one-body standing proof does not meet that later gate.
+
 Sources, exact generation prompts and the unused failed extraction are retained in [asset provenance](../../../assets/character-master/head-hair/PROVENANCE.md).

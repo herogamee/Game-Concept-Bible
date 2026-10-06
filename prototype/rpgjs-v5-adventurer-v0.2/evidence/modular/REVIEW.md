@@ -6,7 +6,7 @@
 
 Following the owner's request to start with one complete front drawing, a separate candidate is now in `assets/character-master/front-v1.png`, reviewed on a light background in `evidence/character-master/front-v1-review.png`. It was generated as one full character, without compositing any of this experiment's parts. Design review remains pending; it is not yet a layered wardrobe master or a gameplay asset.
 
-The source and runtime changes are unfinished local work. A previous main-to-candidate merge is committed, but this character implementation has not been committed/pushed or accepted as product work. No completed game/production-art claim is justified.
+The source and runtime changes are preserved research work, committed/pushed in checkpoint `148c623` alongside the later registered-layer studies. They remain rejected as product art. Publication of this diagnostic code does not establish completed game/production-art acceptance.
 
 ## Why the result differs from the working DDTank Lab
 
