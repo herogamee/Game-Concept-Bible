@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-07 — Research external walking and equipment rigs
+
+- Inspect upstream GitHub procedural foot scheduling, actual Spineboy rig data, Spine equipment skins and Godot cutout workflow. Record sources and concrete comparison in the eight-frame review.
+- Identify separate motion/art gates: the older failed mesh already had IK and half-cycle leg phases; active generated raster poses still repeat the leading leg. Recommend a coloured skeleton/contact proof followed by properly bound cutout artwork. Runtime remains unchanged by this research.
+
 ## 2026-10-07 — Add eight authored frames to the walking lab
 
 - Publish a versioned headless8-pose source and2000×342 auxiliary sheet; preserve4-frame history and all independent appearance layers. Update live playback,90ms clock, frame stepping and source links.
