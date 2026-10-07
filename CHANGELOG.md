@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-07 — Lock the current DDTank-style modular character baseline
+
+- Preserve the owner-requested character design summary, machine-readable contract, 24 registered PNGs, clean two-outfit stand/walk masters, paired-hair source references, exact prompts, Canvas wardrobe and Godot adapter snapshots in `characters/ddtank-lab-v1`. Keep commercial DDTank bitmaps/SWF/atlases/decompiled excerpts external.
+- Lock 250×342 frames, head/neck registration, two 8-frame downleft outfit clips and timing, independent blink, 78px standard-head icons, defaults/layer order, original-vs-Lab compatibility and the −27px custom-character-to-aura correction. Record actual gaps in glasses/custom wings/full costumes, directions/actions and production integration.
+- Add snapshot/live SHA-256 verification and corruption/missing/dimension self-tests, plus catalog/PNG guards in both live renderers and exporter. Native comparison smoke tests pass; documentation and checks do not certify art throughput or replace owner visual review.
+
 ## 2026-10-07 — Implement coloured support-foot gait proof
 
 - Add a fixed-length two-leg skeleton with immutable blue/orange limb identities, opposite contact/passing phases, independent foot targets and stride-matched movement speed. Make it the walking lab's default review mode with an eight-pose grid; retain generated clothing frames as the failed comparison.

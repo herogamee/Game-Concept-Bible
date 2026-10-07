@@ -1,5 +1,9 @@
 # Project status
 
+## Locked current character study — 2026-10-07
+
+The owner requested a repository summary and invariant baseline for the latest external DDTank lab. See [design standard v1](design/DDTANK-CHARACTER-STANDARD-v1.md), [contract](characters/ddtank-lab-v1/contract.json), and [verification](characters/ddtank-lab-v1/evidence/verification.json). Original generated art/source/code is now preserved with runtime catalog/PNG guards and a snapshot/live-file verifier. Current custom support: male/downleft, two outfits with real stand and eight walk frames, independent head/hair/eye/detail/cap swaps, blink, standard-head inventory icons, and centered native aura composition. Nine items form 48 looks/384 walk-pose combinations; these counts are not visual-quality approval. Other equipment, directions, combat and production-game integration remain incomplete. This supersedes prior walking trials as the current study checkpoint; no production-engine migration is declared.
+
 ## Current character-authoring direction — 2026-10-06
 
 The owner clarified the [fixed-template asset standard](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-APPEARANCE.md#owner-defined-fixed-template-asset-standard--2026-10-06): one normal head/body with invariant proportions and pose registration; separate eye sets (eyes + brows + mouth), face sets, hair, glasses, hats, wings, integrated clothing (top + trousers/skirt + shoes), and full-costume replacement. These requirements and remaining authoring deliverables are now recorded. The immediate work is to establish a repeatable asset-production process before catalog expansion or engine migration.

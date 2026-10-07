@@ -1,0 +1,16 @@
+{
+  "verified_sources": 128,
+  "errors": {
+    "15107": "com.jpexs.decompiler.flash.SwfOpenException: Invalid SWF file, wrong signature."
+  },
+  "provenance": "Existing local JPEXS conversion; every SWF SHA256 rechecked against installed 4.0 files in this audit.",
+  "bounds_definition": "JPEXS timeline display rectangle including filters. Battle cell uses whole root union, with child matrices retained; not raw child dimensions.",
+  "show_width_range": [
+    99,
+    500
+  ],
+  "show_height_range": [
+    74,
+    470
+  ]
+}

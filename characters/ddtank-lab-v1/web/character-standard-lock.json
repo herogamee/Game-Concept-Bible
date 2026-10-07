@@ -1,0 +1,170 @@
+{
+  "id": "ddtank-character-standard-v1",
+  "locked_at": "2026-10-07",
+  "catalog_sha256": "8125064595fb8e3f58d89c6042d93dae65d0ddb2b1a85440ed0b523072b5a7bc",
+  "settings": {
+    "frame_size": [
+      250,
+      342
+    ],
+    "frame_count": 8,
+    "cycle_seconds": 0.9,
+    "head_anchor": [
+      117,
+      162
+    ],
+    "head_source_anchor": [
+      600,
+      627
+    ],
+    "head_scale": 0.23,
+    "layer_order": [
+      "cloth",
+      "base_head",
+      "face",
+      "eff",
+      "hair",
+      "head"
+    ],
+    "defaults": {
+      "cloth": "ours_cloth_1",
+      "hair": "ours_hair_1",
+      "face": "ours_face_1",
+      "eff": "none",
+      "head": "none"
+    },
+    "walk_preview_rate": 0.75,
+    "standard_head_center_x": 125,
+    "aura_character_offset": [
+      -27,
+      0
+    ],
+    "bag_center_x": 244,
+    "icon_size": [
+      78,
+      78
+    ]
+  },
+  "assets": {
+    "image/equip/m/face/default/1/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "2ac912a9513f169efc6ccc1f33563b3aef09eee125a1893d00db1d5246b72d88"
+    },
+    "image/equip/m/cloth/ours_cloth_1/1/walk_downleft.png": {
+      "width": 2000,
+      "height": 342,
+      "sha256": "38f2d6863e06fab7474433bfe63fab09a82e15166c7ff5c15c2ca10cb764bbf4"
+    },
+    "image/equip/m/cloth/ours_cloth_1/1/stand_show.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "09983d45970569049860548c07aa1009c6519afcb749188f12694dfb103a140e"
+    },
+    "image/equip/m/cloth/ours_cloth_1/icon_1.png": {
+      "width": 78,
+      "height": 78,
+      "sha256": "3ddeacd38937de34f20781a1f379c28133485c93489fb43dd30fe0b5ab5132c7"
+    },
+    "image/equip/m/cloth/ours_cloth_2/1/walk_downleft.png": {
+      "width": 2000,
+      "height": 342,
+      "sha256": "ead5a78116cff0ae951c0fa4dc662fdfe754cc926939aaf78347a9b3352e56ae"
+    },
+    "image/equip/m/cloth/ours_cloth_2/1/stand_show.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "fdc7b678014dd454eddb172d7816b474e8f326ce72fa2660fe99f438fcf0275b"
+    },
+    "image/equip/m/cloth/ours_cloth_2/icon_1.png": {
+      "width": 78,
+      "height": 78,
+      "sha256": "96dfa24c163c1b0e05b3a39f439fc60bcf07081c4cd52adab31639d8fa65a8e1"
+    },
+    "image/equip/m/hair/ours_hair_1/1/B/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "f6b2e3c415350016140a5f57196bf56f21b199a110969398b66a13ff29fd13e6"
+    },
+    "image/equip/m/hair/ours_hair_1/1/A/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "86860baa951f411a328f78d099bda9569b2907701a4bbc3899d2ed49bd1a6984"
+    },
+    "image/equip/m/hair/ours_hair_1/icon_1.png": {
+      "width": 78,
+      "height": 78,
+      "sha256": "ac9cd1e3d3c8fdbe833f9b9f95d7c0a915a1a8c2c93d125900883b0ecafaeb66"
+    },
+    "image/equip/m/hair/ours_hair_4/1/B/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "5093b2c75c06df1a103d1a90b495df89dcabc00973664a4df472aedf6fa90fcb"
+    },
+    "image/equip/m/hair/ours_hair_4/1/A/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "fcd7a9dad14014a63b5d2d6d876c2228a41aa32431a7242e275c9e47eabd6772"
+    },
+    "image/equip/m/hair/ours_hair_4/icon_1.png": {
+      "width": 78,
+      "height": 78,
+      "sha256": "92c8f57fd3142370bf61db6198d974015b21919c020630296c5caa845509d0f9"
+    },
+    "image/equip/m/face/ours_face_1/1/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "c5740314f3138ca70cadfda0c47e68f1125d9acfccc40b9f23754ba1cbf90c58"
+    },
+    "image/equip/m/face/ours_face_1/icon_1.png": {
+      "width": 78,
+      "height": 78,
+      "sha256": "1c54197af7bd3a9078682d2d1cc2441bce458502d2b21f024957ae5ec23703e3"
+    },
+    "image/equip/m/face/ours_face_2/1/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "4bd14644583f05a4c8c462db3313fc41a20b49bcc5ae9cb784be879e990453a8"
+    },
+    "image/equip/m/face/ours_face_2/icon_1.png": {
+      "width": 78,
+      "height": 78,
+      "sha256": "6036ad4a6bd71c3afe82f25183637539de13d7f23ef24f1ed460d0839844e7d8"
+    },
+    "image/equip/m/eff/ours_eff_1/1/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "d9e4bd8c4529221cf16424daefd7a385601a369584a424365d6dc93606f59c0f"
+    },
+    "image/equip/m/eff/ours_eff_1/icon_1.png": {
+      "width": 78,
+      "height": 78,
+      "sha256": "d46721f3219493835952efd5c498eef18f4c34cd3274948237eb88be907c3c92"
+    },
+    "image/equip/m/eff/ours_eff_2/1/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "89ebbe0fe8f448b9a494e550efa11794599daf1457e01d27b72627e1af5a0bb7"
+    },
+    "image/equip/m/eff/ours_eff_2/icon_1.png": {
+      "width": 78,
+      "height": 78,
+      "sha256": "438b924f13e6252bc55d1c5f4a47d58c6ab6c3822579e444bfe67f0fbaf5c635"
+    },
+    "image/equip/m/head/ours_head_1/1/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "8c155001a7fc6272ccb6e869bb280c815d86e8c99581c0c62693d5838b39746a"
+    },
+    "image/equip/m/head/ours_head_1/icon_1.png": {
+      "width": 78,
+      "height": 78,
+      "sha256": "278c1565b7591011c523c71ad6433ef2370ba2161e5fac10a687b573f1777f46"
+    },
+    "image/equip/m/face/ours_face_3/1/walk_downleft.png": {
+      "width": 250,
+      "height": 342,
+      "sha256": "7031ce333934ea9bfceaa98c6c1a73c97b7e3b9e62e3ec1d2449dfd43d7352e7"
+    }
+  }
+}

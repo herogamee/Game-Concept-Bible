@@ -1,0 +1,404 @@
+{
+  "id": "ddtank-character-standard-v1",
+  "version": 1,
+  "status": "Owner-requested locked working baseline; limited lab, not production completion",
+  "owner_authority": "Chat 2026-10-07: summarize all character design in the repository and lock the achieved settings",
+  "source_local_root": "D:\\Codex\\DDtank",
+  "reference_local_root": "D:/DDT 4.0/Resource",
+  "active_lab": {
+    "browser": "http://127.0.0.1:5214/template-walk-test/index.html",
+    "godot_launcher": "Compare Characters + Bag Aura.cmd",
+    "runtime": "Godot 4.7.2 / browser Canvas; no production engine selected"
+  },
+  "registration": {
+    "frame_size": [
+      250,
+      342
+    ],
+    "frame_count": 8,
+    "cycle_seconds": 0.9,
+    "head_anchor": [
+      117,
+      162
+    ],
+    "head_source_anchor": [
+      600,
+      627
+    ],
+    "head_scale": 0.23,
+    "layer_order": [
+      "cloth",
+      "base_head",
+      "face",
+      "eff",
+      "hair",
+      "head"
+    ],
+    "defaults": {
+      "cloth": "ours_cloth_1",
+      "hair": "ours_hair_1",
+      "face": "ours_face_1",
+      "eff": "none",
+      "head": "none"
+    },
+    "walk_preview_rate": 0.75,
+    "standard_head_center_x": 125,
+    "aura_character_offset": [
+      -27,
+      0
+    ],
+    "bag_center_x": 244,
+    "icon_size": [
+      78,
+      78
+    ]
+  },
+  "standing": {
+    "frame_size": [
+      250,
+      342
+    ],
+    "source_anchor": [
+      600,
+      627
+    ],
+    "target_neck": [
+      117,
+      162
+    ],
+    "scale": 0.23,
+    "body_assets": [
+      "image/equip/m/cloth/ours_cloth_1/1/stand_show.png",
+      "image/equip/m/cloth/ours_cloth_2/1/stand_show.png"
+    ],
+    "bag_motion": "stand",
+    "aura_gallery_motion": "stand"
+  },
+  "walking": {
+    "direction": "downleft",
+    "camera": "orthographic overhead, 45-degree pose guide",
+    "frame_count": 8,
+    "cycle_seconds": 0.9,
+    "base_frame_seconds": 0.1125,
+    "default_rate": 0.75,
+    "effective_frame_seconds": 0.15,
+    "effective_cycle_seconds": 1.2,
+    "sheet": [
+      2000,
+      342
+    ],
+    "frame_order": "0..7 horizontal, authored source 4 columns x 2 rows, row-major",
+    "authoring_grid": [
+      4,
+      2
+    ],
+    "method_source": "https://toy.ginzii.com/walk-template",
+    "outfits": [
+      {
+        "id": "ours_cloth_1",
+        "source": "authoring/traveler-headless-walk-v1.png",
+        "registration": {
+          "scale": 0.466,
+          "source_necks": [
+            [
+              170.42,
+              198.27
+            ],
+            [
+              174.46,
+              199.09
+            ],
+            [
+              172.83,
+              198.2
+            ],
+            [
+              175.53,
+              198.86
+            ],
+            [
+              172.73,
+              170.14
+            ],
+            [
+              177.27,
+              169.31
+            ],
+            [
+              177.88,
+              166.11
+            ],
+            [
+              179.31,
+              166.19
+            ]
+          ],
+          "target_neck": [
+            117,
+            162
+          ]
+        }
+      },
+      {
+        "id": "ours_cloth_2",
+        "source": "authoring/knight-headless-walk-v1.png",
+        "registration": {
+          "scale": 0.452,
+          "source_necks": [
+            [
+              169.25,
+              201.98
+            ],
+            [
+              172.53,
+              201.91
+            ],
+            [
+              169.83,
+              203.87
+            ],
+            [
+              175.63,
+              203.89
+            ],
+            [
+              169.57,
+              123.06
+            ],
+            [
+              172.55,
+              122.88
+            ],
+            [
+              172.62,
+              121.24
+            ],
+            [
+              177.38,
+              122.34
+            ]
+          ],
+          "target_neck": [
+            117,
+            162
+          ]
+        }
+      }
+    ],
+    "swap_policy": "Keep frame and clock while swapping equipment; no procedural knee/limb deformation"
+  },
+  "blink": {
+    "closed_asset": {
+      "path": "image/equip/m/face/ours_face_3/1/walk_downleft.png",
+      "width": 250,
+      "height": 342,
+      "sha256": "7031ce333934ea9bfceaa98c6c1a73c97b7e3b9e62e3ec1d2449dfd43d7352e7"
+    },
+    "closed_seconds": 0.16,
+    "interval_seconds": [
+      2.4,
+      4.8
+    ],
+    "source": "authoring/head-parts/eyes-joy.png",
+    "source_eye_regions": [
+      [
+        [
+          435,
+          440
+        ],
+        [
+          452,
+          436
+        ],
+        [
+          478,
+          448
+        ],
+        [
+          506,
+          464
+        ],
+        [
+          511,
+          534
+        ],
+        [
+          453,
+          544
+        ],
+        [
+          435,
+          518
+        ]
+      ],
+      [
+        [
+          555,
+          447
+        ],
+        [
+          584,
+          425
+        ],
+        [
+          637,
+          424
+        ],
+        [
+          694,
+          443
+        ],
+        [
+          710,
+          473
+        ],
+        [
+          700,
+          537
+        ],
+        [
+          576,
+          546
+        ],
+        [
+          551,
+          513
+        ]
+      ]
+    ],
+    "method": "Clip the existing closed-eye artwork into ocular regions only; preserve each selected expression's eyebrows and mouth. Use the shared head transform.",
+    "reference": "research/DDTank41-Classic/Source Flash/scripts/ddt/view/character/RoomPlayerAction.as: NORMAL_CLOSE_EYES (open -> closed -> open); lab timing is independent of walking."
+  },
+  "icons": {
+    "size": [
+      78,
+      78
+    ],
+    "content_envelope": [
+      70,
+      70
+    ],
+    "bounds_alpha_threshold": 32,
+    "head_items": [
+      "hair",
+      "face",
+      "eff",
+      "head"
+    ],
+    "head_item_layers": "immutable base_head + selected component",
+    "eye_inventory_policy": "One open-eye icon per eye set; closed-eye source only in animation_faces"
+  },
+  "inventory": {
+    "count": 9,
+    "slots": {
+      "cloth": [
+        "ours_cloth_1",
+        "ours_cloth_2"
+      ],
+      "hair": [
+        "ours_hair_1",
+        "ours_hair_4"
+      ],
+      "face": [
+        "ours_face_1",
+        "ours_face_2"
+      ],
+      "eff": [
+        "ours_eff_1",
+        "ours_eff_2"
+      ],
+      "head": [
+        "ours_head_1"
+      ]
+    },
+    "look_combinations": 48,
+    "walking_pose_compositions": 384,
+    "removed_hair": [
+      "old side-swept blue",
+      "old silver curls"
+    ],
+    "empty_required_slots": "use defaults",
+    "empty_optional_slots": [
+      "eff",
+      "head"
+    ]
+  },
+  "category_status": {
+    "base_head": "implemented immutable blank head",
+    "hair": "implemented brown + paired blue, A/B cap coverage",
+    "face": "implemented two eye+brow+mouth sets with independent blink",
+    "eff": "implemented scar / blush-freckles / none",
+    "cloth": "implemented two complete headless bodies, separate stand and eight walk frames",
+    "head": "implemented one cap / none",
+    "glass": "original DDTank compositor implemented; new-character slot not integrated",
+    "wing": "original SWF-to-atlas compositor implemented; 128 verified pairs, custom lab UI does not expose a new wing slot",
+    "suits": "original full-suit replacement implemented; custom full-costume asset and pose family not integrated",
+    "arm": "original compositor has default weapon proxy for aura level; new walking weapon/socket/actions not integrated"
+  },
+  "aura": {
+    "portrait_scale": 2.0833333333333335,
+    "circle_anchor": [
+      97.91666666666667,
+      135.41666666666666
+    ],
+    "body_anchor": [
+      93.75,
+      262.5
+    ],
+    "custom_character_offset": [
+      -27,
+      0
+    ],
+    "feet_support_centers": {
+      "ours_cloth_1": 120.5,
+      "ours_cloth_2": 121.0
+    },
+    "draw_order": [
+      "circle",
+      "wing_back",
+      "character",
+      "wing_front",
+      "body"
+    ],
+    "nimbus": "max(head_tier,cloth_tier)*100 + arm_tier",
+    "tier_rules": {
+      "0-4": 0,
+      "5-8": 1,
+      "9-11": 2,
+      "12": 3,
+      "13-14 original": 0,
+      "13-14 lab": 4,
+      "15+ or Gold": 5
+    },
+    "totem_body_minimum": 10,
+    "comparison_defaults": {
+      "arm": 9,
+      "cloth": 12,
+      "totem": 10,
+      "rule": "original",
+      "nimbus": 302
+    },
+    "lab_tier4": "tier3 hue variant, scale 1.1; no original SWF tier4"
+  },
+  "native_compatibility": {
+    "profile": "../../prototype/rpgjs-v5-adventurer-v0.2/tools/ddtank40/profile.json",
+    "measurements": "evidence/ddtank40-position-contracts.json",
+    "rule": "Original show/game/virtual layouts remain canonical; stand_show and walk_downleft are explicit lab extensions; not 100% Flash interchange"
+  },
+  "authoring_rules": [
+    "Keep one immutable blank head and body proportion template. No per-item runtime fitting, trim, stretch or geometry replacement.",
+    "Hair pair: first standard blank head + new hair, without eyes/brows/mouth; then matching hair-only RGBA via ImageGen. Preserve both raw outputs and prompts; only hair-only is a compositing layer.",
+    "Eye sets own eyes, brows and mouth and originate from hairless sources; eff owns scars/tattoos/earrings/details on the same head.",
+    "Clothing sources must be authored headless with intact rounded neck, collar, scarf, hands, legs and shoes. Never cut a headed portrait to manufacture a body.",
+    "Head layers share scale 0.23 and source/target anchors. Existing two walk families have distinct recorded offline scales/neck tables; freeze these historical calibrations, not a permission to fit future items arbitrarily.",
+    "New looks must match viewpoint, head coverage, neck overlap and feet support in every authored pose; dimension/hash checks alone do not approve art.",
+    "Full costume is a replacement mode, not an extra overlapping normal head/body; requires a complete supported pose family."
+  ],
+  "release_limits": [
+    "Only male downleft custom walk and stand are implemented. Eight directions, female family, run, gun/sword/actions and full costumes remain unsupported.",
+    "Static head parts are shared across eight body frames, not a skeletal rig.",
+    "Not integrated into the main v0.1 playable, RPGJS or Phaser production runtime.",
+    "No proof of production throughput for thousands of assets."
+  ],
+  "change_policy": "Preserve v1 byte-for-byte. Any authorized revision gets a new version plus visual/registration tests; never regenerate the v1 lock just to silence a failure."
+}

@@ -1,0 +1,163 @@
+{
+  "client": {
+    "path": "D:/DDT 4.0/Resource/flash50/2.swf",
+    "sha256": "078ecb1792766a19dd7f956025ca2a335b3d9c42e7a829428fa9088731a64485"
+  },
+  "decompiler": "JPEXS 26.3.0 selected-class export from installed flash50/2.swf",
+  "positions": {
+    "portrait_layer_origin": [
+      0,
+      0
+    ],
+    "portrait_output": [
+      250,
+      342
+    ],
+    "portrait_display": [
+      120,
+      165
+    ],
+    "portrait_normal_wing": [
+      -1,
+      2
+    ],
+    "portrait_type1_suit_body_y": -13,
+    "portrait_type1_suit_wing_y": -40,
+    "battle_frame": [
+      114,
+      95
+    ],
+    "battle_grid": [
+      13,
+      3
+    ],
+    "battle_body_origin": [
+      -62,
+      -83
+    ],
+    "battle_frame_local_reference": [
+      62,
+      83
+    ],
+    "battle_player_wrapper_y": -3,
+    "walk_frame": [
+      120,
+      175
+    ],
+    "walk_composited_strip": [
+      1800,
+      175
+    ],
+    "walk_head_bob_y": [
+      0,
+      2
+    ]
+  },
+  "normal_portrait_draw_order": [
+    "face (base head + expression)",
+    "hair",
+    "cloth (body + clothing)",
+    "eff",
+    "head",
+    "glass",
+    "weapon"
+  ],
+  "default_template_ids": {
+    "m": [
+      1101,
+      2101,
+      3101,
+      4101,
+      5101,
+      6101,
+      7001,
+      13101,
+      15001
+    ],
+    "f": [
+      1201,
+      2201,
+      3201,
+      4201,
+      5201,
+      6201,
+      7002,
+      13201,
+      15001
+    ]
+  },
+  "limits": [
+    "No separate skull/eye anatomical anchor metadata was found in the inspected loaders. Pixel content is authored in shared source coordinates.",
+    "Battle local reference [62,83] is derived from bitmap placement, not a skeleton joint or collision geometry.",
+    "UI widget position varies by screen and parent transform. Listed positions are relative to the character container.",
+    "Not every resource is loadable. Header-verified dimensions do not by themselves validate every animation or file."
+  ],
+  "evidence": [
+    {
+      "path": "client/scripts/ddt/view/character/ShowCharacter.as",
+      "start_line": 26,
+      "end_line": 28
+    },
+    {
+      "path": "client/scripts/ddt/view/character/ShowCharacter.as",
+      "start_line": 577,
+      "end_line": 594
+    },
+    {
+      "path": "client/scripts/ddt/view/character/ShowCharacterLoader.as",
+      "start_line": 88,
+      "end_line": 148
+    },
+    {
+      "path": "client/scripts/ddt/view/character/BaseCharacter.as",
+      "start_line": 18,
+      "end_line": 20
+    },
+    {
+      "path": "client/scripts/ddt/view/character/BaseLayer.as",
+      "start_line": 61,
+      "end_line": 65
+    },
+    {
+      "path": "client/scripts/ddt/view/character/GameCharacter.as",
+      "start_line": 165,
+      "end_line": 170
+    },
+    {
+      "path": "client/scripts/ddt/view/character/GameCharacter.as",
+      "start_line": 266,
+      "end_line": 280
+    },
+    {
+      "path": "client/scripts/ddt/view/character/ShowCharacter.as",
+      "start_line": 478,
+      "end_line": 492
+    },
+    {
+      "path": "client/scripts/ddt/view/character/ShowCharacter.as",
+      "start_line": 549,
+      "end_line": 558
+    },
+    {
+      "path": "client/scripts/ddt/view/walkcharacter/WalkCharacterLoader.as",
+      "start_line": 16,
+      "end_line": 18
+    },
+    {
+      "path": "client/scripts/ddt/view/walkcharacter/WalkCharacterLoader.as",
+      "start_line": 186,
+      "end_line": 202
+    },
+    {
+      "path": "client/scripts/ddt/manager/PathManager.as",
+      "start_line": 339,
+      "end_line": 363
+    },
+    {
+      "path": "client/scripts/ddt/data/player/PlayerInfo.as",
+      "start_line": 242,
+      "end_line": 263
+    }
+  ],
+  "publication_note": "Measured values and local evidence locations only; decompiled source excerpts excluded."
+}

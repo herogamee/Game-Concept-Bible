@@ -1,0 +1,13 @@
+{
+  "standard": "ddtank-character-standard-v1",
+  "passed": true,
+  "snapshot_files_checked": 70,
+  "live_files_checked": 60,
+  "external_metadata_and_config_checked": 10,
+  "registered_pngs": 24,
+  "inventory_items": 9,
+  "open_eye_sets": 2,
+  "stand_looks": 48,
+  "walk_pose_compositions": 384,
+  "errors": []
+}

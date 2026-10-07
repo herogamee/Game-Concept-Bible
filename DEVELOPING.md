@@ -26,6 +26,17 @@ npm.cmd run preview -- --port 4175
 
 Map regeneration is optional for an unchanged checkout; the generated TMX/TSX/PNG and registry are already tracked. `npm ci` needs registry access. Large-bundle/native-config warnings are known. Multiplayer development uses `npm.cmd run dev:online` on 5174 and is server-authoritative, with guest identities and in-memory storage; it is not production hosting.
 
+## Locked character-study verification
+
+Read [DDTank character standard v1](design/DDTANK-CHARACTER-STANDARD-v1.md) before changing the current authoring pipeline. From the repository root, run:
+
+```powershell
+python characters/ddtank-lab-v1/tools/verify_standard.py --self-test
+python characters/ddtank-lab-v1/tools/verify_standard.py --live-root D:/Codex/DDtank
+```
+
+The second command requires the owner's external live lab. The browser-only snapshot can be served from `characters/ddtank-lab-v1` with `python -m http.server 5215 --bind 127.0.0.1`, then opened at `http://127.0.0.1:5215/web/index.html`. Godot adapters additionally require the external lab's non-published commercial resources. Preserve v1 when creating an authorized new version; never regenerate its lock just to suppress drift errors.
+
 ## Portable playable build
 
 The source branch includes [`releases/willowbrook-v02-portable.zip`](releases/willowbrook-v02-portable.zip). Extract it, install Node.js 22+ and double-click `start-game.cmd` on Windows (or run `node tools/serve-portable.mjs` elsewhere). Open http://localhost:4175/. No `npm install` is needed to play this built bundle. Serve over localhost; directly opening HTML with `file://` does not work. This is browser-local standalone simulation, not an online server.

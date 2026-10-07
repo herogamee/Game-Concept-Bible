@@ -1,0 +1,9 @@
+# Preserve the exact runtime/source bytes recorded in baseline-lock.json.
+web/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+godot/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+evidence/ddtank40-*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+provenance/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Historical source is preserved byte-for-byte, including its final blank line.
+web/whole-character-v1.html whitespace=blank-at-eol,space-before-tab,cr-at-eol,-blank-at-eof
+contract.json -text
+baseline-lock.json -text

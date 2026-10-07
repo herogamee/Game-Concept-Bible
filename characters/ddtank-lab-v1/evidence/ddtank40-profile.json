@@ -1,0 +1,64 @@
+{
+  "id": "ddtank-4.0-local-2026-10-06",
+  "version": 1,
+  "authority": "Owner-directed canonical character resource format; measured installed DDTank 4.0",
+  "sourceClientSha256": "078ecb1792766a19dd7f956025ca2a335b3d9c42e7a829428fa9088731a64485",
+  "origin": [0, 0],
+  "sexFolders": ["m", "f"],
+  "categories": {"head":1,"glass":2,"hair":3,"eff":4,"cloth":5,"face":6,"arm":7,"suits":13,"wing":15},
+  "show": {
+    "output": [250,342],
+    "display": [120,165],
+    "ordinaryPng": [250,312],
+    "faceSheet": [1000,312],
+    "faceColumns": 4,
+    "suitSheet": [1000,312],
+    "tallSuitSheet": [1000,342],
+    "drawOrder": ["face","hair","cloth","eff","head","glass","arm"],
+    "wingPosition": [-1,2],
+    "type1SuitBodyY": -13,
+    "type1SuitWingY": -40,
+    "emptyDefaultPng": {"eff":[360,150],"glass":[360,150],"suits":[360,150]},
+    "legacyExceptions": {"hair":[[360,150],[1500,312]],"face":[[500,312],[360,150]],"eff":[[360,150]],"glass":[[360,150]],"cloth":[[360,150]],"arm":[[360,150],[1500,312],[120,150]],"suits":[[360,150],[360,164]]}
+  },
+  "game": {
+    "sheet": [1482,285], "cell": [114,95], "columns":13, "rows":3,
+    "bodyPosition": [-62,-83], "playerWrapperY":-3,
+    "actions": {"stand":[0,6,7,8,9,10],"walk":[1,2,3,4,5],"shot":[22,23,26,27],"showgun":[19,20,21],"throws":[31,32,33,34,35]},
+    "allFrames":39
+  },
+  "virtual": {
+    "cell":[120,175], "headSheet":[360,150], "bodySheet":[840,350],
+    "headSlots":["face","hair","eff"], "bodyFolders":["clothf","cloth"],
+    "headColumns":3, "bodyColumns":7, "bodyRows":2,
+    "outputStrip":[1800,175], "headBobY":[0,2],
+    "loaderDrawCalls":[[0,0,0,0,0],[1,0,1,1,1],[2,7,2,2,2],[3,1,0,0,0],[4,2,0,0,0],[5,3,0,0,0,2],[6,4,0,0,0],[7,5,0,0,0],[8,6,0,0,0,2],[9,8,2,2,2],[10,9,2,2,2],[11,10,2,2,2,2],[12,11,2,2,2],[13,12,2,2,2],[14,13,2,2,2,2]]
+  },
+  "icon":[78,78],
+  "hairVariantPolicy":{"headProperty1Equals1":"B","otherwise":"A","hiddenHeadUsesDefault":true},
+  "paths": {
+    "equip":"image/equip/{sex}/{slot}/{pic}/{plane}/{kind}.png",
+    "hair":"image/equip/{sex}/hair/{pic}/{plane}/{variant}/{kind}.png",
+    "icon":"image/equip/{sex}/{slot}/{pic}/icon_{plane}.png",
+    "arm":"image/arm/{pic}/1/{direction}/{kind}.png",
+    "wing":"image/equip/wing/{pic}/wings.swf",
+    "virtual":"image/virtual/{sex}/{slot}/{pic}/{plane}.png"
+  },
+  "defaults": {
+    "m":{"head":1101,"glass":2101,"hair":3101,"eff":4101,"cloth":5101,"face":6101,"arm":7001,"suits":13101,"wing":15001},
+    "f":{"head":1201,"glass":2201,"hair":3201,"eff":4201,"cloth":5201,"face":6201,"arm":7002,"suits":13201,"wing":15001}
+  },
+  "productionRequiredContexts":["show","game","virtual"],
+  "rules":[
+    "Authoring masters may be larger; published assets must use the installed 4.0 resource layout.",
+    "Runtime never fits, centers or scales an individual PNG layer to painted bounds.",
+    "Category transforms are fixed once for a master template, shared by every item, recorded at export.",
+    "All layers authored on one shared master must use one uniform export scale and translation. Never squeeze the body or fit the head independently to source silhouettes.",
+    "Original clothing includes an overlapping neck behind the face. Preserve the measured installed-source order separately; anatomical interchange needs explicit validation.",
+    "Do not trim transparent registration space. Enforce dimensions, relative origin, frame coverage and hair A/B.",
+    "An absent pose remains unsupported; never certify repeated standing pixels as authored walking/shooting.",
+    "Wing atlas conversion must preserve source crop origin and internal transforms; stage bounds are not artwork bounds.",
+    "Keep commercial source images/SWF/decompiled source outside the original-art repository.",
+    "Matching file format does not certify viewpoint/topology fit, original Flash client registration or complete game integration."
+  ]
+}
