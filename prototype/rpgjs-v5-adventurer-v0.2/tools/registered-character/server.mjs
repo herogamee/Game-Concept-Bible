@@ -13,6 +13,7 @@ const staticFiles=new Map(['index.html','client.mjs','compositor.mjs','portrait-
 for(const name of ['index.html','client.mjs','format.mjs','registration.mjs'])staticFiles.set(`/ddt40/${name}`,fileURLToPath(new URL(`../ddtank40/${name}`,import.meta.url)));
 for(const name of ['walk.html','walk-client.mjs','walk-rig.mjs','walk-mesh-legacy.html','walk-mesh-legacy-client.mjs'])staticFiles.set(`/ddt40/${name}`,fileURLToPath(new URL(`../ddtank40/${name}`,import.meta.url)));
 for(const name of ['manifest.json','image/equip/m/cloth/ours_cloth_1/1/walk.png'])staticFiles.set(`/ddt40/keyframe-walk/${name}`,fileURLToPath(new URL(`../../assets/ddtank40-keyframe-walk-v1/${name}`,import.meta.url)));
+for(const name of ['manifest.json','traveler-eight-poses.png','image/equip/m/cloth/ours_cloth_1/1/walk.png'])staticFiles.set(`/ddt40/keyframe-walk8/${name}`,fileURLToPath(new URL(`../../assets/ddtank40-keyframe-walk-v2/${name}`,import.meta.url)));
 for(const name of ['traveler-parts.png','traveler-keyframes-draft.png'])staticFiles.set(`/ddt40/cutout/${name}`,fileURLToPath(new URL(`../../assets/ddtank40-cutout-v1/${name}`,import.meta.url)));
 for(const name of ['manifest.json','cloth-1-walk.png','cloth-2-walk.png'])staticFiles.set(`/ddt40/walk-assets/${name}`,fileURLToPath(new URL(`../../assets/ddtank40-walk-v1/${name}`,import.meta.url)));
 staticFiles.set('/ddt40/master.png',fileURLToPath(new URL('../../assets/ddtank40-three-quarter-v1/master.png',import.meta.url)));

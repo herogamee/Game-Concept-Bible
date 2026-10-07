@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-07 — Add eight authored frames to the walking lab
+
+- Publish a versioned headless8-pose source and2000×342 auxiliary sheet; preserve4-frame history and all independent appearance layers. Update live playback,90ms clock, frame stepping and source links.
+- Verify8distinct frames, source preservation,96compositions,288neck samples and browser wrapping/swaps. Record ImageGen's incomplete opposite-leg result explicitly; added frames do not certify natural gait or engine integration.
+
 ## 2026-10-07 — Put selected new walking artwork into the live lab
 
 - Replace active standing-texture deformation with four registered sprite poses from the existing, owner-liked headless body image. Keep source PNGs and canonical head/eyes/hair/hat unchanged; swaps retain the motion phase.

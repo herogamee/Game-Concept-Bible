@@ -31,7 +31,9 @@
     "preview": "vite preview --host 127.0.0.1",
     "package:portable": "node tools/package-portable.mjs",
     "test:production": "node --test test/production-preview.test.mjs",
-    "assets:parity": "node tools/build-parity-assets.mjs"
+    "assets:parity": "node tools/build-parity-assets.mjs",
+    "assets:ddt40-keyframe-walk8": "node tools/ddtank40/build-keyframe-walk8.mjs",
+    "verify:ddt40-keyframe-walk8": "node tools/ddtank40/verify-keyframe-walk8.mjs"
   },
   "keywords": [],
   "author": "",

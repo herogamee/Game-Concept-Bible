@@ -1,0 +1,24 @@
+{
+  "source": "assets/ddtank40-keyframe-walk-v2/traveler-eight-poses.png",
+  "sourceSha256": "9963a750d4f7f3774e8bbb4e93099d2e61a029fe49bebe52c1e51b9b107351d8",
+  "sourceUnmodified": true,
+  "runtimeFrames": 8,
+  "canonicalFrame": [
+    250,
+    342
+  ],
+  "runtimeSheet": [
+    2000,
+    342
+  ],
+  "sourcePixelsPreserved": 482985,
+  "declaredImportAlphaExact": true,
+  "maxPremultipliedRgbImportError": 0,
+  "combinations": 96,
+  "headNeckJoinSamples": 288,
+  "headAndAppearanceResourcesUnmodified": true,
+  "clockWrapAndSwapPhasePass": true,
+  "mode": "Frame-based body playback; no standing-texture mesh deformation in active page",
+  "scope": "Eight-frame Canvas trial, one outfit, auxiliary walk.png. Not DDTank battle/virtual or Godot/Phaser integration.",
+  "acceptance": "Owner requested an8-frame trial. Three built-in ImageGen calls produced this source; the opposite-leg instruction was not fully achieved. Eight distinct drawings are playable for review, not an accepted natural gait."
+}

@@ -1,0 +1,14 @@
+Use case: stylized-concept
+Asset type: transparent game sprite atlas, eight distinct headless walking body poses.
+Image 1 is the reference for outfit, compact chibi body proportions, turned 3/4 LEFT viewpoint, scarf, vest, shorts, boots and rendering. Create a NEW eight-frame cyclic WALK atlas of this same outfit. Preserve compact proportions; do not lengthen legs. All eight bodies must have identical torso, neck attachment and scale.
+Layout: landscape 2:1 canvas, EXACTLY four equal columns and two equal rows (4x2), no borders, text, grid or background. Reading left-to-right top row then bottom row is time order1 through8. Each cell has one full headless body only. At nominal2048x1024, each cell512x512. Neck socket centered around local(256,90), grounded soles local y465. Each body includes complete short neck, teal scarf and bow, cream shirt, brown leather vest/belt, brown shorts, bare short knees and brown boots. Body fits inside local x100..405 y85..465. Keep neck socket fixed in every frame; lower body has subtle natural flexion. NO head, chin, face, hair, eyes, eyebrows, mouth. No ground shadows. True transparent alpha.
+Motion: relaxed SMALL walking steps, not marching or high knee kicks. Character anatomically left leg is the foreground leg on screen-left, right leg the background leg on screen-right. They MUST alternate:
+1 left-contact: foreground left foot ahead toward screen-left, right behind; both touch ground. Right arm forward, left back.
+2 left-down: left supports weight, knees softly flex; right heel rises behind.
+3 right-passing: left grounded beneath hip; right swing foot passes low under hip, small knee bend; arms pass middle.
+4 right-up: left heel lifts trailing; right foot extends low ahead toward screen-left ready to land.
+5 right-contact: right background foot ahead screen-left, foreground left behind screen-right. This is the OPPOSITE lead leg to1; same torso orientation, never mirror torso or scarf.
+6 right-down: right supports weight, left heel rises behind.
+7 left-passing: right grounded under hip, left swing foot passes low under hip, small knee bend.
+8 left-up: right heel lifts trailing; left foot extends low forward ready to contact1.
+Contact1/5 are visibly opposite legs. Passing3/7 are opposite legs. Arm swing opposes legs and stays restrained. Distinct intermediate poses, not repeated copies. Fixed collar/neck center and consistent body width across all cells. Do not reuse the reference's repeated lead leg error. Smooth cyclic sequence, clean complete hands/boots, dark thin outlines and polished soft shading identical to reference.

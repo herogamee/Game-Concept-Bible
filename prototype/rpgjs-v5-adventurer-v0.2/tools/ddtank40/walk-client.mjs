@@ -1,7 +1,7 @@
 import {showPlan} from './format.mjs';
 import {GaitSession} from './walk-rig.mjs';
 const $=id=>document.getElementById(id),stage=$('walk-stage'),ctx=stage.getContext('2d'),strip=$('walk-strip'),stripCtx=strip.getContext('2d'),status=$('walk-status');
-const session=new GaitSession({frames:4,frameMs:150,speed:48}),keys=new Set(),textures=new Map();
+const session=new GaitSession({frames:8,frameMs:90,speed:48}),keys=new Set(),textures=new Map();
 let pack,profile,catalog,plan,ready=false,loading=0,last=0,error='',command=0;
 const selected={hair:'ours-310900001',cloth:'ours-510900001',face:'ours-610900001',head:'ours-110900001'};
 async function texture(url){if(!textures.has(url))textures.set(url,new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('โหลดชิ้นส่วนไม่สำเร็จ'));im.src=url}));return textures.get(url);}
@@ -55,4 +55,4 @@ stage.onclick=e=>{const box=stage.getBoundingClientRect();command=0;session.prev
 window.addEventListener('keydown',e=>{if(e.target.closest('select,input,button'))return;const key=e.key.length===1?e.key.toLowerCase():e.key;if(['ArrowLeft','ArrowRight','a','d'].includes(key)){e.preventDefault();keys.add(key);command=0;session.destination=null;resume();}});
 window.addEventListener('keyup',e=>keys.delete(e.key.length===1?e.key.toLowerCase():e.key));
 window.addEventListener('blur',stop);document.addEventListener('visibilitychange',()=>{last=0;if(document.hidden)stop();});
-try{[profile,catalog,pack]=await Promise.all(['/api/ddt40-profile','/api/ddt40-catalog','/ddt40/keyframe-walk/manifest.json'].map(async u=>{const r=await fetch(u);if(!r.ok)throw new Error('โหลดข้อมูลไม่สำเร็จ');return r.json()}));session.frames=pack.frames;session.frameMs=pack.frameMs;session.speed=pack.speed;await equip();requestAnimationFrame(render);}catch(e){status.textContent=e.message;status.className='error';}
+try{[profile,catalog,pack]=await Promise.all(['/api/ddt40-profile','/api/ddt40-catalog','/ddt40/keyframe-walk8/manifest.json'].map(async u=>{const r=await fetch(u);if(!r.ok)throw new Error('โหลดข้อมูลไม่สำเร็จ');return r.json()}));session.frames=pack.frames;session.frameMs=pack.frameMs;session.speed=pack.speed;strip.width=pack.frames*pack.width;strip.style.width=strip.width+'px';$('walk-frame').max=pack.frames-1;await equip();requestAnimationFrame(render);}catch(e){status.textContent=e.message;status.className='error';}
