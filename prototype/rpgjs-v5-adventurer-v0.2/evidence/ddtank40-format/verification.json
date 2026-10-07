@@ -1,0 +1,171 @@
+{
+  "profile": "ddtank-4.0-local-2026-10-06",
+  "view": "three-quarter-left",
+  "template": "ddtank40-standing-three-quarter-left-v1",
+  "originalItems": 15,
+  "files": 33,
+  "originalCombinations": 162,
+  "referenceDefaults": [
+    {
+      "sex": "m",
+      "exactPixels": true
+    },
+    {
+      "sex": "f",
+      "exactPixels": true
+    }
+  ],
+  "interchangeCases": 12,
+  "sourceMastersUnmodified": true,
+  "allOrigins": [
+    0,
+    0
+  ],
+  "rejectedInvalidDimensions": true,
+  "rejectedMissingExpressions": true,
+  "rejectedIncompleteProductionPack": true,
+  "authoredExpressionChecks": [
+    {
+      "id": "ours-610900001",
+      "featurePixels": 1073,
+      "headContourIdentical": true
+    },
+    {
+      "id": "ours-610900002",
+      "featurePixels": 769,
+      "headContourIdentical": true
+    },
+    {
+      "id": "ours-610900003",
+      "featurePixels": 350,
+      "headContourIdentical": true
+    }
+  ],
+  "protectedBodyPixels": 5874,
+  "protectedEar": true,
+  "capCrownChecks": [
+    {
+      "id": "hair-chestnut",
+      "coveredWithCap": true,
+      "restoredCrownPixels": 109318
+    },
+    {
+      "id": "hair-teal",
+      "coveredWithCap": true,
+      "restoredCrownPixels": 104986
+    },
+    {
+      "id": "hair-silver-curls",
+      "coveredWithCap": true,
+      "restoredCrownPixels": 66190
+    }
+  ],
+  "exportMatrix": [
+    0.21075455333911536,
+    0,
+    0,
+    0.21075455333911536,
+    -32.59291891935706,
+    49.19774501300952
+  ],
+  "uniformAllLayers": true,
+  "rejectedAnisotropicBody": true,
+  "rejectedSeparateHeadBodyFits": true,
+  "proportionChecks": [
+    {
+      "id": "clothing-traveler",
+      "native": {
+        "x": 455,
+        "y": 598,
+        "width": 357,
+        "height": 611
+      },
+      "exported": {
+        "x": 63,
+        "y": 175,
+        "width": 75,
+        "height": 129
+      },
+      "ratioError": 0.004950817536316765
+    },
+    {
+      "id": "clothing-knight",
+      "native": {
+        "x": 454,
+        "y": 598,
+        "width": 358,
+        "height": 612
+      },
+      "exported": {
+        "x": 63,
+        "y": 175,
+        "width": 75,
+        "height": 129
+      },
+      "ratioError": 0.006106275172145015
+    },
+    {
+      "id": "clothing-mage",
+      "native": {
+        "x": 454,
+        "y": 598,
+        "width": 358,
+        "height": 612
+      },
+      "exported": {
+        "x": 63,
+        "y": 175,
+        "width": 75,
+        "height": 129
+      },
+      "ratioError": 0.006106275172145015
+    }
+  ],
+  "neckChecks": [
+    {
+      "id": "clothing-traveler",
+      "neckAboveOldCut": 2608,
+      "overlapBehindJaw": 2222
+    },
+    {
+      "id": "clothing-knight",
+      "neckAboveOldCut": 2608,
+      "overlapBehindJaw": 2222
+    },
+    {
+      "id": "clothing-mage",
+      "neckAboveOldCut": 2608,
+      "overlapBehindJaw": 2222
+    }
+  ],
+  "faceAboveClothing": true,
+  "acceptance": "File-format/portrait-renderer checks pass. Actual Flash-client item registration, anatomical/topology compatibility, all actions, female originals and owner visual acceptance remain pending.",
+  "browserChecks": {
+    "page": "http://127.0.0.1:5199/fixed-template",
+    "uniformMasterBesideAssembly": true,
+    "clothingOnlyNeckPreview": true,
+    "independentKnightBlueGreenCapSelection": true,
+    "independentMageSilverJoySelection": true,
+    "capHidingRestoresB": true,
+    "resetRestoresDefaults": true,
+    "actualDrawOrder": "cloth,face,hair,eff,head,glass",
+    "actualExportScale": 0.21075455333911536,
+    "consoleErrors": 0,
+    "externalScreenshot": "D:/Codex/DDtank/research/compatibility-4.0/uniform-master-neck-lab.png",
+    "visualAcceptance": "Owner review pending"
+  },
+  "smokeChecks": {
+    "syntax": true,
+    "routes": [
+      "/fixed-template",
+      "/fixed-template-legacy",
+      "/original",
+      "/walk",
+      "/ddt40/registration.mjs",
+      "/ddt40/master.png",
+      "/api/ddt40-profile",
+      "/api/ddt40-catalog",
+      "/ddt40/ours/image/equip/m/cloth/ours_cloth_1/1/show.png"
+    ]
+  }
+}

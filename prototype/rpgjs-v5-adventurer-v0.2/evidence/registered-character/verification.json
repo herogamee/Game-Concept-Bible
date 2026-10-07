@@ -1,0 +1,124 @@
+{
+  "scope": "Local 4.0 registered portrait compositor; no original-art wardrobe acceptance",
+  "items": 3449,
+  "sexes": [
+    {
+      "sex": "m",
+      "reference": {
+        "maxAlphaDelta": 1,
+        "maxPremultipliedChannelDelta": 1.3960784313725583
+      },
+      "missingSlotFallbacks": 7,
+      "combinations": [
+        {
+          "face": 6101,
+          "hair": 3101,
+          "cloth": 5101
+        },
+        {
+          "face": 6101,
+          "hair": 3101,
+          "cloth": 5102
+        },
+        {
+          "face": 6101,
+          "hair": 3102,
+          "cloth": 5101
+        },
+        {
+          "face": 6101,
+          "hair": 3102,
+          "cloth": 5102
+        },
+        {
+          "face": 6102,
+          "hair": 3101,
+          "cloth": 5101
+        },
+        {
+          "face": 6102,
+          "hair": 3101,
+          "cloth": 5102
+        },
+        {
+          "face": 6102,
+          "hair": 3102,
+          "cloth": 5101
+        },
+        {
+          "face": 6102,
+          "hair": 3102,
+          "cloth": 5102
+        }
+      ],
+      "distinctCharacters": 8,
+      "hatVariantId": 1102,
+      "expressionCount": 4,
+      "proofPath": "D:\\Codex\\DDtank\\tests\\web-registered-proof-m.png"
+    },
+    {
+      "sex": "f",
+      "reference": {
+        "maxAlphaDelta": 1,
+        "maxPremultipliedChannelDelta": 1.9607843137254903
+      },
+      "missingSlotFallbacks": 7,
+      "combinations": [
+        {
+          "face": 6201,
+          "hair": 3201,
+          "cloth": 5201
+        },
+        {
+          "face": 6201,
+          "hair": 3201,
+          "cloth": 5202
+        },
+        {
+          "face": 6201,
+          "hair": 3202,
+          "cloth": 5201
+        },
+        {
+          "face": 6201,
+          "hair": 3202,
+          "cloth": 5202
+        },
+        {
+          "face": 6202,
+          "hair": 3201,
+          "cloth": 5201
+        },
+        {
+          "face": 6202,
+          "hair": 3201,
+          "cloth": 5202
+        },
+        {
+          "face": 6202,
+          "hair": 3202,
+          "cloth": 5201
+        },
+        {
+          "face": 6202,
+          "hair": 3202,
+          "cloth": 5202
+        }
+      ],
+      "distinctCharacters": 8,
+      "hatVariantId": 1202,
+      "expressionCount": 4,
+      "proofPath": "D:\\Codex\\DDtank\\tests\\web-registered-proof-f.png"
+    }
+  ],
+  "checks": [
+    "male/female Godot reference pixels within alpha/compositing rounding tolerance",
+    "seven independent empty-slot fallbacks per sex without selection mutation",
+    "eight distinct face/hair/cloth combinations per sex at identical origins",
+    "hat A/B variant and hidden-hat recovery",
+    "four expression frame indices per sex",
+    "opposite sex, wrong slot and unknown item rejection",
+    "shifted origin and out-of-bitmap frame rejection",
+    "failed load leaves previously drawn canvas intact"
+  ]
+}

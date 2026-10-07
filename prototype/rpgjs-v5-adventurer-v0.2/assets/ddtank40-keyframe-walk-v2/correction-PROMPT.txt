@@ -1,0 +1,7 @@
+Use case: precise-object-edit. Edit the provided transparent eight-pose headless outfit atlas. Keep the exact landscape canvas,4columns2rows, all eight neck/collar positions, torso dimensions, scarf, vest, shorts, boots style, colors and transparency.
+The important error: bottom row is currently another left-leg step. CHANGE ONLY THE LIMBS IN THE BOTTOM ROW to the opposite leg and opposite arm phases. Leave the top row intact.
+Bottom-left cell5: the RIGHT/background leg goes FORWARD to screen-left, visible from underneath the right side of shorts crossing diagonally ahead. The LEFT/foreground thigh goes BACK to screen-right, its boot behind. Draw both legs anatomically attached to their original hips. Do NOT flip torso, scarf or belt. Contact pose.
+Bottom cell6: RIGHT/background leg is planted ahead/supporting; LEFT/foreground knee bends behind, heel lifting.
+Bottom cell7: RIGHT/background leg planted straight under pelvis; LEFT/foreground knee swings forward low across right supporting leg with boot off ground. This is the OPPOSITE knee to top cell3.
+Bottom cell8: RIGHT/background leg trails behind, LEFT/foreground foot extends forward to screen-left to return to top-left pose.
+Bottom-row arms swing opposite their corresponding top-row phases, no extra hands. Natural small steps, keep short chibi limb lengths. Two feet per pose, complete neck and scarf. No head, eyes, mouth, text, borders, shadows or opaque background. Actual transparent alpha. Eight distinct temporal poses, not a four-pose loop repeated twice.

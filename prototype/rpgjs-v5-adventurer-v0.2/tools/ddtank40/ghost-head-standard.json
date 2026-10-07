@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "scope": "One new short-hair standing trial; head is the authority, brown hair is a volume reference. This is not exact silhouette identity or production acceptance.",
+  "canvas": [1254, 1254],
+  "headTemplate": "layers/head-template.png",
+  "headSha256": "b9227919413cabb4dae769f2059134035ce06575614e0fd6869c3f3a39c146b1",
+  "brownReference": "layers/hair-chestnut.png",
+  "brownSha256": "b4ca3a964c9f656d0157ef662b8c70af484cb118374626f5a330a5374d91b386",
+  "alphaThreshold": 128,
+  "brownBounds": [320, 56, 631, 479],
+  "widthAndHeightRatio": [0.95, 1.05],
+  "opaqueAreaRatio": [0.9, 1.1],
+  "edgeTolerance": 24,
+  "crownYTolerance": 12,
+  "skullCoverage": [[500,250],[600,250],[720,250],[780,310],[470,310]],
+  "emptyEyeMouth": [[474,493],[635,498],[552,578]],
+  "emptyEar": [795,491,29,36],
+  "newFamilyImport": [0.625,0,0,0.625,216,-20],
+  "policy": "Measure bounds to reject drift, never use them to fit an item. The generation head is a reference only; output only hair. Future sources keep the fixed family import, must pass fit and visual review, and are rejected otherwise. No headed-source deletion or ear holes."
+}

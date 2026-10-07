@@ -1,0 +1,425 @@
+{
+  "head.south": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 29,
+      "y": 49,
+      "width": 256,
+      "height": 249
+    }
+  },
+  "torso.south": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 65,
+      "y": 347,
+      "width": 185,
+      "height": 253
+    }
+  },
+  "head.west": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 352,
+      "y": 51,
+      "width": 241,
+      "height": 242
+    }
+  },
+  "torso.west": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 394,
+      "y": 344,
+      "width": 150,
+      "height": 265
+    }
+  },
+  "head.east": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 661,
+      "y": 50,
+      "width": 242,
+      "height": 243
+    }
+  },
+  "torso.east": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 711,
+      "y": 344,
+      "width": 149,
+      "height": 265
+    }
+  },
+  "head.north": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 968,
+      "y": 50,
+      "width": 258,
+      "height": 241
+    }
+  },
+  "torso.north": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 1005,
+      "y": 345,
+      "width": 185,
+      "height": 256
+    }
+  },
+  "upper-arm": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 112,
+      "y": 664,
+      "width": 88,
+      "height": 240
+    }
+  },
+  "forearm": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 433,
+      "y": 686,
+      "width": 76,
+      "height": 197
+    }
+  },
+  "hand": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 716,
+      "y": 692,
+      "width": 130,
+      "height": 180
+    }
+  },
+  "shorts": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 337,
+      "y": 978,
+      "width": 269,
+      "height": 183
+    }
+  },
+  "thigh": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 736,
+      "y": 949,
+      "width": 98,
+      "height": 247
+    }
+  },
+  "shin": {
+    "file": "base-parts.png",
+    "rect": {
+      "x": 1054,
+      "y": 944,
+      "width": 86,
+      "height": 254
+    }
+  },
+  "hair-chestnut.south": {
+    "file": "hair-chestnut.png",
+    "rect": {
+      "x": 38,
+      "y": 25,
+      "width": 557,
+      "height": 522
+    }
+  },
+  "hair-chestnut.west": {
+    "file": "hair-chestnut.png",
+    "rect": {
+      "x": 678,
+      "y": 36,
+      "width": 547,
+      "height": 525
+    }
+  },
+  "hair-chestnut.east": {
+    "file": "hair-chestnut.png",
+    "rect": {
+      "x": 32,
+      "y": 658,
+      "width": 534,
+      "height": 499
+    }
+  },
+  "hair-chestnut.north": {
+    "file": "hair-chestnut.png",
+    "rect": {
+      "x": 667,
+      "y": 649,
+      "width": 530,
+      "height": 529
+    }
+  },
+  "hair-silver.south": {
+    "file": "hair-silver.png",
+    "rect": {
+      "x": 21,
+      "y": 61,
+      "width": 584,
+      "height": 482
+    }
+  },
+  "hair-silver.west": {
+    "file": "hair-silver.png",
+    "rect": {
+      "x": 681,
+      "y": 61,
+      "width": 546,
+      "height": 483
+    }
+  },
+  "hair-silver.east": {
+    "file": "hair-silver.png",
+    "rect": {
+      "x": 19,
+      "y": 684,
+      "width": 556,
+      "height": 477
+    }
+  },
+  "hair-silver.north": {
+    "file": "hair-silver.png",
+    "rect": {
+      "x": 641,
+      "y": 685,
+      "width": 585,
+      "height": 476
+    }
+  },
+  "boots.south": {
+    "file": "boots.png",
+    "rect": {
+      "x": 166,
+      "y": 113,
+      "width": 289,
+      "height": 434
+    }
+  },
+  "boots.west": {
+    "file": "boots.png",
+    "rect": {
+      "x": 714,
+      "y": 145,
+      "width": 473,
+      "height": 389
+    }
+  },
+  "boots.east": {
+    "file": "boots.png",
+    "rect": {
+      "x": 67,
+      "y": 751,
+      "width": 475,
+      "height": 387
+    }
+  },
+  "boots.north": {
+    "file": "boots.png",
+    "rect": {
+      "x": 833,
+      "y": 727,
+      "width": 261,
+      "height": 434
+    }
+  },
+  "hat.south": {
+    "file": "hat.png",
+    "rect": {
+      "x": 50,
+      "y": 116,
+      "width": 549,
+      "height": 359
+    }
+  },
+  "hat.west": {
+    "file": "hat.png",
+    "rect": {
+      "x": 653,
+      "y": 142,
+      "width": 574,
+      "height": 338
+    }
+  },
+  "hat.east": {
+    "file": "hat.png",
+    "rect": {
+      "x": 40,
+      "y": 748,
+      "width": 563,
+      "height": 339
+    }
+  },
+  "hat.north": {
+    "file": "hat.png",
+    "rect": {
+      "x": 680,
+      "y": 742,
+      "width": 534,
+      "height": 366
+    }
+  },
+  "shirt-traveler.torso.south": {
+    "file": "shirt-traveler.png",
+    "rect": {
+      "x": 22,
+      "y": 218,
+      "width": 292,
+      "height": 409
+    }
+  },
+  "shirt-traveler.sleeve.south": {
+    "file": "shirt-traveler.png",
+    "rect": {
+      "x": 78,
+      "y": 627,
+      "width": 193,
+      "height": 420
+    }
+  },
+  "shirt-traveler.torso.west": {
+    "file": "shirt-traveler.png",
+    "rect": {
+      "x": 314,
+      "y": 210,
+      "width": 314,
+      "height": 417
+    }
+  },
+  "shirt-traveler.sleeve.west": {
+    "file": "shirt-traveler.png",
+    "rect": {
+      "x": 397,
+      "y": 794,
+      "width": 173,
+      "height": 264
+    }
+  },
+  "shirt-traveler.torso.east": {
+    "file": "shirt-traveler.png",
+    "rect": {
+      "x": 627,
+      "y": 211,
+      "width": 314,
+      "height": 416
+    }
+  },
+  "shirt-traveler.sleeve.east": {
+    "file": "shirt-traveler.png",
+    "rect": {
+      "x": 713,
+      "y": 793,
+      "width": 177,
+      "height": 266
+    }
+  },
+  "shirt-traveler.torso.north": {
+    "file": "shirt-traveler.png",
+    "rect": {
+      "x": 941,
+      "y": 213,
+      "width": 291,
+      "height": 414
+    }
+  },
+  "shirt-traveler.sleeve.north": {
+    "file": "shirt-traveler.png",
+    "rect": {
+      "x": 994,
+      "y": 627,
+      "width": 189,
+      "height": 420
+    }
+  },
+  "shirt-blue.torso.south": {
+    "file": "shirt-blue.png",
+    "rect": {
+      "x": 22,
+      "y": 162,
+      "width": 292,
+      "height": 431
+    }
+  },
+  "shirt-blue.sleeve.south": {
+    "file": "shirt-blue.png",
+    "rect": {
+      "x": 108,
+      "y": 765,
+      "width": 155,
+      "height": 325
+    }
+  },
+  "shirt-blue.torso.west": {
+    "file": "shirt-blue.png",
+    "rect": {
+      "x": 314,
+      "y": 162,
+      "width": 306,
+      "height": 429
+    }
+  },
+  "shirt-blue.sleeve.west": {
+    "file": "shirt-blue.png",
+    "rect": {
+      "x": 420,
+      "y": 767,
+      "width": 154,
+      "height": 320
+    }
+  },
+  "shirt-blue.torso.east": {
+    "file": "shirt-blue.png",
+    "rect": {
+      "x": 635,
+      "y": 162,
+      "width": 306,
+      "height": 429
+    }
+  },
+  "shirt-blue.sleeve.east": {
+    "file": "shirt-blue.png",
+    "rect": {
+      "x": 681,
+      "y": 767,
+      "width": 155,
+      "height": 320
+    }
+  },
+  "shirt-blue.torso.north": {
+    "file": "shirt-blue.png",
+    "rect": {
+      "x": 941,
+      "y": 163,
+      "width": 292,
+      "height": 430
+    }
+  },
+  "shirt-blue.sleeve.north": {
+    "file": "shirt-blue.png",
+    "rect": {
+      "x": 1000,
+      "y": 768,
+      "width": 157,
+      "height": 325
+    }
+  },
+  "sword": {
+    "file": "sword.png",
+    "rect": {
+      "x": 285,
+      "y": 49,
+      "width": 454,
+      "height": 1423
+    }
+  }
+}

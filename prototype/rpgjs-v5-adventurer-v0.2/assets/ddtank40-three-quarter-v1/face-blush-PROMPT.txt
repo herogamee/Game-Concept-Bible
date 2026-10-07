@@ -1,0 +1,5 @@
+Use case: precise-object-edit.
+Asset type: independently selectable registered character layer.
+Input image: EDIT TARGET, our fixed three-quarter-left standing template.
+Add ONLY selectable soft rosy cheek blush and three tiny freckles on each cheek, following THREE-QUARTER LEFT perspective. Small far-cheek patch around x478,y560, larger near-cheek patch around x706,y560 on this1254-square image. Keep blank face without eyes/eyebrows/mouth. Subtle restrained marks, no nose change, no skin-outline change.
+STRICT: edit only the requested category; exact1254×1254 square frame and original figure registration. Keep three-quarter-left viewpoint, head contour, nose, ear, neck and all unchanged parts at their original positions. Do not recenter, enlarge or fit the character. Original clean brown-outline 2D cel-shaded game art. Actual transparent RGBA background, no floor/shadow/text/extra objects. One complete character only.

@@ -1,0 +1,63 @@
+{
+  "version": 2,
+  "scope": "front standing review only; not integrated into gameplay",
+  "canvas": {
+    "width": 64,
+    "height": 64,
+    "exportScale": 12,
+    "origin": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "head": {
+    "file": "head-front-registered-v2.png",
+    "source": "../modular/base-parts.png",
+    "rect": {
+      "x": 29,
+      "y": 49,
+      "width": 256,
+      "height": 249
+    },
+    "sourcePixelScale": 0.1171875,
+    "x": 17,
+    "y": 5.8203125
+  },
+  "hair": {
+    "file": "hair-chestnut-front-registered-v2.png",
+    "source": "../modular/hair-chestnut.png",
+    "rect": {
+      "x": 38,
+      "y": 25,
+      "width": 557,
+      "height": 522
+    },
+    "sourcePixelScale": 0.06104129263913824,
+    "x": 15,
+    "y": 0.5
+  },
+  "body": {
+    "source": "traveler-body-front.png",
+    "rect": {
+      "x": 252,
+      "y": 146,
+      "width": 739,
+      "height": 1022
+    },
+    "top": 33,
+    "height": 27.5,
+    "centerX": 32,
+    "head": {
+      "x": 32,
+      "y": 20,
+      "width": 30,
+      "height": 30
+    },
+    "hair": {
+      "x": 32,
+      "y": 16.3,
+      "width": 33,
+      "height": 28
+    }
+  }
+}

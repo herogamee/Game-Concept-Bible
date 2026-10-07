@@ -1,0 +1,8 @@
+Use case: precise-object-edit
+Asset type: HAIR-ONLY PNG sprite for the same invisible modular chibi head.
+Primary request: Make a silver wavy hairstyle variant of the BLUE HAIR IN IMAGE1. Keep IMAGE1's exact absolute canvas placement, overall hair mass, alpha opening, crown and side size. Change only color and internal lock arrangement to silver waves.
+Inputs: Image1 is the exact geometry edit target. Image2 silver is a COLOR/WAVY-LOCK STYLE reference only, never use its size or placement. Image3 is the standard head in generation coordinates: treat it as fully invisible, do not render any part of it.
+LOCKED CANVAS:1254x1254, preserve every empty margin. Keep Image1's outer footprint x140..1167,y125..871, crown tip, left/right sides and lower tuft ends. DO NOT resize, crop, move or recenter the hairstyle. Output is high in the square just like Image1.
+Face/ear fit: Keep Image1's transparent face opening and clearance to Image3's actual eyes/ear. The left eye region near x413,y821 and right eye near x670,y829 must be empty, and ear region x926..973,y818..875 must be empty. Draw only connected natural tapered bangs and sideburns; no punched ear circle or skin-removal effect.
+Styling: Silver-white hair, softer wavy lock flows and curled highlights with dark gray outlines; full rounded crown/side thickness comparable to Image1. Retain the head-relative shape, 3/4-left camera and polished chibi shading. Internal waves may change, outer registration must stay.
+OUTPUT ONLY HAIR ON REAL ALPHA. The reference head is a ghost and remains completely absent. No skin, head outline, forehead, ear, eye, eyebrow, mouth, neck, body, guide marks, text, background or checkerboard art. Entire lower frame outside hair remains transparent.

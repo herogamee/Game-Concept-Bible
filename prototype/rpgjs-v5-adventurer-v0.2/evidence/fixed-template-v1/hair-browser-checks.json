@@ -1,0 +1,58 @@
+[
+  {
+    "check": "cap-and-walk",
+    "motion": {
+      "action": "walk",
+      "frame": "1",
+      "phase": "1.7662000000000833",
+      "playing": "true",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":\"hat-adventurer\"}"
+    },
+    "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":\"hat-adventurer\"}",
+    "size": "ผมปัดข้างสีฟ้า: 532 × 396 px · ยอดผมเหนือกระหม่อม 97 px · หัวและจุดวางเดิม"
+  },
+  {
+    "check": "cap-removal-while-walking",
+    "galleryCanvasSizes": [
+      [
+        310,
+        270
+      ],
+      [
+        310,
+        270
+      ],
+      [
+        310,
+        270
+      ],
+      [
+        310,
+        270
+      ],
+      [
+        310,
+        270
+      ],
+      [
+        310,
+        270
+      ]
+    ],
+    "motion": {
+      "action": "walk",
+      "frame": "3",
+      "phase": "3.767800000000032",
+      "playing": "true",
+      "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":null}"
+    },
+    "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":null}",
+    "size": "ผมปัดข้างสีฟ้า: 532 × 396 px · ยอดผมเหนือกระหม่อม 97 px · หัวและจุดวางเดิม"
+  },
+  {
+    "check": "shared-guides",
+    "checked": true,
+    "errors": 0,
+    "selected": "{\"eye_set\":\"eyes-determined\",\"face_set\":\"face-blush\",\"hair\":\"hair-teal\",\"clothing\":\"clothing-mage\",\"hat\":null}"
+  }
+]

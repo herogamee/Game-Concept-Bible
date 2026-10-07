@@ -1,0 +1,142 @@
+[
+  {
+    "TemplateID": 110900001,
+    "CategoryID": 1,
+    "NeedSex": 1,
+    "Pic": "default",
+    "Name": "ไม่ใส่หมวก",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 210900001,
+    "CategoryID": 2,
+    "NeedSex": 1,
+    "Pic": "default",
+    "Name": "ไม่ใส่แว่น",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 410900001,
+    "CategoryID": 4,
+    "NeedSex": 1,
+    "Pic": "default",
+    "Name": "ไม่มีรายละเอียดใบหน้า",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 610900001,
+    "CategoryID": 6,
+    "NeedSex": 1,
+    "Pic": "ours_face_1",
+    "Name": "ตาอำพัน · ยิ้ม",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 610900002,
+    "CategoryID": 6,
+    "NeedSex": 1,
+    "Pic": "ours_face_2",
+    "Name": "ตาเขียว · มุ่งมั่น",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 610900003,
+    "CategoryID": 6,
+    "NeedSex": 1,
+    "Pic": "ours_face_3",
+    "Name": "ตาปิด · ยิ้มกว้าง",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 310900001,
+    "CategoryID": 3,
+    "NeedSex": 1,
+    "Pic": "ours_hair_1",
+    "Name": "ผมน้ำตาล",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 310900004,
+    "CategoryID": 3,
+    "NeedSex": 1,
+    "Pic": "ours_hair_4",
+    "Name": "ผมฟ้า · คู่ภาพหัวมาตรฐาน",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 510900001,
+    "CategoryID": 5,
+    "NeedSex": 1,
+    "Pic": "ours_cloth_1",
+    "Name": "ชุดนักเดินทาง",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 510900002,
+    "CategoryID": 5,
+    "NeedSex": 1,
+    "Pic": "ours_cloth_2",
+    "Name": "ชุดอัศวินฝึกหัด",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 510900003,
+    "CategoryID": 5,
+    "NeedSex": 1,
+    "Pic": "ours_cloth_3",
+    "Name": "ชุดนักเวทฝึกหัด",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 410900002,
+    "CategoryID": 4,
+    "NeedSex": 1,
+    "Pic": "ours_eff_1",
+    "Name": "รอยแผล",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 410900003,
+    "CategoryID": 4,
+    "NeedSex": 1,
+    "Pic": "ours_eff_2",
+    "Name": "แก้มแดงและกระ",
+    "Property1": 1,
+    "Property8": "1",
+    "Level": 1
+  },
+  {
+    "TemplateID": 110900002,
+    "CategoryID": 1,
+    "NeedSex": 1,
+    "Pic": "ours_head_1",
+    "Name": "หมวกนักเดินทาง",
+    "Property1": 2,
+    "Property8": "1",
+    "Level": 1
+  }
+]

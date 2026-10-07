@@ -1,28 +1,10 @@
-# AGENTS.md
+# v0.1 — playable quality baseline
 
-Goal: browser-first low-spec pixel RPG/MMORPG. Gameplay first, art later.
+Read ../../AGENTS.md, ../../design/implementation-reset-2026-10-02.md and ../CODEX-HANDOFF-QUALITY-PARITY.md first. These reflect the owner's latest authorization and supersede the old RPGJS-only/LPC-only handoff.
 
-Current baseline: `prototype/web-pixel-rpg-v0.1/index.html` is the first playable loop.
-
-Read before architecture work, in this order:
-- `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md`
-- `design/CONSOLIDATION-AUDIT-2026-10-03.md`
-- `prototype/PROTOTYPE-STATUS-2026-10-03.md`
-- `research/open-source-game-development-stack-2026-10-02.md`
-- `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md`
-- `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md`
-- `design/COMBAT-KERNEL-v0.1.md`
-
-Rules:
-- Keep browser-first and low-spec.
-- Preserve working movement/combat/quest/save behavior.
-- Prefer data-driven NPC/item/quest/monster definitions.
-- Do not add heavy graphics dependencies before gameplay needs them.
-- Next architecture target is **RPGJS v5 + TypeScript + Tiled + Universal LPC-compatible sprites**.
-- RPGJS v5 is the primary engine. Do not add Phaser or Colyseus unless a concrete RPGJS blocker is documented first.
-- Use LPC/Kenney/open assets only with license/credit records; never copy commercial game sprites.
-- Online mode must remain server-authoritative before valuable economy/PvP systems are added.
-- Keep NPC simulation bounded by the Player-First Adventurer World design.
-- Meaningful changes should update README/CHANGELOG and remain easy for ChatGPT/Codex/Claude to continue.
-- Current feature breadth is frozen. Implement and validate v0.3 combat before adding new standalone systems.
-- Do not claim the RPGJS migration or v0.3 combat is complete until the target folder exists and build/tests/play evidence are recorded.
+- Preserve this working Canvas/JavaScript prototype, illustrated assets, audio, input/combat/quest behavior and `al-web-rpg-v01` save compatibility.
+- This is the primary playable and visual/control reference. No renderer migration or asset replacement in this folder during an engine comparison.
+- Keep browser-first/low-spec goals, authored data IDs, bounded NPC support and asset license/provenance records. Never copy commercial-game sprites.
+- Candidate engineering happens separately. RPGJS v0.2 is a technical experiment; Phaser 4 may be compared in an isolated one-scene experiment under the current owner authorization.
+- Final online gameplay outcomes must be server-authoritative. Do not infer product/scale readiness from two clients or logic tests alone.
+- Meaningful changes update README/CHANGELOG; preserve previous concept versions. Product parity requires owner visual/feel review before changing the default playable.

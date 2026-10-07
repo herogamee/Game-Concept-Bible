@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "generator": "built-in image_gen",
+  "kind": "whole-character walking experiment",
+  "direction": "downleft",
+  "columns": 4,
+  "rows": 2,
+  "frame_count": 8,
+  "cycle_seconds": 0.9,
+  "sheet": "walk-generated-v1.png",
+  "sheet_width": 1448,
+  "sheet_height": 1086,
+  "cell_width": 362,
+  "cell_height": 543,
+  "frame_order": "row-major top row then bottom row",
+  "per_frame_adjustments": false,
+  "reference_character": "character-reference.png",
+  "pose_guide": "pose-guide.png",
+  "method_source": "https://toy.ginzii.com/walk-template",
+  "prompt": "Use case: compositing. Asset type: one production 2D game walk cycle spritesheet, 8 frames arranged 4 columns by 2 rows, landscape 4:3 canvas.\nImage 1 is the exact pose/layout reference: a gray 3D mannequin walking DOWNLEFT, viewed from an orthographic camera tilted down 45 degrees. Each of the 8 cells is a DIFFERENT successive phase of one walk cycle, in reading order left to right top row, then left to right bottom row. Image 2 is the appearance reference: our existing brown-haired chibi traveler.\nRedraw the traveler from image 2 over ALL EIGHT mannequins from image 1. Copy each mannequin's individual pose, limb overlap, shoulder/elbow/wrist/hip/knee/ankle positions, foot placement, camera angle and facing direction. Preserve the same relative placement and scale in every cell as image 1. Do NOT copy the standing pose from image 2. Do NOT improvise a new walk sequence. Frames 5-8 must exchange the stance and swing legs from frames 1-4; arms counter-swing. Never keep both feet raised together, never hopping, no repeated standing frames.\nPreserve the recognizable identity, warm outlined shaded illustration style, brown tousled hair, amber eyes, cream short-sleeve tunic, brown sleeveless vest, brass-buckle belt, brown shorts, teal scarf tied at the neck with its tails, bare lower legs and brown ankle boots. Same garment details, head size and body proportions in all frames. Adapt the camera to the mannequin's 45-degree overhead view and keep full bodies entirely inside their cells. Face DOWNLEFT in every frame.\nActual transparent background with clean alpha, no green/magenta backdrop, no baked checkerboard, no gray mannequin visible anywhere, no text, numbers, labels, borders, grid, ground plane, cast shadows, weapons, or extra characters. Exactly eight separate complete characters, one per evenly sized cell, ample empty alpha padding separating cells. Lock head centers and vertical foot-ground registration to the guide cell by cell. Output the sprite sheet only.",
+  "limitations": [
+    "Whole-character sheet; no independent equipment layers",
+    "Generated poses and clothing consistency require visual review",
+    "Generated sheet differs in pixel dimensions from pose guide; runtime uses separate equal cells for each sheet"
+  ]
+}

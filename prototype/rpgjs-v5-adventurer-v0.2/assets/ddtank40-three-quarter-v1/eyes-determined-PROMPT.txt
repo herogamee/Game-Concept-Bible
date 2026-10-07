@@ -1,0 +1,5 @@
+Use case: precise-object-edit.
+Asset type: registered interchangeable standing character part.
+Image 1 is the EDIT TARGET: the bald blank-faced three-quarter-left template. Image 2 is ONLY the reference for original facial-feature positions, head/body turn and identity.
+Add ONLY one selectable eye-set: two vivid green chibi eyes, determined angled eyebrows and a small confident closed smile. Use the same existing three-quarter-left eye locations as the original master: near viewer-right eye larger, far viewer-left eye narrower. Match the default eye scale rather than using tiny eyes.
+STRICT INVARIANTS: keep exact1254×1254 square canvas and transparent margins; keep the bald head size, skull/chin/ear/nose contour, head turn, neck, torso, clothing, limbs, feet and their positions unchanged. No front view. No re-centering or scale change. No new props or background. The edited region alone may change; all other artwork stays the same. Actual RGBA transparency; no checkerboard, floor, shadow or text. One complete character in the identical registration.

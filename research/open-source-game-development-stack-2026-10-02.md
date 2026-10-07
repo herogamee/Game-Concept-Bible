@@ -1,3 +1,4 @@
+> **Policy update — 2026-10-02:** The owner authorized a [quality-first implementation reset](../design/implementation-reset-2026-10-02.md). The source/tool/license research below is retained; mandatory RPGJS/LPC exclusivity is historical guidance. Final engine remains open, v0.1 is the playable reference, and comparative product parity must precede feature expansion. Read the [current handoff](../prototype/CODEX-HANDOFF-QUALITY-PARITY.md).
 # Open-Source Game Development Stack Research — 2026-10-02
 
 Status: **Technical research / implementation guidance**

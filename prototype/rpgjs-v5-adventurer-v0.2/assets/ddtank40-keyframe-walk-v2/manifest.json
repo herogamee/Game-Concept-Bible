@@ -1,0 +1,179 @@
+{
+  "version": 2,
+  "id": "eight-pose-keyframe-walk-v2",
+  "width": 250,
+  "height": 342,
+  "frames": 8,
+  "frameMs": 90,
+  "speed": 48,
+  "source": "assets/ddtank40-keyframe-walk-v2/traveler-eight-poses.png",
+  "sourceSize": [
+    1774,
+    887
+  ],
+  "sourceSha256": "9963a750d4f7f3774e8bbb4e93099d2e61a029fe49bebe52c1e51b9b107351d8",
+  "sourceFrames": [
+    {
+      "index": 0,
+      "phase": "left-contact",
+      "rect": [
+        0,
+        0,
+        443,
+        443
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "phase": "left-down",
+      "rect": [
+        443,
+        0,
+        444,
+        443
+      ],
+      "origin": [
+        443,
+        0
+      ],
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 2,
+      "phase": "right-passing",
+      "rect": [
+        887,
+        0,
+        443,
+        443
+      ],
+      "origin": [
+        887,
+        0
+      ],
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 3,
+      "phase": "right-up",
+      "rect": [
+        1330,
+        0,
+        444,
+        443
+      ],
+      "origin": [
+        1330,
+        0
+      ],
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 4,
+      "phase": "right-contact",
+      "rect": [
+        0,
+        443,
+        443,
+        444
+      ],
+      "origin": [
+        0,
+        414
+      ],
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 5,
+      "phase": "right-down",
+      "rect": [
+        443,
+        443,
+        444,
+        444
+      ],
+      "origin": [
+        443,
+        414
+      ],
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 6,
+      "phase": "left-passing",
+      "rect": [
+        887,
+        443,
+        443,
+        444
+      ],
+      "origin": [
+        887,
+        414
+      ],
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "index": 7,
+      "phase": "left-up",
+      "rect": [
+        1330,
+        443,
+        444,
+        444
+      ],
+      "origin": [
+        1330,
+        414
+      ],
+      "headOffset": [
+        0,
+        0
+      ]
+    }
+  ],
+  "importMatrix": [
+    0.345,
+    0,
+    0,
+    0.345,
+    26.135,
+    149.645
+  ],
+  "headPolicy": "Unchanged canonical head/eyes/hair/hat at common original origin; one body-family import for all8poses.",
+  "items": [
+    {
+      "id": "ours-510900001",
+      "file": "image/equip/m/cloth/ours_cloth_1/1/walk.png",
+      "url": "/ddt40/keyframe-walk8/image/equip/m/cloth/ours_cloth_1/1/walk.png"
+    }
+  ],
+  "acceptance": "Owner requested an8-frame trial. Three built-in ImageGen calls produced this source; the opposite-leg instruction was not fully achieved. Eight distinct drawings are playable for review, not an accepted natural gait.",
+  "scope": "Eight-frame Canvas trial, one outfit, auxiliary walk.png. Not DDTank battle/virtual or Godot/Phaser integration."
+}

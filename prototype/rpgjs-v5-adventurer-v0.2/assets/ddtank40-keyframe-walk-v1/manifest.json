@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "id": "owner-selected-keyframe-walk-v1",
+  "width": 250,
+  "height": 342,
+  "frames": 4,
+  "frameMs": 150,
+  "speed": 48,
+  "source": "assets/ddtank40-cutout-v1/traveler-keyframes-draft.png",
+  "sourceSha256": "aaf9d5e882f4c754e6b1dbc086899f63187c28d95bec68e37402bd965538aab2",
+  "sourceFrames": [
+    {
+      "rect": [
+        0,
+        0,
+        627,
+        700
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "index": 0,
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "rect": [
+        627,
+        0,
+        627,
+        700
+      ],
+      "origin": [
+        627,
+        0
+      ],
+      "index": 1,
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "rect": [
+        0,
+        700,
+        627,
+        554
+      ],
+      "origin": [
+        0,
+        558
+      ],
+      "index": 2,
+      "headOffset": [
+        0,
+        0
+      ]
+    },
+    {
+      "rect": [
+        627,
+        700,
+        627,
+        554
+      ],
+      "origin": [
+        627,
+        558
+      ],
+      "index": 3,
+      "headOffset": [
+        0,
+        0
+      ]
+    }
+  ],
+  "importMatrix": [
+    0.345,
+    0,
+    0,
+    0.345,
+    -9.985,
+    87.51
+  ],
+  "headPolicy": "Existing canonical head/eyes/hair/hat remain unchanged, all at their common origin. Only the source body atlas receives its declared family import.",
+  "items": [
+    {
+      "id": "ours-510900001",
+      "file": "image/equip/m/cloth/ours_cloth_1/1/walk.png",
+      "url": "/ddt40/keyframe-walk/image/equip/m/cloth/ours_cloth_1/1/walk.png"
+    }
+  ],
+  "acceptance": "Owner liked the new source artwork and requested live use on2026-10-07. Composed playback remains for review; repeated leading-leg phases and source variation are recorded, not repaired by texture deformation.",
+  "scope": "Four-frame Canvas lab preview, one outfit. Auxiliary walk.png, not DDTank game.png/virtual coverage and not Godot/Phaser integration."
+}

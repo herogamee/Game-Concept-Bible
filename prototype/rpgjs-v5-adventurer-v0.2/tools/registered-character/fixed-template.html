@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="th">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>แม่แบบตัวละคร — แต่งตัวและทดลองเดิน</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#e8e3d6;color:#30372b;font:16px Tahoma,sans-serif}main{max-width:1100px;margin:auto;padding:20px}a{color:#49643f}h1{font-size:24px;margin:14px 0 8px}h2{font-size:18px;margin:0 0 12px}p{line-height:1.6}.intro{margin:8px 0 16px;color:#64715b}.panel{background:#fffaf0;border:1px solid #d4ccbc;border-radius:12px;padding:16px;margin-bottom:16px}.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:end}.controls>label{flex:1;min-width:200px}.controls label span{display:block;margin-bottom:7px}select,button{font:inherit;background:#fffdf7;color:#303b2b;border:1px solid #b4bca6;border-radius:7px;padding:10px}select{width:100%}button{cursor:pointer}.toggles{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:13px}.toggles label{display:flex;align-items:center;gap:6px}.workbench{display:grid;grid-template-columns:1fr 1.1fr;gap:14px}.character{text-align:center;background:#dfe8d6;border-radius:8px;padding:8px}.character canvas{height:350px;max-width:100%;width:auto}.head canvas{width:100%;height:auto;background:#dfe8d6;border-radius:8px}.caption{font-size:13px;color:#64715b;margin:8px 0}.status{font-size:14px;margin:12px 0 0;color:#526845}.errors{color:#a2382d}.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.card{padding:7px;text-align:center}.card canvas{width:100%;height:auto;background:#e4ebdd;border-radius:5px}.card span{display:block;font-size:12px;line-height:1.5;margin-top:6px}.card[aria-pressed=true]{border:2px solid #567442;background:#eff5e7}.layers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.layers figure{margin:0;text-align:center}.layers canvas{width:100%;height:auto;background:repeating-conic-gradient(#e4eadc 0% 25%,#d8dfce 0% 50%) 0/18px 18px}.layers figcaption{font-size:13px;margin:7px 0}summary{cursor:pointer;font-weight:bold}.layers{margin-top:14px}.note{font-size:14px;color:#66705c}@media(max-width:600px){main{padding:12px}h1{font-size:20px}.panel{padding:12px}.character canvas{height:270px}.workbench{gap:10px}.matrix{gap:6px}.layers{grid-template-columns:repeat(2,1fr)}}
+</style>
+<style>
+@media(max-width:760px){main{padding:14px}h1{font-size:22px}.intro{font-size:14px;margin-bottom:12px}.panel{padding:12px}.controls label span{font-size:14px}.toggles{font-size:14px}.character canvas{height:270px}}
+.motion-stage{text-align:center;margin-top:14px;background:linear-gradient(#dfe8d6 0 94%,#c4d1b5 94%);border-radius:8px}.motion-stage canvas{height:384px;width:auto;max-width:100%}
+</style>
+<main>
+<nav><a href="/original">ตัวละครหน้าตรงเดิม</a> · <a href="/walk">แลปเดิน</a></nav>
+<h1>แม่แบบเดิม · แต่งตัวและทดลองเดิน</h1>
+<p class="intro">เลือกตา ใบหน้า ผม หมวก และชุดแยกกัน · ใช้ตัวเลือกเดียวกันทั้งยืนและเดินหน้าตรง</p>
+<section class="panel">
+  <div class="controls">
+    <label><span>ชุดดวงตา · ตา + คิ้ว + ปาก</span><select id="fixed-eyes" aria-label="ชุดดวงตา"></select></label>
+    <label><span>ชุดใบหน้า</span><select id="fixed-face" aria-label="ชุดใบหน้า"></select></label>
+    <label><span>ชุดเสื้อผ้า · เสื้อ + กางเกง + รองเท้า</span><select id="fixed-clothing" aria-label="ชุดเสื้อผ้า"></select></label>
+    <label><span>ทรงผม</span><select id="fixed-hair" aria-label="ทรงผม"></select></label>
+    <label><span>หมวก</span><select id="fixed-hat" aria-label="หมวก"></select></label>
+  </div>
+  <div class="toggles">
+    <label><input type="checkbox" id="fixed-show-hair" checked>แสดงผม</label>
+    <label><input type="checkbox" id="fixed-show-eyes" checked>แสดงชุดดวงตา</label>
+    <label><input type="checkbox" id="fixed-guides">จุดอ้างอิง</label>
+    <button id="fixed-reset">ใช้ค่าเริ่มต้น</button>
+  </div>
+  <p id="fixed-status" class="status" role="status">กำลังโหลดชิ้นส่วน…</p>
+</section>
+<section class="panel workbench">
+  <div class="character"><h2>ตัวละครที่ประกอบแล้ว</h2><canvas id="fixed-character" width="620" height="1225" aria-label="ตัวละครบนแม่แบบเดิม"></canvas></div>
+  <div class="head"><h2>ขยายดูหัวและใบหน้า</h2><canvas id="fixed-head" width="620" height="540" aria-label="ภาพขยายชุดดวงตาและชุดใบหน้า"></canvas><p class="caption">ถอดผมเพื่อเทียบโครงหัว และปิดชุดดวงตาเพื่อดูชุดใบหน้าอย่างเดียวได้</p></div>
+</section>
+<section class="panel" id="front-motion-panel">
+  <h2>ยืน ↔ เดิน · หน้าตรงหนึ่งทิศ</h2>
+  <div class="controls"><button id="motion-walk" aria-pressed="false">เดินอยู่กับที่</button><button id="motion-stand" aria-pressed="true">กลับท่ายืน</button><button id="motion-step">ดูเฟรมถัดไป</button><label><span>ความเร็วท่าเดิน</span><select id="motion-rate" aria-label="ความเร็วท่าเดิน"><option value="1">ปกติ</option><option value="0.5">ช้า ½</option></select></label></div>
+  <div class="motion-stage"><canvas id="fixed-motion" width="384" height="512" aria-label="ตัวละครยืนและเดินด้วยชุดที่เลือก"></canvas></div>
+  <p id="motion-status" class="status">กำลังโหลดเฟรมเดิน…</p>
+  <p class="caption">เปลี่ยนตัวเลือกด้านบนระหว่างเดินได้ · ท่าหลัก 4 เฟรม มุมมองเดินเข้าหาผู้เล่น</p>
+</section>
+<section class="panel"><h2>ผมเดิม + 2 ทรงใหม่ · เทียบเมื่อใส่หมวก</h2><div id="fixed-headwear-gallery" class="matrix"></div><p id="fixed-hair-size" class="status"></p><p class="caption">ผมทุกทรงใช้กรอบภาพและจุดวางเดียวกัน · กรอบทดลองผมสั้นหน้าตรง: กว้าง 490–570 px และสูงเหนือกระหม่อม 55–155 px · ตัวเลขใต้ภาพวัดเฉพาะเนื้อผม ไม่รวมพื้นที่โปร่งใส</p><p class="caption">เปิด “จุดอ้างอิง” เพื่อเทียบกระหม่อมและช่วงยอดผม · หมวกบังส่วนบนของผมและเหลือหน้าม้า ถอดหมวกแล้วกลับมาเป็นทรงที่เลือกไว้</p></section>
+<section class="panel"><h2>ชุดเดิม + 2 ชุดใหม่</h2><div id="fixed-clothing-gallery" class="matrix"></div><p class="caption">ทั้งสามภาพใช้ชุดดวงตา ชุดใบหน้า และผมที่เลือกอยู่ คลิกเพื่อสลับชุด</p></section>
+<section class="panel"><h2>ชุดดวงตา × ชุดใบหน้า · ทั้ง 9 แบบ</h2><div id="fixed-matrix" class="matrix"></div><p class="caption">ภาพคลังใช้หัวเปล่าเดียวกัน คลิกเพื่อเลือกคู่ที่ต้องการ</p></section>
+<details class="panel"><summary>ดูชิ้นส่วนแยกกัน</summary><div id="fixed-layers" class="layers"></div></details>
+<p class="note">ต้นแบบหน้าตรง: ตา 3 แบบ ใบหน้า 2 แบบ ผม 3 ทรง หมวก 1 ใบ ชุด 3 แบบ · กำลังทดสอบความสวยงามและจังหวะเดินก่อนทำทิศอื่น</p>
+</main>
+<script type="module" src="/fixed-template-client.mjs"></script>
+</html>

@@ -1,5 +1,7 @@
 # GAME CONCEPT BIBLE v0.3 — Combat & Classes Candidate
 
+Implementation checkpoint (2026-10-07): the owner-locked [modular character standard v1](../design/DDTANK-CHARACTER-STANDARD-v1.md) preserves the current stand/walk/wardrobe/blink/aura study and its incomplete contexts. This is an asset/renderer working baseline, not approval of a production engine, combat animation coverage or expanded gameplay scope.
+
 **Date:** 2026-10-03  
 **Status:** Current combat/class prototype candidate — working proposal, not final balance lock  
 **Predecessors:** v0.2.1 Player/NPC Boundary Correction, v0.2 World/Guild proposal  

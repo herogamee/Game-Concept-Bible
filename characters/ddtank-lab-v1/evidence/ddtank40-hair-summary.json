@@ -1,0 +1,33 @@
+{
+  "alpha_threshold": 128,
+  "coordinate_space": "first 250x342 source canvas, top-left origin",
+  "decoded": 1971,
+  "records": 1971,
+  "canonical_filter": "plane 1, variant B, non-empty; these are file measurements, not item counts",
+  "canonical_by_sex": [
+    {
+      "sex": "m",
+      "files": 254,
+      "width_range": [
+        109,
+        218
+      ],
+      "height_range": [
+        71,
+        258
+      ]
+    },
+    {
+      "sex": "f",
+      "files": 280,
+      "width_range": [
+        126,
+        247
+      ],
+      "height_range": [
+        106,
+        297
+      ]
+    }
+  ]
+}

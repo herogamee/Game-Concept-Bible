@@ -1,0 +1,586 @@
+{
+  "profile": "ddtank-4.0-local-2026-10-06",
+  "version": 3,
+  "view": "three-quarter-left",
+  "template": "ddtank40-standing-three-quarter-left-v1",
+  "masterDirectory": "assets/ddtank40-three-quarter-v1/layers",
+  "authoringDirectory": "assets/ddtank40-three-quarter-v1",
+  "authoringSourceHashes": {
+    "blank-head-generated.png": "9d29eccd2cf4d778049e36bf30295c8cc7cdf55eb046e4694cefca2ce9b1eaa2",
+    "eyes-amber-generated.png": "cff766cc27de4ac4342f65a223a71dd0a683b4a6f9b93d33efe45973d1497c76",
+    "eyes-determined-generated.png": "ac3ab05325ff7017f32b2f29ec78ddeffa9e8267c2e9fb7f4947bb758ad4af0c",
+    "eyes-joy-generated.png": "910844242f3a779be12c3880dc92ad36111e86ee8bce46ebd2039d7461d92cf0",
+    "face-scar-generated.png": "00b1cdfaa6ffbeda8f43f7d83581245f83e6ab41643368cb430bf3919e807144",
+    "face-blush-correction-generated.png": "744a9756ba25b4c16c8e03b309d3050d2381c5c1b5575c5426a4c6cf5ecec229",
+    "clothing-traveler-headless-v2.png": "42872a6d00a3beff742fb7285ff49cdad6743bbf26200087a7940d1ed6fd2438",
+    "clothing-knight-headless-v2.png": "ac41ead4961b535c9290421e2dc23f41242eb8f5294bb6ceebc02be252416180",
+    "clothing-mage-headless-v2.png": "be11a331540363193aead8b5c10f1cc3d65ff47efcdccc2c349fb99e8176e55a",
+    "hair-chestnut-only-v2.png": "b4ca3a964c9f656d0157ef662b8c70af484cb118374626f5a330a5374d91b386",
+    "hair-pair-v1/hair-only.png": "625e910945159ad4339c866ba64bbad0fed72f14c86a9db4c1dbf9934108d45d",
+    "hat-adventurer-generated.png": "73d06313597fa768a0a8e8a17ae15bde84fd8521d6c44fe288ad823c1c3ad0fb",
+    "hair-pair-v1/blank-head-hair.png": "ee03497ad1790a3eddab83fc821834e9cb0bb65fc86e6c6a8b61281e3cc93364",
+    "clothing-knight-generated.png": "09c940217a47b1f200121caf6a59d3cb2e4561ddd4dc00d66ba8f5d7a671d7b2",
+    "clothing-mage-generated.png": "d3c1b784e9b0b5f7887a226da7bbb4aee6ceac842c485b69e7faba18ab663e28",
+    "face-blush-generated.png": "899c5ecfcded8ea6fb8c0aa36ff1029950f64268547bee972bc1fd2d5c9cfeeb",
+    "ghost-brown-volume-guide-v3.png": "281caea7426b3118d260d18deb9dfca74e210aa95004d275d94ceaed315fd0f9",
+    "ghost-brown-volume-guide-v5.png": "c2b3e0ab24e0fdf65e0a4ada535317c53303205b71b38b1accceaf4cc92cf354",
+    "ghost-head-guide-v3.png": "90accc5ba1da0404b3234d37d2e31916728002359ec1a8e73b55ede330be740c",
+    "ghost-head-guide-v5.png": "1a894b7528c55035f92cb58f92372f4596d023509c4f3b57a0c237c3c8f87722",
+    "hair-chestnut-compact-generated.png": "bd6f231fb28d818cfdb348dcf250db8e75b0391615b91239c67b0a2ed6627a80",
+    "hair-chestnut-generated.png": "c8fc9acc65a78aba9a45172597d24507b2e951cfefafdd37652a1c8eb0ae249f",
+    "hair-chestnut-only-generated-v2.png": "fc4cac88cfa9524f20a2acbb38d80edcce2e91e5f5a5eb4b753b93afe3882424",
+    "hair-silver-curls-compact-generated.png": "32e3c785f02352a7e277b1230210b4ddbdc41a19dc41ef8903ce4a590e8a4edd",
+    "hair-silver-curls-generated.png": "2bb0e311aba831f2c53ae19e58b9060ac095b5d51d7f397c8a1d3ae60a150dad",
+    "hair-silver-curls-ghost-generated-v3.png": "6abaf79caa221f65f771b3cf3f0940fc93656d26ff63ac11f441ab5d31a79e0a",
+    "hair-silver-curls-ghost-generated-v4.png": "51095530b193d6f7f9a08d0e1700d18496eab6f0cc068a892476ec47daa0993d",
+    "hair-silver-curls-ghost-v3.png": "4558d77fef62baa3ac90e237d0d2db4fbbad22af286806810d19cc4f570bbc74",
+    "hair-silver-curls-ghost-v4.png": "740d029bbd34f73a2560273adcfdb969ae326ac656b68e1ea5a48d397f05a8b1",
+    "hair-silver-curls-only-generated-v2.png": "f6930f8641ff775b1e6f179c811caffd1634768e5914ea8cfa51e7dd36508fec",
+    "hair-silver-curls-only-v2.png": "35ac3faa78c25f8f79d3bd8c1dff79858342b581b08fe26c71739f0a9fac76da",
+    "hair-silver-ghost-low-v3.png": "b473a9b9167c94fd973b6630ddf0fbe374718b72f2322d1b8dae8a541c53c7d7",
+    "hair-silver-ghost-oversized-v3.png": "9c420c55875c8c6742756b215d271a4af1811760aefa3c993429174811c84fda",
+    "hair-silver-ghost-rejected-v5.png": "615db59846d2f60a5b124eb01cbf45a012161404e534f7b948e01215faac7533",
+    "hair-teal-compact-generated.png": "4aa0e53078d947bef185c3fe7e72e87e2696ea513127bc71a1f928604fe11daf",
+    "hair-teal-generated.png": "1a8867f2b311259d1eef7c4d5931c54600d551993baf3d973af95025329375a5",
+    "hair-teal-ghost-generated-v3.png": "95e587ebd181c2f587acdff633c5c3a61eb76df747dfb10b15c3a55469d0e2e4",
+    "hair-teal-ghost-generated-v4.png": "d7fe7865bc185b442acef48ea9f30e1fd171efc957fd4823f1f35e645567b10e",
+    "hair-teal-ghost-generated-v5.png": "deecaf0e5355832678cea5751136d02c5e6f64c10259cd636791ebb3f4323cdb",
+    "hair-teal-ghost-v3.png": "0402900bc07e9039a92138ef6b58b34fea0806a03c06db56629e45478b4e95f4",
+    "hair-teal-ghost-v4.png": "0b3c10a501485a2ec26ec1cfaad5cc383da2b8a4f8d3305049dbffb0f668d889",
+    "hair-teal-ghost-v5.png": "1baa16b1b9c59eb1b6aa258ecc7fc66c79831cf48f151275d5c5fcd18d59cb64",
+    "hair-teal-only-generated-v2.png": "18126013528afff1c92d38ba55dc82e657ba54986483be46915cb237767b721c",
+    "hair-teal-only-v2.png": "c192da3bd6e6ec9beec97ec263a972e044409d2d2b69cc735ec154df9c444ed9",
+    "master.png": "c3935fc8c254842c7fc33f1049054da13d4137fd0e60ed822d0873052cb3b75d"
+  },
+  "contexts": [
+    "show"
+  ],
+  "defaults": {
+    "m": {
+      "head": "ours-110900001",
+      "glass": "ours-210900001",
+      "eff": "ours-410900001",
+      "face": "ours-610900001",
+      "hair": "ours-310900001",
+      "cloth": "ours-510900001"
+    }
+  },
+  "items": [
+    {
+      "id": "ours-110900001",
+      "templateId": 110900001,
+      "name": "ไม่ใส่หมวก",
+      "slot": "head",
+      "pic": "default",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/head/default/1/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/head/default/1/show.png"
+        }
+      }
+    },
+    {
+      "id": "ours-210900001",
+      "templateId": 210900001,
+      "name": "ไม่ใส่แว่น",
+      "slot": "glass",
+      "pic": "default",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/glass/default/1/show.png",
+          "width": 360,
+          "height": 150,
+          "url": "/ddt40/ours/image/equip/m/glass/default/1/show.png"
+        }
+      }
+    },
+    {
+      "id": "ours-410900001",
+      "templateId": 410900001,
+      "name": "ไม่มีรายละเอียดใบหน้า",
+      "slot": "eff",
+      "pic": "default",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/eff/default/1/show.png",
+          "width": 360,
+          "height": 150,
+          "url": "/ddt40/ours/image/equip/m/eff/default/1/show.png"
+        }
+      }
+    },
+    {
+      "id": "ours-610900001",
+      "templateId": 610900001,
+      "name": "ตาอำพัน · ยิ้ม",
+      "slot": "face",
+      "pic": "ours_face_1",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/face/ours_face_1/1/show.png",
+          "width": 1000,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/face/ours_face_1/1/show.png"
+        }
+      },
+      "showFrames": [
+        0
+      ]
+    },
+    {
+      "id": "ours-610900002",
+      "templateId": 610900002,
+      "name": "ตาเขียว · มุ่งมั่น",
+      "slot": "face",
+      "pic": "ours_face_2",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/face/ours_face_2/1/show.png",
+          "width": 1000,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/face/ours_face_2/1/show.png"
+        }
+      },
+      "showFrames": [
+        0
+      ]
+    },
+    {
+      "id": "ours-610900003",
+      "templateId": 610900003,
+      "name": "ตาปิด · ยิ้มกว้าง",
+      "slot": "face",
+      "pic": "ours_face_3",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/face/ours_face_3/1/show.png",
+          "width": 1000,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/face/ours_face_3/1/show.png"
+        }
+      },
+      "showFrames": [
+        0
+      ]
+    },
+    {
+      "id": "ours-310900001",
+      "templateId": 310900001,
+      "name": "ผมน้ำตาล",
+      "slot": "hair",
+      "pic": "ours_hair_1",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "A": {
+          "path": "image/equip/m/hair/ours_hair_1/1/A/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/hair/ours_hair_1/1/A/show.png"
+        },
+        "B": {
+          "path": "image/equip/m/hair/ours_hair_1/1/B/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/hair/ours_hair_1/1/B/show.png"
+        }
+      }
+    },
+    {
+      "id": "ours-310900004",
+      "templateId": 310900004,
+      "name": "ผมฟ้า · คู่ภาพหัวมาตรฐาน",
+      "slot": "hair",
+      "pic": "ours_hair_4",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "A": {
+          "path": "image/equip/m/hair/ours_hair_4/1/A/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/hair/ours_hair_4/1/A/show.png"
+        },
+        "B": {
+          "path": "image/equip/m/hair/ours_hair_4/1/B/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/hair/ours_hair_4/1/B/show.png"
+        }
+      }
+    },
+    {
+      "id": "ours-510900001",
+      "templateId": 510900001,
+      "name": "ชุดนักเดินทาง",
+      "slot": "cloth",
+      "pic": "ours_cloth_1",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/cloth/ours_cloth_1/1/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/cloth/ours_cloth_1/1/show.png"
+        }
+      },
+      "headOverlap": "behind-face"
+    },
+    {
+      "id": "ours-510900002",
+      "templateId": 510900002,
+      "name": "ชุดอัศวินฝึกหัด",
+      "slot": "cloth",
+      "pic": "ours_cloth_2",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/cloth/ours_cloth_2/1/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/cloth/ours_cloth_2/1/show.png"
+        }
+      },
+      "headOverlap": "behind-face"
+    },
+    {
+      "id": "ours-510900003",
+      "templateId": 510900003,
+      "name": "ชุดนักเวทฝึกหัด",
+      "slot": "cloth",
+      "pic": "ours_cloth_3",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/cloth/ours_cloth_3/1/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/cloth/ours_cloth_3/1/show.png"
+        }
+      },
+      "headOverlap": "behind-face"
+    },
+    {
+      "id": "ours-410900002",
+      "templateId": 410900002,
+      "name": "รอยแผล",
+      "slot": "eff",
+      "pic": "ours_eff_1",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/eff/ours_eff_1/1/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/eff/ours_eff_1/1/show.png"
+        }
+      }
+    },
+    {
+      "id": "ours-410900003",
+      "templateId": 410900003,
+      "name": "แก้มแดงและกระ",
+      "slot": "eff",
+      "pic": "ours_eff_2",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 1,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/eff/ours_eff_2/1/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/eff/ours_eff_2/1/show.png"
+        }
+      }
+    },
+    {
+      "id": "ours-110900002",
+      "templateId": 110900002,
+      "name": "หมวกนักเดินทาง",
+      "slot": "head",
+      "pic": "ours_head_1",
+      "sex": "m",
+      "source": "ours",
+      "hairType": 2,
+      "assets": {
+        "main": {
+          "path": "image/equip/m/head/ours_head_1/1/show.png",
+          "width": 250,
+          "height": 312,
+          "url": "/ddt40/ours/image/equip/m/head/ours_head_1/1/show.png"
+        }
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "image/equip/m/head/default/1/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "97a2d0124d2d2b6100f7d7d6f48f568ed0d7826cdd26a54d446e5b2c55e968f3"
+    },
+    {
+      "path": "image/equip/m/head/default/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "28a8a7726242811e8a345faadcf55ad0dfe144ed535ea479a30b063d99b8c9ac"
+    },
+    {
+      "path": "image/equip/m/glass/default/1/show.png",
+      "width": 360,
+      "height": 150,
+      "sha256": "d357c07a30c4fd674d67f45f03d1dcdb6dbe27ee72c891993f3c7e532fdc2c1d"
+    },
+    {
+      "path": "image/equip/m/glass/default/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "28a8a7726242811e8a345faadcf55ad0dfe144ed535ea479a30b063d99b8c9ac"
+    },
+    {
+      "path": "image/equip/m/eff/default/1/show.png",
+      "width": 360,
+      "height": 150,
+      "sha256": "d357c07a30c4fd674d67f45f03d1dcdb6dbe27ee72c891993f3c7e532fdc2c1d"
+    },
+    {
+      "path": "image/equip/m/eff/default/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "28a8a7726242811e8a345faadcf55ad0dfe144ed535ea479a30b063d99b8c9ac"
+    },
+    {
+      "path": "image/equip/m/face/ours_face_1/1/show.png",
+      "width": 1000,
+      "height": 312,
+      "sha256": "4ec0e4dbc1088f1cc2acaec1f3bd4478d75938764ba20a3ae59a53abbaebcbf6"
+    },
+    {
+      "path": "image/equip/m/face/ours_face_1/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "5632fca8ad581c6239ffed33841c556f43f693529f123f939c05908442c745bd"
+    },
+    {
+      "path": "image/equip/m/face/ours_face_2/1/show.png",
+      "width": 1000,
+      "height": 312,
+      "sha256": "e375550e98883beb3c4a580ccdde2d802ebb17e728a0f4b68574a9864c8e6eb7"
+    },
+    {
+      "path": "image/equip/m/face/ours_face_2/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "fa49dc9e9baf1ecff8dffceb4a3457b867740ecde3505b5db52ee9029b371a28"
+    },
+    {
+      "path": "image/equip/m/face/ours_face_3/1/show.png",
+      "width": 1000,
+      "height": 312,
+      "sha256": "d0c2ab36d93180e45ff3788d25f2c9b3aef480d719797fb52d691c9cc6c89e61"
+    },
+    {
+      "path": "image/equip/m/face/ours_face_3/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "62391ffdc649f1bb30ac303f660c7c67d79947e22b1ecb74eb4043fded2f16e3"
+    },
+    {
+      "path": "image/equip/m/hair/ours_hair_1/1/A/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "2d0430ec60105d8fb81f4c7a9299477edcff2d57c66d8b81b6a1c1bc85dc23c3"
+    },
+    {
+      "path": "image/equip/m/hair/ours_hair_1/1/B/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "64df099ccee49d38f0bd3188cf426c73691cd4a2925cfdbe3c517e613bf08b51"
+    },
+    {
+      "path": "image/equip/m/hair/ours_hair_1/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "3fe2488e8dd08dce6f6284729152a8978219d638083be01b536a52d84307252b"
+    },
+    {
+      "path": "image/equip/m/hair/ours_hair_4/1/A/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "a22869263f5b674bdf559d42f9396fa1b5b680ea5fd60e764df2149aec758575"
+    },
+    {
+      "path": "image/equip/m/hair/ours_hair_4/1/B/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "9c0d1df65e9aa5c70034f453d72f9d26dcd46b9a88394ce6f7057d2f3de95c41"
+    },
+    {
+      "path": "image/equip/m/hair/ours_hair_4/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "3085634d3005392ba2dcf6a27776e60e9d40d740e010b1bf560f880f6be587a4"
+    },
+    {
+      "path": "image/equip/m/cloth/ours_cloth_1/1/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "63b8e0e265e198fe03416c9d0e7312f22ed527f28e098cba5365797e6063ce5f"
+    },
+    {
+      "path": "image/equip/m/cloth/ours_cloth_1/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "b39466d059ad8cd3107d8e45f6819fcf6b3149d8951217458cc058755e3d7e75"
+    },
+    {
+      "path": "image/equip/m/cloth/ours_cloth_2/1/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "b681a5e4ec2426ae986e435f076b193d0daa239fc91406c4d6c69a4d1ed0bfb1"
+    },
+    {
+      "path": "image/equip/m/cloth/ours_cloth_2/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "a9c9c5280b6e482e5de9b0426205d4f1af80239887a06db03f1de4e039db2ed9"
+    },
+    {
+      "path": "image/equip/m/cloth/ours_cloth_3/1/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "478f63f34617a01eca6093f217b3089340cd033754cd6aea54a031e189475838"
+    },
+    {
+      "path": "image/equip/m/cloth/ours_cloth_3/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "0bd2fdbc09ed18377d3ec4663ce32d797c64a4e53936c88db6c02d6a4622fda8"
+    },
+    {
+      "path": "image/equip/m/eff/ours_eff_1/1/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "81dac53efe6ee6ac551ecf8b5afd220dcdf25e81e9467c1d78a14f8a46eabe54"
+    },
+    {
+      "path": "image/equip/m/eff/ours_eff_1/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "4e0526b07c8977a168ed971a33ad0053c38551a6cdd0aadd8806d4b307f277aa"
+    },
+    {
+      "path": "image/equip/m/eff/ours_eff_2/1/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "8eb39e1b0844e68279293f90168a7ca7dfced96fa9f0704a498c116433c043d5"
+    },
+    {
+      "path": "image/equip/m/eff/ours_eff_2/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "644f38baf4ce0e22011775adb3a6b5e4d9b5b9e16f03642c6b033558f0cbb47a"
+    },
+    {
+      "path": "image/equip/m/head/ours_head_1/1/show.png",
+      "width": 250,
+      "height": 312,
+      "sha256": "32bf03535fdad05e1d16b83de5d9a0b40f7a15ff46e49978859a7685c9985c52"
+    },
+    {
+      "path": "image/equip/m/head/ours_head_1/icon_1.png",
+      "width": 78,
+      "height": 78,
+      "sha256": "7a9c1bb35e89ba35ac6e1461fdf79d374e1dae0904d5dfce33690b3856dea470"
+    }
+  ],
+  "calibration": {
+    "version": 2,
+    "mode": "uniform-shared-master",
+    "master": [
+      1254,
+      1254
+    ],
+    "matrix": [
+      0.21075455333911536,
+      0,
+      0,
+      0.21075455333911536,
+      -32.59291891935706,
+      49.19774501300952
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "alphaThreshold": 128,
+    "sourceTopY": 56,
+    "sourceGroundY": 1209,
+    "targetTopY": 61,
+    "targetGroundY": 304,
+    "neckSource": [
+      600,
+      627
+    ],
+    "neckTarget": [
+      93.85981308411215,
+      181.34084995663486
+    ],
+    "note": "One uniform matrix for head, hair, eyes, cheek details, cap and clothing. Preserve authored proportions inside canonical transparent canvases. Authoring landmarks are not Flash anatomical anchors."
+  },
+  "sourceHashes": {
+    "head-template.png": "b9227919413cabb4dae769f2059134035ce06575614e0fd6869c3f3a39c146b1",
+    "eyes-amber.png": "796bfdb63230b1f8cdd0307e2654db841333289a0148e3c954619743970f3bd9",
+    "eyes-determined.png": "0a842b134e47fb3231ff25ec1994c6008010da9c764958de3a75efa841e9db28",
+    "eyes-joy.png": "94b1a21c3e4779b79a7b55eb517c72dbccffb1a11804171c4197716c2df9eb71",
+    "hair-chestnut-under-hat.png": "d0d467f9ff5b87c15660194386f7f9c0285997eb8bf6c066cde7ae456e642efe",
+    "hair-chestnut.png": "b4ca3a964c9f656d0157ef662b8c70af484cb118374626f5a330a5374d91b386",
+    "hair-paired-teal-under-hat.png": "4a8677337250859a58bb2956d0c4b6d4918478a921b6e6bfd89ddf5be3dc5dd5",
+    "hair-paired-teal.png": "625e910945159ad4339c866ba64bbad0fed72f14c86a9db4c1dbf9934108d45d",
+    "clothing-traveler.png": "42872a6d00a3beff742fb7285ff49cdad6743bbf26200087a7940d1ed6fd2438",
+    "clothing-knight.png": "ac41ead4961b535c9290421e2dc23f41242eb8f5294bb6ceebc02be252416180",
+    "clothing-mage.png": "be11a331540363193aead8b5c10f1cc3d65ff47efcdccc2c349fb99e8176e55a",
+    "face-scar.png": "b93e64c7b43f8c2ffed741332426768e2a13d8256287630d166bab0eb6417b37",
+    "face-blush.png": "b488de8a5a9fa8ffa4925b423e23b1e29ec34aaf5ce20b9ad72cb6ccb186187c",
+    "hat-adventurer.png": "a496a8bf57bf6e5a80e93d74d49e88b96d87b5f223a861ec2ad001f0ab6ec253"
+  },
+  "availability": {
+    "show": "Standing frame 0 only for original faces",
+    "game": "Not exported: 39 actual battle cells still required",
+    "virtual": "Not exported: matched front/back town poses still required",
+    "female": "Not authored",
+    "flashRegistration": "Registration fields exported; unchanged Flash-client ingestion has not been verified"
+  },
+  "acceptance": "Revised 3/4-left standing artwork on a shared head/body template. Owner visual acceptance, complete action interchange and original Flash ingestion remain pending."
+}

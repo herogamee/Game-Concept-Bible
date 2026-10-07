@@ -1,0 +1,5 @@
+Use case: precise-object-edit.
+Asset type: registered bald/blank-head underpainting for a modular 2D game character.
+Input: the attached THREE-QUARTER-LEFT original traveler master is the edit target.
+Change ONLY the head: remove every hair strand and tuft, and remove eyes, eyebrows and mouth. Supply a naturally rounded bald scalp and clean skin where those features were. KEEP the same face contour, chin, nose, viewer-right ear, warm skin shading and three-quarter-left turn. The viewer-left ear stays almost hidden, not symmetrical. Keep the exact head-to-neck attachment and head scale. Do not turn the head frontally.
+All torso, scarf, costume, limbs, boots, stance and every position MUST remain unchanged. Keep the same square canvas, frame, transparent margins and character registration. Do not enlarge, center, tilt or move the figure. This blank-headed version must overlay the original without shifting. Transparent RGBA background, no floor/shadow/text, no new objects. One complete bald blank-faced three-quarter traveler only.

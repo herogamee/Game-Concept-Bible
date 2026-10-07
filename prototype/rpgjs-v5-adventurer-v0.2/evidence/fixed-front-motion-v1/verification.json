@@ -1,0 +1,105 @@
+{
+  "cases": 810,
+  "visibleLooks": 162,
+  "statesPerLook": 5,
+  "authoredWalkingKeyPoses": 4,
+  "direction": "front",
+  "allOriginsZero": true,
+  "headAppearanceUnchangedAcrossActionsFramesAndClothes": true,
+  "neckConnectedInAllCases": true,
+  "sharedExposedBodyFixtures": [
+    {
+      "pose": "right-contact",
+      "canonicalPixels": 3776
+    },
+    {
+      "pose": "left-passing",
+      "canonicalPixels": 3673
+    },
+    {
+      "pose": "left-contact",
+      "canonicalPixels": 3878
+    },
+    {
+      "pose": "right-passing",
+      "canonicalPixels": 4137
+    }
+  ],
+  "independentEquipmentKeepsAnimationPhase": true,
+  "unsupportedActionsAndMissingClothingPosesRejected": true,
+  "soles": [
+    {
+      "clothing": "clothing-traveler",
+      "pose": "right-contact",
+      "left": 450,
+      "right": 479
+    },
+    {
+      "clothing": "clothing-traveler",
+      "pose": "left-passing",
+      "left": 443,
+      "right": 478
+    },
+    {
+      "clothing": "clothing-traveler",
+      "pose": "left-contact",
+      "left": 475,
+      "right": 449
+    },
+    {
+      "clothing": "clothing-traveler",
+      "pose": "right-passing",
+      "left": 479,
+      "right": 452
+    },
+    {
+      "clothing": "clothing-knight",
+      "pose": "right-contact",
+      "left": 451,
+      "right": 479
+    },
+    {
+      "clothing": "clothing-knight",
+      "pose": "left-passing",
+      "left": 443,
+      "right": 479
+    },
+    {
+      "clothing": "clothing-knight",
+      "pose": "left-contact",
+      "left": 476,
+      "right": 450
+    },
+    {
+      "clothing": "clothing-knight",
+      "pose": "right-passing",
+      "left": 479,
+      "right": 453
+    },
+    {
+      "clothing": "clothing-mage",
+      "pose": "right-contact",
+      "left": 451,
+      "right": 479
+    },
+    {
+      "clothing": "clothing-mage",
+      "pose": "left-passing",
+      "left": 444,
+      "right": 479
+    },
+    {
+      "clothing": "clothing-mage",
+      "pose": "left-contact",
+      "left": 476,
+      "right": 450
+    },
+    {
+      "clothing": "clothing-mage",
+      "pose": "right-passing",
+      "left": 479,
+      "right": 452
+    }
+  ],
+  "limitations": "Four key poses at 6fps, stationary front-facing gait trial. Visual rhythm, soles, transitions, sleeve boundaries and owner art acceptance remain pending. Other directions/actions, full costumes, playable integration and production throughput are not implemented."
+}

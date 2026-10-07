@@ -1,0 +1,7 @@
+Use case: precise-object-edit
+Asset type: HAIR-ONLY PNG for a modular chibi head.
+Primary request: Correct ONLY the LEFT FACE OPENING of blue hair in Image1. A dangling inner left lock covers the left eye. Shape this small area to expose the eye as Image2 brown hair does. Keep all other blue hair, full volume, crown, right ear opening and exact canvas placement.
+References: Image1 blue hair is edit target. Image2 brown hair is the exact LEFT-BANG/LEFT-SIDEBURN CLEARANCE guide, on the same generation frame. Image3 is invisible head guide only, NEVER output skin or head.
+Localized correction: Within x395..520,y470..645, shorten/recurve the inner lower left hair tips to the left, matching Image2's open face edge. The actual eye area x436..465,y585..635 MUST BE ENTIRELY ALPHA ZERO, including the pixels (444,612),(444,622). Let left cheek/eye show beneath the hair. Keep the outer left hair silhouette around x255..400 and the lower outer tufts; redraw only the inward-facing lock so it ends to the LEFT of x425 or ABOVE y575. Do not punch a round hole. Draw natural tapered bangs as hair, not a crop.
+Keep exact overall image size1254x1254 and painted placement x255..1028,y79..648. Do not recenter, move, zoom or resize any hair. Keep previously open right ear rectangle x835..871,y610..654 alpha zero.
+Output ONLY HAIR on real transparency. Blank face opening and outside hair, no head, skin, face, ears, eyes, brow, mouth, body, guides, text or background. Preserve blue shade and illustration style.

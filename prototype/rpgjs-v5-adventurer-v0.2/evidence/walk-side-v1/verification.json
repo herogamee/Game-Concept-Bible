@@ -1,0 +1,627 @@
+{
+  "scope": "Eight original wardrobe combinations through eight right-facing walk frames. Natural gait/visual owner acceptance pending.",
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "frame": {
+    "width": 384,
+    "height": 512,
+    "columns": 4,
+    "rows": 2
+  },
+  "combinations": 8,
+  "renderedCases": 64,
+  "distinctPixelOutputs": 64,
+  "protectedRegions": {
+    "iris": {
+      "x": 248,
+      "y": 146,
+      "width": 22,
+      "height": 39
+    },
+    "earCore": {
+      "x": 163,
+      "y": 171,
+      "width": 16,
+      "height": 21
+    },
+    "mouth": {
+      "x": 272,
+      "y": 200,
+      "width": 15,
+      "height": 13
+    },
+    "body": {
+      "x": 0,
+      "y": 238,
+      "width": 384,
+      "height": 274
+    }
+  },
+  "equipPreservesPhaseAndPosition": true,
+  "defaultFallbackPreservesNullSelections": true,
+  "invalidSlotIdFrameOrClipRejected": true,
+  "baseRoundtrip": {
+    "maxAlpha": 0,
+    "maxPremultiplied": 0
+  },
+  "cases": [
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 0,
+      "hash": "176504b2c62781a08d44c02f593195d34b5da9ea38cea3217e3c4db0795f23e9"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 1,
+      "hash": "9e6d0a663a4d5d2a72642dc4b5cf090394dfb73f6d68824ceb125a9fbe6d36ef"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 2,
+      "hash": "e040f4e0c5195cf8a56f64f32eeb3a14848101146e92955441bccafcc296befc"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 3,
+      "hash": "e5a80defb662c82477bd81123d5d8083c9ab5dcc3c9936fc75a27235db5e0abc"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 4,
+      "hash": "9a028e64d4d03358178d7d27dcbf029fde45f4f951ca8f1472064cfeebf630d7"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 5,
+      "hash": "43b04b31a0848f95510d7719f868592a750523b465afaf6e9882b4b8be210a80"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 6,
+      "hash": "29e64fc899aac2468018388df1c84dec25ca64df4b4c64bff97bebb349710be6"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 7,
+      "hash": "b65e7f7ef20d5f9d3a04e8f57bdb754382286ce4bd0570aa5e43d008a147ec66"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 0,
+      "hash": "ef57daf3e7a4058aa40e058b4f789d925c45082aadd3500192c92a4f1933482c"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 1,
+      "hash": "bb242223e5322ba3f697bb5e1e737171971fe0407ad5921ba59ff9bcae199a4d"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 2,
+      "hash": "7b6287ae9167b9e2bd41f70ccf33c27ff6bb199a7d7a89571eea6ee14fdb1f06"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 3,
+      "hash": "b64da52b80fb0f0722d8bd869382d673bf14c0794903f5f779c687ef23134aca"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 4,
+      "hash": "7f4e3ffc8448d4444e3e5192d6c5c75d8f6eebb747072608f52e30ae3be79f6f"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 5,
+      "hash": "1acd2fb5859d38813cd77995105e973d40452b66b949b1d5fb2256c9bb809980"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 6,
+      "hash": "d9b393c987da84514ac8e1b13e0606f631d8ad84710720e204440f93928ce150"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 7,
+      "hash": "0a373cdeda437c90bcb057aea912fa7a5ef5c2c85ff508b6dbfe31203428e0e4"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 0,
+      "hash": "e5cd5eb44c02df08e379784cbbbcaeb34ff011bd268b86bc3ba5a1f86d8e33a9"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 1,
+      "hash": "91ede21b5d9c4ce4b2dcb822927badbe01b624d6f62fe4cccf350c10f727bdc0"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 2,
+      "hash": "bfa2b872540fa235cd0bddf701fd89ce714e138acc921fb593fbcb9ce6d6d29e"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 3,
+      "hash": "37d8ef7263a282c403a0643960fa15eed3f6125256b5ed2f56956076bbaf61ec"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 4,
+      "hash": "e394210333ba86cd05580b850fba8e52f5a8b5fcae3248d3b74b7fadc2e40695"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 5,
+      "hash": "bc640124047eae822c2c88368c9ae503998ef226ea5a43e8f224edce7ba626af"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 6,
+      "hash": "259177e9b9411319f81adefa6729888d7695c1a1c268e43f56fdbbd276fc3740"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 7,
+      "hash": "60ff317dddaa8103890f68924cf67ff0cb12f79ca5e627065c8ac6185d40c4a5"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 0,
+      "hash": "c159749f991dd29e9546a3fdf0da030e16a4956fa13eba64faba4e79c9b58c0b"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 1,
+      "hash": "48391d530a6dfd5e4147f64b1849eb35e15f384855a938319f0a14017688e60d"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 2,
+      "hash": "d4dde20045da563c2714a00f8f04987d78afcc94460db0ce6706c9519ace52f2"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 3,
+      "hash": "5a251842a28ec33156b58ef46a852950caab77a5b24c826cad8c7be87a902936"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 4,
+      "hash": "a6e7a589335c0521f2064d96f93489d3226835fc4c9596262dbb6e49881f41a1"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 5,
+      "hash": "b2ba2bcc6d6aa8b07ac845c8fce0b7176decc0c9002763c1363832687af40be8"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 6,
+      "hash": "17a779ba98606d40ce18d249a94a08b20e62bdfd60cede089f1a8ce5a25c6d11"
+    },
+    {
+      "selected": {
+        "face": "face-amber",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 7,
+      "hash": "e892837ced25e840a1562e4277e04fbe4812d3669631dd82877accae62c87455"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 0,
+      "hash": "301c3113dd265ea0f499caa35e82ddcb10619e1b56389b665679f80f4c4fd583"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 1,
+      "hash": "187888f4f45fbb9f1dccace425ab7948ec0d0c026bbdd8cade4b9c0cb27b7e2a"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 2,
+      "hash": "5058a9fbe19f2fa5bae0008a54c02dadd723d58f8f84e7d90ab9e358420c528c"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 3,
+      "hash": "5d3e5c34e4bd12e0c6232b02a6278b81beadbc87978aaa2c1c1a01d5a156ccfb"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 4,
+      "hash": "f7b7fb18eba62f58719e798efc89a54ec5d7ccc3d22862ecf5fc5c8624b71431"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 5,
+      "hash": "b1eea65f4704728ea69c341e696ed5564f2ba85e51d401d0d553013c7bf7cfac"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 6,
+      "hash": "1f628249a10e0b318b5345c97931302be83689a5d099e77e11dcea2fd95f7311"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-traveler"
+      },
+      "frame": 7,
+      "hash": "32d9b7d7538eb4c49505ad26eb9cec8437b47bbc5df6900e8ce7e5fb3d83531d"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 0,
+      "hash": "784cd21bffdac64cb352103a1b4101413c99fd585135209f263c901bd53a016d"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 1,
+      "hash": "30712767f0403b5344d1455222270727c87abb0b435e2d70664a319c04b17eee"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 2,
+      "hash": "7bae7831904f22fd29440a75193fe5110707b6f3b259f59c474bf6924e6443d9"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 3,
+      "hash": "5ce3ba3c03bb6a1deedbcf91be8b03eb42393efd6bf29154c45255985487280d"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 4,
+      "hash": "e2152efd0f8875ddfa6c1bb425e9c8651800a5e8b65870d976cd5370d8829ef2"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 5,
+      "hash": "4b7e3d59abe3bb5d7cdd613c807b18302b3d3505c6f5fbffad8bd4762e54b635"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 6,
+      "hash": "b87a54a2d2eacd9a9b103c09385298c34e8adddd94924fb9ad8871738a71b9d4"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-chestnut",
+        "body": "body-blue"
+      },
+      "frame": 7,
+      "hash": "b449687b9a2f49b403acb75d8308a60e522fdd85c671f0f25598d898a17c2582"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 0,
+      "hash": "5561bcbee9623e8fc24fdb41f677c33a88d0f1b7e63d4ef169ef616cccc7f1b5"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 1,
+      "hash": "dabc1da96dbc4c7de0276ffa0717e781cb1f2dc5b78f1ea6d8958a8b068e4c8b"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 2,
+      "hash": "2e427024cf3219ac306b01d7753ca793bb0360dfd75a8d3099f32a458d378c18"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 3,
+      "hash": "093e4976a9991153eae4abb4f3ca170add66f99080cd8f415c61c105400ee8dd"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 4,
+      "hash": "17751a0366cdc57f5963bfff3087407c096ce2453e02b2db66e85a9d7c860336"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 5,
+      "hash": "88f37494621dd600c6faa7486a4ee2f3f929ab6e394543769e42a7426c2fe49f"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 6,
+      "hash": "752e1cc8baf2d1a6ddebb6972f7610c96a81c65dd1677abf5ee1a251dbd8f5ae"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-traveler"
+      },
+      "frame": 7,
+      "hash": "0966002bba5d93c970d95bbf7d67e42430c55494cfd65e4c5da2a05255f68356"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 0,
+      "hash": "117269dcb272883f75ee98a44c23767ee59c81e0b159891794ebaddc3b578ee1"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 1,
+      "hash": "e837b60c7f20604f932cdead2accce2e2ca89996de09a76f508dfaebc11741c1"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 2,
+      "hash": "4bed956e446232d3b4922a68745f6e5ff0532799bebfaa17ba89e14d1c905269"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 3,
+      "hash": "4cc3107fbcad9cf353832c3e20094564863ee832c66ddeab29b5dfe8003b03b6"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 4,
+      "hash": "83abee5744fd6de2ba30d1c115413a38097915ddd2498a9aa976496199121094"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 5,
+      "hash": "2837fbb3ea144d6b11fd1a552631f1d4e8b5f1831c2a541a91701963cdee905d"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 6,
+      "hash": "138936ec6a3bf557a67f0e3660b1229c10b681239f6a73f5fa50edfded454674"
+    },
+    {
+      "selected": {
+        "face": "face-calm",
+        "hair": "hair-silver",
+        "body": "body-blue"
+      },
+      "frame": 7,
+      "hash": "d2a7aa1f3ece20dd0f2a35ad5d704defb7ce7b227307e574ed510d8ab987b7f9"
+    }
+  ]
+}

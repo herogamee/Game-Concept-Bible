@@ -1,0 +1,5 @@
+Use case: precise-object-edit.
+Asset type: independently selectable registered character layer.
+Input image: EDIT TARGET, our fixed three-quarter-left standing template.
+Change ONLY the clothing bundle into our novice mage outfit: compact purple short-sleeved tunic with restrained gold edging and a small gold chest emblem, dark plum shorts, belt and matching purple ankle boots. No hat, staff, cape extension or robe covering the legs. Keep exact relaxed three-quarter LEFT body pose, neck/arms/hands/knees and limb positions. The outfit uses the identical body anatomy and sole locations.
+STRICT: edit only the requested category; exact1254×1254 square frame and original figure registration. Keep three-quarter-left viewpoint, head contour, nose, ear, neck and all unchanged parts at their original positions. Do not recenter, enlarge or fit the character. Original clean brown-outline 2D cel-shaded game art. Actual transparent RGBA background, no floor/shadow/text/extra objects. One complete character only.

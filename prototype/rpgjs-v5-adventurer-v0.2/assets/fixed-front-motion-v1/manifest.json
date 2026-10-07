@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "template": "fixed-front-motion-v1",
+  "appearanceTemplate": "fixed-front-v1",
+  "width": 384,
+  "height": 512,
+  "frames": 4,
+  "columns": 4,
+  "rows": 1,
+  "direction": "front",
+  "actions": [
+    "stand",
+    "walk"
+  ],
+  "fps": 6,
+  "mapping": {
+    "scale": 0.36,
+    "x": -33,
+    "y": 42.52
+  },
+  "anchors": {
+    "neck": [
+      192,
+      238
+    ],
+    "standingGround": [
+      192,
+      480
+    ]
+  },
+  "poses": [
+    {
+      "id": "right-contact",
+      "sourceKey": "left-contact"
+    },
+    {
+      "id": "left-passing",
+      "sourceKey": "left-passing"
+    },
+    {
+      "id": "left-contact",
+      "sourceKey": "right-contact-corrected"
+    },
+    {
+      "id": "right-passing",
+      "sourceKey": "right-passing"
+    }
+  ],
+  "bodyProtection": {
+    "skinRegions": [
+      [
+        390,
+        650,
+        180,
+        250
+      ],
+      [
+        695,
+        650,
+        180,
+        250
+      ],
+      [
+        480,
+        880,
+        290,
+        210
+      ]
+    ],
+    "skinRule": {
+      "minRed": 190,
+      "minGreen": 110,
+      "minBlue": 75,
+      "minRedGreen": 35,
+      "minRedBlue": 55,
+      "minGreenBlue": 15,
+      "minAlpha": 100
+    },
+    "dilation": 5,
+    "source": "one traveler pose per frame; same frozen mask reused for all outfits"
+  },
+  "clothing": {
+    "clothing-traveler": {
+      "stand": "clothing-traveler-stand.png",
+      "walk": "clothing-traveler-walk.png"
+    },
+    "clothing-knight": {
+      "stand": "clothing-knight-stand.png",
+      "walk": "clothing-knight-walk.png"
+    },
+    "clothing-mage": {
+      "stand": "clothing-mage-stand.png",
+      "walk": "clothing-mage-walk.png"
+    }
+  },
+  "atlases": [
+    "clothing-traveler-walk.png",
+    "clothing-knight-walk.png",
+    "clothing-mage-walk.png"
+  ],
+  "files": [
+    "head-template.png",
+    "eyes-amber.png",
+    "eyes-determined.png",
+    "eyes-joy.png",
+    "face-scar.png",
+    "face-blush.png",
+    "hair-chestnut.png",
+    "hair-chestnut-under-hat.png",
+    "hair-teal.png",
+    "hair-teal-under-hat.png",
+    "hair-silver-curls.png",
+    "hair-silver-curls-under-hat.png",
+    "hat-adventurer.png",
+    "clothing-traveler-stand.png",
+    "clothing-traveler-walk.png",
+    "clothing-knight-stand.png",
+    "clothing-knight-walk.png",
+    "clothing-mage-stand.png",
+    "clothing-mage-walk.png"
+  ],
+  "scope": "Four individually authored front walk key poses plus the original stand pose. Shared original head/appearance IDs and pose-owned exposed-body masks. No runtime limb rotation or per-item fitting. Experimental gait, owner acceptance pending; not other directions/actions or a mass-production pipeline."
+}

@@ -1,0 +1,320 @@
+{
+  "profile": "ddtank-4.0-local-2026-10-06",
+  "view": "three-quarter-left",
+  "template": "ddtank40-standing-three-quarter-left-v1",
+  "originalItems": 15,
+  "files": 33,
+  "originalCombinations": 162,
+  "referenceDefaults": [
+    {
+      "sex": "m",
+      "exactPixels": true
+    },
+    {
+      "sex": "f",
+      "exactPixels": true
+    }
+  ],
+  "interchangeCases": 12,
+  "sourceMastersUnmodified": true,
+  "allOrigins": [
+    0,
+    0
+  ],
+  "rejectedInvalidDimensions": true,
+  "rejectedMissingExpressions": true,
+  "rejectedIncompleteProductionPack": true,
+  "authoredExpressionChecks": [
+    {
+      "id": "ours-610900001",
+      "featurePixels": 844,
+      "headContourIdentical": true
+    },
+    {
+      "id": "ours-610900002",
+      "featurePixels": 769,
+      "headContourIdentical": true
+    },
+    {
+      "id": "ours-610900003",
+      "featurePixels": 350,
+      "headContourIdentical": true
+    }
+  ],
+  "hairFreeFaceLandmarks": [
+    [
+      615,
+      401
+    ],
+    [
+      612,
+      410
+    ],
+    [
+      698,
+      418
+    ]
+  ],
+  "eyeSources": {
+    "eyes-amber": "eyes-amber-generated.png",
+    "eyes-determined": "eyes-determined-generated.png",
+    "eyes-joy": "eyes-joy-generated.png"
+  },
+  "rejectedBrownHairInAmberEyeSet": true,
+  "bodyLandmarkPixels": 5874,
+  "exactLimbPixelInvariance": false,
+  "hairOnlyChecks": [
+    {
+      "id": "hair-chestnut",
+      "generatedHairOnlySource": "hair-chestnut-only-generated-v2.png",
+      "registeredSource": "hair-chestnut-only-v2.png",
+      "nativeCopiedByteForByte": true,
+      "headAndBodyAbsent": true,
+      "eyeMouthRegionsEmpty": true,
+      "connectedComponents": [
+        166552
+      ],
+      "importMatrix": [
+        0.72,
+        0,
+        0,
+        0.72,
+        168,
+        3
+      ]
+    },
+    {
+      "id": "hair-teal",
+      "generatedHairOnlySource": "hair-teal-only-generated-v2.png",
+      "registeredSource": "hair-teal-only-v2.png",
+      "nativeCopiedByteForByte": true,
+      "headAndBodyAbsent": true,
+      "eyeMouthRegionsEmpty": true,
+      "connectedComponents": [
+        135614
+      ],
+      "importMatrix": [
+        0.72,
+        0,
+        0,
+        0.72,
+        168,
+        3
+      ]
+    },
+    {
+      "id": "hair-silver-curls",
+      "generatedHairOnlySource": "hair-silver-curls-only-generated-v2.png",
+      "registeredSource": "hair-silver-curls-only-v2.png",
+      "nativeCopiedByteForByte": true,
+      "headAndBodyAbsent": true,
+      "eyeMouthRegionsEmpty": true,
+      "connectedComponents": [
+        130126
+      ],
+      "importMatrix": [
+        0.72,
+        0,
+        0,
+        0.72,
+        168,
+        3
+      ]
+    }
+  ],
+  "rejectedOldDetachedHairFragment": true,
+  "protectedEar": true,
+  "capCrownChecks": [
+    {
+      "id": "hair-chestnut",
+      "coveredWithCap": true,
+      "restoredCrownPixels": 107614
+    },
+    {
+      "id": "hair-teal",
+      "coveredWithCap": true,
+      "restoredCrownPixels": 102556
+    },
+    {
+      "id": "hair-silver-curls",
+      "coveredWithCap": true,
+      "restoredCrownPixels": 79741
+    }
+  ],
+  "exportMatrix": [
+    0.21075455333911536,
+    0,
+    0,
+    0.21075455333911536,
+    -32.59291891935706,
+    49.19774501300952
+  ],
+  "uniformAllLayers": true,
+  "rejectedAnisotropicBody": true,
+  "rejectedSeparateHeadBodyFits": true,
+  "proportionChecks": [
+    {
+      "id": "clothing-traveler",
+      "native": {
+        "x": 453,
+        "y": 578,
+        "width": 360,
+        "height": 633
+      },
+      "exported": {
+        "x": 63,
+        "y": 171,
+        "width": 76,
+        "height": 133
+      },
+      "ratioError": 0.004761904761904745
+    },
+    {
+      "id": "clothing-knight",
+      "native": {
+        "x": 452,
+        "y": 581,
+        "width": 367,
+        "height": 631
+      },
+      "exported": {
+        "x": 63,
+        "y": 172,
+        "width": 77,
+        "height": 133
+      },
+      "ratioError": 0.004589129499498079
+    },
+    {
+      "id": "clothing-mage",
+      "native": {
+        "x": 454,
+        "y": 600,
+        "width": 359,
+        "height": 610
+      },
+      "exported": {
+        "x": 63,
+        "y": 176,
+        "width": 76,
+        "height": 128
+      },
+      "ratioError": 0.008878830083565381
+    }
+  ],
+  "neckChecks": [
+    {
+      "id": "clothing-traveler",
+      "bodyOnlySource": "clothing-traveler-headless-v2.png",
+      "headRegionEmpty": true,
+      "sourceCopiedByteForByte": true,
+      "genuineNeckLandmarks": [
+        [
+          610,
+          615
+        ],
+        [
+          630,
+          615
+        ],
+        [
+          638,
+          626
+        ]
+      ],
+      "retainedCollarLandmarks": [
+        [
+          675,
+          622
+        ],
+        [
+          700,
+          623
+        ],
+        [
+          720,
+          625
+        ]
+      ]
+    },
+    {
+      "id": "clothing-knight",
+      "bodyOnlySource": "clothing-knight-headless-v2.png",
+      "headRegionEmpty": true,
+      "sourceCopiedByteForByte": true,
+      "genuineNeckLandmarks": [
+        [
+          610,
+          615
+        ],
+        [
+          630,
+          615
+        ],
+        [
+          638,
+          626
+        ]
+      ],
+      "retainedCollarLandmarks": [
+        [
+          648,
+          633
+        ],
+        [
+          654,
+          635
+        ],
+        [
+          659,
+          632
+        ]
+      ]
+    },
+    {
+      "id": "clothing-mage",
+      "bodyOnlySource": "clothing-mage-headless-v2.png",
+      "headRegionEmpty": true,
+      "sourceCopiedByteForByte": true,
+      "genuineNeckLandmarks": [
+        [
+          610,
+          615
+        ],
+        [
+          630,
+          615
+        ],
+        [
+          638,
+          626
+        ]
+      ],
+      "retainedCollarLandmarks": [
+        [
+          648,
+          633
+        ],
+        [
+          654,
+          635
+        ],
+        [
+          659,
+          632
+        ]
+      ]
+    }
+  ],
+  "coveredJoinPixels": 765,
+  "faceAboveClothing": true,
+  "acceptance": "File-format/portrait-renderer checks pass. Actual Flash-client item registration, anatomical/topology compatibility, all actions, female originals and owner visual acceptance remain pending.",
+  "browserChecks": {
+    "url": "http://127.0.0.1:5199/fixed-template",
+    "selectedHair": "ours-310900002",
+    "faceOnlyPreviewOpen": true,
+    "blueAndSilverRetainFaceFile": "/ddt40/ours/image/equip/m/face/ours_face_1/1/show.png",
+    "consoleWarningsOrErrors": [],
+    "screenshot": "D:/Codex/DDtank/research/compatibility-4.0/face-hair-free-browser-review.png"
+  }
+}

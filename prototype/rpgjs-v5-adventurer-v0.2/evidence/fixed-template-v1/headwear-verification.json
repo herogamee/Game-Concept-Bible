@@ -1,0 +1,12 @@
+{
+  "cases": 162,
+  "distinctVisibleCombinations": 162,
+  "hairstyles": 3,
+  "hats": 1,
+  "sharedCutY": 310,
+  "hatRemovalRestoresSelectedHair": true,
+  "hiddenHairKeepsHat": true,
+  "allLayersRegisteredAtOrigin": true,
+  "clothingPreservesRenderedHead": true,
+  "acceptance": "Technical front-pose checks only; owner visual and gait review pending."
+}

@@ -1,0 +1,9 @@
+.npm-cache/
+.research-cache/
+.rpgjs-upstream/
+.rpgjs-starter/
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+artifacts/

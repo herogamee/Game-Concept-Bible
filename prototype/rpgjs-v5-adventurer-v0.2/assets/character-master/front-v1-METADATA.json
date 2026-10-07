@@ -1,0 +1,15 @@
+{
+  "file": "front-v1.png",
+  "width": 1254,
+  "height": 1254,
+  "sha256": "95dd1b32201acfa84b282eaaa22f3f0b58e21568051274ae3b2e14e9f337c827",
+  "fullyTransparentPixels": 1184382,
+  "fullyOpaquePixels": 957,
+  "visibleBoundsAlphaOver180": {
+    "left": 351,
+    "top": 38,
+    "right": 904,
+    "bottom": 1217
+  },
+  "status": "front design candidate; owner review pending; not layered or integrated"
+}

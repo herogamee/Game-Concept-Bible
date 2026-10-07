@@ -4,6 +4,24 @@ Canonical design repository for the original fantasy **Adventurer Life RPG** pro
 
 ## Current direction
 
+The owner requested a preserved **[DDTank-style character baseline v1](design/DDTANK-CHARACTER-STANDARD-v1.md)** on 2026-10-07. The [versioned pack](characters/ddtank-lab-v1/) now stores our modular PNGs, clean headless outfit masters, prompts, Canvas wardrobe, Godot adapters, exact registration/animation settings and SHA-256 checks. It is the latest character-study reference: two outfits with stand/eight-frame downleft walk, two hairstyles, two open-eye sets with independent blink, two face-detail sets and a cap; standing Bag/Aura portraits align the character to native effects. Glasses/custom wings/full costumes, other directions, combat poses and production integration remain unfinished. Earlier front-motion/mesh/gait checkpoints below are historical studies, not the active baseline.
+
+The current character-authoring priority is the owner's [fixed-template asset standard](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-APPEARANCE.md#owner-defined-fixed-template-asset-standard--2026-10-06): one normal head and body, fixed registration, separate eye sets (eyes/brows/mouth) and face sets, integrated clothing sets, and full-costume replacement. This supersedes the old generic face/eyes and shirt/pants/shoes target. A front-pose subset now exists; the full authoring standard and legacy runtime integration remain unfinished. Establish a repeatable production process before projecting a catalog of thousands or moving the art study into another engine.
+
+The [shared front wardrobe and motion proof](prototype/rpgjs-v5-adventurer-v0.2/evidence/fixed-front-motion-v1/REVIEW.md) runs at `http://127.0.0.1:5199/fixed-template`: three clothing bundles, three eye/brow/mouth sets, two cheek-detail face sets plus none, three hairstyles and one cap. Select categories independently across the original stand and four authored front walk key poses; equip/reset preserves the animation phase, and cap removal restores selected hair. 162 visible looks and 810 pose compositions pass technical checks. Four key poses still need gait/foot/sleeve refinement and owner review. Broader equipment/actions, playable integration and measured production throughput remain unfinished.
+
+The RPGJS candidate now has a **[Character Lab](prototype/rpgjs-v5-adventurer-v0.2/CHARACTER-LAB.md)** at `http://localhost:5173/lab.html` for frame inspection, local costume/face layers, sword timing and actual-game Slime testing with a separate save. Gait art and class gameplay remain pending review/development.
+
+The local modular limb experiment failed owner visual review. Its [review record](prototype/rpgjs-v5-adventurer-v0.2/evidence/modular/REVIEW.md) includes a front-only continuous-body and head/hair registration study; these review PNGs are not integrated animation assets or an accepted replacement for the playable character.
+
+A [new complete front character candidate](prototype/rpgjs-v5-adventurer-v0.2/evidence/character-master/front-v1-review.png) starts the art review again from one coherent drawing. Its [source and provenance](prototype/rpgjs-v5-adventurer-v0.2/assets/character-master/PROVENANCE.md) record the generated PNG and exact prompt. A [first original head/hair proof](prototype/rpgjs-v5-adventurer-v0.2/evidence/character-master/head-hair/REVIEW.md) now toggles one separate hairstyle at `http://127.0.0.1:5199/original`, using a reconstructed scalp and three fixed-frame layers. Owner design review, alternate hairstyles/clothing and animation remain pending.
+
+A separate [registered-layer web proof](prototype/rpgjs-v5-adventurer-v0.2/evidence/registered-character/REVIEW.md) now changes face, hair and clothing using local 4.0 reference images without part fitting. Sixteen combinations and male/female Godot-reference pixel comparisons were checked. It reads commercial reference images externally; the original-art wardrobe remains unresolved.
+
+The owner requires independent eye-set/face-set/hair/clothing choices to persist across every supported motion and action. The earlier eight-combination walking study remains evidence; it does not pass the current fixed-template production standard or implement separate eye and face sets.
+
+A [first original side-walk study](prototype/rpgjs-v5-adventurer-v0.2/evidence/walk-side-v1/REVIEW.md) now runs at `http://127.0.0.1:5199/walk`: two face variants, two hairstyles and two outfit colourways through eight frames, with live changes that preserve position/phase. All 64 composition cases were checked. Natural gait, source-edge quality and owner acceptance remain pending; neutral idle, other views and combat actions are not implemented for this character.
+
 The player begins as an ordinary **F-rank adventurer**, chooses a profession, joins an Adventurer Guild, accepts ranked quests, travels through towns and villages, forms relationships and parties, grows toward S-rank, and explores a mysterious 100-floor dungeon.
 
 The core fantasy is not "be the chosen hero immediately." It is:
@@ -56,7 +74,7 @@ Preserve previous Bible versions. Foundation locks and explicit owner approvals 
 
 For each meaningful checkpoint, update the current Bible and CHANGELOG, check references and consistency, commit with a clear message and push to this repository. Never treat documentation completeness as proof that a mechanic is balanced or implemented.
 
-The active concept step is now **v0.3 Combat & Classes Candidate**, supported by a small greybox career loop and four-loadout combat comparison. Narrative, economy, treasure, equipment, crafting, trade and bounded housing now have working specialist proposals, so **feature breadth is temporarily frozen**: consolidate and validate the core game instead of opening more standalone systems. S-rank remains the proposed professional ceiling; Floor 100's final truth remains open even though a junction direction is being explored. The technical migration target is **RPGJS v5 + TypeScript + Tiled + LPC**, with [RPGJS migration instructions](prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md) and the [v0.3 combat implementation handoff](prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md). Shared-world intent does not justify MMO-scale implementation yet; avoid large networking scale, the remaining 97 floors, or new life-simulation subsystems before the core loop is validated.
+The active concept step is v0.3 Combat & Classes Candidate, with a bounded four-loadout comparison. Feature breadth remains frozen while the core loop is validated. The implementation reset keeps v0.1 as the playable quality reference and RPGJS v0.2 as a technical experiment; original illustrated art is allowed and LPC is optional. Read design/implementation-reset-2026-10-02.md and prototype/CODEX-HANDOFF-QUALITY-PARITY.md before the historical migration and combat handoffs. Engine selection and product parity still require measured evidence and owner visual/control review. Shared-world intent does not justify MMO-scale scope or the remaining 97 floors.
 
 ## Design pillars
 
@@ -85,4 +103,12 @@ The Bible uses semantic-style concept versions:
 - v0.9 — Prototype specification
 - v1.0 — First complete pre-production Bible
 
-Last updated: 2026-10-03
+Last updated: 2026-10-06
+
+## Playable prototypes and current direction
+
+See [implemented game status](PROJECT-STATUS.md) and [setup on another computer](DEVELOPING.md). The current source/preview branch is `codex/rpgjs-v0.2`; prototype implementation is separate from Bible version numbers.
+
+Start with **[v0.1 — illustrated Willowbrook](prototype/web-pixel-rpg-v0.1/README.md)**, the recommended playable and presentation/control reference. See the [prototype index](prototype/README.md) and [current implementation handoff](prototype/CODEX-HANDOFF-QUALITY-PARITY.md).
+
+[Willowbrook Adventurer v0.2](prototype/rpgjs-v5-adventurer-v0.2/readme.md) is a technical experiment that has not passed product parity. It uses RPGJS v5, TypeScript and Tiled with original v0.1 illustrated art; inactive Universal LPC assets retain credits. It is separate from the preserved v0.1. The candidate includes a phased sword/slime loop, three-kill quest, inventory/potion, EXP/drop, portals/save, a local server-authoritative two-client mode, display-density choices, saved adjustable camera framing, continuous diagonal movement, authored scenery anchoring and a durable appearance foundation. See its README and evidence records for run commands and limitations.

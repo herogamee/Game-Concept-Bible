@@ -1,0 +1,36 @@
+{
+  "canvas": [
+    1254,
+    1254
+  ],
+  "pair": [
+    "blank-head-hair.png",
+    "hair-only.png"
+  ],
+  "tool": "built-in image_gen",
+  "headTemplateSha256": "b9227919413cabb4dae769f2059134035ce06575614e0fd6869c3f3a39c146b1",
+  "headTemplateUnchanged": true,
+  "drawOrigin": [
+    0,
+    0
+  ],
+  "resizingOrFitting": false,
+  "facialFeatures": "No eyes, eyebrows or mouth in either delivered image; visually inspected.",
+  "hairAlphaSamplesPass": true,
+  "comparison": {
+    "method": "Blue-pixel classification at alpha>=128; diagnostic only, not exact segmentation",
+    "masterPixels": 148582,
+    "hairPixels": 149742,
+    "silhouetteIoU": 0.9697463899691654,
+    "meanChannelDifference": 12.305093131614365,
+    "pixelIdentity": false
+  },
+  "scope": "Paired hair-only source replaces the rejected hair on the existing lab item; the generated master never replaces the immutable head. No production/Flash integration or exact pair identity certified. Owner visual acceptance pending.",
+  "catalogUse": {
+    "id": "ours-310900004",
+    "name": "ผมฟ้า · คู่ภาพหัวมาตรฐาน",
+    "native": "layers/hair-paired-teal.png",
+    "replaces": "hair-ghost-teal",
+    "designImageUsedAsHairLayer": false
+  }
+}

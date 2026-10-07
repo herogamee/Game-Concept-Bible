@@ -1,3 +1,4 @@
+> **Historical guidance — superseded on 2026-10-02:** The owner authorized a quality-first reset after rejecting v0.2's presentation/control regression. Read [active implementation direction](../../design/implementation-reset-2026-10-02.md) and [current handoff](../CODEX-HANDOFF-QUALITY-PARITY.md). Preserve this record for history; its mandatory RPGJS/LPC rules are no longer the active engine/art policy.
 # CODEX HANDOFF — RPGJS v5 + LPC Playable Migration v0.2
 
 > **Continuation:** After the migration/kernel baseline is established, follow `CODEX-HANDOFF-COMBAT-v0.3.md` for the current Sword/Spear/Bow/Staff-Focus combat validation. The v0.3 handoff does not supersede this file's migration, asset-license or server-authority requirements.

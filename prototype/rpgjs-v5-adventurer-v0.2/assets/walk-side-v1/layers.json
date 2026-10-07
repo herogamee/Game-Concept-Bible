@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "atlas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "frame": {
+    "width": 384,
+    "height": 512,
+    "columns": 4,
+    "rows": 2
+  },
+  "clip": {
+    "id": "walk-east-v1",
+    "action": "walk",
+    "direction": "east",
+    "count": 8,
+    "frameMs": 100,
+    "stridePixels": 330
+  },
+  "displayScale": 0.58,
+  "groundY": 496,
+  "defaults": {
+    "face": "face-amber",
+    "hair": "hair-chestnut",
+    "body": "body-traveler"
+  },
+  "items": [
+    {
+      "slot": "face",
+      "id": "face-amber",
+      "file": "face-amber.png",
+      "label": "หน้าอำพัน",
+      "clip": "walk-east-v1"
+    },
+    {
+      "slot": "face",
+      "id": "face-calm",
+      "file": "face-calm.png",
+      "label": "หน้าสงบตาเขียว",
+      "clip": "walk-east-v1"
+    },
+    {
+      "slot": "hair",
+      "id": "hair-chestnut",
+      "file": "hair-chestnut.png",
+      "label": "ผมน้ำตาล",
+      "clip": "walk-east-v1"
+    },
+    {
+      "slot": "hair",
+      "id": "hair-silver",
+      "file": "hair-silver.png",
+      "label": "ผมเงิน",
+      "clip": "walk-east-v1"
+    },
+    {
+      "slot": "body",
+      "id": "body-traveler",
+      "file": "body-traveler.png",
+      "label": "ชุดน้ำตาล",
+      "clip": "walk-east-v1"
+    },
+    {
+      "slot": "body",
+      "id": "body-blue",
+      "file": "body-blue.png",
+      "label": "ชุดน้ำเงิน",
+      "clip": "walk-east-v1"
+    }
+  ],
+  "authoring": {
+    "headBodySplitY": 238,
+    "hairMask": "canonical spatial support, feature exclusions and source-colour seeds; no fitted offsets"
+  },
+  "scope": "One male right-facing walk study. Left is whole-character mirroring. Natural gait/owner art review pending; no combat actions."
+}

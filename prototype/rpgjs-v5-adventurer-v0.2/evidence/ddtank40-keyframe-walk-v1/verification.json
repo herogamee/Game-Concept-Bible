@@ -1,0 +1,24 @@
+{
+  "source": "assets/ddtank40-cutout-v1/traveler-keyframes-draft.png",
+  "sourceSha256": "aaf9d5e882f4c754e6b1dbc086899f63187c28d95bec68e37402bd965538aab2",
+  "sourceUnmodified": true,
+  "runtimeFrames": 4,
+  "canonicalFrame": [
+    250,
+    342
+  ],
+  "runtimeSheet": [
+    1000,
+    342
+  ],
+  "sourcePixelsPreserved": 240334,
+  "declaredImportAlphaExact": true,
+  "maxPremultipliedRgbImportError": 0,
+  "combinations": 48,
+  "headNeckJoinSamples": 144,
+  "headAndAppearanceResourcesUnmodified": true,
+  "clockWrapAndSwapPhasePass": true,
+  "mode": "Frame-based body playback; no standing-texture mesh deformation in active page",
+  "scope": "Four-frame Canvas lab preview, one outfit. Auxiliary walk.png, not DDTank game.png/virtual coverage and not Godot/Phaser integration.",
+  "acceptance": "Owner liked the new source artwork and requested live use on2026-10-07. Composed playback remains for review; repeated leading-leg phases and source variation are recorded, not repaired by texture deformation."
+}
