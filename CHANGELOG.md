@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-07 — Implement coloured support-foot gait proof
+
+- Add a fixed-length two-leg skeleton with immutable blue/orange limb identities, opposite contact/passing phases, independent foot targets and stride-matched movement speed. Make it the walking lab's default review mode with an eight-pose grid; retain generated clothing frames as the failed comparison.
+- Verify limb lengths, support/bend/cycle constraints and stationary world-space stance feet in both directions at three rates. Preserve independent head/eyes/hair/cap and equipment phase. Painted clothing is not yet bound; document this as a motion proof rather than a finished character.
+
 ## 2026-10-07 — Research external walking and equipment rigs
 
 - Inspect upstream GitHub procedural foot scheduling, actual Spineboy rig data, Spine equipment skins and Godot cutout workflow. Record sources and concrete comparison in the eight-frame review.

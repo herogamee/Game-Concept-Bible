@@ -11,7 +11,7 @@ const profile=JSON.parse(await readFile(new URL('../ddtank40/profile.json',impor
 const compatible=await compatibilityCatalog(source,profile);
 const staticFiles=new Map(['index.html','client.mjs','compositor.mjs','portrait-adapter.mjs','original.html','original-client.mjs','walk.html','walk-client.mjs','walk-model.mjs','fixed-template.html','fixed-template-client.mjs','fixed-template-model.mjs'].map(name=>[`/${name}`,fileURLToPath(new URL(name,import.meta.url))]));
 for(const name of ['index.html','client.mjs','format.mjs','registration.mjs'])staticFiles.set(`/ddt40/${name}`,fileURLToPath(new URL(`../ddtank40/${name}`,import.meta.url)));
-for(const name of ['walk.html','walk-client.mjs','walk-rig.mjs','walk-mesh-legacy.html','walk-mesh-legacy-client.mjs'])staticFiles.set(`/ddt40/${name}`,fileURLToPath(new URL(`../ddtank40/${name}`,import.meta.url)));
+for(const name of ['walk.html','walk-client.mjs','walk-rig.mjs','support-gait.mjs','walk-mesh-legacy.html','walk-mesh-legacy-client.mjs'])staticFiles.set(`/ddt40/${name}`,fileURLToPath(new URL(`../ddtank40/${name}`,import.meta.url)));
 for(const name of ['manifest.json','image/equip/m/cloth/ours_cloth_1/1/walk.png'])staticFiles.set(`/ddt40/keyframe-walk/${name}`,fileURLToPath(new URL(`../../assets/ddtank40-keyframe-walk-v1/${name}`,import.meta.url)));
 for(const name of ['manifest.json','traveler-eight-poses.png','image/equip/m/cloth/ours_cloth_1/1/walk.png'])staticFiles.set(`/ddt40/keyframe-walk8/${name}`,fileURLToPath(new URL(`../../assets/ddtank40-keyframe-walk-v2/${name}`,import.meta.url)));
 for(const name of ['traveler-parts.png','traveler-keyframes-draft.png'])staticFiles.set(`/ddt40/cutout/${name}`,fileURLToPath(new URL(`../../assets/ddtank40-cutout-v1/${name}`,import.meta.url)));
