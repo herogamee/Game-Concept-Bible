@@ -1,92 +1,105 @@
-# ChatGPT → GitHub Issue → Codex App (Windows) — low-quota workflow
+# ChatGPT ↔ Codex App (Windows) — goal-based, low-quota workflow
 
-**Goal:** Discuss/design extensively in **ordinary ChatGPT Chat**, but send Codex only the **approved implementation brief**, not a pasted conversation. No ChatGPT Work requirement and no automatic back-and-forth.
+Repository: `herogamee/Game-Concept-Bible`
 
-Repo: `herogamee/Game-Concept-Bible`
+## Purpose and roles
 
-## One-time setup (Windows Codex App)
+The owner talks and brainstorms freely in **ordinary ChatGPT Chat** without copying the discussion into Codex. When a plan is approved, ChatGPT posts a **concise goal-based GitHub Issue**; Codex App reads the Issue and independently chooses the best design/implementation from the actual codebase.
 
-Open the local repository in Codex App and confirm the terminal can use GitHub:
+- **Owner — Game Director:** defines outcomes, locked creative direction and major boundaries; decides vision disagreements and high-risk approvals.
+- **Codex — Technical & Implementation Lead:** owns technical design, code/asset integration, practical UI/UX details, debugging, tests and delivery. Can reject or improve ChatGPT proposals while meeting the owner's goal.
+- **ChatGPT — Research & Design Advisor:** explores options, supplies useful references and reviews results; **cannot require Codex to obey its suggestions or approve each technical decision**.
+
+**A mockup or implementation idea from ChatGPT is not a literal source-code specification**. If the owner explicitly approves a visual requirement, protect its intended appearance/behavior while letting Codex choose how to implement and adapt it for real devices. The goal is a cohesive game, not pixel-perfect copying of a static image at any cost.
+
+## Confirmed connection and limits
+
+The two-way GitHub Issue handshake was confirmed in [Issue #4](https://github.com/herogamee/Game-Concept-Bible/issues/4) (`CODEX_HANDSHAKE_OK` / `CHATGPT_HANDSHAKE_OK`). This proves each side can read/write this asynchronous mailbox, **not** that they can converse live or wake each other automatically.
+
+No ChatGPT Work, polling bot, paid API service or continuous AI-to-AI discussion is needed for the basic workflow. GitHub access on ChatGPT and `gh` authentication in the Windows Codex App are separate.
+
+## Daily workflow — two short prompts and a PR review
+
+1. In ChatGPT discuss the idea until the owner is happy; then say:
+   > ส่งงานนี้ให้ Codex
+
+2. ChatGPT creates one **goal-based implementation brief** in a GitHub Issue. For straightforward tasks, aim for about 150–350 words. Include:
+   - **Outcome**: what the game/user should be able to do or see;
+   - **Non-negotiables**: only owner-locked behavior, visual direction, security or compatibility constraints;
+   - **References**: precise Bible/source/mockup URLs *accessible to Codex*;
+   - **Acceptance**: observable play/build/test outcomes;
+   - **Design freedom**: explicitly delegate technical approach, code structure and practical UI details to Codex.
+   
+   Do NOT paste the entire discussion, abandoned designs or speculative implementation steps as commands. If an image only exists in ChatGPT, the owner/agent must place a usable image asset/reference in the repository or Issue; a chat-local image path is not accessible to Codex automatically.
+
+3. In **Codex App on Windows**, type:
+   > ทำ Issue #N
+
+   Codex reads that Issue and relevant project files, independently selects the method, implements/tests, and opens a linked PR. Codex should proactively solve in-scope problems without requesting ChatGPT approval or reopening already-locked decisions.
+
+4. Back here in ChatGPT, type:
+   > ตรวจ PR #M
+
+   ChatGPT reviews the actual diff, build/test evidence and the owner's outcomes, not whether Codex followed ChatGPT's suggested file tree. Reviewer feedback should be marked:
+   - **Must fix**: demonstrated regression, missing approved acceptance, security/data risk, licensing or failed test;
+   - **Suggestion**: aesthetic preference, alternate implementation or optional enhancement; not automatically blocking.
+   
+   Codex is free to respond with evidence, select a better solution, or decline a suggestion. If disagreement changes the owner's intended player experience, ask the owner; don't start an endless agent argument.
+
+5. For a needed fix, the owner can tell Codex:
+   > แก้ตามคอมเมนต์ PR #M
+
+   Only the owner authorizes the merge/deploy or other high-risk action. Repeat this cycle only for concrete defects/decisions, not continuous discussion.
+
+## Decision model
+
+| Topic | Default decision maker |
+| --- | --- |
+| Code architecture, algorithms, component boundaries, tool/library choices | Codex |
+| Detailed UI/UX implementation, layout adaptations and performance | Codex |
+| Better approach than ChatGPT suggested, within approved outcomes | Codex |
+| Relevant bug fixes, tests, contained refactors | Codex |
+| Research, alternatives, nonbinding review | ChatGPT |
+| Game identity, major gameplay direction, locked Bible/visual requirements | Owner |
+| Major engine migration, risky destructive changes, deployment, merge to main | Owner approval |
+
+Codex should **briefly report meaningful changes of direction in the PR**: what changed, why it is better for the goal, what was tested, and any trade-off. No approval request for every small adjustment.
+
+Proactively discovered major new gameplay systems should be proposed as a separate Issue or PR for owner prioritization; do not smuggle them into unrelated changes. This preserves Codex's creativity without making the game incoherent.
+
+## Brief example — Ternhaven first-screen scene
+
+**Outcome:** Create a beautiful, playable opening scene in Ternhaven fitting the Player-First Adventurer World and chosen bright chibi/fantasy UI direction. Guild, market and NPCs should feel like a functioning town, not a static building picker.
+
+**Non-negotiables:** Preserve working systems; starter-world identity and browser/low-spec goal; original assets and licenses. A saved style mockup guides visual direction, but is not a demand for exact implementation.
+
+**References:** precise relevant Bible files, current game source, accessible approved mockup.
+
+**Acceptance:** player can enter, move/interact with at least one meaningful town service; UI is readable at target resolutions; actual build/play evidence submitted.
+
+**Codex authority:** choose camera/scene composition, responsive layout, reusable UI elements, technical integration and sensible optimizations. Explain substantial deviations from the discussed reference. Seek owner approval only for a new **fundamental** game flow or major engine pivot.
+
+## Windows one-time readiness
+
+In Codex App's local repo terminal:
 ```powershell
-git remote -v
 git status
+git remote -v
 gh auth status
 ```
-If GitHub CLI is missing: `winget install --id GitHub.cli -e`, restart terminal, then `gh auth login` via browser. Do not copy PATs or passwords into chats/issues.
+If `gh` is not installed: `winget install --id GitHub.cli -e`, reopen terminal, then `gh auth login` via browser. Do not paste access tokens into chats/issues. Codex already reported a successful `gh` handshake in Issue #4; only repeat setup when the local environment changes.
 
-**Already verified:** on 2026-10-08, Codex replied with `CODEX_HANDSHAKE_OK` in [Issue #4](https://github.com/herogamee/Game-Concept-Bible/issues/4). Its report says GitHub CLI auth succeeded. This is evidence of **asynchronous Issue read/comment**, not automatic Codex activation.
-
-## Daily use — only two short messages
-
-**(A) Here in ChatGPT, after we finish designing:** say:
-> ส่งงานนี้ให้ Codex
-
-ChatGPT should create **one** concise GitHub Issue, normally 150–350 words for a straightforward task. Include only:
-- Goal / the change to implement.
-- Current repository path/baseline and **direct links to relevant source specs/mockups**.
-- Exact must-do / must-not-do.
-- Acceptance checks and tests.
-- Any remaining decision **explicitly marked as undecided**.
-
-Do not copy debate, abandoned ideas or the entire chat into the Issue. Avoid redundant long context and reopening locked decisions. An image visible only in ChatGPT is not automatically accessible to Codex; attach or commit the actual asset/reference to GitHub when needed.
-
-**(B) In the Codex App conversation**, type just:
-> ทำ Issue #N
-
-Root `AGENTS.md` defines what this means. Codex reads the Issue, relevant files only, works on a scoped branch, runs tests and opens a linked PR. The owner can write the Issue URL instead of N. Codex does not need to read the ChatGPT conversation.
-
-**(C) Here in ChatGPT, after Codex reports a PR:** say:
-> ตรวจ PR #M
-
-ChatGPT checks the actual diff, relevant Bible rules and test evidence; it comments on the PR as authorized. If revisions are needed, in Codex App say:
-> แก้ตามคอมเมนต์ PR #M
-
-**Only the owner approves merges.** Repeat review cycles only when there are concrete defects or untested acceptance conditions.
-
-## Why this minimizes Codex consumption
-
-- Ordinary design discussion stays in ChatGPT Chat; Codex receives only the final task.
-- One implementation brief per approved task; no chained AI debates, monitoring loop or repeated long summaries.
-- Codex still **must read necessary source files and run tests**; do not sacrifice correctness to shorten inputs.
-- This is expected to reduce unnecessary context, but actual Codex quota consumption depends on task/model/tool usage, and **no fixed savings are guaranteed**.
-- Manual one-line kickoff is intentional. Making Codex poll GitHub or run on every Issue could **increase quota consumption**.
-
-## Brief format
-
-```markdown
-### เป้าหมาย
-[ผลลัพธ์เดียวที่ต้องการ]
-### จุดอ้างอิง
-- [ลิงก์ Bible / mockup / source file ที่เกี่ยวข้องเท่านั้น]
-### ทำ
-- ...
-### ห้ามเปลี่ยน
-- ...
-### ผ่านเมื่อ
-- [ ] ...
-- [ ] รายงานคำสั่งทดสอบและผลจริง
-```
-
-If work is large, split into independently testable Issues **only where the owner approves**; do not expand scope by default.
-
-## Useful direct commands (Codex can run them)
-
+Useful commands (Codex may run directly):
 ```powershell
 gh issue view N --repo herogamee/Game-Concept-Bible --comments
-gh issue comment N --repo herogamee/Game-Concept-Bible --body "BLOCKED: <specific question>"
-gh pr create --repo herogamee/Game-Concept-Bible --base main --head <task-branch> --title "<short title>" --body "Refs #N"
+gh pr create --repo herogamee/Game-Concept-Bible --base main --head <branch> --title "<title>" --body "Refs #N"
 gh pr view M --repo herogamee/Game-Concept-Bible --comments
 ```
 
-## Limits and safety
+## Quota and safety
 
-- GitHub is the **shared mailbox**, not a live agent-to-agent chat.
-- New Issues/PRs do not wake up an existing Codex App conversation or ChatGPT by themselves.
-- ChatGPT's connected GitHub permissions and Codex's local GitHub CLI login are independent.
-- Do not merge `main`, deploy, or change the working project without owner approval.
-- Do not place credentials or local sensitive data into the shared mailbox.
-- Keep results short: changed paths, test evidence, screenshots if necessary, exact blocker, PR URL.
-
-## What is installed in this proposal?
-
-Root `AGENTS.md`, this guide, an Issue template, and a PR template. No bot, paid API automation, scheduler or game-code change is included.
+- A small approved Issue avoids having Codex ingest lengthy ChatGPT debates.
+- Codex still must inspect enough code and run tests for correctness. Savings are **not guaranteed** and depend on task complexity.
+- No ChatGPT Work required; GitHub Issues/PRs do not trigger agent runs unless a separate supported automation is configured.
+- Preserve existing working trees, secrets and player data; work on branches and get owner approval for merges/deploys.
+- A GitHub PR is an auditable change proposal, not evidence of a successful game build.

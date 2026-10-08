@@ -1,20 +1,24 @@
-## Issue
+## Related task
 Refs #
 
-## ผลที่ทำเสร็จ (brief)
+## ผลลัพธ์ที่ทำสำเร็จ
+-
+
+## การตัดสินใจออกแบบของ Codex
+<!-- Major implementation/design choices and material deviations from ChatGPT proposals; explain why briefly. Not a request for ChatGPT approval. -->
 -
 
 ## ไฟล์ที่เปลี่ยน
 -
 
-## ทดสอบจริง
-<!-- Commands and PASS/FAIL, or clearly mark NOT RUN and why -->
+## ผลทดสอบจริง
+<!-- PASS/FAIL/NOT RUN + command or observable evidence -->
 -
 
-## หลักฐาน / UI screenshot (if relevant)
+## ภาพ/วิดีโอ/หลักฐาน UI (ถ้ามี)
 -
 
-## ข้อจำกัด / คำถามที่ยังค้าง
+## ความเสี่ยง/งานต่อเนื่อง/คำถามถึงเจ้าของเกม
 - None
 
-**Owner reviews before merge. Do not claim a test passed unless executed.**
+**Codex owns the technical design. ChatGPT review is advisory unless it finds an objective defect or broken owner-approved requirement. Owner approval is required for merge/deploy.**

@@ -1,28 +1,24 @@
-# AGENTS.md
+# Web pixel RPG prototype — local instructions
 
-Goal: browser-first low-spec pixel RPG/MMORPG. Gameplay first, art later.
+Root `AGENTS.md` applies: **Codex makes in-scope technical/UI decisions independently**; ChatGPT proposals are nonbinding. Owner controls locked game outcomes and high-risk changes.
 
-Current baseline: `prototype/web-pixel-rpg-v0.1/index.html` is the first playable loop.
+**Baseline:** `prototype/web-pixel-rpg-v0.1/index.html` (working gameplay loop). **Goal:** browser-first, ordinary-PC performance. **Current prototype migration direction:** RPGJS v5 + TypeScript + Tiled + Universal LPC-compatible sprites (not a final-engine lock).
 
-Read before architecture work, in this order:
-- `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md`
-- `design/CONSOLIDATION-AUDIT-2026-10-03.md`
-- `prototype/PROTOTYPE-STATUS-2026-10-03.md`
-- `research/open-source-game-development-stack-2026-10-02.md`
-- `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md`
-- `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md`
-- `design/COMBAT-KERNEL-v0.1.md`
+## Read only what the task requires
 
-Rules:
-- Keep browser-first and low-spec.
-- Preserve working movement/combat/quest/save behavior.
-- Prefer data-driven NPC/item/quest/monster definitions.
-- Do not add heavy graphics dependencies before gameplay needs them.
-- Next architecture target is **RPGJS v5 + TypeScript + Tiled + Universal LPC-compatible sprites**.
-- RPGJS v5 is the primary engine. Do not add Phaser or Colyseus unless a concrete RPGJS blocker is documented first.
-- Use LPC/Kenney/open assets only with license/credit records; never copy commercial game sprites.
-- Online mode must remain server-authoritative before valuable economy/PvP systems are added.
-- Keep NPC simulation bounded by the Player-First Adventurer World design.
-- Meaningful changes should update README/CHANGELOG and remain easy for ChatGPT/Codex/Claude to continue.
-- Current feature breadth is frozen. Implement and validate v0.3 combat before adding new standalone systems.
-- Do not claim the RPGJS migration or v0.3 combat is complete until the target folder exists and build/tests/play evidence are recorded.
+Use the current Issue and pertinent files/tests. Consult, **only if relevant**:
+- World/Bible: `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md`, `design/CONSOLIDATION-AUDIT-2026-10-03.md`.
+- Prototype status: `prototype/PROTOTYPE-STATUS-2026-10-03.md`.
+- Engine/assets: `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md`, `research/open-source-game-development-stack-2026-10-02.md`.
+- Combat: `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md`, `design/COMBAT-KERNEL-v0.1.md`.
+
+Do **not** re-read all these references for a small Issue.
+
+## Guardrails, not micromanagement
+
+- Preserve functioning movement/combat/quest/save and other agents' local changes.
+- Codex chooses reusable components, data models, implementation, UI and optimization based on evidence. Do not add heavy dependencies without a clear benefit.
+- Preserve web/low-spec goal, licensed art credits and server-authoritative online economy/PvP when implemented. Never use copied commercial game sprites.
+- Keep Player-First NPC behavior and existing F→E scope. Big new standalone systems go to owner as proposals; in-scope quality/bug fixes are Codex decisions.
+- Codex may test alternate engines/tools, but **owner approval is required for a full migration**. Existing RPGJS direction is the default prototype path.
+- Report actual build/tests and linked PR; update docs only as relevant. ChatGPT review is advisory except for objective defects and missed owner-approved requirements.

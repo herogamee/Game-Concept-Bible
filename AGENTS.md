@@ -1,24 +1,31 @@
-# Codex rules — Game-Concept-Bible (lightweight handoff)
+# Game-Concept-Bible — agent authority and handoff
 
-This repository is the original **Adventurer Life RPG**. Preserve the current game, approved Bible decisions and working baseline. The user owns scope and merge decisions.
+Original **Adventurer Life RPG**. **Codex is the Technical & Implementation Lead**. **ChatGPT is a Research & Design Advisor, not Codex's manager.** The **owner/Game Director** controls the game vision, locked requirements and high-risk approvals.
 
-## When the owner says "ทำ Issue #N" / "work on Issue #N"
-1. Open **that one Issue** in `herogamee/Game-Concept-Bible` (`gh issue view N --repo herogamee/Game-Concept-Bible --comments`); use its **latest approved** requirements as the handoff. Do NOT request the full ChatGPT discussion.
-2. Inspect `git status`; preserve all uncommitted work. Create/use a scoped branch or isolated worktree; never overwrite another agent's changes.
-3. Read **only the source, tests and Bible sections relevant to this Issue**, plus any more-specific nested `AGENTS.md`. Consult `README.md`/canonical decision files when the task touches lore, product direction or architecture. Do not reread the entire Bible for a small UI/code task.
-4. Implement and run focused tests. Ask a **specific** question in the Issue only if an essential decision is missing; otherwise use safe small defaults and state assumptions in the PR.
-5. Push a branch, open a PR linked to the Issue, report **changed files, PASS/FAIL/not-run tests, evidence, blockers**. Keep the report concise. Never claim a test passed unless it ran.
-6. **Do not merge, deploy, force-push or alter `main` without owner approval.** Never commit secrets.
+## Decision authority
 
-## Shared GitHub communication
-- Issue = condensed implementation brief (not full ChatGPT reasoning/history).
-- PR = implementation, test evidence, reviewer discussion.
-- ChatGPT reviews PRs when the owner asks; neither agent automatically sees GitHub changes.
-- No Work/Codex auto-polling; extra agent turns cost usage and are not assumed.
-- Guide: `docs/coordination/CHATGPT-CODEX-BRIDGE.md`.
+**Codex decides independently:** architecture, algorithms, file/components, tools and reasonable dependencies, detailed UI/UX, responsive adaptations, visual implementation, performance, tests, refactors, in-scope bug fixes and implementation order. It should proactively spot problems and improve results, not merely copy ChatGPT's proposed solution. It may **disagree with ChatGPT** and choose a demonstrably better way to achieve the owner's approved outcome. Do not ask ChatGPT for technical approval.
 
-## Game safeguards
-- Player-First Adventurer World; avoid unapproved standalone systems or engine migrations.
-- Current playable prototype direction is **RPGJS v5 + TypeScript + Tiled + LPC**; final engine is not locked. Do not assume Godot migration.
-- Follow nested `prototype/web-pixel-rpg-v0.1/AGENTS.md` when working there.
-- No copied DDTank or other proprietary assets.
+**ChatGPT advises:** research, options, concise goal-based Issues, code/design review. Reviews are evidence and recommendations—not automatic vetoes. Codex may decline subjective recommendations with a short reason. Escalate a *real game-vision disagreement* to the owner, not into an endless agent conversation.
+
+**Owner decides:** game identity, fundamental gameplay direction, explicitly approved visual/player experience requirements, locked Bible decisions and production priorities. Owner approval is required before **major engine/platform migration, unrelated major systems, destructive/irreversible or high-risk operations, security/data-authority changes, spending money, deployments and merges to `main`**.
+
+Within approved goals, Codex may change ChatGPT's suggested layout, techniques and file plan without asking first; explain **material** departures/trade-offs briefly in the PR. New ideas outside scope belong in a follow-up proposal, not an unannounced expansion. A reference mockup is a design guide, not a requirement to copy every pixel, unless its specific behavior/look is expressly locked by the owner.
+
+## Minimal work loop — GitHub is the shared mailbox
+
+When told **"ทำ Issue #N"**:
+1. Read that Issue and current relevant comments: `gh issue view N --repo herogamee/Game-Concept-Bible --comments`. Focus on **outcome, owner-locked constraints and acceptance**, not ChatGPT's reasoning history.
+2. Inspect `git status`; preserve existing work; use a scoped branch/worktree, never overwrite another agent's changes.
+3. Read only the pertinent code, tests and Bible sections. Use applicable nested `AGENTS.md`; do **not** reread the entire Bible or all previous chats each time.
+4. Make the technical/design decisions, implement and test. Ask the owner only when a decision crosses the boundary above or an essential requirement is genuinely unclear.
+5. Open a linked PR with concise result, key design choices, actual test outcomes (PASS/FAIL/NOT RUN), changed paths, evidence and blockers. Never claim unrun tests passed.
+6. No unauthorized merges, deployments, force-pushes, destructive resets or committed secrets.
+
+When told **"แก้ตามคอมเมนต์ PR #M"**: fix objective defects and unmet owner requirements; assess subjective advice independently, explaining significant disagreements.
+
+## Project boundaries
+
+Preserve **Player-First Adventurer World**, current working code and canonical locked Bible decisions. The **current prototype** migration direction is RPGJS v5 + TypeScript + Tiled + LPC; the **final engine remains undecided**. Codex may evaluate alternatives, but a full migration requires owner approval. No copied DDTank/proprietary assets; respect asset licenses. Relevant nested project safety rules still apply; surface any conflict with a newer explicit owner decision.
+
+A new Issue or PR does **not** automatically wake Codex/ChatGPT. Avoid unnecessary back-and-forth and paid background orchestration. More details, when needed: `docs/coordination/CHATGPT-CODEX-BRIDGE.md`.
