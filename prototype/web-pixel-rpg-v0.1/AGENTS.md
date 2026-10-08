@@ -1,36 +1,24 @@
-# Prototype-specific Codex guidance — web-pixel-rpg-v0.1
+# Web pixel RPG prototype — local instructions
 
-Applies within this prototype directory alongside root `AGENTS.md`.
+Root `AGENTS.md` applies: **Codex makes in-scope technical/UI decisions independently**; ChatGPT proposals are nonbinding. Owner controls locked game outcomes and high-risk changes.
 
-**Codex is the Technical & Implementation Lead.** Choose the concrete architecture, code structure, algorithms, UI/UX implementation, optimizations and test plan independently. ChatGPT mockups and proposed implementation details are references, not commands. Preserve the **owner's approved experience and existing working features**.
+**Baseline:** `prototype/web-pixel-rpg-v0.1/index.html` (working gameplay loop). **Goal:** browser-first, ordinary-PC performance. **Current prototype migration direction:** RPGJS v5 + TypeScript + Tiled + Universal LPC-compatible sprites (not a final-engine lock).
 
-## Local context
+## Read only what the task requires
 
-- Goal: browser-first, low-spec Adventurer Life RPG prototype; gameplay reliability first.
-- Current playable baseline: `prototype/web-pixel-rpg-v0.1/index.html`.
-- Existing **prototype migration direction**: RPGJS v5 + TypeScript + Tiled + Universal LPC-compatible sprites. This is not a decision that permanently locks the final engine.
-- If an alternative approach solves an observed technical blocker better, Codex can investigate, benchmark and propose it. **Full-stack/engine migration** requires owner approval; small internal choices do not.
+Use the current Issue and pertinent files/tests. Consult, **only if relevant**:
+- World/Bible: `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md`, `design/CONSOLIDATION-AUDIT-2026-10-03.md`.
+- Prototype status: `prototype/PROTOTYPE-STATUS-2026-10-03.md`.
+- Engine/assets: `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md`, `research/open-source-game-development-stack-2026-10-02.md`.
+- Combat: `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md`, `design/COMBAT-KERNEL-v0.1.md`.
 
-## Read only relevant sources
+Do **not** re-read all these references for a small Issue.
 
-Do **not** reread all docs on every task. Follow the one GitHub Issue, inspect pertinent files, and consult these when the change needs them:
+## Guardrails, not micromanagement
 
-- World/game identity: `design/WORLD-SYSTEM-INTEGRATION-GUARDRAILS-v0.1.md` and `design/CONSOLIDATION-AUDIT-2026-10-03.md`.
-- Existing prototype state: `prototype/PROTOTYPE-STATUS-2026-10-03.md`.
-- Engine/asset migration: `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-RPGJS-v0.2.md` and `research/open-source-game-development-stack-2026-10-02.md`.
-- Combat: `prototype/web-pixel-rpg-v0.1/CODEX-HANDOFF-COMBAT-v0.3.md` and `design/COMBAT-KERNEL-v0.1.md`.
-
-Read as much as necessary to be correct, no more than is useful. If the task changes architecture, review the affected contracts and tests.
-
-## Technical and game safeguards
-
-- Preserve functioning movement/combat/quest/save, and inspect `git status` before changing files; avoid breaking another agent's work.
-- Prefer data-driven NPC/item/quest/monster definitions and reusable components when beneficial, but choose the actual design based on tests and codebase evidence.
-- Keep ordinary-PC and web performance viable. Do not add heavy dependencies without demonstrated value.
-- Use LPC/Kenney/open assets only with license/credit records; never copy commercial game sprites.
-- Online valuable economy/PvP operations must remain server-authoritative when implemented.
-- Keep NPC simulation Player-First; do not let autonomous NPCs replace player progression.
-- Current feature breadth is intentionally bounded until the v0.3 combat prototype has evidence. Feel free to improve *in-scope* design and quality; suggest bigger standalone systems separately for owner approval.
-- Do not claim migrations, builds or playtests passed unless actually run. Update README/CHANGELOG as appropriate for meaningful implemented changes, and deliver a linked PR for owner review.
-
-**Decision autonomy:** For technical/visual implementation details, Codex decides; for locked world/feature outcomes, major engine/platform pivots or risky irreversible operations, owner decides. ChatGPT comments are advisory except factual regressions, safety or unmet owner-approved requirements.
+- Preserve functioning movement/combat/quest/save and other agents' local changes.
+- Codex chooses reusable components, data models, implementation, UI and optimization based on evidence. Do not add heavy dependencies without a clear benefit.
+- Preserve web/low-spec goal, licensed art credits and server-authoritative online economy/PvP when implemented. Never use copied commercial game sprites.
+- Keep Player-First NPC behavior and existing F→E scope. Big new standalone systems go to owner as proposals; in-scope quality/bug fixes are Codex decisions.
+- Codex may test alternate engines/tools, but **owner approval is required for a full migration**. Existing RPGJS direction is the default prototype path.
+- Report actual build/tests and linked PR; update docs only as relevant. ChatGPT review is advisory except for objective defects and missed owner-approved requirements.
