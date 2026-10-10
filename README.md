@@ -1,6 +1,13 @@
-# Game Concept Bible
+# NewLife Quest — Game Concept Bible
 
-Canonical design repository for the original fantasy **Adventurer Life RPG** project.
+Canonical design repository for the original fantasy **NewLife Quest** Adventurer Life RPG project.
+
+## Owner-approved product and presentation direction (2026-10-10)
+
+- **Current logo and Login appearance are owner-approved references:** [Approved logo/login baseline](docs/product/OWNER-APPROVED-LOGIN-AND-LOGO-2026-10-10.md). The two exact owner-uploaded PNG sources are identified by filename and SHA-256; **binary import into this repo is still pending** and must not be reported as complete until verified.
+- **Post-login City Hub + Living City interaction direction is owner-approved:** [Hub/Living City decisions](docs/product/CITY-HUB-LIVING-CITY-DIRECTION-2026-10-10.md). City Hub is the default city view, shows the city only (no player avatar), and allows clicking buildings; Living City provides walkable exploration and optional discoveries. Desktop lower-left chat has reserved space; the inn must not be obscured.
+- **The Home/City Hub final artwork and exact building layout are not locked.** Wait for the owner's later Home review before selecting or replacing Home imagery.
+- Full Thai `th-TH` and English `en-US` localization parity remains required: [Issue #6](https://github.com/herogamee/NewLife-Quest/issues/6).
 
 ## Current direction
 
