@@ -1,4 +1,4 @@
-# Game-Concept-Bible — agent authority and handoff
+# NewLife Quest — agent authority and handoff
 
 Original **Adventurer Life RPG**. **Codex is the Technical & Implementation Lead**. **ChatGPT is a Research & Design Advisor, not Codex's manager.** The **owner/Game Director** controls the game vision, locked requirements and high-risk approvals.
 
@@ -15,7 +15,7 @@ Within approved goals, Codex may change ChatGPT's suggested layout, techniques a
 ## Minimal work loop — GitHub is the shared mailbox
 
 When told **"ทำ Issue #N"**:
-1. Read that Issue and current relevant comments: `gh issue view N --repo herogamee/Game-Concept-Bible --comments`. Focus on **outcome, owner-locked constraints and acceptance**, not ChatGPT's reasoning history.
+1. Read that Issue and current relevant comments: `gh issue view N --repo herogamee/NewLife-Quest --comments`. Focus on **outcome, owner-locked constraints and acceptance**, not ChatGPT's reasoning history.
 2. Inspect `git status`; preserve existing work; use a scoped branch/worktree, never overwrite another agent's changes.
 3. Read only the pertinent code, tests and Bible sections. Use applicable nested `AGENTS.md`; do **not** reread the entire Bible or all previous chats each time.
 4. Make the technical/design decisions, implement and test. Ask the owner only when a decision crosses the boundary above or an essential requirement is genuinely unclear.
@@ -25,6 +25,9 @@ When told **"ทำ Issue #N"**:
 When told **"แก้ตามคอมเมนต์ PR #M"**: fix objective defects and unmet owner requirements; assess subjective advice independently, explaining significant disagreements.
 
 ## Project boundaries
+
+The owner's approved **logo and login** reference decisions are documented in `docs/product/OWNER-APPROVED-LOGIN-AND-LOGO-2026-10-10.md`; the approved **City Hub/Living City product interactions**, with **Home final artwork explicitly pending**, are documented in `docs/product/CITY-HUB-LIVING-CITY-DIRECTION-2026-10-10.md`. These owner locks override subjective visual advice but do not remove Codex's implementation autonomy or authorize unapproved deployments/merges. The referenced binary images are **not yet in GitHub** until verified by SHA-256 after upload.
+
 
 Preserve **Player-First Adventurer World**, current working code and canonical locked Bible decisions. The **current prototype** migration direction is RPGJS v5 + TypeScript + Tiled + LPC; the **final engine remains undecided**. Codex may evaluate alternatives, but a full migration requires owner approval. No copied DDTank/proprietary assets; respect asset licenses. Relevant nested project safety rules still apply; surface any conflict with a newer explicit owner decision.
 

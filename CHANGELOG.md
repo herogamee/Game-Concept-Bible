@@ -1,5 +1,13 @@
 # Changelog
 
+## Owner UI/visual requirements checkpoint — 2026-10-10 (documentation only)
+
+- Locked **exact current** NewLife Quest logo and Sky Castle Login image selection with original PNG metadata and SHA-256 checks; source PNG binary import remains pending, and there is no claim of functional login completion.
+- Recorded City Hub first-entry/default, A2 (core services + optional Living City discoveries), B2 (major walkable interiors + UI services), C1 (one-screen City Hub), clickable actual buildings, lower-left desktop chat reservation, hotel visibility, and landscape mobile/desktop UI constraints.
+- **Explicitly deferred final Home/City Hub artwork** and exact building placements; prior mockups do not become approved production assets by this checkpoint.
+- Reaffirmed Thai and English UI/location translation parity (Issue #6) and retained player-first world/implementation decision authority.
+
+
 ## v0.3 — 2026-10-03 — Combat & Classes Prototype Candidate
 
 - Added `bible/GAME-CONCEPT-BIBLE-v0.3.md` as the active Combat & Classes prototype candidate while preserving v0.2.1's locked Player/NPC correction.

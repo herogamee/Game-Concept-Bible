@@ -1,6 +1,14 @@
 # Decision register and proposed changes
 
-**Date:** 2026-10-03. Owner approval is distinct from a writer using a coherent working draft.
+**Original register:** 2026-10-03. **Latest owner UI/visual checkpoint:** 2026-10-10. Owner approval is distinct from a writer using a coherent working draft.
+
+## Owner-approved visual and Hub decisions — 2026-10-10
+
+**LOCKED until an explicit later owner change:** Use the exact two owner-supplied images (logo and Sky Castle Login) as the current NewLife Quest branding/login visual baselines. Source filenames, actual dimensions, SHA-256, production/localization constraints and **pending binary asset import** are in [the approved visual baseline](../docs/product/OWNER-APPROVED-LOGIN-AND-LOGO-2026-10-10.md). Do not replace/redesign either visual without owner approval.
+
+**LOCKED product interaction direction:** (A) City Hub is the default after character creation; (A2) City Hub provides daily services while Living City adds walkable NPC/optional hidden discoveries; (B2) significant Living City interiors are walkable while ordinary service buildings may open UI; (C1) the whole town is presented in a single desktop 1920×1080 City Hub composition, with actual building click/tap regions. No player avatar is displayed in City Hub. Desktop lower-left is reserved for in-game chat, and the inn must remain unobstructed. Landscape responsive web on desktop/mobile and full Thai/English coverage are required. See [the detailed agreed Hub decisions](../docs/product/CITY-HUB-LIVING-CITY-DIRECTION-2026-10-10.md) and [localization Issue #6](https://github.com/herogamee/NewLife-Quest/issues/6).
+
+**EXPLICITLY NOT LOCKED:** Final Home/City Hub mockup, any existing generated Home screenshot, exact building positions, and final Living City 2.5D vs 3D implementation. The owner will return to Home design later. Recording these decisions is **not** authorization to replace the current game Home, deploy, or merge without normal approval.
 
 ## Owner direction added in v0.2.1
 
